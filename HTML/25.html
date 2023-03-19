@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- <link rel="stylesheet" href="text.css"> -->
+  <style>*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 10px;
+}
+.container{
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid black;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 70px;
+}
+.logo{
+    font-size: 3rem;
+    
+}
+.menu a{
+    text-decoration: none;
+    font-size: 2rem;
+    padding: 0 15px;
+    color: black;
+}
+.menu a:first-child{
+    color: rgb(255, 128, 10);
+
+}
+.menu a:hover{
+    color: rgb(255, 128, 10);
+}
+span{
+    color: rgb(255, 128, 10);
+}
+.bt{
+    padding: 3px 5px;
+    background-color: #FFF;
+    border-radius: 15px;
+}
+.hero-section{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.left{
+    flex-basis: 40%;
+}
+.right{
+    flex-basis: 50%;
+}
+.right img{
+    width: 60em;
+}
+h2{
+    font-size: 5rem;
+    margin-bottom: 10px;
+}
+p{
+    font-size: 2em;
+}
+.btn{
+    background-color: rgb(255, 128, 10);
+    padding: 5px 10px;
+    font-size: 14px;
+    
+    margin-top: 20px ;
+    border-radius: 10px;
+}
+.btn:hover{
+    background-color: rgb(216, 107, 6);
+}
+.hero-section1{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+.left1{
+    flex-basis: 50%;
+}
+.right1{
+    flex-basis: 40%;
+}
+.left1 img{
+    width: 500px;
+}
+img{
+    border-radius: 5px;
+}
+footer{
+    margin: 10rem 5rem;
+}
+h1{
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+}
+.contact{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 5rem;
+    max-width: 100rem;
+    margin: 0 auto;
+    gap: 2rem;
+}
+form >input{
+    padding: 10px;
+    border-radius: 5px;
+}
+#email,#feedback,#btn{
+    grid-column-start: span 2;
+}
+#feedback{
+    grid-row-start: span 2;
+}
+#btn{
+    color: white;
+    background-color: rgb(34, 54, 34);
+    font-size: 2rem;
+    
+}
+#btn:hover{
+    background-color: rgb(48, 59, 48);
+}
+
+</style>
+</head>
+
+<body>
+  <div class="container">
+    <nav>
+      <div class="logo">SEO <span>EXP</span></div>
+      <div class="menu">
+        <a href="">Home</a>
+        <a href="">About</a>
+        <a href="">Service</a>
+        <a href="">Contact</a>
+        <input type="text" class="bt" placeholder="Search here...">
+      </div>
+    </nav>
+    <div class="hero-section">
+
+      <div class="left">
+        <h2>Expect Great Things from <span>your seo</span>Agency</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis dolor minus cum! Exercitationem laudantium,
+          saepe totam, recusandae suscipit minus a repellat tempore eos architecto quibusdam debitis nulla in tempora
+          laborum.</p>
+          <input type="button"  class="btn"value="Read more">
+        </div>
+        <div class="right">
+          <img src="https://images.pexels.com/photos/574324/pexels-photo-574324.jpeg?auto=compress&cs=tinysrgb&w=610" alt="">
+        </div>
+    </div>
+    
+
+  <div class="hero-section1">
+
+    <div class="left1">
+      <img src="https://images.pexels.com/photos/9099493/pexels-photo-9099493.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+      </div>
+      <div class="right1">
+        <h2>Chatterpati  <span>shivaji</span></h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis dolor minus cum! Exercitationem laudantium,
+        saepe totam, recusandae suscipit minus a repellat tempore eos architecto quibusdam debitis nulla in tempora
+        laborum.</p>
+        <input type="button"  class="btn"value="Read more">
+        
+      </div>
+  </div>
+  <div class="hero-section1">
+    <div class="left">
+      <h2>Rudra  <span>Mahakaal</span> Shiva</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis dolor minus cum! Exercitationem laudantium,
+        saepe totam, recusandae suscipit minus a repellat tempore eos architecto quibusdam debitis nulla in tempora
+        laborum.</p>
+        <input type="button"  class="btn"value="Read more">
+      </div>
+      <div class="right">
+        <img src="https://images.pexels.com/photos/12088465/pexels-photo-12088465.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
+      </div>
+    
+  </div> 
+  <footer >
+    <h1>Contact us</h1>
+    <form action="#"  class="contact">
+      
+      <input type="text" id="name" placeholder="Frist Name">
+      <input type="text" id="lastname" placeholder="Last Name">
+      <input type="email"  id="email" placeholder="Enter your Email">
+      <input type="text" id="feedback" placeholder="your Feedback">
+      <input type="button" value="Submit" id="btn">
+    </form>
+  </footer>
+  </div>
+</body>
+
+</html>

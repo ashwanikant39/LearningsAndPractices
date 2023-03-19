@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FORM Styling</title>
+    <link rel="stylesheet" href="/CSS/19_formStyle.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <h1 class="main">PAYMENT FORM</h1>
+      <hr />
+      <h2>User information</h2>
+      <form action="#">
+        <p>Name: *<input type="text" name="name" required/></p>
+        <fieldset>
+          <legend>Gender</legend>
+          <p>
+            Male <input type="radio" name="gender" class="gender" /> Female
+            <input type="radio" name="gender" class="gender" />
+          </p>
+        </fieldset>
+        <p>Address: <textarea name="" id="" cols="30" rows="5"></textarea></p>
+        <p>Email: <input type="email" /></p>
+      </form>
+      <p>Pincode: <input type="number" /></p>
+      <hr />
+      <h2>Payment info</h2>
+      <p>
+        Card type:
+        <select name="" id="">
+          <option value="">---Select a card type</option>
+          <option value="Visa">Visa</option>
+          <option value="Rupay">Rpay</option>
+          <option value="Master card">MAster card</option>
+        </select>
+      </p>
+      <p>Card number: <input type="number" /></p>
+      <p>Card expiration date: <input type="date" /></p>
+      <p>CVV: <input type="password" /></p>
+      <input type="submit" value="Pay now" />
+      <input type="reset" value="Reset form" />
+    </div>
+  </body>
+</html>

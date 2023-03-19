@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+ 
+
+    <head>
+        <title></title>
+        <style type="text/css">
+
+            .calc {
+                font-family: Arial, Helvetica, sans-serif;
+                width: 215px;
+                justify-content: center;
+                background: blue;
+                padding: 5px;
+                border-radius: 15px;
+                padding-top: 10px;
+            }
+
+            button {
+                left: 10px;
+                margin: auto 0 4px 4px;
+                width: 45px;
+                border-radius: 5pc;
+                border-style: offset;
+                background: linear-gradient(-10deg, grey, black);
+                color: white;
+                font-weight: bold;
+                border: solid ridge;
+                box-shadow: 0 1px 1px 1px grey;
+
+            }
+
+            button:active {
+                background: linear-gradient(180deg, grey, black);
+                box-shadow: 0 1px 1px 1px red;
+
+            }
+
+            #num {
+                padding: 15px;
+                margin: 0 10px 10px 5px;
+                margin-right: 10px;
+                border-radius: 10px;
+                color: black;
+                font-weight: bold;
+                border-style: inset;
+                font-size: larger;
+                width: 169px;
+                font-family: "Lucida Console", Monaco, monospace;
+
+            }
+
+            sup {
+                font-size: 5px;
+
+            }
+
+            #ac, #del {
+                background: linear-gradient(-10deg,red, black);
+            }
+
+            .function-keys {
+                background: linear-gradient(-10deg,green, black);
+            }
+
+            .operation-keys {
+                background: linear-gradient(-10deg, blue, black);
+            }
+
+        </style>
+
+        <script type="text/javascript">
+            function deleteDigit() 
+
+                document.getElementById('num').value = Math.floor(document.getElementById('num').value/10);

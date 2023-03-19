@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Table</title>
+    <style>
+        table {
+            border: 2px solid rgba(29, 20, 20, 0.438);
+        }
+       
+        tbody{
+            background-color: gray;
+        }
+        thead{
+           
+            background-color:  rgb(177, 245, 177);
+        }
+        tfoot, #hey{
+            color: white;
+            background-color: rgba(37, 108, 84, 0.358);
+        }
+        /* #hey{
+            color: white;
+            background-color: black;
+        } */
+    </style>
+  </head>
+  <body>
+
+    <table>
+
+      <thead id="hii" class="hey">
+        <tr>
+          <th>subject</th>
+          <th>Student name</th>
+          <th>Roll number</th>
+          <th>marks</th>
+          <th>grade</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr>
+            <td>English</td>
+            <td>Ashwani</td>
+            <td>2104939</td>
+            <td>119</td>
+            <td>95%</td>
+        </tr>
+        <tr>
+            <td>math</td>
+            <td>Akash</td>
+            <td>2104932</td>
+            <td>85</td>
+            <td>65%</td>
+        </tr>
+        <tr id="hey">
+            <th colspan="5">all passed</th>
+        </tr>
+        <tr>
+            <td>web dev</td>
+            <td>Sourabh</td>
+            <td>2104961</td>
+            <td>112</td>
+            <td>90%</td>
+        </tr>
+        <tr>
+            <td>Physics</td>
+            <td>Ankush</td>
+            <td>2104936</td>
+            <td>110</td>
+            <td>92%</td>
+        </tr><tr>
+            <td>IT</td>
+            <td>Aditya</td>
+            <td>2104939</td>
+            <td>135</td>
+            <td>98%</td>
+        </tr>
+
+      </tbody>
+      <tfoot>
+        <tr>
+            <th colspan="5">all passed</th>
+        </tr>
+      </tfoot>
+    </table>
+
+  </body>
+</html>

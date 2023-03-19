@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paymen_form.com</title>
+  </head>
+  <body>
+    <form action="">
+      <h1>Payment form</h1>
+      <h2>Contact Information</h2>
+      <p>Name: <input type="text" name="name" required /></p>
+      <p>surname: <input type="text" name="surname" required /></p>
+      <fieldset>
+        <legend>Gender</legend>
+        <p>
+          Male <input type="radio" name="gender" id="male" /> <br>
+           Female <input type="radio" name="gender" id="male" />
+        </p>
+      </fieldset>
+      <p>Mob no: <input type="text" name="mob no" required /></p>
+      <p>Email Id: <input type="email" name="email" id="email" required /></p>
+      <p>
+        Address:
+        <textarea name="address" id="address" cols="100" rows="5"></textarea>
+      </p>
+
+      <p>pincode: <input type="pincode" name="pincode" id="pincode" /></p>
+      <hr />
+      <h3>Card Details</h3>
+      <p>
+        Card type:
+        <select name="card type" id="card type">
+          <option value="">--Select a card type--</option>
+          <option value="Visa">Visa</option>
+          <option value="Rupay">Rupay</option>
+          <option value="Master card">Master card</option>
+        </select>
+      </p>
+      <p>Card Holder Name: <input type="name" name="name" id="name" /></p>
+      <p>
+        Card Number:
+        <input type="card number" name="card number" id="card number" />
+      </p>
+      <p>Expiry Date: <input type="date" name="exp_date" id="exp_date" /></p>
+      <p>CVV: <input type="password" name="cvv" id="cvv" /></p>
+      <input type="submit" value="Pay now" />
+    </form>
+  </body>
+</html>

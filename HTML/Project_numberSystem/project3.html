@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Number System Converter</title>
+
+   <!-- <link rel="stylesheet" href="project.css">
+   <script src="project.js" defer></script> -->
+   <style>
+    * {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  #image1{
+    width: 80px;
+    margin-top: 10px;
+    margin-left: 30px;
+    mix-blend-mode: multiply;
+  }
+  #p1{
+    font-style: normal;
+    font-size: 22px;
+  }
+  
+  .navbar{
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .f1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 350px;
+    margin-right: 350px;
+    margin-top: 20px;
+  }
+  
+  body {
+    background-image: linear-gradient(
+      214deg,
+      #f87205 14%,
+      #fdfbfd 46%,
+      #21a403 86%);
+    min-height: 100vh;
+    
+  }
+  
+  .f1 {
+    background-image: linear-gradient(
+      150deg,
+     
+  
+      #00ff91,
+      #00f7f7,
+      rgb(110, 110, 110)
+    );
+    padding: 120px 100px;
+    border-radius: 17px;
+  }
+  #name{
+    background-color: #cb6512;
+    border: 1px solid black;
+    border-radius: 5px;
+  }
+  
+  
+  #select-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  
+  select {
+    margin: 10px 20px;
+    padding: 7px 15px;
+    outline: none;
+  }
+  
+  input {
+    background-color: rgb(255, 255, 255);
+    min-width: 350px;
+    margin: 15px;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.5s;
+  }
+  
+  input:focus {
+    box-shadow: 0px 6px 10px 1px rgba(0, 0, 0, 0.5);
+  }
+  #convert-button:hover{
+    background-color: #91e8e5;
+
+  }
+  
+  #convert-button {
+    padding: 7px 25px;
+    border: solid 1px black;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s transform;
+  }
+  
+  #convert-button:active {
+    transform: scale(0.9);
+  }
+  
+  #input-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  #error {
+    display: none;
+    color: #f00;
+    font-size: small;
+    margin: 0 0 10px 30px;
+    text-align: start;
+  }
+  
+  #written-by-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #000;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-top: 5px;
+  }
+  
+  #written-by-container a {
+    color: #000;
+  }
+  
+  header img{
+    width: 300px;
+  }   
+   </style>
+   
+</head>
+
+<body>
+   <div class="navbar">
+   <img src="logo1.jpg"  id="image1"alt="">
+   <h1 id="p1">FOUNDER'S DAY PROJECT</h1>
+   <select id="name">
+
+      <option >Made By:-</option>
+      <option >Aswhani kant</option>
+      <option >Saurabh Kumar</option>
+   </select>
+
+</div>
+   <div class="f1">
+      
+      <h1>Number System Converter</h1>
+
+      <div id="select-container">
+         <select id="from-select">
+            <option value="from-binary">Binary</option>
+            <option value="from-decimal">Decimal</option>
+            <option value="from-hexadecimal">Hexadecimal</option>
+            <option value="from-octal">Octal</option>
+         </select>
+         <span>to</span>
+         <select id="to-select">
+            <option value="to-binary">Binary</option>
+            <option value="to-decimal">Decimal</option>
+            <option value="to-hexadecimal">Hexadecimal</option>
+            <option value="to-octal">Octal</option>
+         </select>
+      </div>
+
+      <div id="input-container">
+         <input type="text" id="from-input" placeholder="Binary Number">
+         <span id="error"></span>
+      </div>
+
+      <button id="convert-button" id><b>Convert</b></button>
+      
+
+      <input type="text" id="to-input" placeholder="Binary Number" readonly>
+   </div>
+
+
+</body>
+
+</html>

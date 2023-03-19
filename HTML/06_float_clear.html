@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>float</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        font-family: "Poppins", sans-serif;
+      }
+      h1{
+        width: 500px;
+        margin: auto;
+        text-shadow:1px 1px 1px gray;
+      }
+      #container {
+        padding: 10px;
+        border-radius: 20px;
+
+        margin: 50px auto;
+        width: 1000px;
+        border: 3px solid rgb(14, 1, 1);
+        background-color: rgb(7, 240, 240);
+      }
+      .item {
+        border-radius: 20px;
+        border: 3px solid gray;
+        margin: 10px;
+        padding: 20px;
+      }
+      #fruit {
+        background-color: rgb(182, 208, 143);
+        float: left;
+        width: 330px;
+        height: 400px;
+      }
+      #computer {
+        background-color: rgb(228, 165, 165);
+        float: right;
+        width: 50%;
+      }
+      #book {
+        color: white;
+        text-shadow: 2px 3px black;
+        background-color:rgb(255 132 31);
+        /* clear: left;
+         */
+        clear: both;
+        /* float: left; */
+        width: 93%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h1>WElcome to my first page</h1>
+      <div id="fruit" class="item">
+        <h1>Fruit</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit
+          ducimus, voluptas, dolorem culpa explicabo vero architecto iusto modi
+          qui quos aspernatur pariatur blanditiis quae fugit eaque incidunt
+          corporis, animi vitae vel corrupti possimus veritatis! Lorem ipsum
+          dolor, sit amet consectetur adipisicing elit. Molestiae ex excepturi
+          deserunt dolor quia, exercitationem error impedit, fugiat odit dolorem
+          suscipit in sunt veritatis!
+        </p>
+      </div>
+
+      <div id="computer" class="item">
+        <h1>Computer</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit
+          ducimus, voluptas, dolorem culpa explicabo vero architecto iusto modi
+          qui quos aspernatur pariatur blanditiis quae fugit eaque incidunt
+          corporis, animi vitae vel corrupti possimus veritatis! Lorem ipsum
+          dolor sit amet consectetur adipisicing elit. Repudiandae ipsam illum
+          ipsa quae earum, sit quisquam quis accusantium omnis explicabo
+          aspernatur ipsum hic esse illo quasi doloremque velit atque dolore
+          asperiores fuga, ad eos? Facere! Lorem ipsum dolor sit, amet
+          consectetur adipisicing elit. Ipsum laudantium, maxime minus culpa
+          quis, molestias numquam corrupti autem ad ab corporis ex impedit?
+        </p>
+      </div>
+
+      <div id="book" class="item">
+        <h1>Book</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit
+          ducimus, voluptas, dolorem culpa explicabo vero architecto iusto modi
+          qui quos aspernatur pariatur blanditiis quae fugit eaque incidunt
+          corporis, animi vitae vel corrupti possimus veritatis!
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

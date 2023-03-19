@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="style1.css"> -->
+    <style>
+      * {
+  box-sizing: border-box;
+}
+
+body{
+    margin: 0px;
+    padding: 0px;
+    background: url(/HTML/gym.jpg);
+    color: aliceblue;
+    background-image: cover;
+    background-repeat: no-repeat;
+}
+.left{
+    display: inline-block;
+    
+    position: absolute;
+    left: 30px;
+    top: 15px;   
+}
+.left img{
+    width: 50px;
+    border-radius: 20px;
+}
+.mid{
+    display: block;
+    width: 35%;
+    margin:  12px auto;
+    border: 2px solid #666c66;
+    border-radius: 25px;
+
+}
+.right{
+    position: absolute;
+    right: 30px;
+    top: 15px;
+    display: inline-block;
+}
+
+
+.navbar li a:hover{
+    color: brown;
+
+}
+.navbar li{
+    display: inline-block;
+
+
+}
+.navbar li a{
+    color: aliceblue;
+    text-decoration: none;
+    padding: 35px 23px;
+ 
+}
+.btn{
+    margin: 0px 10px;
+    color:aliceblue;
+    background-color: rgb(82 72 72);
+    border-radius: 15px;
+}
+.btn:hover{
+    background-color: rgb(26, 25, 25);
+}
+.container{
+    margin: 80px 115px;
+    padding: 10px 15px;
+    width: 18%;
+    height: 170px;
+    border: 2px solid rgb(67, 67, 67);
+    border-radius: 10px;
+}
+.inp{
+    padding: 1px 20px;
+    margin: 4px auto;
+    background-color: #b7b6b6;
+    border-radius: 15px;
+}
+.btnsr{
+    margin: 0px 2px;
+    background-color: #666c66;
+    border-radius: 5px;
+}
+.btnsr:hover{
+    background-color: #b7b6b6;
+}
+    </style>
+
+
+</head>
+
+<body>
+    <header class="header">
+        <div class="left">
+            <!-- left -->
+            <img src="/HTML/saurab.jpg" alt="">
+            <div>SkS Fitness</div>
+        </div>
+
+        <div class="mid">
+            <ul class="navbar">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">contact</a></li>
+                <li><a href="#">fitness</a></li>
+                <li><a href="#">about</a></li>
+            </ul>
+        </div>
+
+        <div class="right">
+            <!-- right -->
+            <button class="btn">Sign In</button>
+            <button class="btn">Sign up</button>
+        </div>
+    </header>
+    <div class="container">
+        <form action="no">
+                Ragistration for Gym
+            <input type="text" class="inp" placeholder="Enter your name"> <br>
+            <input type="text" class="inp" placeholder="Enter your mob.no.">
+            <input type="email" class="inp" placeholder="Enter your Email"><br><br>
+            <button class="btnsr">Sumbit</button>
+            <button class="btnsr">Reset</button>
+        </form>
+    </div>
+
+
+
+
+</body>
+
+</html>

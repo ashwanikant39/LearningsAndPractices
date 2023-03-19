@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navigstion</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #89d4b8;
+      }
+      .nav {
+        background-color: #000000;
+        border-radius: 25px;
+        /* overflow: auto; */
+      }
+      ul {
+        overflow: auto;
+      }
+      .nav li {
+        float: left;
+        list-style: none;
+        padding: 4px;
+        margin: 4px;
+      }
+      .nav li a {
+        text-decoration: none;
+
+        color: #f7f7f7ab;
+      }
+      .nav li a:hover {
+        color: rgb(10, 249, 46);
+      }
+      .nav li a:active {
+        color: rgb(194, 197, 109);
+      }
+      .div {
+        float: right;
+        margin: 5px 20px;
+      }
+      .div input {
+        border-radius: 10px;
+        color: #d26e6e;
+        border-color: #d26e6e;
+        padding: 0px 10px;
+        margin-top: 3px;
+        
+      }
+      a {
+        text-shadow: 1px 1px 2px black;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <nav class="nav">
+        <ul>
+          <li><a href="#">Home </a></li>
+          <li><a href="#">About </a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact </a></li>
+          <div class="div">
+            <input type="text" class="input" placeholder="Search something" />
+          </div>
+        </ul>
+      </nav>
+    </header>
+  </body>
+</html>
