@@ -3,7 +3,7 @@ int main()
 {
 
   int amount, hun_note, aft_hun, fifty_note, aft_fifty, ten_note, aft_ten, five_note, aft_five, two_note, aft_two, one_note;
-  printf("enter amount: ");
+  printf("\nEnter amount: ");
   scanf("%d", &amount); // suppose 588
 
   hun_note = amount / 100;   // 5 notes of hundred
@@ -21,7 +21,7 @@ int main()
   printf("notes of hundered : %d\n", hun_note);
   printf("notes of fifty : %d\n", fifty_note);
   printf("notes of ten : %d\n", ten_note);
-  printf("notes of five : %d\n", fifty_note);
+  printf("notes of five : %d\n", five_note);
   printf("coin of two : %d\n", two_note);
   printf("coin of one : %d\n\n", one_note);
 
