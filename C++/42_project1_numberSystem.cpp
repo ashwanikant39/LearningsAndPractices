@@ -81,6 +81,7 @@ void hexadeimalTodecimal()
             break;
         }
     }
+    
 
     if (isHexa)
     {

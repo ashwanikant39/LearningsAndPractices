@@ -8,7 +8,7 @@ int main()
     // cout << "Enter rupay at first day: ";
     //  cin >> investRS;
 
-    long investRS = 5;
+    long investRS = 2;
     long days;
     long totalInvest = 0;
     long investPerDay;
