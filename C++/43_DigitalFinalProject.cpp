@@ -57,29 +57,47 @@ void fromDecimal(int number, int toBase)
             cout << x;
         }
     }
-    cout << ")_" << toBase << "\n\n";
+    cout << ")_" << toBase << "\n=============================================\n\n";
 }
 
-int *onesComplement(int number)
+string onesComp(string bin)
 {
-    static int arr[64];
-    int rem1;
-    int i = 0;
-    while (number != 0)
+    int len, i;
+    string ones;
+    len = bin.length();
+    ones.resize(len);
+
+    for (i = 0; i < len; i++)
     {
-        rem1 = number % 10;
-        if (rem1 == 0)
+        if (bin[i] == '0')
         {
-            arr[i] = 1;
+            ones[i] = '1';
         }
-        else if(rem1==1)
+        else
         {
-            arr[i] = 0;
+            ones[i] = '0';
         }
-        number = number / 10;
-        i++;
     }
-    return arr;
+    return ones;
+}
+
+// function to add two strings
+string add(string a, string b)
+{
+    string result = "";
+    int temp = 0;
+    int size_a = a.size() - 1;
+    int size_b = b.size() - 1;
+    while (size_a >= 0 || size_b >= 0 || temp == 1)
+    {
+        temp += ((size_a >= 0) ? a[size_a] - '0' : 0);
+        temp += ((size_b >= 0) ? b[size_b] - '0' : 0);
+        result = char(temp % 2 + '0') + result;
+        temp /= 2;
+        size_a--;
+        size_b--;
+    }
+    return result;
 }
 
 int main()
@@ -87,6 +105,8 @@ int main()
     int choice, choice1, choice3, length, fromBase, toBase, baseRange = true;
     string number;
     int underBase = true;
+    string a, b, x, n;
+    string store = "";
 
     int isBinary = true;
     int isOctal = true;
@@ -98,15 +118,19 @@ int main()
     string binaryNum1, octalNum1, hexaNum1;
     int *value;
 
-    cout << "\n\n\t\twelcome\n\n";
-    cout << "\t1. for convertion \n\t2. for Find 1's complement\n\t3. for Find 2'S complement\n\t4. For Additionn\n\t";
+    int len, i;
+    string bin, ones;
 
-    cout << "\nEnter choice(1-4): ";
+    cout << "\n\n\t-------------------------------------------\n\tWelcome to Electronics digital calculator\n\t-------------------------------------------\n\n";
+    cout << "\t1. for convertion \n\t2. for Find 1's complement\n\t3. for Find 2'S complement\n\t4. For Additionn\n\t5. For Subtraction";
+
+    cout << "\nEnter choice(1-5):";
     cin >> choice;
 
     switch (choice)
     {
     case 1:
+        cout << "\n--------------------------------------------------------------";
         cout << "\n\t1. For Your own base(From & to both) \n\t2. For predefined 12 combination\n\n";
 
         cout << "Enter choice(1-2): ";
@@ -115,11 +139,12 @@ int main()
         switch (choice1)
         {
         case 1:
+            cout << "\n--------------------------------------------------------------\n";
             cout << "Enter number that you want convert: ";
             cin >> number;
             cout << "Enter base between 2 to 36: ";
             cin >> fromBase;
-            if (fromBase > 36)
+            if (fromBase > 36 || fromBase < 2)
             {
                 cout << "*** Sorry, You can enter base only 2 to 36";
                 baseRange = false;
@@ -178,7 +203,7 @@ int main()
                     cin >> toBase;
 
                     // int *value;
-                    cout << "(" << number << ")_" << fromBase << " = ";
+                    cout << "=============================================\n\tYour conversion is \n\t(" << number << ")_" << fromBase << " = ";
                     fromDecimal(decimalNumber, toBase);
                     // for (int j = 0; j <= 50; j++)
                     // {
@@ -189,13 +214,16 @@ int main()
 
             break;
         case 2:
+            cout << "\n--------------------------------------------------------------";
 
             cout << "\n\t1. for DECIMAL to BINARY\n\t2. For DECIMAL to OCTAL\n\t3. For DECIMAL to HEXADECIMAL\n\t4. For BINARY to DECIMAL\n\t5. For BINARY to OCTAL\n\t6. For BINARY to HEXADECIMAL\n\t7. For OCTAL to BINARY\n\t8. For OCTAL to DECIMAL\n\t9. For OCTAL to HEXADCIMAL\n\t10. For HEXADECIMAL to BINARY\n\t11. For HEXADECIMAL to DECIMAL\n\t12. For HEXADECIMAL to OCTAL\n\t\n ";
             cout << "Enter choice(1-12): ";
             cin >> choice3;
             switch (choice3)
             {
+
             case 1:
+                cout << "\n--------------------------------------------------------------\n";
 
                 cout << "Enter your DECIMAL number: ";
                 cin >> decimalNum1;
@@ -204,6 +232,7 @@ int main()
                 break;
 
             case 2:
+                cout << "\n--------------------------------------------------------------\n";
                 cout << "Enter your DECIMAL number: ";
                 cin >> decimalNum1;
                 cout << "DECIMAL to OCTAL result= ";
@@ -212,6 +241,7 @@ int main()
                 break;
 
             case 3:
+                cout << "\n--------------------------------------------------------------\n";
                 cout << "Enter your DECIMAL number: ";
                 cin >> decimalNum1;
                 cout << "DECIMAL to HEXADECIMAL result= ";
@@ -220,6 +250,7 @@ int main()
                 break;
 
             case 4:
+                cout << "\n--------------------------------------------------------------\n";
                 cout << "Enter BINARY number: ";
                 cin >> binaryNum1;
                 for (int i = binaryNum1.size() - 1; i >= 0; i--)
@@ -241,6 +272,7 @@ int main()
                 break;
 
             case 5:
+                cout << "\n--------------------------------------------------------------\n";
                 cout << "Enter BINARY number: ";
                 cin >> binaryNum1;
                 for (int i = binaryNum1.size() - 1; i >= 0; i--)
@@ -262,6 +294,7 @@ int main()
                 break;
 
             case 6:
+                cout << "\n--------------------------------------------------------------\n";
                 cout << "Enter BINARY number: ";
                 cin >> binaryNum1;
                 for (int i = binaryNum1.size() - 1; i >= 0; i--)
@@ -283,6 +316,7 @@ int main()
                 break;
 
             case 7:
+                cout << "\n--------------------------------------------------------------\n";
                 cout << "Enter OCTAL number: ";
                 cin >> octalNum1;
                 for (int i = octalNum1.size() - 1; i >= 0; i--)
@@ -304,6 +338,7 @@ int main()
                 break;
 
             case 8:
+                cout << "\n--------------------------------------------------------------\n";
                 cout << "Enter OCTAL number: ";
                 cin >> octalNum1;
                 for (int i = octalNum1.size() - 1; i >= 0; i--)
@@ -325,6 +360,7 @@ int main()
                 break;
 
             case 9:
+                cout << "\n--------------------------------------------------------------\n";
                 cout << "Enter OCTAL number: ";
                 cin >> octalNum1;
                 for (int i = octalNum1.size() - 1; i >= 0; i--)
@@ -347,6 +383,7 @@ int main()
 
             case 10:
 
+                cout << "\n--------------------------------------------------------------\n";
                 cout << "Enter your HEXADECIMAL number: ";
                 cin >> hexaNum1;
 
@@ -368,6 +405,7 @@ int main()
                 break;
 
             case 11:
+                cout << "\n--------------------------------------------------------------\n";
                 cout << "Enter your HEXADECIMAL number: ";
                 cin >> hexaNum1;
 
@@ -389,6 +427,7 @@ int main()
                 break;
 
             case 12:
+                cout << "\n--------------------------------------------------------------\n";
                 cout << "Enter your HEXADECIMAL number: ";
                 cin >> hexaNum1;
 
@@ -423,19 +462,101 @@ int main()
 
         break;
     case 2:
-        value = onesComplement(10101);
-        for (int i = 0; i < sizeof(value) - 1; i++)
-        {
-            cout << value[i];
-        }
+        cout << "\n--------------------------------------------------------------\n";
+
+        cout << "Enter number for 1's complement: ";
+        cin >> a;
+        cout << "\n=============================================\n\t1's complement of " << a << " is (" << onesComp(a) << ")\n=============================================";
 
         break;
     case 3:
+        cout << "\n--------------------------------------------------------------\n";
+        cout << "Enter number for 2's complement: ";
+        cin >> a;
+        b = add(onesComp(a), "1");
+        cout << "\n=============================================\n\t2's complement of " << a << " is (" << b << ")\n=============================================";
 
         break;
     case 4:
+        cout << "\n--------------------------------------------------------------\n";
+
+        cout << "Enter first number: ";
+        cin >> a;
+        cout << "Enter second number: ";
+        cin >> b;
+        cout << "\n======================================\n\tYour addition is (" << add(a, b) << ")\n======================================";
 
         break;
+
+    case 5:
+        cout << "\n--------------------------------------------------------------\n";
+        cout << "\t1. For BINARY SUBTRACTION using 1's complement:\n\t2. For BINARY SUBTRACTION using 2's complement:\nEnter choice(1-2): ";
+        cin >> choice1;
+        switch (choice1)
+        {
+        case 1:
+            cout << "\n--------------------------------------------------------------\n";
+            cout << "Enter POSITIVE BINARY NUMBER(+): ";
+            cin >> a;
+            cout << "Enter NEGATIVE BINARY NUMBER(-): ";
+            cin >> b;
+
+            x = onesComp(b);
+            n = add(a, x);
+            // cout<<n;
+
+            if (a.size() - 1 >= n.size() - 1)
+            {
+                cout << "\n============================================================================\n";
+                cout << "\tSubtraction is (" << n << ") and it is negative & in 1's complement form\n";
+                cout << "============================================================================\n\n";
+            }
+            else
+            {
+                for (int i = 1; i <= n.size() - 1; i++)
+                {
+                    store = store + n[i];
+                }
+                // cout << store;
+                cout << "\n============================================================================\n";
+                cout << "\tSubtraction is (" << add(store, "1") << ") and positive & it's true form\n";
+                cout << "\n============================================================================\n";
+            }
+
+            break;
+        case 2:
+            cout << "\n--------------------------------------------------------------\n";
+            cout << "\n--------------------------------------------------------------\n";
+            cout << "Enter POSITIVE BINARY NUMBER(+): ";
+            cin >> a;
+            cout << "Enter NEGATIVE BINARY NUMBER(-): ";
+            cin >> b;
+            n = (add(a, add(onesComp(b), "1")));
+            // cout<<n;
+            if (a.size() - 1 >= n.size() - 1)
+            {
+                cout << "\n============================================================================\n";
+                cout << "\tSubtraction is (" << n << ") and it is negative & in 2's complement form\n";
+                cout << "============================================================================\n\n";
+            }
+            else
+            {
+                for (int i = 1; i <= n.size() - 1; i++)
+                {
+                    store = store + n[i];
+                }
+                cout << "\n============================================================================\n";
+                cout << "\tSubtraction is (" << store << ") and Positive & it's true form\n";
+                cout << "============================================================================\n\n";
+            }
+
+            break;
+            default: 
+            cout<<"Wrong choice**";
+        }
+
+        break;
+
     default:
         cout << "You entered wrong choice**";
         break;
