@@ -526,7 +526,7 @@ int main()
             break;
         case 2:
             cout << "\n--------------------------------------------------------------\n";
-            cout << "\n--------------------------------------------------------------\n";
+            // cout << "\n--------------------------------------------------------------\n";
             cout << "Enter POSITIVE BINARY NUMBER(+): ";
             cin >> a;
             cout << "Enter NEGATIVE BINARY NUMBER(-): ";
@@ -551,8 +551,8 @@ int main()
             }
 
             break;
-            default: 
-            cout<<"Wrong choice**";
+        default:
+            cout << "Wrong choice**";
         }
 
         break;
