@@ -6,7 +6,7 @@ public class A34_updateBit {
         System.out.println("Enter 1 for make 1(set)\nEnter 0 for make 0(clear)  ");
         int a = sc.nextInt();
 
-        int num = 13;
+        int num = 10;
         int position = 2;
         int bitmask = 1 << position;
 
