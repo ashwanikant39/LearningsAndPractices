@@ -19,7 +19,7 @@
       margin: 0px;
       padding: 0px;
       background: url(/HTML/project2/abs-gb02517e62_1920.jpg);
-      /* height: 5155px; */
+      height: 5155px;
     }
     .left {
       /* border: 2px solid red; */
@@ -37,15 +37,17 @@
     .center {
       /* border: 2px solid blue;  */
       display: block;
-      width: 37%;
-      margin: 20px auto;
+      width: 43%;
+      margin: 39px auto;
     }
     .right {
       /* border: 2px solid green; */
       display: inline-block;
       position: absolute;
-      top: 20px;
+      /* position:sticky; */
+      top: 35px;
       right: 20px;
+
     }
     .navbar li {
       display: inline-block;
@@ -75,6 +77,43 @@
     .btn:hover {
       background-color: rgb(31, 29, 29);
     }
+    .container{
+      position: fixed;
+      /* top: 3px; */
+      border: 4px solid rgb(246, 246, 246);
+    margin: 231px 70px;
+    width: 33%;
+    padding: 10px 70px;
+  border-radius: 20px;}
+  .container h1{
+    text-align: center;
+  }
+  .form-group{
+    /* border: 2px solid red; */
+
+  }
+  .form-group input{
+    text-align: center;
+    display: block;
+    border: 2px solid black;
+    border-radius: 7px;
+    width: 362px;
+    font-size: 24px;
+
+
+    margin: 10px auto;
+    padding: 4px;
+  }
+  .container button{
+  display: block;
+  width: 62%;
+  margin: 26px auto;
+  font-size: 30px;
+
+
+
+
+  }
   </style>
   <body>
     <header class="header">
@@ -96,5 +135,24 @@
         ><button class="btn">Email use</button>
       </div>
     </header>
+    <div class="container">
+      <h1>Welcome to gym</h1>
+      <form action=".php">
+        <div class="form-group">
+          <input type="text" name="" placeholder=" Enter your Name">
+        </div>
+        <div class="form-group">
+          <input type="text" name="" placeholder=" Enter your Age">
+        </div>
+        <div class="form-group">
+          <input type="text" name="" placeholder=" Enter your Number">
+        </div>
+        <div class="form-group">
+          <input type="text" name="" placeholder=" Enter your Gender">
+        </div>
+        <button class="btn">Submit</button>
+        
+
+    </div>
   </body>
 </html>
