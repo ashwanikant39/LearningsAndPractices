@@ -3,16 +3,15 @@ using namespace std;
 int main()
 {
 
-    
-    // int investRS;
-    // cout << "Enter rupay at first day: ";
-    //  cin >> investRS;
+    int investRS;
+    cout << "Enter rupay at first day: ";
+    cin >> investRS;
 
-    long investRS = 2;
+    // long investRS = 5;
     long days;
     long totalInvest = 0;
     long investPerDay;
-   
+
     cout << "\n\nEnter days: ";
     cin >> days;
     for (int i = 1; i <= days; i++)
