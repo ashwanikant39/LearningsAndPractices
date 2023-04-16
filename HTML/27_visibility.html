@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .box {
+        width: 200px;
+        height: 200px;
+        border: 2px solid gray;
+      }
+      #box1 {
+        position: relative;
+        top: 70px;
+        background-color: red;
+        z-index: 35;
+      }
+      #box2 {
+        background-color: rgb(55, 38, 239);
+        position: relative;
+        top: 0px;
+        z-index: 33;
+        /* display: none; */
+        /* visibility: hidden; */
+      }
+      #box3 {
+        background-color: rgb(188, 255, 2);
+      }
+      #box4 {
+        background-color: rgb(2, 93, 30);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box" id="box1"></div>
+    <div class="box" id="box2"></div>
+    <div class="box" id="box3"></div>
+    <div class="box" id="box4"></div>
+  </body>
+</html>
