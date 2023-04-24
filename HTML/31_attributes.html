@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Attributes</title>
+
+    <style>
+      .main {
+        display: block;
+        width: 10vw;
+        margin: auto;
+      }
+      input {
+        margin: 20px;
+        display: block;
+        display: flex; 
+      }
+      input[type="text"] {
+        padding: 20px;
+        border: 2px solid red;
+        border-radius: 15em;
+      }
+      input[type="password"] {
+        padding: 20px;
+        border: 2px solid red;
+        border-radius: 15em;
+      }
+      a[target]{
+        font-size: 34px;
+          border: 2px solid blue;
+          border-radius: 15em;
+          background-color: violet;
+          text-decoration: none;
+      }
+      a[target='_self']{
+        color: green;
+      }
+      a:hover{
+        color: red;
+      }
+
+      /* li:nth-child(2n+0){
+       color: red;
+      } */
+
+      li:nth-child(odd){
+        background-color: red;
+      }
+
+      li:nth-child(even){
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <form action="#">
+        <a href="http://google.com" target="_blank"> Google</a>
+        <a href="http://facebook.com" target="_self"> Facebook</a>
+        <input type="text" placeholder="Enter your name" />
+        <input type="password" placeholder="Enter your password" />
+        <input type="search" value="Submit" />
+      </form>
+      <ul>
+        <li class="item" id="item1">first</li>
+        <li class="item" id="item2">second</li>
+        <li class="item" id="item-third">third</li>
+        <li class="item" id="item3">fourth</li>
+        <li class="item" id="item4">fifth</li>
+        <li class="item" id="item5">sexth</li>
+        <li class="item" id="item6">seventh</li>
+        <li class="item" id="item7">eighth</li>
+        <li class="item" id="item8">ninth</li>
+        <li class="item" id="item9">tenth</li>
+        <li class="item" id="item10">eleventh</li>
+      </ul>
+    </div>
+  </body>
+</html>

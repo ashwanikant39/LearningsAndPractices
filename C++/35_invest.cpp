@@ -4,7 +4,7 @@ int main()
 {
 
     int investRS;
-    cout << "Enter rupay at first day: ";
+    cout << "\nEnter rupay at first day: ";
     cin >> investRS;
 
     // long investRS = 5;
@@ -28,7 +28,8 @@ int main()
          << "Total invest in " << days << " day= " << totalInvest << endl;
     cout << "Win at " << days << "th day= (" << investRS << "*9)= " << win << endl;
     cout << "Profit in " << days << " days= " << profit << endl;
-    cout << "Profit in percentage= " << (profit * 100.0) / totalInvest << "\n\n";
+    cout << "Profit in percentage= " << (profit * 100.0) / totalInvest<<endl;
+    cout << "Average(Per day earning)= " << profit / days << "\n\n";
 
     return 0;
 }
