@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        .main{
+            display: flex;
+            /* border: 2px solid red; */
+            flex-wrap: wrap;
+        }
+        .box{
+            border: 1px solid red;
+            padding: 20px;
+            margin: 20px;
+            width: 30%;
+            /* box-shadow: 20px 10px 10px  rgba(229, 13, 229, 50%); */
+            box-shadow:inset 20px 10px 10px  rgba(229, 13, 229, 50%);
+            box-shadow: 20px 20px 20px red, 16px 17px 20px blue;
+        }
+        #box1{
+            text-shadow: 10px 15px 20px rgb(108, 59, 59);
+            
+        }
+        #box2{
+
+        }
+        #box3{
+
+        }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="box" id="box1">
+        <h1>Box1</h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae quam aspernatur neque hic facilis laborum error sapiente facere eaque sit!</p>
+      </div>
+      <div class="box" id="box2">
+        <h1>Box2</h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae quam aspernatur neque hic facilis laborum error sapiente facere eaque sit!</p>
+      </div>
+      <div class="box" id="box3">
+        <h1>Box3</h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae quam aspernatur neque hic facilis laborum error sapiente facere eaque sit!</p>
+      </div>
+    </div>
+  </body>
+</html>
