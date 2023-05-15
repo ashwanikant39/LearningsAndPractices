@@ -25,7 +25,7 @@ public class A41_binarySearch1 {
 
         int arr1[] = { 1, 4, 8, 9, 12, 15, 20 };
         int key = 8;
-        System.out.println("Found at index:" + findLargest(arr1, key));
+        System.out.println("Found at index: " + findLargest(arr1, key));
     }
 
 }

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- This link tag is used to link html file with css file -->
+    <link rel="stylesheet" href="index.css"
+    <title></title>
+    <style>
+        /* Styling of navigation bar */
+#navdiv{
+  display:flex;
+  width:17%;
+  margin-left: 82%;
+  justify-content: space-around;
+  margin-top: 1%;
+  height:35px;
+}
+
+nav img{
+  margin-top: 5px;
+}
+
+#googleimg{
+  margin-top: 100px;
+}
+/* Removing underline from links*/
+a{
+  margin-top: 8px;
+  text-decoration: none;
+}
+
+button{
+  border-radius: 3px;
+  height:100%;
+  padding:5px 12px;
+  background-color: #4C87E1 ;
+  color:white;
+  border:none;
+}
+/* setting up size and border stle of search bar*/
+#maindiv{
+width:35%;
+border-radius: 50px;
+display: flex;
+height:40px;
+border:1px solid lightgrey;
+}
+
+#inputspan{
+  width:80%;
+}
+span{
+  vertical-align: top;
+}
+span:first-child{
+  width:10%;
+  border-radius: 50px;
+  margin-top: 7px;
+}
+span:last-child{
+  width:10%;
+  border-radius: 50px;
+  margin-top: 7px;
+}
+
+input{
+  height:100%;
+  width:100%;
+  border: none;
+  padding:0px;
+}
+
+section{
+  display: flex;
+  margin-top: 2%;
+  width:23%;
+  justify-content: space-around;
+  margin-bottom: 2%;
+}
+section button{
+  padding:10px 12px;
+  background-color: lightgrey;
+  color:black;
+}
+
+ul{
+  display: flex;
+  width: 30%;
+  padding-left: 0px;
+  list-style: none;
+  justify-content: space-around;
+  margin: 6px;
+}
+#Bottomdiv{
+  display:flex;
+  font-size: 12px;
+  margin-top: 3%;
+}
+#Bottomdiv span{
+  width:7%;
+  margin-left: 31%;
+}
+/*When hovered*/
+a:hover{
+  text-decoration: underline;
+}
+button:hover{
+  border: 1px solid gray;
+}
+    </style>
+  </head>
+  <body>
+    <!--Nav tag is used here for navigation bar at top right corner -->
+    <nav>
+      <div id="navdiv">
+        <a href="https://www.google.com/gmail/about/#" class="c">Gmail</a>
+        <a href="https://www.google.co.in/imghp?hl=en&tab=wi&ogbl" class="c">Images</a>
+        <div><img src="menu.png"></div>
+        <div><button type="submit" name="button">Sign In</button></div>
+      </div>
+    </nav>
+    <!--End of navigation -->
+    <!-- Main body of google -->
+    <main>
+      <center>
+        <img src="google.png" width="20%" height="5%" id="googleimg">
+        <!-- Search bar -->
+        <div>
+          <div id="maindiv">
+            <span><img src="search.png"></span>
+            <span id="inputspan"><input type="text" name="search"></span>
+            <span><img src="/HTML/7123011_google_mic_icon.png"></span>
+          </div>
+        </div>
+        <!--Buttons -->
+        <section>
+          <div><button type="submit">Google Search</button></div>
+          <div><button type="submit">I'm feeling lucky</button></div>
+        </section>
+        <div><a href="">Work, learn and run your bussiness from home</a></div>
+        <div id="Bottomdiv">
+          <span>Google offered in:</span>
+          <ul>
+            <li><a href="">हिन्द</a>ी</li>
+            <li><a href="">বাংলা</a></li>
+            <li><a href="">తెలుగు</a></li>
+            <li><a href="">मराठी</a></li>
+            <li><a href="">தமிழ்</a></li>
+            <li><a href="">ગુજરાતી</a></li>
+            <li><a href="">ಕನ್ನಡ</a></li>
+            <li><a href="">മലയാളം</a></li>
+            <li><a href="">ਪੰਜਾਬੀ</a></li>
+          </ul>
+        </div>
+      </center>
+    </main>
+  </body>
+</html>

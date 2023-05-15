@@ -5,24 +5,57 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      ul {
+        /* background-color: rgb(116, 94, 94); */
+        display: flex;
+        margin: 0px;
+        padding: 0px;
+      }
+      ul li {
+        list-style: none;
+        margin: 10px;
+      }
+    </style>
   </head>
   <body>
+    <nav>
+      <ul>
+        <li>home</li>
+        <li>About</li>
+        <li>Learn</li>
+        <li>Buy</li>
+      </ul>
+    </nav>
     <div>
       <p>hello</p>
     </div>
     <script>
-    //   console.log(document.documentElement);
-    //   console.log(document.body);
-    //   document.title = "Dom";
-    //   console.log(document.body.firstChild);
-    //   console.log(document.body.lastChild);
-    //   console.log(document.body.childNodes);
+      //   console.log(document.documentElement);
+      //   console.log(document.body);
+      //   document.title = "Dom";
+      //   console.log(document.body.firstChild);
+      //   console.log(document.body.lastChild);
+      //   console.log(document.body.childNodes);
 
-    console.log(document.body.firstChild)
-    console.log(document.body.childNodes[0])
-    
-    console.log(document.body.lastChild)
+      // console.log(document.body.firstChild)
+      // console.log(document.body.childNodes);
+      // let arr = Array.from(document.body.childNodes);
+      // console.log(arr);
 
+      // console.log(typeof arr);
+      // console.log(document.body.firstChild);
+
+      // let a = document.body.firstChild;
+      // console.log(a.parentNode)
+      // console.log(a.parentElement)
+
+      // console.log(document.body.lastChild)
+
+      const bgcolor = () => {
+        document.body.firstElementChild.style.background = "red"
+      };
+      let b=document.body
     </script>
   </body>
 </html>

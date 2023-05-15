@@ -9,7 +9,7 @@ class A36_square {
         num= sc.nextInt();
         
         int ans=1;
-        for (int i = 1; i <= 7; i++) {
+        for (int i = 1; i <= 8; i++) {
             System.out.println(num+"^"+i+"= "+num*ans);
             ans=ans*num;
 

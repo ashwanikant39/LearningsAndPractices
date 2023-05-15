@@ -13,8 +13,10 @@ int main()
     printf("vowels are %d\n", x);
     int y = countLenght(name);
     printf("lenght is %d\n", y);
-    int z = y - x;   //total lenght - vowels
+    int z = y - x; // total lenght - vowels
     printf("consonants are %d", z);
+
+    
     return 0;
 }
 int countvowels(char arr[])
