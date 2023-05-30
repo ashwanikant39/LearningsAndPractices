@@ -8,17 +8,20 @@
   </head>
   <body>
     <script>
-      let numbers = [];
+      let arr = [];
       let i = 0;
       let n;
       do {
         n = prompt("Enter " + i + " number: ");
         n = Number.parseInt(n);
 
-        numbers.push(n);
+        arr.push(n);
         i++;
       } while (n != 0);
-      console.log(numbers);
+      console.log(arr);
+      document.write("your array value: "+arr+"    ")
     </script>
   </body>
 </html>
+
+78

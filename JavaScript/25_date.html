@@ -1,0 +1,92 @@
+<html>
+  <head>
+    <title>Calculate days between dates</title>
+    <script>
+      function daysDifference() {
+        var dateI1 = document.getElementById("dateInput1").value;
+        var dateI2 = document.getElementById("dateInput2").value;
+
+        var date1 = new Date(dateI1);
+        var date2 = new Date(dateI2);
+
+        var time_difference = date2.getTime() - date1.getTime();
+
+        var result = time_difference / (1000 * 60 * 60 * 24);
+
+        return (document.getElementById("result").innerHTML =
+          result + " days between both dates. ");
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@500&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      html {
+        font-family: "Nunito Sans", sans-serif;
+      }
+      #outer {
+        min-height: 50px;
+        padding: 5px;
+        width: 50%;
+      }
+      #box1,
+      #box2 {
+        min-height: 50px;
+        width: 49%;
+        margin-left: 5px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        float: left;
+        border-radius: 50px;
+        background-color: #f1f1f1;
+      }
+      #inputBox {
+        font-size: larger;
+        height: 30px;
+        border-radius: 50px;
+        width: 200px;
+        border: none;
+      }
+      .button {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        margin: 20px 0px;
+        /* background-color: red; */
+      }
+      button {
+        font-size: large;
+        padding: 8px 20px;
+        border: none;
+        border-radius: 6px;
+      }
+      button:hover {
+        background-color: rgb(216, 200, 200);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="outer">
+      <div id="box1">
+        <label for="Current Date"> Current Date </label>
+
+        <input type="date" name="" id="inputBox" />
+      </div>
+
+      <div id="box2">
+        <label for="Current Date"> Birth Date </label>
+
+        <input type="date" name="" id="inputBox" />
+      </div>
+    </div>
+    <div class="button">
+      <button>Done</button>
+    </div>
+  </body>
+</html>
+

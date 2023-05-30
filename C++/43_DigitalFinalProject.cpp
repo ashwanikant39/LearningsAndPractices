@@ -168,6 +168,9 @@ int main()
                             break;
                         }
                     }
+                    // Name: Ashwani Kant
+                    // Roll no.: 2104939
+
                     else if (65 <= int(number[i]) && int(number[i]) <= 90)
                     {
                         if ((int(number[i]) - 55) >= fromBase)

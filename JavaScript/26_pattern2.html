@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let n = 10;
+      for (let i = 1; i <= n; i++) {
+        for (let j = 1; j <= i; j++) {
+          document.write("*");
+          // console.log("*");
+        }
+        document.write("</br>");
+
+        // console.log("\n");
+      }
+
+
+
+      document.write("</br>");
+      document.write("</br>");
+
+
+
+      //   let n = 10;
+      // <h1> 2</h1>
+      for (let i = 1; i <= n; i++) {
+        for (let j = n; j >= 1; j--) {
+          if (i >= j) {
+            document.write("*");
+            // console.log("*");
+          } else {
+            document.write("&nbsp; ");
+          }
+        }
+        document.write("</br>");
+
+        // console.log("\n");
+      }
+
+
+
+      document.write("</br>");
+      document.write("</br>");
+
+
+
+      //   let n = 10;
+      for (let i = 1; i <= 10; i++) {
+        for (let j = 10; j >= 1; j--) {
+          if (i >= j || i == 10) {
+            document.write("*");
+          } else {
+            document.write("&nbsp;&nbsp;");
+          }
+        }
+        for (let j = 2; j <= 10; j++) {
+          if (i >= j || i == 10) {
+            document.write("*");
+          } else {
+            document.write(" ");
+          }
+        }
+
+        document.write("</br>");
+      }
+      for (let i = 9; i >= 1; i--) {
+        for (let j = 10; j >= 1; j--) {
+          if (i >= j || i == 10) {
+            document.write("*");
+          } else {
+            document.write("&nbsp;&nbsp;");
+          }
+        }
+        for (let j = 2; j <= 10; j++) {
+          if (i >= j || i == 10) {
+            document.write("*");
+          } else {
+            document.write(" ");
+          }
+        }
+
+        document.write("</br>");
+      }
+
+
+      
+    </script>
+  </body>
+</html>
