@@ -4,8 +4,70 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Age calculator</title>
+    <style>
+      html {
+        padding: 0px;
+        margin: 0px;
+        /* background-color: rgb(72, 69, 69); */
+      }
+      .container {
+        display: flex;
+        justify-content: space-around;
+      }
+      .button {
+        display: flex;
+        justify-content: center;
+      }
+      .button button {
+        border: none;
+        border-radius: 10px;
+        font-size: 25px;
+      }
+      input {
+        margin: 5px;
+        padding: 5px;
+        border: none;
+        font-size: 25px;
+        font-family: Arial, Helvetica, sans-serif;
+        border-radius: 10px;
+      }
+      #box {
+        align-items: center;
+        background-color: rgb(230, 218, 218);
+        padding: 1px 10px;
+        border-radius: 10px;
+      }
+      #box p {
+        font-size: 25px;
+      }
+      #age{
+        align-items: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="first" id="box">
+        <p>Select current date</p>
+        <input type="date" id="cDate" />
+      </div>
+
+      <div class="second" id="box">
+        <p>Select your birth</p>
+        <input type="date" id="bDate" />
+      </div>
+    </div>
+
+    <div class="button">
+      <button onclick="output()">Show output</button><br /><br />
+
+      <span id="age"> </span>
+    </div>
     <script>
+      bDate.max = new Date().toISOString().split("T")[0];
+
       function output() {
         let reurn1 = document.getElementById("age");
         var currentdate = document.getElementById("cDate").value;
@@ -52,16 +114,5 @@
         reurn1.innerText = curAge;
       }
     </script>
-  </head>
-  <body>
-    <p>Select current date</p>
-    <input type="date" id="cDate" />
-
-    <p>Select your birth</p>
-    <input type="date" id="bDate" max="2023-05-30" />
-    <br /><br />
-    <button onclick="output()">Show output</button><br /><br />
-
-    <span id="age"> </span>
   </body>
 </html>

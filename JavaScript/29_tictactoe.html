@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic tac toe Game</title>
+    
+    
+    
+    
+    <style>
+      
+              
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 2px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default radio button */
+  .container input {
+    position: absolute;
+    opacity:0;
+    cursor: pointer;
+  }
+  
+  /* Create a custom radio button */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .container:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the radio button is checked, add a blue background */
+  .container input:checked ~ .checkmark {
+    background-color: #2196F3;
+  }
+  
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the indicator (dot/circle) when checked */
+  .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the indicator (dot/circle) */
+  .container .checkmark:after {
+    top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+  }
+      
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .inputDetails {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 10px;
+        padding: 10px;
+        justify-content: center;
+      }
+      .inputName {
+        font-size: 20px;
+        padding: 5px;
+        border-radius: 35px;
+        margin: 10px;
+      }
+      .selectS{
+        border: none;
+        margin: 5px;
+        font-size: 35px;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 100px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .gameContainer {
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+      }
+      /* input[type="text"]{
+    margin: 20px;
+    padding: 20px; */
+      /* } */
+
+      .container1 {
+        display: grid;
+        grid-template-rows: repeat(3, 13vw);
+        grid-template-columns: repeat(3, 13vw);
+        font-family: "Roboto", sans-serif;
+      
+      }
+      .box {
+        border: 2px solid black;
+        font-size: 8vw;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      
+
+      
+      
+
+      
+      
+
+    </style>
+  </head>
+  <body>
+    <h1>Tic tac toe Game</h1>
+
+    <div id="firstPlayer" class="inputDetails">
+      <input
+        type="text"
+        class="inputName"
+        placeholder="Enter Name of first player"
+      />
+      <label class="container">X
+        <input id="radio1" type="radio" value="first" checked="checked" name="radio">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">0
+        <input id="radio2" type="radio" value="second" name="radio">
+        <span class="checkmark"></span>
+      </label>
+    </div>
+
+    <div id="SecondPlayer" class="inputDetails">
+      <input type="text" class="inputName" placeholder="Enter Name of Second player" />
+      <label class="container">X
+        <input id="radio3" type="radio" value="first" checked="checked" name="radio2">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">0
+        <input id="radio4" type="radio" value="second" name="radio2">
+        <span class="checkmark"></span>
+      </label>
+      <span id="result"></span>
+
+
+      
+    </div>
+
+    <div class="gameContainer">
+        <div class="container1">
+        
+        <div class="box"><span class="boxtext"></span></div>
+        <div class="box"><span class="boxtext"></span></div>
+        <div class="box"><span class="boxtext"></span></div>
+        <div class="box"><span class="boxtext"></span></div>
+        <div class="box"><span class="boxtext"></span></div>
+        <div class="box"><span class="boxtext"></span></div>
+        <div class="box"><span class="boxtext"></span></div>
+        <div class="box"><span class="boxtext"></span></div>
+        <div class="box"><span class="boxtext"></span></div>
+      </div>
+      
+      <script>
+let value1 =document.getElementById('radio1'); 
+let value2 =document.getElementById('radio2'); 
+let value3 =document.getElementById('radio3'); 
+let value4 =document.getElementById('radio4'); 
+console.log(value1)
+if(value1.checked){
+// console.log(value1)
+value2.checked=false
+value3.checked = false
+value4.checked = true
+}
+  if(value2.checked){
+    value1.checked=false
+value3.checked = true
+value4.checked = false
+  
+}
+if(value3.checked){
+  value1.checked=false
+value3.checked = true
+value4.checked = false
+}
+
+
+      </script>
+
+
+      
+
+
+    
+  </body>
+</html>
