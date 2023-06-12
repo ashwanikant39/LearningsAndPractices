@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title>STUDENT FORM</title>
+    <script type="text/javascript">
+      function empty() {
+        var x;
+        x = document.getElementById("roll-input").value;
+        if (x == "") {
+          alert("Enter a Valid Roll Number");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1 align="center">student details</h1>
+    <div id="input">
+      <form action="retrive.php" method="get">
+        <fieldset>
+          <legend>Get Details</legend>
+          <dl>
+            <dt><label for="roll-input">Enter Roll Number</label></dt>
+            <dd>
+              <input type="text" name="roll" id="roll-input" />
+              <dd>
+                <input type="submit" value="submit" onClick="empty()" />
+              </dd>
+            </dd>
+          </dl>
+        </fieldset>
+      </form>
+    </div>
+  </body>
+</html>
