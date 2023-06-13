@@ -182,6 +182,7 @@
         <div class="firstUser">
           <input
             id="userOne"
+            onchange="handleChange()"
             type="text"
             placeholder="Enter first user name"
             required
@@ -191,7 +192,7 @@
             id="X1"
             type="radio"
             name="User1"
-            value="X"
+            value=""
             required
           />X
           <input
@@ -199,7 +200,7 @@
             id="O1"
             type="radio"
             name="User1"
-            value="O"
+            value=""
             required
           />O
         </div>
@@ -209,6 +210,7 @@
         <div class="secondUser">
           <input
             id="userTwo"
+            onchange="handleChange()"
             type="text"
             placeholder="Enter second user name"
             required
@@ -218,7 +220,7 @@
             id="X2"
             type="radio"
             name="User2"
-            value="X"
+            value=""
             required
           />X
           <input
@@ -226,13 +228,19 @@
             id="O2"
             type="radio"
             name="User2"
-            value="O"
+            value=""
             required
           />O
         </div>
 
         <div class="buttons">
-          <input onclick="getName()" class="btn" value="Submit" type="button" />
+          <input
+            onclick="getName()"
+            class="btn"
+            id="SubmitId"
+            value="Submit"
+            type="button"
+          />
 
           <input type="reset" value="Reset" />
         </div>
@@ -267,7 +275,7 @@
     </div>
 
     <div class="result inactive">
-      <h1>O Win the game</h1>
+      <h1></h1>
       <button>Restart</button>
     </div>
 
@@ -277,6 +285,12 @@
 
       var playerOne;
       var playerTwo;
+
+      var X_Player;
+      var O_Player;
+
+      let firstName = document.getElementById("userOne").value;
+      let secondName = document.getElementById("userTwo").value;
 
       let value1 = document.getElementById("X1");
       let value2 = document.getElementById("O1");
@@ -302,15 +316,21 @@
         value2.checked = false;
         value3.checked = false;
       }
+
+      // let disableSubmit = document.getElementById("SubmitId");
+      // function checkFill() {
+      //   if (firstName.value < 0 && secondName.value < 0) {
+      //     disableSubmit.disabled = true;
+      //   } else {
+      //     disableSubmit.disabled = false;
+      //   }
+      // }
+
       function getName() {
-        let firstName = document.getElementById("userOne").value;
         // console.log(firstName)
-        document.getElementById("userName1").innerHTML =
-          firstName + "'s Symbol =";
+        let firstName = document.getElementById("userOne").value;
 
         let secondName = document.getElementById("userTwo").value;
-        document.getElementById("userName2").innerHTML =
-          secondName + "'s Symbol =";
 
         let radioValueX1 = document.getElementById("X1");
         let radioValueO1 = document.getElementById("O1");
@@ -319,6 +339,9 @@
 
         player1 = document.getElementById("userOne").value;
         player2 = document.getElementById("userTwo").value;
+
+        document.getElementById("User1Turn").innerHTML = firstName;
+        document.getElementById("User2turn").innerHTML = secondName;
 
         if (radioValueX1.checked) {
           playerOne = document.getElementById("radio1").innerHTML =
@@ -335,103 +358,149 @@
           playerTwo = document.getElementById("radio2").innerHTML =
             radioValueO2.value;
         }
-
-        document.getElementById("User1Turn").innerHTML = firstName;
-        document.getElementById("User2turn").innerHTML = secondName;
         // console.log( document.getElementsByClassName("player1").innerHTML =
         //   firstName + "'s Symbol =");
 
         // document.getElementsByClassName("player2").innerHTML = secondName;
+
+        // player1 = playerOne;
+        // player2 = playerTwo;
+        // console.log(player1);
+
+        // console.log(player2);
 
         // console.log(player1);
         // console.log(player2);
 
         // console.log(playerOne);
         // console.log(playerTwo);
-      }
 
-      // // cell script
-      const cellElement = document.querySelectorAll(".game-board .cell");
-      const playerFirst = document.querySelector(".players .player1");
-      const playerSecond = document.querySelector(".players .player2");
-      const result = document.querySelector(".result");
-      const result_text = document.querySelector(".result h1");
-      const restart_btn = document.querySelector(".result button");
+        if (playerOne == "X") {
+          X_Player = player1;
+        } else if (playerOne == "O") {
+          O_Player = player1;
+        }
 
-      // console.log(cellElement);
-      const winningCondition = [
-        [0, 1, 2],
-        [3, 4, 5],
-        [6, 7, 8],
-        [0, 3, 6],
-        [1, 4, 7],
-        [2, 5, 8],
-        [0, 4, 8],
-        [2, 4, 6],
-      ];
-      let toggleTurn = true;
+        if (playerTwo == "X") {
+          X_Player = player2;
+        } else if (playerTwo == "O") {
+          O_Player = player2;
+        }
+        // console.log("X player is " + X_Player);
+        // console.log("Y player is " + O_Player);
 
-      cellElement.forEach((cell) => {
-        // console.log(cell.innerHTML);
-        cell.onclick = () => {
-          // console.log(cell.innerHTML);
-          let currentPlayer = toggleTurn ? playerOne : playerTwo;
-          cell.classList.add("disable");
+        let submitBtn = document.getElementById("SubmitId");
 
-          addCell(cell, currentPlayer);
-          if (winnerCheck(currentPlayer)) {
-            // console.log(currentPlayer + " winner");
-            result.classList.remove("inactive");
-            result_text.innerHTML = currentPlayer + " Win tha game";
-          } else if (isdraw()) {
-            // console.log("Draw");
-            result.classList.remove("inactive");
-            result_text.innerHTML = " Draw the game";
+        if (
+          (firstName.length < 1 ||
+          secondName.length < 1 ) ||
+          (playerOne.checked === false ||
+          playerTwo.checked === false)
+        ) {
+          // submitBtn.setAttribute("disabled", true);
+          alert("Please enter values");
+        } else {
+          document.getElementById("userName1").innerHTML =
+            firstName + "'s Symbol =";
+
+          document.getElementById("userName2").innerHTML =
+            secondName + "'s Symbol =";
+
+          // // cell script
+          const cellElement = document.querySelectorAll(".game-board .cell");
+          const playerFirst = document.querySelector(".players .player1");
+          const playerSecond = document.querySelector(".players .player2");
+          const result = document.querySelector(".result");
+          const result_text = document.querySelector(".result h1");
+          const restart_btn = document.querySelector(".result button");
+
+          // console.log(cellElement);
+          const winningCondition = [
+            [0, 1, 2],
+            [3, 4, 5],
+            [6, 7, 8],
+            [0, 3, 6],
+            [1, 4, 7],
+            [2, 5, 8],
+            [0, 4, 8],
+            [2, 4, 6],
+          ];
+          let toggleTurn = true;
+
+          cellElement.forEach((cell) => {
+            // console.log(cell.innerHTML);
+            cell.onclick = () => {
+              // console.log(cell.innerHTML);
+              let currentPlayer = toggleTurn ? playerOne : playerTwo;
+              cell.classList.add("disable");
+
+              addCell(cell, currentPlayer);
+              if (winnerCheck(currentPlayer)) {
+                // console.log(currentPlayer + " winner");
+                result.classList.remove("inactive");
+                if (currentPlayer == "X") {
+                  result_text.innerHTML = X_Player + " Win tha game";
+                } else if (currentPlayer == "O") {
+                  result_text.innerHTML = O_Player + " Win tha game";
+                }
+
+                // result_text.innerHTML = currentPlayer + " Win tha game";
+              } else if (isdraw()) {
+                // console.log("Draw");
+                result.classList.remove("inactive");
+                result_text.innerHTML = " Draw the game";
+              }
+
+              // winnerCheck();
+              // console.log(cell.innerHTML);
+              swapPlayer();
+            };
+          });
+
+          function handleChange() {
+            let firstName = document.getElementById("userOne").value;
+            let secondName = document.getElementById("userTwo").value;
           }
 
-          // winnerCheck();
-          // console.log(cell.innerHTML);
-          swapPlayer();
-        };
-      });
+          function winnerCheck(currentPlayer) {
+            return winningCondition.some((condition) => {
+              // console.log(condition);
+              return condition.every((index) => {
+                // console.log(index);
+                // console.log(cellElement[index].classList.contains(currentPlayer));
+                return cellElement[index].classList.contains(currentPlayer);
+              });
+            });
+          }
+          function isdraw() {
+            return [...cellElement].every((cell) => {
+              return (
+                cell.classList.contains(playerOne) ||
+                cell.classList.contains(playerTwo)
+              );
+            });
+          }
 
-      function winnerCheck(currentPlayer) {
-        return winningCondition.some((condition) => {
-          // console.log(condition);
-          return condition.every((index) => {
-            // console.log(index);
-            // console.log(cellElement[index].classList.contains(currentPlayer));
-            return cellElement[index].classList.contains(currentPlayer);
-          });
-        });
-      }
-      function isdraw() {
-        return [...cellElement].every((cell) => {
-          return (
-            cell.classList.contains(playerOne) ||
-            cell.classList.contains(playerTwo)
-          );
-        });
-      }
+          function swapPlayer() {
+            toggleTurn = !toggleTurn;
+            if (toggleTurn) {
+              playerFirst.classList.add("active");
+              playerSecond.classList.remove("active");
+            } else {
+              playerSecond.classList.add("active");
+              playerFirst.classList.remove("active");
+            }
+          }
 
-      function swapPlayer() {
-        toggleTurn = !toggleTurn;
-        if (toggleTurn) {
-          playerFirst.classList.add("active");
-          playerSecond.classList.remove("active");
-        } else {
-          playerSecond.classList.add("active");
-          playerFirst.classList.remove("active");
+          function addCell(cell, currentPlayer) {
+            cell.innerHTML = currentPlayer;
+            cell.classList.add(currentPlayer);
+          }
+          restart_btn.onclick = () => {
+            location.reload();
+          };
         }
       }
-
-      function addCell(cell, currentPlayer) {
-        cell.innerHTML = currentPlayer;
-        cell.classList.add(currentPlayer);
-      }
-      restart_btn.onclick = () => {
-        location.reload();
-      };
     </script>
   </body>
 </html>
