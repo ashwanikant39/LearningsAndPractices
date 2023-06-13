@@ -9,7 +9,9 @@
       * {
         box-sizing: border-box;
       }
+
       body {
+        /* background-color: aquamarine; */
         padding: 0;
         margin: 0;
         font-family: Arial, Helvetica, sans-serif;
@@ -35,6 +37,7 @@
         width: 500px;
         /* border: 2px solid red; */
       }
+
       input[type="text"] {
         border: 1px solid black;
         padding: 7px;
@@ -50,6 +53,7 @@
 
         /* background-color: red; */
       }
+
       .btn:hover {
         background-color: rgb(169, 186, 180);
         color: white;
@@ -64,6 +68,7 @@
         /* border: none; */
         /* background-color: red; */
       }
+
       input[type="reset"]:hover {
         background-color: rgb(169, 186, 180);
         color: white;
@@ -74,22 +79,25 @@
         /* padding: 10px;
         size: 5px; */
       }
+
       .players {
-        border: 1px solid rgb(181, 165, 165);
+        /* border: 1px solid rgb(181, 165, 165); */
         display: flex;
         justify-content: center;
         align-items: center;
-        /* max-width: 300px; */
+        max-width: 300px;
         margin: 1% 35% 0% 35%;
         border-radius: 16px;
-        font-size: 24px;
+        font-size: 10px;
       }
+
       .players div {
         padding: 10px;
         /* border: 2px solid blue; */
 
         /* border-radius: 4px; */
       }
+
       .players div.active {
         /* padding: 11px; */
         margin: 3px;
@@ -97,11 +105,13 @@
         background-color: rgb(172, 209, 139);
         color: white;
       }
+
       .game-board {
         display: grid;
         grid-template-columns: repeat(3, auto);
         margin-top: 20px;
       }
+
       .cell {
         height: 100px;
         width: 100px;
@@ -113,32 +123,39 @@
         cursor: pointer;
         border-radius: 9px;
       }
+
       .cell:hover {
         font-size: 90px;
         background-color: antiquewhite;
       }
+
       .cell:active {
         color: rgb(122, 118, 118);
         background-color: rgb(207, 174, 131);
       }
+
       .cell:nth-child(1),
       .cell:nth-child(2),
       .cell:nth-child(3) {
         border-top: none;
       }
+
       .cell:nth-child(1),
       .cell:nth-child(4),
       .cell:nth-child(7) {
         border-left: none;
       }
+
       .cell:nth-child(3n) {
         border-right: none;
       }
+
       .cell:nth-child(7),
       .cell:nth-child(8),
       .cell:nth-child(9) {
         border-bottom: none;
       }
+
       .result {
         margin-top: 10px;
         z-index: 99;
@@ -148,12 +165,14 @@
         align-items: center;
         flex-direction: column;
       }
+
       .result h1 {
         color: rgb(35, 3, 3);
         font-size: 30px;
         background-color: rgb(180, 180, 195);
         margin: 5px;
       }
+
       .result button {
         font-size: 30px;
         padding: 5px;
@@ -164,12 +183,21 @@
         margin: 4px;
         color: white;
       }
+
       .inactive {
         display: none;
       }
+
       .disable {
         pointer-events: none;
       }
+
+      .boxDeactive {
+        display: none;
+      }
+      /* .firstUser {
+        flex-wrap: nowrap;
+      } */
     </style>
   </head>
 
@@ -192,7 +220,7 @@
             id="X1"
             type="radio"
             name="User1"
-            value=""
+            value="X"
             required
           />X
           <input
@@ -200,7 +228,7 @@
             id="O1"
             type="radio"
             name="User1"
-            value=""
+            value="O"
             required
           />O
         </div>
@@ -220,7 +248,7 @@
             id="X2"
             type="radio"
             name="User2"
-            value=""
+            value="X"
             required
           />X
           <input
@@ -228,7 +256,7 @@
             id="O2"
             type="radio"
             name="User2"
-            value=""
+            value="O"
             required
           />O
         </div>
@@ -254,24 +282,25 @@
       </form>
     </div>
     <!-- <hr id="hr" /> -->
-
-    <div class="players">
-      <div class="player1 active"><span id="User1Turn">User 1</span></div>
-      <div class="player2"><span id="User2turn">User 2</span></div>
-    </div>
-    <!-- <span id="player1">1</span>
+    <div class="box boxDeactive">
+      <div class="players">
+        <div class="player1 active"><span id="User1Turn">User 1</span></div>
+        <div class="player2"><span id="User2turn">User 2</span></div>
+      </div>
+      <!-- <span id="player1">1</span>
     <span id="player2">2</span> -->
 
-    <div class="game-board">
-      <div class="cell"></div>
-      <div class="cell"></div>
-      <div class="cell"></div>
-      <div class="cell"></div>
-      <div class="cell"></div>
-      <div class="cell"></div>
-      <div class="cell"></div>
-      <div class="cell"></div>
-      <div class="cell"></div>
+      <div class="game-board">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+      </div>
     </div>
 
     <div class="result inactive">
@@ -280,6 +309,8 @@
     </div>
 
     <script>
+      // if(continueGame)
+
       var player1;
       var player2;
 
@@ -343,21 +374,6 @@
         document.getElementById("User1Turn").innerHTML = firstName;
         document.getElementById("User2turn").innerHTML = secondName;
 
-        if (radioValueX1.checked) {
-          playerOne = document.getElementById("radio1").innerHTML =
-            radioValueX1.value;
-        } else {
-          playerOne = document.getElementById("radio1").innerHTML =
-            radioValueO1.value;
-        }
-
-        if (radioValueX2.checked) {
-          playerTwo = document.getElementById("radio2").innerHTML =
-            radioValueX2.value;
-        } else {
-          playerTwo = document.getElementById("radio2").innerHTML =
-            radioValueO2.value;
-        }
         // console.log( document.getElementsByClassName("player1").innerHTML =
         //   firstName + "'s Symbol =");
 
@@ -375,37 +391,56 @@
         // console.log(playerOne);
         // console.log(playerTwo);
 
-        if (playerOne == "X") {
-          X_Player = player1;
-        } else if (playerOne == "O") {
-          O_Player = player1;
-        }
-
-        if (playerTwo == "X") {
-          X_Player = player2;
-        } else if (playerTwo == "O") {
-          O_Player = player2;
-        }
         // console.log("X player is " + X_Player);
         // console.log("Y player is " + O_Player);
 
         let submitBtn = document.getElementById("SubmitId");
 
         if (
-          (firstName.length < 1 ||
-          secondName.length < 1 ) ||
-          (playerOne.checked === false ||
-          playerTwo.checked === false)
+          firstName.length < 1 ||
+          secondName.length < 1 ||
+          (radioValueX1.checked === false && radioValueO1.checked === false) ||
+          (radioValueX2.checked === false && radioValueO2.checked === false)
         ) {
           // submitBtn.setAttribute("disabled", true);
           alert("Please enter values");
         } else {
+          const BoxDeactivate = document.querySelector(".boxDeactive");
+          BoxDeactivate.classList.remove("boxDeactive");
+
+          if (radioValueX1.checked) {
+            playerOne = document.getElementById("radio1").innerHTML =
+              radioValueX1.value;
+          } else {
+            playerOne = document.getElementById("radio1").innerHTML =
+              radioValueO1.value;
+          }
+
+          if (radioValueX2.checked) {
+            playerTwo = document.getElementById("radio2").innerHTML =
+              radioValueX2.value;
+          } else {
+            playerTwo = document.getElementById("radio2").innerHTML =
+              radioValueO2.value;
+          }
+
           document.getElementById("userName1").innerHTML =
             firstName + "'s Symbol =";
 
           document.getElementById("userName2").innerHTML =
             secondName + "'s Symbol =";
 
+          if (playerOne == "X") {
+            X_Player = player1;
+          } else if (playerOne == "O") {
+            O_Player = player1;
+          }
+
+          if (playerTwo == "X") {
+            X_Player = player2;
+          } else if (playerTwo == "O") {
+            O_Player = player2;
+          }
           // // cell script
           const cellElement = document.querySelectorAll(".game-board .cell");
           const playerFirst = document.querySelector(".players .player1");
@@ -413,6 +448,10 @@
           const result = document.querySelector(".result");
           const result_text = document.querySelector(".result h1");
           const restart_btn = document.querySelector(".result button");
+          // const disableGameboard = document.querySelector("game-board");
+
+          // const disableGameboard =
+          //   document.getElementsByClassName("game-board");
 
           // console.log(cellElement);
           const winningCondition = [
@@ -426,36 +465,55 @@
             [2, 4, 6],
           ];
           let toggleTurn = true;
+          var continueGame = true;
+          console.log("first " + continueGame);
 
           cellElement.forEach((cell) => {
-            // console.log(cell.innerHTML);
+            console.log(typeof continueGame, continueGame);
+
+            // console.log("second " + continueGame);
+
             cell.onclick = () => {
-              // console.log(cell.innerHTML);
-              let currentPlayer = toggleTurn ? playerOne : playerTwo;
-              cell.classList.add("disable");
+              if (continueGame == true) {
+                console.log("hello top ", continueGame);
+                // console.log(cell.innerHTML);
+                let currentPlayer = toggleTurn ? playerOne : playerTwo;
+                cell.classList.add("disable");
 
-              addCell(cell, currentPlayer);
-              if (winnerCheck(currentPlayer)) {
-                // console.log(currentPlayer + " winner");
-                result.classList.remove("inactive");
-                if (currentPlayer == "X") {
-                  result_text.innerHTML = X_Player + " Win tha game";
-                } else if (currentPlayer == "O") {
-                  result_text.innerHTML = O_Player + " Win tha game";
+                addCell(cell, currentPlayer);
+                if (winnerCheck(currentPlayer)) {
+                  // console.log(currentPlayer + " winner");
+                  result.classList.remove("inactive");
+                  if (currentPlayer == "X") {
+                    result_text.innerHTML = X_Player + " Win the game";
+                    continueGame = false;
+
+                    // console.log("hello1");
+                  } else if (currentPlayer == "O") {
+                    result_text.innerHTML = O_Player + " Win the game";
+                    continueGame = false;
+
+                    // console.log("hello2");
+                  }
+                  // console.log("third " + continueGame);
+
+                  // console.log("fourth " + continueGame);
+                } else if (isdraw()) {
+                  // console.log("Draw");
+                  result.classList.remove("inactive");
+                  result_text.innerHTML = " Draw the game";
+                  // continueGame = false;
                 }
+                // continueGame = false;
 
-                // result_text.innerHTML = currentPlayer + " Win tha game";
-              } else if (isdraw()) {
-                // console.log("Draw");
-                result.classList.remove("inactive");
-                result_text.innerHTML = " Draw the game";
+                // winnerCheck();
+                // console.log(cell.innerHTML);
+                swapPlayer();
               }
-
-              // winnerCheck();
-              // console.log(cell.innerHTML);
-              swapPlayer();
             };
           });
+
+          console.log("hellllllll");
 
           function handleChange() {
             let firstName = document.getElementById("userOne").value;
@@ -469,6 +527,7 @@
                 // console.log(index);
                 // console.log(cellElement[index].classList.contains(currentPlayer));
                 return cellElement[index].classList.contains(currentPlayer);
+                // continueGame = false;
               });
             });
           }
