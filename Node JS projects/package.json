@@ -4,13 +4,13 @@
   "description": "its package",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon index.js"
   },
   "author": "ashwani",
- 
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "slugify": "^1.6.6"
   },
   "devDependencies": {
     "nodemon": "^2.0.22"

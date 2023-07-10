@@ -10,7 +10,10 @@ const fs = require("fs");
 //     console.log("written")
 // })
 
+
+
 const b = fs.writeFileSync("file3.txt", "hello world!");
 console.log("written");
 console.log("Finished");
+// console.log(b.toString);
 

@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        /* background-color: aquamarine; */
+        padding: 0;
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: linear-gradient(90deg, #272626, #3a4452);
+      }
+
+      .heading {
+        display: flex;
+        justify-content: center;
+        color: #ffff;
+      }
+
+      .userInfo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        border: 1px solid rgb(251, 161, 6);
+        border-radius: 20px;
+        width: 500px;
+        box-shadow: 0px 3px 15px rgba(113, 115, 119, 0.5);
+
+        /* border: 2px solid red; */
+      }
+      /* input{
+        color: #ffffff;
+
+      } */
+
+      input[type="text"] {
+        border: 1px solid black;
+        padding: 7px;
+        border-radius: 6px;
+        border: none;
+        background-color: transparent;
+        box-shadow: 0px 3px 15px rgba(113, 115, 119, 0.6);
+        /* color: #ffffff; */
+      }
+
+      .btn {
+        padding: 3px;
+        margin: 10px;
+        width: 60px;
+        border-radius: 6px;
+        border: 1px solid black;
+        background-color: #fb7c14;
+        /* background-color: #fb7c14; */
+
+        /* background-color: red; */
+      }
+
+      .btn:hover {
+        background-color: rgb(169, 186, 180);
+        color: white;
+      }
+
+      input[type="reset"] {
+        padding: 3px;
+        margin: 10px;
+        width: 60px;
+        border-radius: 6px;
+        border: 1px solid black;
+        /* border: none; */
+        /* background-color: red; */
+      }
+
+      input[type="reset"]:hover {
+        background-color: rgb(169, 186, 180);
+        color: white;
+      }
+
+      input[type="radio"] {
+        margin: 5px;
+        /* background-color: #fb7c14; */
+        /* color: #fb7c14; */
+
+        /* padding: 10px;
+        size: 5px; */
+      }
+
+      .players {
+        /* border: 1px solid rgb(181, 165, 165); */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 300px;
+        margin: 1% 35% 0% 35%;
+        border-radius: 16px;
+        font-size: 10px;
+      }
+
+      .players div {
+        padding: 10px;
+        /* border: 2px solid blue; */
+
+        /* border-radius: 4px; */
+      }
+
+      .players div.active {
+        /* padding: 11px; */
+        margin: 3px;
+        border-radius: 13px;
+        background-color: rgb(172, 209, 139);
+        color: white;
+      }
+
+      .game-board {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        margin-top: 20px;
+      }
+
+      .cell {
+        height: 100px;
+        width: 100px;
+        border: 2px solid rgb(214, 152, 152);
+        font-size: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        border-radius: 9px;
+      }
+
+      .cell:hover {
+        font-size: 90px;
+        background-color: antiquewhite;
+      }
+
+      .cell:active {
+        color: rgb(122, 118, 118);
+        background-color: rgb(207, 174, 131);
+      }
+
+      .cell:nth-child(1),
+      .cell:nth-child(2),
+      .cell:nth-child(3) {
+        border-top: none;
+      }
+
+      .cell:nth-child(1),
+      .cell:nth-child(4),
+      .cell:nth-child(7) {
+        border-left: none;
+      }
+
+      .cell:nth-child(3n) {
+        border-right: none;
+      }
+
+      .cell:nth-child(7),
+      .cell:nth-child(8),
+      .cell:nth-child(9) {
+        border-bottom: none;
+      }
+
+      .result {
+        margin-top: 10px;
+        z-index: 99;
+        /* background: rgb(64, 60, 60); */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      .result h1 {
+        color: rgb(35, 3, 3);
+        font-size: 30px;
+        background-color: rgb(180, 180, 195);
+        margin: 5px;
+      }
+
+      .result button {
+        font-size: 30px;
+        padding: 5px;
+        cursor: pointer;
+        border-radius: 9px;
+        border: none;
+        background-color: rgb(56, 53, 53);
+        margin: 4px;
+        color: white;
+      }
+
+      .inactive {
+        display: none;
+      }
+
+      .disable {
+        pointer-events: none;
+      }
+
+      .boxDeactive {
+        display: none;
+      }
+      /* .firstUser {
+        flex-wrap: nowrap;
+      } */
+    </style>
+  </head>
+
+  <body>
+    <div class="heading">
+      <h1>Tic tac toe Game</h1>
+    </div>
+    <div class="userInfo">
+      <form action="">
+        <div class="firstUser">
+          <input
+            id="userOne"
+            onchange="handleChange()"
+            type="text"
+            placeholder="Enter first user name"
+            required
+          />
+          <input
+            onclick="ChooseSymbol1()"
+            id="X1"
+            type="radio"
+            name="User1"
+            value="X"
+            required
+          />X
+          <input
+            onclick="ChooseSymbol2()"
+            id="O1"
+            type="radio"
+            name="User1"
+            value="O"
+            required
+          />O
+        </div>
+
+        <br />
+
+        <div class="secondUser">
+          <input
+            id="userTwo"
+            onchange="handleChange()"
+            type="text"
+            placeholder="Enter second user name"
+            required
+          />
+          <input
+            onclick="ChooseSymbol3()"
+            id="X2"
+            type="radio"
+            name="User2"
+            value="X"
+            required
+          />X
+          <input
+            onclick="ChooseSymbol4()"
+            id="O2"
+            type="radio"
+            name="User2"
+            value="O"
+            required
+          />O
+        </div>
+
+        <div class="buttons">
+          <input
+            onclick="getName()"
+            class="btn"
+            id="SubmitId"
+            value="Submit"
+            type="button"
+          />
+
+          <input type="reset" value="Reset" />
+        </div>
+        <!-- <hr> -->
+
+        <span id="userName1"></span>
+        <span id="radio1"></span>
+        <br />
+        <span id="userName2"></span>
+        <span id="radio2"></span>
+      </form>
+    </div>
+    <!-- <hr id="hr" /> -->
+    <div class="box boxDeactive">
+      <div class="players">
+        <div class="player1 active"><span id="User1Turn">User 1</span></div>
+        <div class="player2"><span id="User2turn">User 2</span></div>
+      </div>
+      <!-- <span id="player1">1</span>
+    <span id="player2">2</span> -->
+
+      <div class="game-board">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+      </div>
+    </div>
+
+    <div class="result inactive">
+      <h1></h1>
+      <button>Restart</button>
+    </div>
+
+    <script>
+      // if(continueGame)
+
+      var player1;
+      var player2;
+
+      var playerOne;
+      var playerTwo;
+
+      var X_Player;
+      var O_Player;
+
+      let firstName = document.getElementById("userOne").value;
+      let secondName = document.getElementById("userTwo").value;
+
+      let value1 = document.getElementById("X1");
+      let value2 = document.getElementById("O1");
+      let value3 = document.getElementById("X2");
+      let value4 = document.getElementById("O2");
+      function ChooseSymbol1() {
+        value2.checked = false;
+        value3.checked = false;
+        value4.checked = true;
+      }
+      function ChooseSymbol2() {
+        value1.checked = false;
+        value3.checked = true;
+        value4.checked = false;
+      }
+      function ChooseSymbol3() {
+        value1.checked = false;
+        value2.checked = true;
+        value4.checked = false;
+      }
+      function ChooseSymbol4() {
+        value1.checked = true;
+        value2.checked = false;
+        value3.checked = false;
+      }
+
+      // let disableSubmit = document.getElementById("SubmitId");
+      // function checkFill() {
+      //   if (firstName.value < 0 && secondName.value < 0) {
+      //     disableSubmit.disabled = true;
+      //   } else {
+      //     disableSubmit.disabled = false;
+      //   }
+      // }
+
+      function getName() {
+        // console.log(firstName)
+        let firstName = document.getElementById("userOne").value;
+
+        let secondName = document.getElementById("userTwo").value;
+
+        let radioValueX1 = document.getElementById("X1");
+        let radioValueO1 = document.getElementById("O1");
+        let radioValueX2 = document.getElementById("X2");
+        let radioValueO2 = document.getElementById("O2");
+
+        player1 = document.getElementById("userOne").value;
+        player2 = document.getElementById("userTwo").value;
+
+        document.getElementById("User1Turn").innerHTML = firstName;
+        document.getElementById("User2turn").innerHTML = secondName;
+
+        // console.log( document.getElementsByClassName("player1").innerHTML =
+        //   firstName + "'s Symbol =");
+
+        // document.getElementsByClassName("player2").innerHTML = secondName;
+
+        // player1 = playerOne;
+        // player2 = playerTwo;
+        // console.log(player1);
+
+        // console.log(player2);
+
+        // console.log(player1);
+        // console.log(player2);
+
+        // console.log(playerOne);
+        // console.log(playerTwo);
+
+        // console.log("X player is " + X_Player);
+        // console.log("Y player is " + O_Player);
+
+        let submitBtn = document.getElementById("SubmitId");
+
+        if (
+          firstName.length < 1 ||
+          secondName.length < 1 ||
+          (radioValueX1.checked === false && radioValueO1.checked === false) ||
+          (radioValueX2.checked === false && radioValueO2.checked === false)
+        ) {
+          // submitBtn.setAttribute("disabled", true);
+          alert("Please enter values");
+        } else {
+          const BoxDeactivate = document.querySelector(".boxDeactive");
+          BoxDeactivate.classList.remove("boxDeactive");
+
+          if (radioValueX1.checked) {
+            playerOne = document.getElementById("radio1").innerHTML =
+              radioValueX1.value;
+          } else {
+            playerOne = document.getElementById("radio1").innerHTML =
+              radioValueO1.value;
+          }
+
+          if (radioValueX2.checked) {
+            playerTwo = document.getElementById("radio2").innerHTML =
+              radioValueX2.value;
+          } else {
+            playerTwo = document.getElementById("radio2").innerHTML =
+              radioValueO2.value;
+          }
+
+          document.getElementById("userName1").innerHTML =
+            firstName + "'s Symbol =";
+
+          document.getElementById("userName2").innerHTML =
+            secondName + "'s Symbol =";
+
+          if (playerOne == "X") {
+            X_Player = player1;
+          } else if (playerOne == "O") {
+            O_Player = player1;
+          }
+
+          if (playerTwo == "X") {
+            X_Player = player2;
+          } else if (playerTwo == "O") {
+            O_Player = player2;
+          }
+          // // cell script
+          const cellElement = document.querySelectorAll(".game-board .cell");
+          const playerFirst = document.querySelector(".players .player1");
+          const playerSecond = document.querySelector(".players .player2");
+          const result = document.querySelector(".result");
+          const result_text = document.querySelector(".result h1");
+          const restart_btn = document.querySelector(".result button");
+          // const disableGameboard = document.querySelector("game-board");
+
+          // const disableGameboard =
+          //   document.getElementsByClassName("game-board");
+
+          // console.log(cellElement);
+          const winningCondition = [
+            [0, 1, 2],
+            [3, 4, 5],
+            [6, 7, 8],
+            [0, 3, 6],
+            [1, 4, 7],
+            [2, 5, 8],
+            [0, 4, 8],
+            [2, 4, 6],
+          ];
+          let toggleTurn = true;
+          var continueGame = true;
+          console.log("first " + continueGame);
+
+          cellElement.forEach((cell) => {
+            console.log(typeof continueGame, continueGame);
+
+            // console.log("second " + continueGame);
+
+            cell.onclick = () => {
+              if (continueGame == true) {
+                console.log("hello top ", continueGame);
+                // console.log(cell.innerHTML);
+                let currentPlayer = toggleTurn ? playerOne : playerTwo;
+                cell.classList.add("disable");
+
+                addCell(cell, currentPlayer);
+                if (winnerCheck(currentPlayer)) {
+                  // console.log(currentPlayer + " winner");
+                  result.classList.remove("inactive");
+                  if (currentPlayer == "X") {
+                    result_text.innerHTML = X_Player + " Win the game";
+                    continueGame = false;
+
+                    // console.log("hello1");
+                  } else if (currentPlayer == "O") {
+                    result_text.innerHTML = O_Player + " Win the game";
+                    continueGame = false;
+
+                    // console.log("hello2");
+                  }
+                  // console.log("third " + continueGame);
+
+                  // console.log("fourth " + continueGame);
+                } else if (isdraw()) {
+                  // console.log("Draw");
+                  result.classList.remove("inactive");
+                  result_text.innerHTML = " Draw the game";
+                  // continueGame = false;
+                }
+                // continueGame = false;
+
+                // winnerCheck();
+                // console.log(cell.innerHTML);
+                swapPlayer();
+              }
+            };
+          });
+
+          console.log("hellllllll");
+
+          function handleChange() {
+            let firstName = document.getElementById("userOne").value;
+            let secondName = document.getElementById("userTwo").value;
+          }
+
+          function winnerCheck(currentPlayer) {
+            return winningCondition.some((condition) => {
+              // console.log(condition);
+              return condition.every((index) => {
+                // console.log(index);
+                // console.log(cellElement[index].classList.contains(currentPlayer));
+                return cellElement[index].classList.contains(currentPlayer);
+                // continueGame = false;
+              });
+            });
+          }
+          function isdraw() {
+            return [...cellElement].every((cell) => {
+              return (
+                cell.classList.contains(playerOne) ||
+                cell.classList.contains(playerTwo)
+              );
+            });
+          }
+
+          function swapPlayer() {
+            toggleTurn = !toggleTurn;
+            if (toggleTurn) {
+              playerFirst.classList.add("active");
+              playerSecond.classList.remove("active");
+            } else {
+              playerSecond.classList.add("active");
+              playerFirst.classList.remove("active");
+            }
+          }
+
+          function addCell(cell, currentPlayer) {
+            cell.innerHTML = currentPlayer;
+            cell.classList.add(currentPlayer);
+          }
+          restart_btn.onclick = () => {
+            location.reload();
+          };
+        }
+      }
+    </script>
+  </body>
+</html>
