@@ -10,3 +10,4 @@ myEmitter.on("waterFull", () => {
 console.log("Hello1");
 myEmitter.emit("waterFull");
 console.log("Hello2");
+ 

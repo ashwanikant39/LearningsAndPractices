@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      li {
+        list-style: none;
+        margin: 20px;
+        font-size: 50px;
+      }
+      nav {
+        display: flex;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <li>Home</li>
+      <li>About</li>
+      <li>Call</li>
+      <li>Email</li>
+    </nav>
+
+    <td>hello</td>
+    <td>hello</td>
+    <td>hello</td>
+    <td>hello</td>
+    <td>hello</td>
+    <td>hello</td>
+    <script>
+      // document.getElementsByTagName("nav")[0].firstElementChild.style.color = "red";
+      //  document.getElementsByTagName("nav")[0].firstElementChild.style.color = "green";
+      //  document.getElementsByTagName("nav")[0].lastElementChild.style.color = "green";
+      // //   console.log(firstElem);
+
+      Array.from(document.getElementsByTagName("li")).forEach((element) => {
+        element.style.background = "yellow";
+      });
+    </script>
+  </body>
+</html>

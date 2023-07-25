@@ -34,7 +34,7 @@ const server = http.createServer((req, res) => {
     res.statusCode = 200;
     res.end("<h1>This is about server </h1>");
   } else {
-    // res.aditya();
+    res.aditya(mncf);
     res.statusCode = 404;
     res.end("<h1>page not found</h1>");
   }

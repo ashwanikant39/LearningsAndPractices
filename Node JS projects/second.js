@@ -3,4 +3,4 @@ name:"Ashwani",
 age: 21,
 city: "Agra"
 }
-module.exports=obj
+module.exports=obj 
