@@ -9,9 +9,10 @@ public class A39_linearSearch1 {
         return -1;
     }
 
+
     static public void main(String[] args) {
         int numbers[] = { 1, 6, 2, 9, 10, 7 };
-        int key = 1;
+        int key = 10;
 
         int ans = key5(numbers, key);
         System.out.println(key+" Found at index "+ans);
