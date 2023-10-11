@@ -8,8 +8,8 @@ int main()
     cout << b << endl;
     cout << c << endl;
 cout<<"After manipulat\n";
-    cout << setw(4) << a << endl;
-    cout << setw(4) << b << endl;
+    cout << setw(5) << a << endl;
+    cout << setw(5) << b << endl;
     cout << setw(5) << c << endl;
     return 0;
 }
