@@ -1,21 +1,13 @@
 #include<stdio.h>
+int main(){
+    
+   int area=2/2*5*10;
+   int count=5;
+   count= count+1;
 
-int main()
-{
-    int lenght ;
-    int width ; 
-
-
-    printf(" Eneter the perimeter lenght: ");
-    scanf("%d",&lenght);
-
-// printf("%d", lenght);
-    printf(" Eneter the perimeter width: ");
-    scanf("%d",&width);
+    printf("%d", count);
 
 
-    printf(" perimeter of rectangle  : %d " , 2 * (lenght + width) );
 
-    return 0 ;
-
+    return 0;
 }

@@ -16,7 +16,7 @@
         justify-content: space-around;
       }
       .button {
-        display: flex;
+        /* display: flex; */
         justify-content: center;
       }
       .button button {
@@ -42,8 +42,34 @@
         font-size: 25px;
       }
       #age{
+        /* margin-top: 100px; */
         align-items: center;
       }
+      .mainBtn{
+        display: flex;
+        justify-content: center;
+      }
+      #age{
+        /* color: red;
+        padding: 25px;
+        background-color: rgb(230, 218, 218);
+        padding: 1px 10px;
+        border-radius: 10px;
+        margin-top: 50px; */
+
+
+      }
+      .age1{
+        /* color: red; */
+        /* padding: 25px; */
+        background-color: rgb(230, 218, 218);
+        padding: 1px 10px;
+        border-radius: 5px;
+        margin-top: 10px;
+
+      }
+     
+
     </style>
   </head>
 
@@ -59,12 +85,16 @@
         <input type="date" id="bDate" />
       </div>
     </div>
-
-    <div class="button">
-      <button onclick="output()">Show output</button><br /><br />
-
-      <span id="age"> </span>
+    <div class="mainBtn">
+      <div class="button">
+        <button onclick="output()">Show output</button>
+          <div class="age1">
+            <span id="age"></span>
+          </div>
+    
+  </div>
     </div>
+    
     <script>
       bDate.max = new Date().toISOString().split("T")[0];
 
