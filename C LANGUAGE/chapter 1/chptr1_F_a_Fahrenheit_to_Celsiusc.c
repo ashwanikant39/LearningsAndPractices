@@ -2,7 +2,7 @@
 #include <stdio.h>
 int main()
 {
-    float f, c d;
+    float f, c d, e;
     printf("Enter temperature in Fahrenheit=");
     scanf("%f", &f);
     
