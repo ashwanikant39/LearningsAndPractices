@@ -1,0 +1,110 @@
+﻿@model BEEKP.Models.FAQViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Index", "FAQ", FormMethod.Post, new { @id = "frmFAQ", @name = "frmFAQ" }))
+{
+    @Html.AntiForgeryToken()
+
+        <!-- BEGIN PAGE CONTENT -->
+    <div class="container pt-10">
+        <!-- BEGIN PAGE CONTENT INNER -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="portlet light">
+                    @*<div class="portlet-title">
+                            <div class="caption">
+                                <span class="caption-subject font-green-sharp bold uppercase">Cluster Details List</span>
+                            </div>
+                        </div>*@
+                    <div id="divmanufacturers">
+                        <section class="breadcrumb-area">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-xl-12">
+                                        <div class="inner-content clearfix">
+                                            <div class="title_breadcrumb float-left">
+                                                <h1>FAQ</h1>
+                                            </div>
+                                            <div class="breadcrumb-menu float-right">
+                                                <ul class="clearfix">
+                                                    <li><a href="/">Resources</a></li>
+                                                    <li class="active">FAQ</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        @*<h4 class="text-theme-colored">FAQ</h4>*@
+                        <div id="acdClusterDetails" class="panel-group accordion">
+                            @for (Int32 i = 0; i < Model.ListFAQ.Count; i++)
+                            {
+                                Int32 counter = i + 1;
+                                String Quesno = "Q" + counter + ".";
+                                <div class="panel">
+                                    <div class="panel-title"> <a data-parent="#acdClusterDetails" data-toggle="collapse" href="#@Model.ListFAQ[i].FAQ_id" class="" aria-expanded="true"> <span class="open-sub"></span>@Quesno @Model.ListFAQ[i].FAQ_question</a> </div>
+                                    <div id="@Model.ListFAQ[i].FAQ_id" class="panel-collapse collapse" role="tablist" aria-expanded="true">
+                                        <div class="panel-content">
+                                            @Html.Raw(Model.ListFAQ[i].FAQ_answer)
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            }
+
+
+                            @*<div class="panel">
+                <div class="panel-title"> <a data-parent="#accordion1" data-toggle="collapse" href="#accordion11" class="" aria-expanded="true"> <span class="open-sub"></span> Q. What do you mean by item and end product?</a> </div>
+                <div id="accordion11" class="panel-collapse collapse" role="tablist" aria-expanded="true">
+                    <div class="panel-content">
+                        <p>Ut cursus massa at urnaaculis estie. Sed aliquamellus vitae ultrs condmentum leo massa mollis estiegittis miristum nulla.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="panel">
+                <div class="panel-title"> <a class="collapsed" data-parent="#accordion1" data-toggle="collapse" href="#accordion12" aria-expanded="false"> <span class="open-sub"></span> Q. What are some examples of permitted end products?</a> </div>
+                <div id="accordion12" class="panel-collapse collapse" role="tablist" aria-expanded="false" style="height: 0px;">
+                    <div class="panel-content">
+                        <p>Ut cursus massa at urnaaculis estie. Sed aliquamellus vitae ultrs condmentum leo massa mollis estiegittis miristum nulla.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="panel">
+                <div class="panel-title"> <a data-parent="#accordion1" data-toggle="collapse" href="#accordion13" class="collapsed" aria-expanded="false"> <span class="open-sub"></span> Q. Am I allowed to modify the item that I purchased?</a> </div>
+                <div id="accordion13" class="panel-collapse collapse" role="tablist" aria-expanded="false">
+                    <div class="panel-content">
+                        <p>Ut cursus massa at urnaaculis estie. Sed aliquamellus vitae ultrs condmentum leo massa mollis estiegittis miristum nulla.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="panel">
+                <div class="panel-title"> <a data-parent="#accordion1" data-toggle="collapse" href="#accordion14" class="collapsed" aria-expanded="false"> <span class="open-sub"></span> Q. What does non-exclusive mean?</a> </div>
+                <div id="accordion14" class="panel-collapse collapse" role="tablist" aria-expanded="false">
+                    <div class="panel-content">
+                        <p>Ut cursus massa at urnaaculis estie. Sed aliquamellus vitae ultrs condmentum leo massa mollis estiegittis miristum nulla.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="panel">
+                <div class="panel-title"> <a data-parent="#accordion1" data-toggle="collapse" href="#accordion15" class="collapsed" aria-expanded="false"> <span class="open-sub"></span> Q. What is a single application?</a> </div>
+                <div id="accordion15" class="panel-collapse collapse" role="tablist" aria-expanded="false">
+                    <div class="panel-content">
+                        <p>Ut cursus massa at urnaaculis estie. Sed aliquamellus vitae ultrs condmentum leo massa mollis estiegittis miristum nulla.</p>
+                    </div>
+                </div>
+            </div>*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END PAGE CONTENT INNER -->
+
+    </div>
+
+}

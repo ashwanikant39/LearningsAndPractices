@@ -1,0 +1,46 @@
+﻿@model BEEKP.Models.EnergyProfessionalViewModel
+
+@if (Model.ListEnergyProfessionals != null && Model.ListEnergyProfessionals.Count > 0)
+{
+    <table id="tblEnergyProfessionals" class="table table-striped table-hover table-bordered table-small-padding table-Valign-middle">
+
+        <thead>
+            <tr>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Organization Address
+                </th>
+                <th>
+                    Email Address
+                </th>
+                <th class="width-200">
+                    Area of Specialization 
+                </th>
+
+            </tr>
+        </thead>
+        <tbody>
+
+            @for (Int32 i = 0; i < Model.ListEnergyProfessionals.Count; i++)
+                {
+                <tr>
+                    <td>
+                        @Model.ListEnergyProfessionals[i].name
+                    </td>
+                    <td>
+                        @Model.ListEnergyProfessionals[i].organization_address
+                    </td>
+                    <td>
+                       @Model.ListEnergyProfessionals[i].email_id
+                    </td>
+                    <td>
+                       @Model.ListEnergyProfessionals[i].area_specialization_name
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+}

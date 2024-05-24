@@ -1,0 +1,162 @@
+﻿@model BEEKP.Models.ClusterDetailsViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Index", "ClusterDetails", FormMethod.Post, new { @id = "frmClusterDetails", @name = "frmClusterDetails" }))
+{
+    @Html.AntiForgeryToken()
+
+        <!-- BEGIN PAGE CONTENT -->
+    <div class="container pt-10 pb-20">
+        <!-- BEGIN PAGE CONTENT INNER -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="portlet light">
+                    <section class="breadcrumb-area">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="inner-content clearfix">
+                                        <div class="title_breadcrumb float-left">
+                                            <h1>Cluster Profile</h1>
+                                        </div>
+                                        <div class="breadcrumb-menu float-right">
+                                            <ul class="clearfix">
+                                                <li><a href="/">Resources</a></li>
+                                                <li class="active">Cluster Profile</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <div id="divmanufacturers">
+                        @*<h4 class="text-theme-colored">Cluster Profile</h4>
+                        <hr />*@
+                        <div id="acdPhase" class="panel-group accordion">
+                            @for (Int32 i = 0; i < Model.ListClusterDetailsModel.Count; i++)
+                            {
+                                string phaseid = "Phases" + Model.ListClusterDetailsModel[i].Phases.phases_id.ToString();
+                                string acdidcluster = "acdClusterDetails" + Model.ListClusterDetailsModel[i].Phases.phases_id.ToString();
+
+                                <div class="panel">
+                                    <div class="panel-title"> <a data-parent="#acdPhase" data-toggle="collapse" href="#@phaseid" class="" aria-expanded="true"><span class="open-sub"><i class="fas fa-plus-square-o"></i></span> @Model.ListClusterDetailsModel[i].Phases.phases_title</a> </div>
+                                    <div id="@phaseid" class="panel-collapse collapse" role="tablist" aria-expanded="true">
+                                        <div class="panel-content">
+
+                                            @*//================================================*@
+
+                                            <div id="@acdidcluster" class="panel-group accordion">
+                                                @for (Int32 j = 0; j < Model.ListClusterDetailsModel[i].ListCluster.Count; j++)
+                                                {
+
+                                                    string clusterid = "Cluster" + Model.ListClusterDetailsModel[i].ListCluster[j].cluster_id.ToString();
+
+                                                    <div class="panel">
+                                                        <div class="panel-title"> <a data-parent="#@acdidcluster" data-toggle="collapse" href="#@clusterid" class="" aria-expanded="true"><i class="fas fa-plus-square-o"></i> <span class="open-sub"></span> @Model.ListClusterDetailsModel[i].ListCluster[j].cluster_name</a> </div>
+                                                        <div id="@clusterid" class="panel-collapse collapse" role="tablist" aria-expanded="true">
+                                                            <div class="panel-content">
+                                                                @Html.Raw(Model.ListClusterDetailsModel[i].ListCluster[j].cluster_profile)
+                                                                <div class="row">
+                                                                    @if (Model.ListClusterDetailsModel[i].ListCluster[j].cluster_doc_hindi != null && Model.ListClusterDetailsModel[i].ListCluster[j].cluster_doc_hindi != "")
+                                                                    {
+                                                                        <div class="col-md-4">
+                                                                            <a href="/documents/Cluster/@Model.ListClusterDetailsModel[i].ListCluster[j].cluster_doc_hindi" target="_blank">
+                                                                                <i class="fas fa-download"></i> @Model.ListClusterDetailsModel[i].ListCluster[j].cluster_doc_hindi
+                                                                            </a>
+                                                                        </div>
+                                                                    }
+                                                                    @if (Model.ListClusterDetailsModel[i].ListCluster[j].cluster_doc_english != null && Model.ListClusterDetailsModel[i].ListCluster[j].cluster_doc_english != "")
+                                                                    {
+                                                                        <div class="col-md-4">
+                                                                            <a href="/documents/Cluster/@Model.ListClusterDetailsModel[i].ListCluster[j].cluster_doc_english" target="_blank">
+                                                                                <i class="fas fa-download"></i> @Model.ListClusterDetailsModel[i].ListCluster[j].cluster_doc_english
+                                                                            </a>
+                                                                        </div>
+                                                                    }
+                                                                    @if (Model.ListClusterDetailsModel[i].ListCluster[j].cluster_doc_marathi != null && Model.ListClusterDetailsModel[i].ListCluster[j].cluster_doc_marathi != "")
+                                                                    {
+                                                                        <div class="col-md-4">
+                                                                            <a href="/documents/Cluster/@Model.ListClusterDetailsModel[i].ListCluster[j].cluster_doc_marathi" target="_blank">
+                                                                                <i class="fas fa-download"></i> @Model.ListClusterDetailsModel[i].ListCluster[j].cluster_doc_marathi
+                                                                            </a>
+                                                                        </div>
+                                                                    }
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+                                                }
+
+
+
+                                            </div>
+
+                                            @*//================================================*@
+
+
+
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            }
+
+
+                            @*<div class="panel">
+                    <div class="panel-title"> <a data-parent="#accordion1" data-toggle="collapse" href="#accordion11" class="" aria-expanded="true"> <span class="open-sub"></span> Q. What do you mean by item and end product?</a> </div>
+                    <div id="accordion11" class="panel-collapse collapse" role="tablist" aria-expanded="true">
+                        <div class="panel-content">
+                            <p>Ut cursus massa at urnaaculis estie. Sed aliquamellus vitae ultrs condmentum leo massa mollis estiegittis miristum nulla.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel">
+                    <div class="panel-title"> <a class="collapsed" data-parent="#accordion1" data-toggle="collapse" href="#accordion12" aria-expanded="false"> <span class="open-sub"></span> Q. What are some examples of permitted end products?</a> </div>
+                    <div id="accordion12" class="panel-collapse collapse" role="tablist" aria-expanded="false" style="height: 0px;">
+                        <div class="panel-content">
+                            <p>Ut cursus massa at urnaaculis estie. Sed aliquamellus vitae ultrs condmentum leo massa mollis estiegittis miristum nulla.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel">
+                    <div class="panel-title"> <a data-parent="#accordion1" data-toggle="collapse" href="#accordion13" class="collapsed" aria-expanded="false"> <span class="open-sub"></span> Q. Am I allowed to modify the item that I purchased?</a> </div>
+                    <div id="accordion13" class="panel-collapse collapse" role="tablist" aria-expanded="false">
+                        <div class="panel-content">
+                            <p>Ut cursus massa at urnaaculis estie. Sed aliquamellus vitae ultrs condmentum leo massa mollis estiegittis miristum nulla.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel">
+                    <div class="panel-title"> <a data-parent="#accordion1" data-toggle="collapse" href="#accordion14" class="collapsed" aria-expanded="false"> <span class="open-sub"></span> Q. What does non-exclusive mean?</a> </div>
+                    <div id="accordion14" class="panel-collapse collapse" role="tablist" aria-expanded="false">
+                        <div class="panel-content">
+                            <p>Ut cursus massa at urnaaculis estie. Sed aliquamellus vitae ultrs condmentum leo massa mollis estiegittis miristum nulla.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel">
+                    <div class="panel-title"> <a data-parent="#accordion1" data-toggle="collapse" href="#accordion15" class="collapsed" aria-expanded="false"> <span class="open-sub"></span> Q. What is a single application?</a> </div>
+                    <div id="accordion15" class="panel-collapse collapse" role="tablist" aria-expanded="false">
+                        <div class="panel-content">
+                            <p>Ut cursus massa at urnaaculis estie. Sed aliquamellus vitae ultrs condmentum leo massa mollis estiegittis miristum nulla.</p>
+                        </div>
+                    </div>
+                </div>*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END PAGE CONTENT INNER -->
+
+    </div>
+
+}

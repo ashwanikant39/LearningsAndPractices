@@ -1,0 +1,95 @@
+﻿@model BEEKP.Areas.Admin.Models.AdminEventViewModel
+
+@if (Model.ListEventActive != null)
+{
+    <table id="tblEventActive" class="table table-striped table-hover table-bordered">
+
+        <thead>
+            <tr>
+                <th>
+                    Event Image
+                </th>
+                <th>
+                    Event Title
+                </th>
+                @*<th>
+                    Event Video Url
+                </th>
+                <th>
+                    Event Video Url
+                </th>*@
+                <th>
+                    Event Date
+                </th>
+                <th>
+                    Event Location
+                </th>
+                <th>
+                    Event Short Description
+                </th>
+                <th align="center" valign="middle">
+                    Action
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @for (Int32 i = 0; i < Model.ListEventActive.Count; i++)
+                {
+
+                <tr>
+                    <td>
+                        @if (Model.ListEventActive[i].event_image_name != null && Model.ListEventActive[i].event_image_name != "")
+                        {
+                            <img src="~/images/Event/@Model.ListEventActive[i].event_image_name" alt="Event Inage" width="100px">
+                        }
+                        else
+                        {
+                            <img src=@BEEKP.Class.Constants.NO_IMAGE alt="Event Inage" width="100px">
+                        }
+                    </td>
+                    <td>
+                        <label>@Model.ListEventActive[i].event_title</label>
+                    </td>
+                    @*<td>
+                        <label><a href="@Model.ListEventActive[i].event_video_url1"target="_blank">@Model.ListEventActive[i].event_video_url1</a></label>
+                    </td>
+                    <td>
+                        <label><a href="@Model.ListEventActive[i].event_video_url2"target="_blank">@Model.ListEventActive[i].event_video_url2</a></label>
+                    </td>*@
+                    <td>
+                        <label>@Model.ListEventActive[i].event_date </label>
+                    </td>
+                    <td>
+                        <label>@Model.ListEventActive[i].event_location </label>
+                    </td>
+                    <td>
+                        <label>@Model.ListEventActive[i].event_short_description </label>
+                    </td>
+                    <td align="center" valign="middle">
+                        @if (Model.PagePermission.role_edit == BEEKP.Class.Constants.PAGE_PERMISSION_YES)
+                        {
+                            <a href="@Url.Action("EventAddEdit", "AdminEvent", new { sEventID = BEEKP.Class.Encryption.Encrypt(Model.ListEventActive[i].event_id.ToString(), true) })" title="" class="custom-edit-tooltip"><i class="fa fa-pencil"></i></a>
+                        }
+                        
+                        @if (Model.PagePermission.role_delete == BEEKP.Class.Constants.PAGE_PERMISSION_YES)
+                        {
+                            @Html.Raw("|");
+                            <a href="@Url.Action("DeleteEvent", "AdminEvent", new { sEventID = BEEKP.Class.Encryption.Encrypt(Model.ListEventActive[i].event_id.ToString(),true),sevent_image_name = Model.ListEventActive[i].event_image_name})" title="" data-toggle="confirmation" data-original-title="Are you sure ?"><i class="fa fa-trash-o"></i></a>
+                        }
+                    </td>
+                </tr>
+            }
+
+
+
+
+
+        </tbody>
+    </table>
+}
+
+
+
+
+

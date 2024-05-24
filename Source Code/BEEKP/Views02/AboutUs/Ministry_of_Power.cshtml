@@ -1,0 +1,154 @@
+﻿
+@{
+    ViewBag.Title = "Ministry_of_Power";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<section class="breadcrumb-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="inner-content clearfix">
+                    <div class="title_breadcrumb float-left">
+                        <h1>Ministry of Power</h1>
+                    </div>
+                    <div class="breadcrumb-menu float-right">
+                        <ul class="clearfix">
+                            <li><a href="/">AboutUs</a></li>
+                            <li class="active">Ministry of Power</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+ 
+
+<section class="about-wrap pt-4 pb-5">
+        <div class="container">
+        <div class="row">
+                <div class="col-md-12 text-justify">
+                    <p>The Ministry of Power started functioning independently with effect from 2nd July, 1992. Earlier it was known as the Ministry of Energy sources. Electricity is a concurrent subject at Entry 38 in List III of the seventh Schedule of the Constitution of India. The Ministry of Power is primarily responsible for the development of electrical energy in the country. The Ministry is concerned with perspective planning, policy formulation, processing of projects for investment decision, monitoring of the implementation of power projects, training and manpower development and the administration and enactment of legislation in regard to thermal, hydro power generation, transmission and distribution. The Ministry of Power is responsible for the Administration of the Electricity Act, 2003, the Energy Conservation Act , 2001 and to undertake such amendments to these Acts, as may be necessary from time to time, in conformity with the Government's policy objectives.</p>
+
+
+ <b>Links:</b> <b><a href="https://powermin.gov.in/ ">https://powermin.gov.in/ </a></b><br>
+
+                    
+
+
+
+                </div>
+            </div>
+           
+        </div>
+    </section>
+
+    
+
+    <!--Newsletter Start-->
+
+    <div class="newsletter-wrap wow fadeInUp">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="title">
+                        <h3 class="text-white"><small>Stay in Loop</small><br> Join our Newsletter</h3>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="news-info">
+                        <form>
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="search" placeholder="Your Email Address">
+                                <div class="form_icon"><i class="fas fa-envelope"></i></div>
+                            </div>
+                            <input type="submit" class="sigup" value="Subscribe">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Newsletter End-->
+
+
+
+    <?php include('include/footer.php'); ?>
+    <script src="js/all.js"></script>
+    <script src="js/script.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5-ed0P7eZL44UHUnOF_WB-BN3XaUk4zk&callback=initMap&sensor=false&region=IN"></script>
+    <script type="text/javascript">
+        var markers = [{
+                "title": 'Pune',
+                "lat": '18.5196',
+                "lng": '73.8553',
+                "description": 'Pune is a mixed cluster in Maharastra <a href="abc.php">Read More</a>',
+                "icon": 'https://lav.indevconsultancy.com/energy/d17/images/icons/mixed-industries.png'
+            },
+            {
+                "title": 'Navi Mumbai',
+                "lat": '18.990713',
+                "lng": '73.116844',
+                "description": 'Navi Mumbai is Foundry Cluster in Maharastra <a href="abc.php">Read More</a>',
+                "icon": 'https://lav.indevconsultancy.com/energy/d17/images/icons/foundry.png'
+            }
+        ];
+        window.onload = function() {
+            LoadMap();
+        }
+
+        function LoadMap() {
+            var mapOptions = {
+                center: new google.maps.LatLng(markers[0].lat, markers[0].lng),
+                zoom: 6,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("dvMap"), mapOptions);
+
+            //Create and open InfoWindow.
+            var infoWindow = new google.maps.InfoWindow();
+
+            for (var i = 0; i < markers.length; i++) {
+                var data = markers[i];
+                var myLatlng = new google.maps.LatLng(data.lat, data.lng);
+                var marker = new google.maps.Marker({
+                    position: myLatlng,
+                    map: map,
+                    title: data.title,
+                    icon: data.icon
+                });
+
+                //Attach click event to the marker.
+                (function(marker, data) {
+                    google.maps.event.addListener(marker, "click", function(e) {
+                        //Wrap the content inside an HTML DIV in order to set height and width of InfoWindow.
+                        infoWindow.setContent("<div style = 'width:200px;min-height:40px'>" + data.description + "</div>");
+                        infoWindow.open(map, marker);
+                    });
+                })(marker, data);
+            }
+        }
+    </script>
+
+    <script>
+        (function($) {
+            // $('.accordion > a').addClass('active').next().slideDown();
+            $('.accordion > a:eq(0) a').addClass('active').next().slideDown();
+
+
+            $('.accordion a').click(function(j) {
+                // var dropDown = $(this).closest('a').find('a');
+
+                if ($(this).hasClass('active')) {
+                    $(this).removeClass('active');
+                } else {
+                    $(this).closest('.accordion').find('a.active').removeClass('active');
+                    $(this).addClass('active');
+                }
+                dropDown.stop(false, true).slideToggle();
+                j.preventDefault();
+            });
+        })(jQuery);
+    </script>
+</body>

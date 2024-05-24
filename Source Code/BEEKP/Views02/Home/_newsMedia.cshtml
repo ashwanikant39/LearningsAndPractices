@@ -1,0 +1,17 @@
+﻿@model List<BEEKP.Areas.Admin.Models.News>
+
+@foreach (var item in Model)
+{
+    <li>
+        <div class="thumb">
+            <img src="~/images/news/@item.news_image_name" />
+        </div>
+        <div class="info">
+            <a href="javascrtip:void(0)">@item.news_title</a>
+            <div class="meta-title">
+                <span class="post-date">@item.news_date</span>
+                <span class="categpory-name">@item.news_short_description</span>
+            </div>
+        </div>
+    </li>
+}

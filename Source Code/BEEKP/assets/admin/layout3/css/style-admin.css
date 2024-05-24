@@ -1,0 +1,44 @@
+﻿.text-denger {
+    color:red;
+}
+.text-denger .validation-summary-errors {
+    position:relative;
+}
+.text-denger .validation-summary-errors li{
+    color:red;font-size:13px; line-height:13px; text-align:left; position:absolute; left:0; top:-5px;
+}
+
+.required-asterisk{ color:red; }
+
+.small-font-cuatom{ font-size:72%; }
+
+.margin-top-7{ margin-top:7px !important; }
+.display-inline-block{ display:inline-block; }
+
+
+/* Header Start */
+.page-header .page-header-top .page-logo{ height:auto; }
+.page-header .page-header-top .page-logo img{ width:100px; }
+.page-header .page-header-top .page-logo .logo-default{ margin-top:8.5px; margin-bottom:8.5px; }
+
+/* Header End */
+
+/* Admin Title Start */
+.page-header .page-header-top .page-logo{ width:110px; }
+
+.page-header .page-header-top .admin-title{ 
+    float:left;
+    margin-top:30px;
+    margin-left: 15px;
+    }
+.page-header .page-header-top .admin-title {
+    font-size:25px;
+    line-height:28px;
+    color:#444d58;
+     background-color:inherit;
+     text-transform:uppercase;
+ }
+
+.dashboard-height{ min-height:364px; }
+.dashboard-heading{ font-weight:600; font-size:25px; text-align:center; }
+/* Admin Title End */

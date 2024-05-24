@@ -1,0 +1,119 @@
+﻿<nav id="myDIV" class="nav nav-custom pull-left">
+    <ul class="main-nav">
+        <li><a href="@Url.Action("Index", "Home", null, Request.Url.Scheme)">Home</a></li>
+        <li>
+            <a href="javascript:void(0)">
+                About Us
+                <span class="indicator"><i class="fa fa-angle-down"></i></span>
+            </a>
+            <ul class="dropdown">
+                @*<li>
+                        <a href="javascript:void(0)">About Project</a>
+                        <ul class="dropdown">
+                            <li><a href="javascript:void(0)">Global Environment Facility</a></li>
+                            <li><a href="javascript:void(0)">Knowledge Portal</a></li>
+                            <li>
+                                <a href="javascript:void(0)">Project Partners</a>
+                                <ul class="dropdown">
+                                    <li><a href="javascript:void(0)">World Bank</a></li>
+                                    <li><a href="javascript:void(0)">Bureau of Energy Efficiency</a></li>
+                                    <li><a href="javascript:void(0)">Small Industries Development Bank of India</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>*@
+                <li><a href="@Url.Action("AboutProject","AboutUs", null, Request.Url.Scheme)">About SIDHIEE</a></li>
+                <li><a href="@Url.Action("GEF","AboutUs", null, Request.Url.Scheme)">About the GEF</a></li>
+                @*<li>
+                    <a href="@Url.Action("WorldBank","AboutUs", null, Request.Url.Scheme)">
+                        Partner Agencies
+                        <span class="indicator"><i class="fa fa-angle-right"></i></span>
+                    </a>
+                    <ul class="dropdown">
+                        <li><a href="@Url.Action("WorldBank","AboutUs", null, Request.Url.Scheme)">World Bank</a></li>
+                        <li><a href="@Url.Action("BureauOfEnergyEfficiency","AboutUs", null, Request.Url.Scheme)">Bureau of Energy Efficiency</a></li>
+                        <li><a href="@Url.Action("SmallIndustriesDevelopmentBankOfIndia","AboutUs", null, Request.Url.Scheme)">Small Industries Development Bank of India</a></li>
+                    </ul>
+                </li>*@
+                <li>
+                    <a href="@Url.Action("WorldBank","AboutUs", null, Request.Url.Scheme)">Partner Agencies</a>
+                </li>
+                @*<li><a href="@Url.Action("KnowledgePortal","AboutUs", null, Request.Url.Scheme)">Knowledge Portal</a></li>*@
+            </ul>
+        </li>
+        @*<li>
+                <a href="javascript:void(0)">MSME Cluster
+                    <span class="indicator"><i class="fa fa-angle-down"></i></span>
+                </a>
+                <ul class="dropdown">
+                    <li><a href="@Url.Action("Index", "ClusterDetails", null, Request.Url.Scheme)">Cluster Profile</a></li>
+                </ul>
+            </li>*@
+        @*<li>
+                <a href="javascript:void(0)">Financing of MSME
+                    <span class="indicator"><i class="fa fa-angle-down"></i></span>
+                </a>
+                <ul class="dropdown">
+                    <li>
+                        <a href="javascript:void(0)">Financing Schemes
+                            <span class="indicator"><i class="fa fa-angle-right"></i></span>
+                        </a>
+                        <ul class="dropdown">
+                            <li><a href="@Url.Action("BankLoan", "FinancingScheme", null, Request.Url.Scheme)">Loan Schemes</a></li>
+                            <li><a href="@Url.Action("GovernmentSubsidy", "FinancingScheme", null, Request.Url.Scheme)">Subsidy Schemes</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>*@
+        <li>
+            <a href="javascript:void(0)">
+                Project Details
+                <span class="indicator"><i class="fa fa-angle-down"></i></span>
+            </a>
+            <ul class="dropdown">
+                <li><a href="@Url.Action("Index", "ClusterDetails", null, Request.Url.Scheme)">Cluster Profile</a></li>
+                <li><a href="@Url.Action("Index", "MSME", null, Request.Url.Scheme)">Participating MSMEs</a></li>
+                <li><a href="@Url.Action("Index", "Manufacturers", null, Request.Url.Scheme)">Manufacturers and Suppliers</a></li>
+                <li><a href="@Url.Action("Index", "EnergyProfessional", null, Request.Url.Scheme)">Energy Experts</a></li>
+                <li><a href="@Url.Action("Index", "BankFinancial", null, Request.Url.Scheme)">Banks and Financial Institutions</a></li>
+                @*<li><a href="@Url.Action("Index", "KnowledgeBank", null, Request.Url.Scheme)">Knowledge Bank</a></li>*@
+                @*<li><a href="@Url.Action("Index", "FinancingScheme", null, Request.Url.Scheme)">Financing Schemes</a></li>*@
+
+                @*<ul class="dropdown">*@
+                <li>
+                    <a href="javascript:void(0)">
+                        Financing Schemes
+                        <span class="indicator"><i class="fa fa-angle-right"></i></span>
+                    </a>
+                    <ul class="dropdown">
+                        <li><a href="@Url.Action("BankLoan", "FinancingScheme", null, Request.Url.Scheme)">Loan Schemes</a></li>
+                        <li><a href="@Url.Action("GovernmentSubsidy", "FinancingScheme", null, Request.Url.Scheme)">Subsidy Schemes</a></li>
+                    </ul>
+                </li>
+                @*</ul>*@
+
+
+                @*<li><a href="@Url.Action("Index", "EnergyTechnologies", null, Request.Url.Scheme)">Energy Efficient Technologies</a></li>*@
+            </ul>
+        </li>
+        @*<li>
+            <a href="javascript:void(0)">
+                Resources
+                <span class="indicator"><i class="fa fa-angle-down"></i></span>
+            </a>
+            <ul class="dropdown">
+                <li><a href="@Url.Action("Index", "CaseStudy", null, Request.Url.Scheme)">Case Studies</a></li>
+                <li><a href="@Url.Action("NewsLetter", "Library", null, Request.Url.Scheme)">Magazine and Newsletter</a></li>
+                <li><a href="@Url.Action("Index", "EnergyTechnologies", null, Request.Url.Scheme)">Energy Efficient Technologies</a></li>
+                <li><a href="@Url.Action("ReportsAndPresentations", "Library", null, Request.Url.Scheme)">Reports and Presentations</a></li>
+                <li><a href="@Url.Action("CreditRating", "Library", null, Request.Url.Scheme)">Integrated Credit Rating Mechanism</a></li>
+                <li><a href="@Url.Action("TrainingManual", "Library", null, Request.Url.Scheme)">Training Manual</a></li>
+                <li><a href="@Url.Action("BestPracticeGuide", "Library", null, Request.Url.Scheme)">Best Practice Guide</a></li>
+                <li><a href="@Url.Action("Other", "Library", null, Request.Url.Scheme)">Others</a></li>
+            </ul>
+        </li>*@
+        <li><a href="@Url.Action("Digital", "Library", null, Request.Url.Scheme)">Digital Library</a></li>
+        <li><a href="@Url.Action("Index", "FAQ", null, Request.Url.Scheme)">FAQ</a></li>
+    </ul>
+</nav>
+

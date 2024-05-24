@@ -1,0 +1,90 @@
+﻿@model BEEKP.Models.ProjectComponentViewModel
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("Detail", "ProjectComponent", FormMethod.Post, new { @id = "frmProjectComponentDetail", @name = "frmProjectComponentDetail" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="bg-lighter">
+        <div class="container pt-10 pb-20">
+            <h4 class="text-theme-colored">Project Component</h4>
+            <div class="row">
+                <div class="col-md-4">
+
+                </div>
+
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="thumb">
+                                <img src="~/images/ProjectComponent/@Model.ProjectComponent.project_component_image_name" alt="Event Image">
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <h4 class="name font-24 mt-0 mb-0">@Model.ProjectComponent.project_component_title</h4>
+                            <h5 class="mt-5">@Model.ProjectComponent.project_component_short_description</h5>
+                            <p>@Html.Raw(Model.ProjectComponent.project_component_full_description)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @*<section id="home" class="divider bg-lighter">
+            <div class="display-table">
+                <div class="display-table-cell">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 col-md-push-3">
+
+                                <h4 class="text-theme-colored mt-0 pt-5">Project Component Details</h4>
+                                <div class="row">
+                                    <div class="form-group col-md-12">
+                                        <label>Project Component Image</label>
+                                        <img class="img-fullwidth mb-sm-0" src="~/images/ProjectComponent/@Model.ProjectComponent.project_component_image_name" alt="">
+
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-md-12">
+                                        <label>Project Component Title</label>
+                                        @Html.Label(Model.ProjectComponent.project_component_title, new { @class = "form-control" })
+
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-md-12">
+                                        <label>Project Component Short Description</label>
+                                        @Html.Label(Model.ProjectComponent.project_component_short_description, new { @class = "form-control" })
+
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-md-12">
+                                        <label>Event Full Description</label>
+                                        @Html.TextArea("ProjectComponent_full_description", Model.ProjectComponent.project_component_full_description, new { @class = "form-control", @row = "10", @readonly = "readonly" })
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="form-actions right">
+                                <div class="row">
+                                    <div class="col-md-offset-3 col-md-9">
+                                        <button type="button" class="btn default" onclick="location.href='@Url.Action("Index", "Home", new {})'">Back</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>*@
+
+}
+
+
+
+
+

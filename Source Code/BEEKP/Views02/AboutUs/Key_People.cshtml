@@ -1,0 +1,94 @@
+﻿@{
+    ViewBag.Title = "BEE_SME_Programme";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .column {
+        float: left;
+        width: 33.3%;
+        margin-bottom: 16px;
+        padding: 0 8px;
+    }
+
+    .container {
+        padding: 0 16px;
+    }
+
+        .container::after, .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+    .title {
+        color: grey;
+    }
+</style>
+<div class="container pt-10 pb-20">
+    <!-- BEGIN PAGE CONTENT INNER -->
+    <div class="row">
+        <div class="col-md-12">
+            <section class="breadcrumb-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="inner-content clearfix">
+                                <div class="title_breadcrumb float-left">
+                                    <h1>Key People</h1>
+                                </div>
+                                <div class="breadcrumb-menu float-right">
+                                    <ul class="clearfix">
+                                        <li><a href="index.php">Programmes</a></li>
+                                        <li class="active">Key People</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            @*<h4 class="text-theme-colored">Key People</h4>*@
+            <hr />
+
+
+            <div class="row">
+                <div class="column">
+                    <div class="card">
+                        <img src="./images/key_people/abhay.png" alt="Abhay Bakre" style="width:365px !important; height:300px !important;">
+                        <div class="container">
+                            <h2>Abhay Bakre</h2>
+                            <p class="title">Director General, Bureau of Energy Efficiency</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="column">
+                    <div class="card">
+                        <img src="./images/key_people/rai.png" alt="R K Rai" style="width:365px !important; height:300px !important;">
+                        <div class="container">
+                            <h2>R K Rai</h2>
+                            <p class="title">Secretary, Bureau of Energy Efficiency</p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <img src="./images/key_people/milind.png" alt="Milind Deore" style="width:365px !important; height:300px !important;">
+                        <div class="container">
+                            <h2>Milind Deore</h2>
+                            <p class="title">Director, Bureau of Energy Efficiency</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+    </div>
+</section>

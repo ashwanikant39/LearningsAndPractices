@@ -1,0 +1,211 @@
+﻿
+@model BEEKP.Areas.Admin.Models.FAQManageModel
+@{
+    ViewBag.Title = "ManageFAQCategory";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@using (Html.BeginForm("ManageFAQ", "AdminFAQ", FormMethod.Post, new { @id = "frmManageFAQ", @name = "frmManageFAQ" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => Model.FAQ.FAQ_id)
+    @Html.HiddenFor(model => Model.PagePermission.role_view)
+    @Html.HiddenFor(model => Model.PagePermission.role_add)
+    @Html.HiddenFor(model => Model.PagePermission.role_edit)
+    @Html.HiddenFor(model => Model.PagePermission.role_delete)
+
+    <div class="page-head">
+        <div class="container">
+            <!-- BEGIN PAGE TITLE -->
+            <div class="page-title">
+                <h1>@Model.PagePermission.file_name</h1>
+            </div>
+            <!-- END PAGE TITLE -->
+
+        </div>
+    </div>
+    <div class="page-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- BEGIN VALIDATION STATES-->
+                    <div class="portlet light">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <span class="caption-subject font-green-sharp bold uppercase">Manage FAQ</span> <small class="small-font-cuatom">Fields marked with asterisk (<span class="required-asterisk"> * </span>) are mandatory to fill in </small>
+                            </div>
+                        </div>
+                        <div class="portlet-body form">
+                            <div class="horizontal-form ">
+                                <div class="form-body form-body-small-padding">
+                                    @*<h3 class="form-section page-title mandatory-note">&nbsp <small>Fields marked with asterisk (<span class="required-asterisk"> * </span>) are mandatory to fill in </small></h3>*@
+
+                                    <!--body start-->
+                                    <div class="row">
+                                        <div class="col-md-6">
+
+                                            <div class="form-group clearfix">
+                                                <label class="control-label col-md-4">Cluster Name<span class="required">* </span></label>
+                                                <div class="col-md-8">
+                                                    @Html.DropDownListFor(model => Model.FAQ.cluster_id, new SelectList(Model.ListCluster, "cluster_id", "cluster_name", ""), new { @class = "form-control required", @id = "ddlcluster", autocomplete = "off", @onchange = "ClusterChanged()" })
+                                                    @Html.ValidationMessageFor(model => model.FAQ.cluster_name, "", new { @class = "text-denger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group clearfix">
+                                                <label class="control-label col-md-4">Category Name<span class="required">* </span></label>
+                                                <div class="col-md-8">
+                                                    @Html.DropDownListFor(model => Model.FAQ.category_id, new SelectList(Model.ListFAQCategory, "category_id", "category_name", ""), new { @class = "form-control required", @id = "ddlcategory", autocomplete = "off" })
+                                                    @Html.ValidationMessageFor(model => model.FAQ.category_name, "", new { @class = "text-denger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group clearfix">
+                                                <label class="control-label col-md-4">Active</label>
+                                                <div class="col-md-8">
+                                                    @Html.CheckBoxFor(model => model.FAQ.status, new { @class = "icheck", @id = "Status", @Placeholder = "Active" })
+                                                    @Html.ValidationMessageFor(model => model.FAQ.status, "", new { @class = "text-denger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group clearfix">
+                                                <label class="control-label col-md-4">Remarks</label>
+                                                <div class="col-md-8">
+                                                    @Html.TextBoxFor(model => model.FAQ.remarks, new { @class = "form-control required", @id = "remarks", @Placeholder = "remarks" })
+                                                    @Html.ValidationMessageFor(model => model.FAQ.remarks, "", new { @class = "text-denger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group clearfix">
+                                                <label class="control-label col-md-4">FAQ Question</label>
+                                                <div class="col-md-12">
+                                                    @Html.TextBoxFor(model => model.FAQ.FAQ_question, new { @class = "form-control required", @id = "FAQ_question", @Placeholder = "FAQ Question" })
+                                                    @Html.ValidationMessageFor(model => model.FAQ.FAQ_question, "", new { @class = "text-denger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group clearfix">
+                                                <label class="control-label col-md-4">FAQ Answer<span class="required">* </span></label>
+                                                <div class="col-md-12" id="vckEditorEmailBody">
+                                                    @Html.TextAreaFor(model => model.FAQ.FAQ_answer, new { @class = "ckeditor form-control", @id = "ckFAQAnswer", @rows = 3, @cols = 22 })
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="row">
+
+
+                                    </div>
+                                </div>
+                                <!--Footer-->
+                                <div class="form-actions right">
+                                    <div class="row">
+                                        <div class="col-md-offset-3 col-md-9">
+                                            <button type="button" class="btn default" onclick="location.href='@Url.Action("Index", "AdminFAQ", new {})'">Back</button>
+                                            <button type="submit" class="btn blue blue-custom" name="btnAction"><i class="fa fa-check"></i>Save</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END FORM-->
+                        </div>
+                        <!-- END VALIDATION STATES-->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- BEGIN VALIDATION STATES-->
+
+
+
+}
+@Scripts.Render("~/bundles/area/js/global")
+@Scripts.Render("~/bundles/area/js/validate")
+@Scripts.Render("~/bundles/area/appjs/faq_manage")
+
+<script type="text/javascript" src="~/assets/global/plugins/ckeditor/ckeditor.js"></script>
+
+<script>
+
+    AddAntiForgeryToken = function (data) {
+        data.__RequestVerificationToken = $('#frmManageFAQ input[name=__RequestVerificationToken]').val();
+        return data;
+    };
+
+
+    function ClusterChanged() {
+        var cluster_id = $("#ddlcluster").val();
+       
+
+        $("#ddlcategory").html("");
+        //$("#ddlObligatoryEntity").html("<option value='0'>-- Select --</option>");
+        //$("#ddlFinancialYear").html("<option value='0'>-- Select --</option>");
+
+        $.ajax({
+
+            url: '/AdminFAQ/PopulateFAQCategoryList',
+            data: AddAntiForgeryToken({ _cluster_id: cluster_id }),
+            async: false,
+            type: 'POST',
+            success: function (result) {
+
+                if (result == 'sessionout') {
+                    window.location.href = "/Account/LogOff";
+                }
+                else if (result.Data == 'error') {
+                    window.location.href = "/Error/GeneralError";
+                }
+                else {
+
+                    var markup = "";
+                    for (var x = 0; x < result.length; x++) {
+                        markup += "<option value='" + result[x].category_id + "'>" + result[x].category_name + "</option>";
+                    }
+
+                    $("#ddlcategory").html(markup);
+                }
+            },
+            error: function (result) {
+                isSuccess = result;
+            }
+
+        }).done(function () {
+
+        });
+    }
+
+</script>
+
+<script>
+    CKEDITOR.replace('ckFAQAnswer', {
+        // Define the toolbar groups as it is a more accessible solution.
+        toolbarGroups: [
+            { "name": "basicstyles", "groups": ["basicstyles"] },
+            //{ "name": "links", "groups": ["links"] },
+            { "name": "paragraph", "groups": ["list", "blocks"] },
+           // { "name": "document", "groups": ["mode"] },
+            //{ "name": "insert", "groups": ["insert"] },
+            //{ "name": "styles", "groups": ["styles"] }
+           // { "name": "about", "groups": ["about"] }
+        ],
+        // Remove the redundant buttons from toolbar groups defined above.
+        removeButtons: 'Underline,Strike,Subscript,Superscript,Anchor,Styles,Specialchar'
+    });
+</script>

@@ -1,0 +1,1361 @@
+﻿@model BEEKP.Models.VideoGalleryViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+ <style>
+ .video-box.inner-view .video-thumb a {
+    background: rgba(0,0,0,0);
+}
+.video-box .video-thumb a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.2);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+.video-box .video-thumb a i {
+    width: 30px;
+    height: 30px;
+    background: #ed303b;
+    color: #fff;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 12px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transform: scale(1);
+    transition: all .3s ease-in-out;
+}
+
+.video-box.inner-view .video-data {
+    display: flex;
+    flex-direction: column;
+    min-height: 38px;
+    justify-content: center;
+    background: #297e46eb;
+    padding: 0 15px;
+}
+.video-box.inner-view .sld-item .video-data h6, .video-box.inner-view .sld-item .video-data p {
+    margin-bottom: 0;
+    margin-top: 0;
+    color: #fff;
+}
+.pb-4,{
+    padding-bottom: 1.5rem!important;
+}
+
+.mt-10{
+    margin-top:30px;
+}
+
+.col-md-2 {
+    -webkit-box-flex: 0;
+    flex: 0 0 20%;
+    max-width: 20%;
+    margin-top:20px;
+}
+.tab {
+    overflow: hidden;
+    border: 1px solid #297b37;
+    background-color: #9ae3a6ed;
+}
+/* Style the buttons inside the tab */
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 35px;
+    transition: 0.3s;
+    font-size: 20px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #1da054d1;
+    color: white;
+}
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color:#262a8adb;
+  color: white;
+
+}
+
+/* Style the tab content */
+.tabcontent {
+  width:100%;
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+  margin-bottom: 50px;
+}
+
+.tabcontent {
+  animation: fadeEffect 3s; 
+}
+
+
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+.portfolio-filter a.active, .portfolio-filter a:hover {
+    color: #fff !important;
+}
+
+.portfolio-filter a.active, .portfolio-filter a:hover, .project .hover-link i {
+    background: #1F386B !important;
+}
+.portfolio-filter a.active, .portfolio-filter a:hover {
+    border-left: 3px solid #46a45a !important;
+}
+
+.portfolio-filter a {
+    border-left: 3px solid transparent;
+    background-color: #f8f8f8;
+    display: inline-block;
+    float: none;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: normal;
+    margin-right: 5px;
+    outline: medium none;
+    padding: 5px 15px;
+    transition: all 100ms ease-in-out 0s;
+}
+.portfolio-filter {
+    margin-bottom: 30px;
+}
+    </style>
+</head>
+
+<body>
+    <?php include('include/header.php'); ?>
+
+
+    <section class="breadcrumb-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="inner-content clearfix">
+                        <div class="title_breadcrumb float-left">
+                            <h1>Project Gallery</h1>
+                        </div>
+                        <div class="breadcrumb-menu float-right">
+                            <ul class="clearfix">
+                                <li><a href="index.php">Resources</a></li>
+                                <li class="active">Project Gallery</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section>
+        <div class="container pb-5">
+           
+        </div>
+    </section>
+    
+<div class="portfolio-filter font-alt align-center text-center mb-6 0">
+                        
+                        <a href="javascript:void(0);" class="" data-filter=".photos">Photos</a>
+                        <a href="javascript:void(0);" class="active" data-filter=".campus">Videos</a>
+                        
+                    </div>
+
+
+ <div class="rs-contact pt-40 md-pt-40">
+    <div class="container">
+      <div class="row">
+             
+                      <div class="row video-box inner-view">
+
+                 <div class="col-md-2">
+                    <div class="sld-item">  
+                        <div class="video-item campus">
+                            <div class="video-thumb">
+                                <img src="images/multiples/1.jpg">
+                                <a href="videos/multiples/1.mp4" class="popup-youtube">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="video-data">
+                                <h6>Multiple cluster_Application of Internet of Things in MSME processes</h6>
+                                
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+
+                <div class="col-md-2">
+                    <div class="sld-item">  
+                        <div class="video-item campus">
+                            <div class="video-thumb">
+                                <img src="images/multiples/1.jpg">
+                                <a href="videos/multiples/2.m4v" class="popup-youtube">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="video-data">
+                                <h6>Multiple cluster_Automation & control system<br> in Boiler</h6>
+                                
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+                <div class="col-md-2">
+                    <div class="sld-item">  
+                        <div class="video-item campus">
+                            <div class="video-thumb">
+                                <img src="images/multiples/1.jpg">
+                                <a href="videos/multiples/3.mp4" class="popup-youtube">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="video-data">
+                                <h6>Multiple cluster_Installation of air pre-heater<br> in boiler</h6>
+                                
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+                <div class="col-md-2">
+                    <div class="sld-item">  
+                        <div class="video-item campus">
+                            <div class="video-thumb">
+                                <img src="images/multiples/1.jpg">
+                                <a href="videos/multiples/4.mp4" class="popup-youtube">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="video-data">
+                                <h6>Multiple Cluster_Installation of APFC panel and Voltage stabilizer</h6>
+                                
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+                <div class="col-md-2">
+                    <div class="sld-item">  
+                        <div class="video-item campus">
+                            <div class="video-thumb">
+                                <img src="images/multiples/1.jpg">
+                                <a href="videos/multiples/5.mp4" class="popup-youtube">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="video-data">
+                                <h6>Multiple cluster_Installation of Condensate<br> Recovery</h6>
+                                
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+                <div class="col-md-2">
+                    <div class="sld-item">  
+                        <div class="video-item campus">
+                            <div class="video-thumb">
+                                <img src="images/multiples/1.jpg">
+                                <a href="videos/multiples/6.mp4" class="popup-youtube">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="video-data">
+                                <h6>Multiple cluster_Installation of Economizer <br>in Boilers</h6>
+                                
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+                <div class="col-md-2">
+                    <div class="sld-item">  
+                        <div class="video-item campus">
+                            <div class="video-thumb">
+                                <img src="images/multiples/1.jpg">
+                                <a href="videos/multiples/7.mp4" class="popup-youtube">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="video-data">
+                                <h6>Multiple cluster_Installation of energy efficient compressed air line </h6>
+                                
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+                <div class="col-md-2">
+                    <div class="sld-item">  
+                        <div class="video-item campus">
+                            <div class="video-thumb">
+                                <img src="images/multiples/1.jpg">
+                                <a href="videos/multiples/8.mp4" class="popup-youtube">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="video-data">
+                                <h6>Multiple cluster_Installation of Harmonic<br> Filter</h6>
+                                
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-2">
+                    <div class="sld-item">  
+                        <div class="video-item campus">
+                            <div class="video-thumb">
+                                <img src="images/multiples/1.jpg">
+                                <a href="videos/multiples/9.mp4" class="popup-youtube">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="video-data">
+                                <h6>Multiple cluster_Real Time monitoring System (Replaced film)</h6>
+                                
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+                <div class="col-md-2">
+                    <div class="sld-item">  
+                        <div class="video-item campus">
+                            <div class="video-thumb">
+                                <img src="images/multiples/1.jpg">
+                                <a href="videos/multiples/10.mp4" class="popup-youtube">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="video-data">
+                                <h6>Multiple cluster_<br>Replacement of conventional motors </h6>
+                                
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-2">
+                    <div class="sld-item">  
+                        <div class="video-item campus">
+                            <div class="video-thumb">
+                                <img src="images/multiples/1.jpg">
+                                <a href="videos/multiples/11.mp4" class="popup-youtube">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="video-data">
+                                <h6>Multiple cluster_<br>Replacement of conventional pumps </h6>
+                                
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+                <div class="col-md-2">
+                    <div class="sld-item">  
+                        <div class="video-item campus">
+                            <div class="video-thumb">
+                                <img src="images/multiples/1.jpg">
+                                <a href="videos/multiples/12.mp4" class="popup-youtube">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="video-data">
+                                <h6>Multiple cluster_Replacement of reciprocating compressor </h6>
+                                
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-2">
+                    <div class="sld-item">  
+                        <div class="video-item campus">
+                            <div class="video-thumb">
+                                <img src="images/multiples/1.jpg">
+                                <a href="videos/multiples/13.mp4" class="popup-youtube">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="video-data">
+                                <h6>Multple Cluster_Installation of compressed air control system</h6>
+                                
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+                 <div class="col-md-2">
+                    <div class="sld-item">  
+                        <div class="video-item campus">
+                            <div class="video-thumb">
+                                <img src="images/multiples/1.jpg">
+                                <a href="videos/multiples/14.mp4" class="popup-youtube">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="video-data">
+                                <h6>Cold storage_Replacement of old traditional refrigeration system </h6>
+                                
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                 <div class="col-md-2">
+                    <div class="sld-item">  
+                        <div class="video-item campus">
+                            <div class="video-thumb">
+                                <img src="images/multiples/1.jpg">
+                                <a href="videos/multiples/15.mp4" class="popup-youtube">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="video-data">
+                                <h6>Ice making_<br>Installation Tube<br>Ice Plant</h6>
+                                
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                 <div class="col-md-2">
+                    <div class="sld-item">  
+                        <div class="video-item campus">
+                            <div class="video-thumb">
+                                <img src="images/multiples/1.jpg">
+                                <a href="videos/multiples/16.mp4" class="popup-youtube">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="video-data">
+                                <h6>SRRM_Furnace<br> automation and <br>control system</h6>
+                                
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                 <div class="col-md-2">
+                    <div class="sld-item">  
+                        <div class="video-item campus">
+                            <div class="video-thumb">
+                                <img src="images/multiples/1.jpg">
+                                <a href="videos/multiples/17.mp4" class="popup-youtube">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="video-data">
+                                <h6>SRRM_Hot<br> Charging of <br>Billets</h6>
+                                
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                 <div class="col-md-2">
+                    <div class="sld-item">  
+                        <div class="video-item campus">
+                            <div class="video-thumb">
+                                <img src="images/multiples/1.jpg">
+                                <a href="videos/multiples/18.mp4" class="popup-youtube">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="video-data">
+                                <h6>SRRM_Installation of energy efficient pulverized coal feeding system</h6>
+                                
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                 <div class="col-md-2">
+                    <div class="sld-item">  
+                        <div class="video-item campus">
+                            <div class="video-thumb">
+                                <img src="images/multiples/1.jpg">
+                                <a href="videos/multiples/19.m4v" class="popup-youtube">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="video-data">
+                                <h6>Steel Induction<br> furnace_Ladle <br>Pre-heating</h6>
+                                
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+                 <div class="col-md-2">
+                    <div class="sld-item">  
+                        <div class="video-item campus">
+                            <div class="video-thumb">
+                                <img src="images/multiples/2.jpg">
+                                <a href="videos/multiples/20.mp4" class="popup-youtube">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="video-data">
+                                <h6>SME Programme<br>in Ludhiana<br> Cluster</h6>
+                                
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                      <div class="col-md-2">
+                    <div class="sld-item">  
+                        <div class="video-item campus">
+                            <div class="video-thumb">
+                                <img src="images/multiples/3.jpg">
+                                <a href="videos/multiples/21.mp4" class="popup-youtube">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="video-data">
+                                <h6>AKE GHAR OR ROSHAN BANAYE</h6>
+                                
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+
+                <div class="col-md-2">
+                    <div class="sld-item">  
+                        <div class="video-item campus">
+                            <div class="video-thumb">
+                                <img src="images/multiples/4.jpg">
+                                <a href="videos/multiples/22.m4v" class="popup-youtube">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="video-data">
+                                <h6>ALUMINUM FINAL</h6>
+                                
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+                <div class="col-md-2">
+                    <div class="sld-item">  
+                        <div class="video-item campus">
+                            <div class="video-thumb">
+                                <img src="images/multiples/5.jpg">
+                                <a href="videos/multiples/23.mp4" class="popup-youtube">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="video-data">
+                                <h6>BEE - SME Programme</h6>
+                                
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+                <div class="col-md-2">
+                    <div class="sld-item">  
+                        <div class="video-item campus">
+                            <div class="video-thumb">
+                                <img src="images/multiples/6.jpg">
+                                <a href="videos/multiples/24.mpg" class="popup-youtube">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="video-data">
+                                <h6>BEE Animtd English Final</h6>
+                                
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+                <div class="col-md-2">
+                    <div class="sld-item">  
+                        <div class="video-item campus">
+                            <div class="video-thumb">
+                                <img src="images/multiples/7.jpg">
+                                <a href="videos/multiples/25.mp4" class="popup-youtube">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="video-data">
+                                <h6>BEE- Energy Conservation day 60_60_Hindi</h6>
+                                
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+                <div class="col-md-2">
+                    <div class="sld-item">  
+                        <div class="video-item campus">
+                            <div class="video-thumb">
+                                <img src="images/multiples/8.jpg">
+                                <a href="videos/multiples/26.mp4" class="popup-youtube">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="video-data">
+                                <h6>BEE SME Programme in Pali - Boiler</h6>
+                                
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+                <div class="col-md-2">
+                    <div class="sld-item">  
+                        <div class="video-item campus">
+                            <div class="video-thumb">
+                                <img src="images/multiples/9.jpg">
+                                <a href="videos/multiples/27.mp4" class="popup-youtube">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="video-data">
+                                <h6>BEE_GYMNASTICS NEW_SPOT</h6>
+                                
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+                <div class="col-md-2">
+                    <div class="sld-item">  
+                        <div class="video-item campus">
+                            <div class="video-thumb">
+                                <img src="images/multiples/10.jpg">
+                                <a href="videos/multiples/28.mp4" class="popup-youtube">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="video-data">
+                                <h6>BIJLI BACHAAO 35s</h6>
+                                
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-2">
+                    <div class="sld-item">  
+                        <div class="video-item campus">
+                            <div class="video-thumb">
+                                <img src="images/multiples/10.jpg">
+                                <a href="videos/multiples/29.mp4" class="popup-youtube">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="video-data">
+                                <h6>BIJLI_BACHAO_60_SEC OPT REV HIGH</h6>
+                                
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+                <div class="col-md-2">
+                    <div class="sld-item">  
+                        <div class="video-item campus">
+                            <div class="video-thumb">
+                                <img src="images/multiples/12.jpg">
+                                <a href="videos/multiples/30.mpg" class="popup-youtube">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="video-data">
+                                <h6>DELP FILM-07--08-14</h6>
+                                
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-2">
+                    <div class="sld-item">  
+                        <div class="video-item campus">
+                            <div class="video-thumb">
+                                <img src="images/multiples/13.jpg">
+                                <a href="videos/multiples/31.mpg" class="popup-youtube">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="video-data">
+                                <h6>Executive_30_sec Commercials tv spot</h6>
+                                
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+                <div class="col-md-2">
+                    <div class="sld-item">  
+                        <div class="video-item campus">
+                            <div class="video-thumb">
+                                <img src="images/multiples/14.jpg">
+                                <a href="videos/multiples/32.mp4" class="popup-youtube">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="video-data">
+                                <h6>Final-EcoNiwas-Longer Version</h6>
+                                
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-2">
+                    <div class="sld-item">  
+                        <div class="video-item campus">
+                            <div class="video-thumb">
+                                <img src="images/multiples/15.jpg">
+                                <a href="videos/multiples/33.mp4" class="popup-youtube">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="video-data">
+                                <h6>GEF - UNIDO - BEE</h6>
+                                
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+                 <div class="col-md-2">
+                    <div class="sld-item">  
+                        <div class="video-item campus">
+                            <div class="video-thumb">
+                                <img src="images/multiples/16.jpg">
+                                <a href="videos/multiples/34.mp4" class="popup-youtube">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="video-data">
+                                <h6>IRON _ STEEL FINAL</h6>
+                                
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                 <div class="col-md-2">
+                    <div class="sld-item">  
+                        <div class="video-item campus">
+                            <div class="video-thumb">
+                                <img src="images/multiples/17.jpg">
+                                <a href="videos/multiples/35.mp4" class="popup-youtube">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="video-data">
+                                <h6>MOTOR REWINDING FILM</h6>
+                                
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                 <div class="col-md-2">
+                    <div class="sld-item">  
+                        <div class="video-item campus">
+                            <div class="video-thumb">
+                                <img src="images/multiples/18.jpg">
+                                <a href="videos/multiples/36.mp4" class="popup-youtube">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="video-data">
+                                <h6>Paper _ Pulp Sector _ PAT</h6>
+                                
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                 <div class="col-md-2">
+                    <div class="sld-item">  
+                        <div class="video-item campus">
+                            <div class="video-thumb">
+                                <img src="images/multiples/19.jpg">
+                                <a href="videos/multiples/37.mp4" class="popup-youtube">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="video-data">
+                                <h6>PAT_Master_New</h6>
+                                
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                 <div class="col-md-2">
+                    <div class="sld-item">  
+                        <div class="video-item campus">
+                            <div class="video-thumb">
+                                <img src="images/multiples/20.jpg">
+                                <a href="videos/multiples/38.mp4" class="popup-youtube">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="video-data">
+                                <h6>Rotary Vacuum Dryer</h6>
+                                
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                 <div class="col-md-2">
+                    <div class="sld-item">  
+                        <div class="video-item campus">
+                            <div class="video-thumb">
+                                <img src="images/multiples/21.jpg">
+                                <a href="videos/multiples/39.m4v" class="popup-youtube">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="video-data">
+                                <h6>Sitare vo hote hen BEE AV</h6>
+                                
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+                 <div class="col-md-2">
+                    <div class="sld-item">  
+                        <div class="video-item campus">
+                            <div class="video-thumb">
+                                <img src="images/multiples/22.jpg">
+                                <a href="videos/multiples/40.mp4" class="popup-youtube">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="video-data">
+                                <h6>SME Programme in Pali Cluster - Float Trap</h6>
+                                
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+                  <div class="col-md-2">
+                    <div class="sld-item">  
+                        <div class="video-item campus">
+                            <div class="video-thumb">
+                                <img src="images/multiples/23.jpg">
+                                <a href="videos/multiples/41.VOB" class="popup-youtube">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="video-data">
+                                <h6>DG Sets</h6>
+                                
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+                  <div class="col-md-2">
+                    <div class="sld-item">  
+                        <div class="video-item campus">
+                            <div class="video-thumb">
+                                <img src="images/multiples/24.jpg">
+                                <a href="videos/multiples/42.mp4" class="popup-youtube">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="video-data">
+                                <h6>FLCTD</h6>
+                                
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                  <div class="col-md-2">
+                    <div class="sld-item">  
+                        <div class="video-item campus">
+                            <div class="video-thumb">
+                                <img src="images/multiples/25.jpg">
+                                <a href="videos/multiples/43.mp4" class="popup-youtube">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="video-data">
+                                <h6>S_L video</h6>
+                                
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                  <div class="col-md-2">
+                    <div class="sld-item">  
+                        <div class="video-item campus">
+                            <div class="video-thumb">
+                                <img src="images/multiples/26.jpg">
+                                <a href="videos/multiples/44.mp4" class="popup-youtube">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="video-data">
+                                <h6>Sumit BEE TVC</h6>
+                                
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                  <div class="col-md-2">
+                    <div class="sld-item">  
+                        <div class="video-item campus">
+                            <div class="video-thumb">
+                                <img src="images/multiples/27.jpg">
+                                <a href="videos/multiples/45.VOB" class="popup-youtube">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="video-data">
+                                <h6>Veneering</h6>
+                                
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+
+
+
+
+
+
+               </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+<section class="pb-4 pt-4">
+    <div class="container">
+      <div class="row">
+    
+
+
+                 <div class="col-md-12">
+                            <div class="title title_center text-center">
+                              <h1 style="color:#297b37;">Cluster Videos</h1> 
+                            </div>
+                      
+
+
+
+
+           <div class="tab" id="tab">
+
+  <button class="tablinks " onclick="openCity(event, 'Brass')">Brass</button>
+  <button class="tablinks" onclick="openCity(event, 'Ceramics')">Ceramics</button>
+  <button class="tablinks" onclick="openCity(event, 'Dairy')">Dairy</button>
+  <button class="tablinks" onclick="openCity(event, 'Foundry')">Foundry</button>
+  <button class="tablinks" onclick="openCity(event, 'Hand Tools')">Hand Tools</button>
+  </div>
+
+
+
+<div id="Brass" class="tabcontent" id="tabcontent">
+
+
+
+<section class="about-wrap pt-4 pb-5 bg-white">
+    <div class="container">
+      <div class="row">
+             
+                      <div class="row video-box inner-view">
+
+                 <div class="col-md-2">
+                    <div class="sld-item">  
+                        <div class="video-item campus">
+                            <div class="video-thumb">
+                                <img src="images/multiples/1.jpg">
+                                <a href="videos/Brass/1.mp4" class="popup-youtube">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="video-data">
+                                <h6>Brass_Installation of Microwave heaters & dryers<br> (Repalced film)</h6>
+                                
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+
+                <div class="col-md-2">
+                    <div class="sld-item">  
+                        <div class="video-item campus">
+                            <div class="video-thumb">
+                                <img src="images/multiples/1.jpg">
+                                <a href="videos/Brass/2.mp4" class="popup-youtube">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="video-data">
+                                <h6>Brass_Replacement of coal based LPG fired melting furnace with IGBT based Induction furnace</h6>
+                                
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+</div></div></div></section></div>
+
+
+<div id="Ceramics" class="tabcontent" id="tabcontent">
+
+
+
+<section class="about-wrap pt-4 pb-5 bg-white">
+    <div class="container">
+      <div class="row">
+             
+                      <div class="row video-box inner-view">
+
+                 <div class="col-md-2">
+                    <div class="sld-item">  
+                        <div class="video-item campus">
+                            <div class="video-thumb">
+                                <img src="images/multiples/1.jpg">
+                                <a href="videos/Ceramics/1.mp4" class="popup-youtube">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="video-data">
+                                <h6>Ceramics_Installation of low thermal mass Cars in tunnel for sanitary ware</h6>
+                                
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+
+                <div class="col-md-2">
+                    <div class="sld-item">  
+                        <div class="video-item campus">
+                            <div class="video-thumb">
+                                <img src="images/multiples/1.jpg">
+                                <a href="videos/Ceramics/2.mp4" class="popup-youtube">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="video-data">
+                                <h6>Ceramics_Use of High Alumina in Ball Mills & Blungers</h6>
+                                
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+           
+
+                         
+
+
+
+
+
+
+
+</div></div></div></section></div>
+
+
+
+<div id="Dairy" class="tabcontent" id="tabcontent">
+
+
+
+<section class="about-wrap pt-4 pb-5 bg-white">
+    <div class="container">
+      <div class="row">
+             
+                      <div class="row video-box inner-view">
+
+                 <div class="col-md-2">
+                    <div class="sld-item">  
+                        <div class="video-item campus">
+                            <div class="video-thumb">
+                                <img src="images/multiples/1.jpg">
+                                <a href="videos/Dairy/1.mp4" class="popup-youtube">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="video-data">
+                                <h6>Dairy_Installation of solar thermal for steam generation</h6>
+                                
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+
+                <div class="col-md-2">
+                    <div class="sld-item">  
+                        <div class="video-item campus">
+                            <div class="video-thumb">
+                                <img src="images/multiples/1.jpg">
+                                <a href="videos/Dairy/2.mp4" class="popup-youtube">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="video-data">
+                                <h6>Dairy_Installation of waste heat recovery from<br> chiller</h6>
+                                
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+               <div class="col-md-2">
+                    <div class="sld-item">  
+                        <div class="video-item campus">
+                            <div class="video-thumb">
+                                <img src="images/multiples/1.jpg">
+                                <a href="videos/Dairy/3.m4v" class="popup-youtube">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="video-data">
+                                <h6>Dairy_Installation of waste heat recovery from compressor(Replaced)</h6>
+                                
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+</div></div></div></section></div>
+
+
+<div id="Foundry" class="tabcontent" id="tabcontent">
+
+
+
+<section class="about-wrap pt-4 pb-5 bg-white">
+    <div class="container">
+      <div class="row">
+             
+                      <div class="row video-box inner-view">
+
+                 <div class="col-md-2">
+                    <div class="sld-item">  
+                        <div class="video-item campus">
+                            <div class="video-thumb">
+                                <img src="images/multiples/1.jpg">
+                                <a href="videos/Foundry/1.mp4" class="popup-youtube">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="video-data">
+                                <h6>Foundry_Installation of energy efficient shell baking re-heating furnace</h6>
+                                
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+
+                <div class="col-md-2">
+                    <div class="sld-item">  
+                        <div class="video-item campus">
+                            <div class="video-thumb">
+                                <img src="images/multiples/1.jpg">
+                                <a href="videos/Foundry/2.mp4" class="popup-youtube">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="video-data">
+                                <h6>Foundry_Installation of IGBT based induction furnace (12 pulse)</h6>
+                                
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+
+                 <div class="col-md-2">
+                    <div class="sld-item">  
+                        <div class="video-item campus">
+                            <div class="video-thumb">
+                                <img src="images/multiples/1.jpg">
+                                <a href="videos/Foundry/3.mp4" class="popup-youtube">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="video-data">
+                                <h6>Foundry_Installation of lost foam<br> casting</h6>
+                                
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+                 <div class="col-md-2">
+                    <div class="sld-item">  
+                        <div class="video-item campus">
+                            <div class="video-thumb">
+                                <img src="images/multiples/1.jpg">
+                                <a href="videos/Foundry/4.mp4" class="popup-youtube">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="video-data">
+                                <h6>Foundry_Scrap processing for input to induction furnace</h6>
+                                
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+
+                 <div class="col-md-2">
+                    <div class="sld-item">  
+                        <div class="video-item campus">
+                            <div class="video-thumb">
+                                <img src="images/multiples/1.jpg">
+                                <a href="videos/Foundry/5.mp4" class="popup-youtube">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="video-data">
+                                <h6>Foundry - Steel Induction Furnace - Ladle Pre heating</h6>
+                                
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+</div></div></div></section></div>
+
+
+
+
+
+</div>
+
+</div></div></div></section>
+
+    <!--Newsletter Start-->
+
+    <div class="newsletter-wrap wow fadeInUp">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="title">
+                        <h3 class="text-white"><small>Stay in Loop</small><br> Join our Newsletter</h3>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="news-info">
+                        <form>
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="search" placeholder="Your Email Address">
+                                <div class="form_icon"><i class="fas fa-envelope"></i></div>
+                            </div>
+                            <input type="submit" class="sigup" value="Subscribe">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Newsletter End-->
+
+
+
+    <?php include('include/footer.php'); ?>
+   <script src="js/all.js"></script>
+    <script src="js/script.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5-ed0P7eZL44UHUnOF_WB-BN3XaUk4zk&callback=initMap&sensor=false&region=IN"></script>
+       
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>

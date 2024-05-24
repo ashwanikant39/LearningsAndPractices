@@ -1,0 +1,61 @@
+﻿@model BEEKP.Models.KnowledgeBankModel
+@{
+    ViewBag.Title = "Notifications";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@*-------------Datatable CSS------------------*@
+<link href="~/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css" rel="stylesheet" />
+
+@*-------------Datatable JS------------------*@
+
+<script src="~/Scripts/jquery-3.6.0.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/assets/global/plugins/datatables/media/js/jquery.dataTables.js"></script>
+<script src="~/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js"></script>
+
+
+
+<div class="container pt-10">
+    <!-- BEGIN PAGE CONTENT INNER -->
+    <div class="row">
+        <div class="col-md-8 min-height-400">
+            <div class="portlet light">
+
+                <div id="divmanufacturers" class="datatable-field-height">
+                    <h4 class="text-theme-colored">Notifications</h4>
+                    <hr />
+                    <ul class="list-group list-padding">
+                        @for (Int32 j = 0; j < Model.ListKnowledgeBank.Count; j++)
+                        {
+                            if (j % 2 == 0)
+                            {
+                                <li class="list-group-item odd-bg-color">
+                                    @if (Model.ListKnowledgeBank[j].file_name != null && Model.ListKnowledgeBank[j].file_name != "")
+                                    {
+                                        <span class="badge badge-custom"><a href="~/documents/Knowledge_Bank/@Model.ListKnowledgeBank[j].file_name" target="_blank">Download</a><i class="fa fa-download"></i> </span>
+                                    }
+                                    @Model.ListKnowledgeBank[j].knowledge_bank_name
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="list-group-item ">
+                                    @if (Model.ListKnowledgeBank[j].file_name != null && Model.ListKnowledgeBank[j].file_name != "")
+                                    {
+                                        <span class="badge badge-custom"><a href="~/documents/Knowledge_Bank/@Model.ListKnowledgeBank[j].file_name" target="_blank">Download</a><i class="fa fa-download"></i> </span>
+                                    }
+                                    @Model.ListKnowledgeBank[j].knowledge_bank_name
+                                </li>
+                            }
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END PAGE CONTENT INNER -->
+
+</div>
+
+
+

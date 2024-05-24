@@ -1,0 +1,231 @@
+﻿@model BEEKP.Models.HomeViewModel
+<div class="about-wrap" id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="aboutImg"><img src="~/images/aboutImg.png" alt=""></div>
+            </div>
+            <div class="col-lg-6">
+                <div class="about_box">
+                    <div class="title">
+                        <p>About</p>
+                        <h1>Sidhiee<span> </span></h1>
+                    </div>
+                    <p class="text-justify">The "SIDHIEE" (Simplified Digital Hands-on Information on Energy Efficiency in MSMEs) is developed as part of the Knowledge Management and Sharing initiative of the BEE's MSME Programme. It hosts a wealth of information generated under the program and intend to share it with energy efficiency stakeholders working in this domain. The portal contains information on energy efficient technologies, best industrial practices and success stories. There are dedicated sections "Digital Library" which provide contacts of technology suppliers, energy efficiency financing schemes, list of energy professionals trained under the project that one may contact and get relevant solutions.</p>
+                    <p class="text-justify">The platform also provides an opportunity to have a meaningful dialogue with the stakeholders on issues, challenges and policy matters that may help in planning future initiatives</p>
+                    <div class="readmore"><a href="@Url.Action("AboutProject","AboutUs", null, Request.Url.Scheme)">Read More</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@*<div class="container-fluid no-left-padding no-right-padding welcome-section2 bg_snow">
+    <div class="container">
+        <div class="section-header tcp_gray">
+            <h3 class="tc_dark tcspan_green"><span>Initiatives </span> for MSMEs</h3>
+            <p class="text-normal">Implemented as part of the larger MSME energy efficiency programme of the BEE, this programme will engage in focused efforts in 5 targeted clusters to increase demand for energy efficiency products and services and mobilize a large group of "decision-ready" units in partnership with the local industrial associations, energy professionals, local service providers and leading vendors of energy efficiency equipment. These energy efficiency demand creation activities will then be linked with the lending programmes of various financial institutions in the specific cluster.</p>
+            <p class="text-normal">The programme consists of the following components:</p>
+        </div>
+        <div class="welcome-content">
+            <div class="welcome-bg border-0">
+                <i><img src="~/images/welcome-siddhie.png" width="250px" alt="Image" /></i>
+            </div>
+            <div class="row">
+                @for (Int32 i = 0; i < Model.ListProjectComponent.Count && i < 8; i++)
+                {
+                    <div class="col-md-6 col-xs-6">
+                        <div class="welcome-box tcp_gray2">
+                            <img src="~/images/ProjectComponent/@Model.ListProjectComponent[i].project_component_image_name" />
+                            <h3 class="tc_dark tc_green_h">@Model.ListProjectComponent[i].project_component_title</h3>
+                            <div class="init-div">
+                                <h3 class="tc_dark tc_green_h">@Model.ListProjectComponent[i].project_component_title</h3>
+                                <ul class="bullet_icons din">
+                                    <li>@Html.Raw(Model.ListProjectComponent[i].project_component_full_description)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+            <div class="clearfix"></div>
+            <div class="view-more">
+                <a href="#" data-toggle="modal" data-target=".more-services" class="tc_white bg_green tc_white_h bg_black_h">View All</a>
+            </div>
+        </div>
+    </div>
+</div>*@
+<div class="container-fluid no-left-padding no-right-padding welcome-section2 bg_snow">
+    <div class="container">
+        <div class="section-header mb-3">
+            <h3 class="tc_dark tcspan_green">Initiatives for MSMEs</h3>
+            <p class="text-normal">Implemented as part of the larger MSME energy efficiency programme of the BEE, this programme will engage in focused efforts in 5 targeted clusters to increase demand for energy efficiency products and services and mobilize a large group of "decision-ready" units in partnership with the local industrial associations, energy professionals, local service providers and leading vendors of energy efficiency equipment. These energy efficiency demand creation activities will then be linked with the lending programmes of various financial institutions in the specific cluster.</p>
+            <p class="text-normal">The programme consists of the following components:</p>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-3">
+                <div class="initiative-box" style="background:url(images/program/1.1.jpg);">
+                    <div class="main-content">
+                        <img src="~/images/program/1.jpg">
+                        <h3>Hand-Holding Support</h3>
+                    </div>
+                    <div class="hover-div">
+                        <h3>Hand-Holding Support</h3>
+                        <p>The project provides end to end support to MSME industries spread in various parts of the country spanning diverse sectors interested in energy savings at their factory unit.....</p>
+                        <ul class="bullet_icons din">
+                            <li>Facilitating end to end implementation</li>
+                            <li>Detailed energy audit</li>
+                            <li>Identification of technology supplier</li>
+                            <li>Post implementation verification</li>
+                        </ul>
+                        <div class="btn-part">
+                            <a href="@Url.Action("HelpDesk", "Support", null, Request.Url.Scheme)" class="read-more">Read More <span></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="initiative-box two" style="background:url(images/program/2.1.jpg);">
+                    <div class="main-content">
+                        <img src="~/images/program/2.jpg">
+                        <h3>Financing Mechanism</h3>
+                    </div>
+                    <div class="hover-div">
+                        <h3>Financing Mechanism</h3>
+                        <p>MSMEs can reduce their energy consumption by investing in equipment, technologies or process improvements, which increase the energy efficiency of their facilities.....</p>
+                        <ul class="bullet_icons din">
+                            <li>Loan up to INR 150 Lakh</li>
+                            <li>Promoter's share required is just 10% of the total cost.</li>
+                            <li>Interest rebate up to 3.85%</li>
+                        </ul>
+                        <div class="btn-part">
+                            <a href="@Url.Action("Index", "BankFinancial", null, Request.Url.Scheme)" class="read-more">Read More <span></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="initiative-box three" style="background:url(images/program/3.1.jpg);">
+                    <div class="main-content">
+                        <img src="~/images/program/3.jpg">
+                        <h3>Technology Demonstration</h3>
+                    </div>
+                    <div class="hover-div">
+                        <h3>Technology Demonstration</h3>
+                        <p>MSME units spread across the country practice a wide range of technologies concerning the products being manufactured at their unit. Few MSME units use new products.....</p>
+                        <ul class="bullet_icons din">
+                            <li>Touch, feel, see and experience the technology</li>
+                            <li>Vendor support services</li>
+                            <li>Easy and fast replication</li>
+                        </ul>
+                        <div class="btn-part">
+                            <a href="@Url.Action("Index", "EnergyProfessional", null, Request.Url.Scheme)" class="read-more">Read More <span></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="initiative-box four" style="background:url(images/program/4.1.jpg);">
+                    <div class="main-content">
+                        <img src="~/images/program/4.jpg">
+                        <h3>KPIs and Benchmarking</h3>
+                    </div>
+                    <div class="hover-div">
+                        <h3>KPIs and Benchmarking</h3>
+                        <p>To sustain the initiatives taken under this project, a component is devised to formulate Key Performance Indicators (KPIs) and to establish benchmarks for each such energy.....</p>
+                        <ul class="bullet_icons din">
+                            <li>Compare your performance internally and with other similar industries</li>
+                            <li>Identify areas of inprovement and&nbsp;prioritize them</li>
+                        </ul>
+                        <div class="btn-part">
+                            <a href="@Url.Action("Other", "Library", null, Request.Url.Scheme)" class="read-more">Read More <span></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="initiative-box five" style="background:url(images/program/5.1.jpg);">
+                    <div class="main-content">
+                        <img src="~/images/program/5.jpg">
+                        <h3>Energy Management System</h3>
+                    </div>
+                    <div class="hover-div">
+                        <h3>Energy Management System</h3>
+                        <p>The project recognizes the importance of energy management and aims to implement and create awareness about IS/ISO 50001 standard at the identified clusters and.....</p>
+                        <ul class="bullet_icons din">
+                            <li>EnMS as per ISO 50001 Standard</li>
+                            <li>Support for design and implementation</li>
+                            <li>Technical support for third party certification audit</li>
+                        </ul>
+                        <div class="btn-part">
+                            <a href="@Url.Action("Index", "EnergyTechnologies", null, Request.Url.Scheme)" class="read-more">Read More <span></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="initiative-box six" style="background:url(images/program/6.1.jpg);">
+                    <div class="main-content">
+                        <img src="~/images/program/6.jpg">
+                        <h3>Web Tools</h3>
+                    </div>
+                    <div class="hover-div">
+                        <h3>Web Tools</h3>
+                        <p>The project has developed a web tool for the assistance of energy auditors, bankers and MSME units alike. A mobile application named SIDBI REA (Resource Efficiency.....</p>
+                        <ul class="bullet_icons din">
+                            <li>Online tool to gauge plant performance</li>
+                            <li>Generate diagnostic report</li>
+                            <li>Recommendation for plant and machinery improvement</li>
+                        </ul>
+                        <div class="btn-part">
+                            <a href="@Url.Action("Hand_tool", "Home", null, Request.Url.Scheme)" class="read-more">Read More <span></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="initiative-box seven" style="background:url(images/program/7.1.jpg);">
+                    <div class="main-content">
+                        <img src="~/images/program/7.jpg">
+                        <h3>Technology Centers</h3>
+                    </div>
+                    <div class="hover-div">
+                        <h3>Technology Centers</h3>
+                        <p>MSME units spread across the country practice a wide range of technologies with respect to products being manufactured at their unit. Some of these are new and some use....</p>
+                        <ul class="bullet_icons din">
+                            <li>In-house testing facility for LT motors</li>
+                            <li>Selection, operation and maintenance skills up-gradation</li>
+                            <li>Entrepreneurship development</li>
+                        </ul>
+                        <div class="btn-part">
+                            <a href="@Url.Action("Digital", "Library", null, Request.Url.Scheme)" class="read-more">Read More <span></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="initiative-box eight" style="background:url(images/program/8.1.jpg);">
+                    <div class="main-content">
+                        <img src="~/images/program/8.jpg">
+                        <h3>Knowledge Management & Sharing</h3>
+                    </div>
+                    <div class="hover-div">
+                        <h3>Knowledge Management & Sharing</h3>
+                        <p>The project aims to create a culture of energy and resource efficiency among the project clusters in which it is working and beyond too. This very portal is a part of the bigger....</p>
+                        <ul class="bullet_icons din">
+                            <li>Implementation case studies from clusters</li>
+                            <li>Technical exhibitions</li>
+                            <li>Training programs for employees</li>
+                            <li>Cross-cluster learning</li>
+                        </ul>
+                        <div class="btn-part">
+                            <a href="@Url.Action("Index", "KnowledgeBank", null, Request.Url.Scheme)" class="read-more">Read More <span></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>

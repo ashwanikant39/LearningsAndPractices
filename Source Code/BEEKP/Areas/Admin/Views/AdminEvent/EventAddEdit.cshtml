@@ -1,0 +1,237 @@
+﻿@model BEEKP.Areas.Admin.Models.EventViewAddEditModel
+@{
+    ViewBag.Title = "EventAddEdit";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@using (Html.BeginForm("EventAddEdit", "AdminEvent", FormMethod.Post, new { @id = "frmEventAddEdit", @name = "frmEventAddEdit", enctype = "multipart/form-data" }))
+
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => Model.Event.event_id)
+    @Html.HiddenFor(model => Model.PagePermission.file_name)
+    @Html.HiddenFor(model => Model.PagePermission.role_view)
+    @Html.HiddenFor(model => Model.PagePermission.role_add)
+    @Html.HiddenFor(model => Model.PagePermission.role_edit)
+    @Html.HiddenFor(model => Model.PagePermission.role_delete)
+
+    <div class="page-head">
+        <div class="container">
+            <!-- BEGIN PAGE TITLE -->
+            <div class="page-title">
+                <h1>@Model.PagePermission.file_name</h1>
+            </div>
+            <!-- END PAGE TITLE -->
+
+        </div>
+    </div>
+    <div class="page-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- BEGIN VALIDATION STATES-->
+                    <div class="portlet light">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <span class="caption-subject font-green-sharp bold uppercase">Manage Event</span> <small class="small-font-cuatom">Fields marked with asterisk (<span class="required-asterisk"> * </span>) are mandatory to fill in </small>
+                            </div>
+                        </div>
+                        <div class="portlet-body form">
+                            <div class="horizontal-form ">
+                                <div class="form-body form-body-small-padding">
+                                    @*<h3 class="form-section page-title mandatory-note">&nbsp <small>Fields marked with asterisk (<span class="required-asterisk"> * </span>) are mandatory to fill in </small></h3>*@
+
+                                    <!--body start-->
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group clearfix">
+                                                <label class="control-label col-md-4">Event Title<span class="required">* </span></label>
+                                                <div class="col-md-8">
+                                                    @Html.TextBoxFor(model => model.Event.event_title, new { @class = "form-control required", @id = "eventTitle", @Placeholder = "Event Title" })
+                                                    @Html.ValidationMessageFor(model => model.Event.event_title, "", new { @class = "text-denger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group clearfix">
+                                                <label class="control-label col-md-4">Event Date<span class="required">* </span></label>
+                                                <div class="col-md-8">
+                                                    <div class="input-group date" data-link-field="hfEventDate" id="divEventDate">
+                                                        @Html.TextBoxFor(model => model.Event.event_date, new { @class = "form-control required", @id = "txtevent_date", @readonly = "readonly", @Placeholder = "Event Date" })
+                                                        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                                                        @Html.HiddenFor(model => model.Event.event_date, new { @id = "hfEventDate" })
+                                                    </div>
+                                                    @Html.ValidationMessageFor(model => model.Event.event_date, "", new { @class = "text-denger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group clearfix">
+                                                <label class="control-label col-md-4">Video URL-1</label>
+                                                <div class="col-md-8">
+                                                    @Html.TextBoxFor(model => model.Event.event_video_url1, new { @class = "form-control", @id = "event_video_url1", @Placeholder = "Youtube Video URL" })
+                                                    @Html.ValidationMessageFor(model => model.Event.event_video_url1, "", new { @class = "text-denger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group clearfix">
+                                                <label class="control-label col-md-4">Video URL-2</label>
+                                                <div class="col-md-8">
+                                                    @Html.TextBoxFor(model => model.Event.event_video_url2, new { @class = "form-control", @id = "event_video_url1", @Placeholder = "Youtube Video URL" })
+                                                    @Html.ValidationMessageFor(model => model.Event.event_video_url2, "", new { @class = "text-denger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group clearfix">
+                                                <label class="control-label col-md-4">Event Location<span class="required">* </span></label>
+                                                <div class="col-md-8">
+                                                    @Html.TextBoxFor(model => model.Event.event_location, new { @class = "form-control required", @id = "eventDate", @Placeholder = "Event Location" })
+                                                    @Html.ValidationMessageFor(model => model.Event.event_location, "", new { @class = "text-denger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group clearfix">
+                                                <label class="control-label col-md-4">Active</label>
+                                                <div class="col-md-8">
+                                                    @Html.CheckBoxFor(model => model.Event.status, new { @class = "icheck", @id = "status", @Placeholder = "Status" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group clearfix">
+                                                <label class="control-label col-md-4">Short Description</label>
+                                                <div class="col-md-8">
+                                                    @Html.TextAreaFor(model => model.Event.event_short_description, new { @class = "form-control", @id = "txtevent_short_description", @Placeholder = "Event Short Description", @rows = "7", @maxlength = "50" })
+                                                    @Html.ValidationMessageFor(model => model.Event.event_short_description, "", new { @class = "text-denger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group clearfix">
+                                                <label class="control-label col-md-4">Event Image<span class="required">* </span></label>
+                                                <div class="col-md-8">
+                                                    <div class="input-group">
+                                                        <span class="input-group-btn">
+                                                            <span class="btn btn-default btn-file">
+                                                                Browse&hellip;
+                                                                @Html.TextBoxFor(m => m.Event.event_image_name, new { type = "file", Name = "file", placeholder = Html.DisplayNameFor(m => m.Event.event_image_name), @id = "fileEventImage", @class = "form-control", accept = ".png,.jpg,.jpeg,.tiff,.bmp" })
+                                                                @Html.HiddenFor(m => m.Event.event_image_name)
+                                                            </span>
+                                                        </span>
+                                                        <input type="text" class="form-control" value="@Model.Event.event_image_name" readonly>
+                                                    </div>
+                                                    <span class="help-block">Max file size 1MB (.jpg/.png/.TIF) </span>
+                                                    <span><small>Dimension[Width: 285 Height: 170]</small> </span>
+                                                    <span id="spnDocumentUpload" style="color:red" class="file-error-message"></span>
+                                                    <br />
+                                                    @if (Model.Event.event_image_name != null && Model.Event.event_image_name != "")
+                                                    {
+                                                        <img src="~/images/Event/@Model.Event.event_image_name" alt="Event Inage" id="imgEventImage" width="100px">
+                                                    }
+                                                    else
+                                                    {
+                                                        <img src="~/images/NoImage.png" alt="Event Image" id="imgEventImage" width="100px">
+                                                    }
+
+
+                                                    @*@Html.TextBox("file", "", new { type = "file", @id="fileEventImage" })*@
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group clearfix">
+                                                <label class="control-label col-md-2">Full Description<span class="required">* </span></label>
+                                                <div class="col-md-12" id="vckEditorEmailBody">
+                                                    @*@Html.Raw(HttpUtility.HtmlDecode(@Html.TextAreaFor(model => model.Event.event_full_description, new { @class = "ckeditor form-control", @id = "ckEditorEventFullDescription", @rows = 3, @cols = 22, @onPaste = "return false" }).ToHtmlString()))
+                                                        @Html.ValidationMessageFor(model => model.Event.event_full_description, "", new { @class = "text-denger" })*@
+                                                    @Html.TextAreaFor(model => model.Event.event_full_description, new { @class = "ckeditor form-control", @id = "ckEvent", @rows = 3, @cols = 22 })
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    @if (Model.Event.event_id > 0)
+                                    {
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            @Html.Partial("_EventImagePartial", Model)
+                                        </div>
+
+                                    </div>
+                                    <div class="form-actions">
+                                        <div class="row">
+                                            <div class="col-md-12">
+
+                                                <button type="button" class="btn green" onclick="location.href='@Url.Action("EventImageAddEdit", "AdminEvent", new { sEventImageID = BEEKP.Class.Encryption.Encrypt("0", true), sEventID = BEEKP.Class.Encryption.Encrypt(Convert.ToString(Model.Event.event_id), true) })'">Add Image</button>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    }
+                                </div>
+                                <!--Footer-->
+                                <div class="form-actions right">
+                                    <div class="row">
+                                        <div class="col-md-offset-3 col-md-9">
+                                            <button type="button" class="btn default" onclick="location.href='@Url.Action("Index", "AdminEvent", new { })'">Back</button>
+                                            <button type="submit" class="btn blue blue-custom" name="btnAction"><i class="fa fa-check"></i>Save</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- END FORM-->
+                        </div>
+                        <!-- END VALIDATION STATES-->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- BEGIN VALIDATION STATES-->
+
+}
+
+
+
+@Scripts.Render("~/bundles/area/js/global")
+@Scripts.Render("~/bundles/area/js/validate")
+@Scripts.Render("~/bundles/area/js/datetimepicker")
+@Scripts.Render("~/bundles/area/appjs/event_addedit")
+@Scripts.Render("~/bundles/area/js/datatables")
+
+
+<script type="text/javascript" src="~/assets/global/plugins/ckeditor/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace('ckEvent', {
+        // Define the toolbar groups as it is a more accessible solution.
+        toolbarGroups: [
+            { "name": "basicstyles", "groups": ["basicstyles"] },
+            //{ "name": "links", "groups": ["links"] },
+            { "name": "paragraph", "groups": ["list", "blocks"] },
+           // { "name": "document", "groups": ["mode"] },
+            //{ "name": "insert", "groups": ["insert"] },
+            //{ "name": "styles", "groups": ["styles"] }
+           // { "name": "about", "groups": ["about"] }
+        ],
+        // Remove the redundant buttons from toolbar groups defined above.
+        removeButtons: 'Underline,Strike,Subscript,Superscript,Anchor,Styles,Specialchar'
+    });
+</script>
+
+

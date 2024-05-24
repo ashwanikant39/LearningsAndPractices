@@ -1,0 +1,984 @@
+﻿<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="description" content="LearnPress | Education & Courses HTML Template" />
+    <meta name="keywords" content="academy, course, education, education html theme, elearning, learning," />
+    <meta name="author" content="ThemeMascot" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/all.css" rel="stylesheet">
+    <link href="~/css/chat-css.css" rel="stylesheet">
+    <script src="~/Scripts/jquery-3.6.0.min.js"></script>
+    @*<script src="~/Scripts/jquery-ui-1.13.0.min.js"></script>*@
+
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/js/all.js"></script>
+    <script src="~/js/script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body class="" id="full_bd">
+    <div class="topbar-wrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-4 col-5">
+                </div>
+                <div class="col-lg-6 col-md-8 col-7">
+                    <div class="top_right">
+                        <ul class="social_media style_none">
+                            <li><a href="https://www.facebook.com/beeindiadigital/" class="fb" target="_blank"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
+                            <li><a href="https://twitter.com/beeindiadigital" class="tw" target="_blank"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                            <li><a href="https://plus.google.com/u/0/109460193888443102625/posts" class="ln" target="_blank"><i class="fab fa-google-plus" aria-hidden="true"></i></a></li>
+                            <li><a href="https://www.youtube.com/channel/UCgZ3hVD1_fIF2rwotvXDgqQ" class="yt" target="_blank"><i class="fab fa-youtube" aria-hidden="true"></i></a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header-wrap wow fadeInUp">
+        <div class="container">
+            <div class="row pt-2 pb-1">
+                <div class="col-lg-2 col-5">
+                    <div class="header_logo"><a href="@Url.Action("Index", "Home", null, Request.Url.Scheme)"><img alt="" src="~/images/logo_circle.png" class="main-logo"></a></div>
+                </div>
+                <div class="col-lg-6 col-3 hidden-xs">
+                    <h5 class="text-center text-logo">Simplified Digital Hands-on Information on Energy Efficiency in MSMEs</h5>
+                </div>
+                <div class="col-lg-4 col-7">
+                    <div class="header_logo text-md-right">
+                        <a href="@Url.Action("Index", "Home", null, Request.Url.Scheme)"><img alt="" src="~/images/logo-bee.png"></a><a href="#"><img alt="" src="~/images/govn-logo.png" class="gov-logo"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid navbar-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-0 .d-lg-none .d-xl-block navbar navbar-expand-lg navbar-light mb-5">
+                </div>
+                <div class="col-lg-12 navbar navbar-expand-lg navbar-light d-flex">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <a class="navbar-brand" href="#"></a>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <button class="close-toggler" type="button" data-toggle="offcanvas"> <span><i class="fas fa-times-circle" aria-hidden="true"></i></span> </button>
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item active"><a href="@Url.Action("Index", "Home", null, Request.Url.Scheme)" class="nav-link">Home</a></li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">About<span class="caret"><i class="fas fa-caret-down"></i></span></a> <i class="fas fa-caret-down"></i>
+                                    <ul class="submenu">
+                                        <li><a href="@Url.Action("AboutProject","AboutUs", null, Request.Url.Scheme)">SIDHIEE</a></li>
+                                        <li><a href="@Url.Action("Ministry_of_Power","AboutUs", null, Request.Url.Scheme)">Ministry of Power</a></li>
+                                        <li><a href="@Url.Action("Bee","AboutUs", null, Request.Url.Scheme)">BEE</a></li>
+                                        <li><a href="@Url.Action("GEF","AboutUs", null, Request.Url.Scheme)">GEF</a></li>
+                                        <li><a href="@Url.Action("Dc_msme","AboutUs", null, Request.Url.Scheme)">DC MSME</a></li>
+                                        <li><a href="@Url.Action("Key_People","AboutUs", null, Request.Url.Scheme)">Key People</a></li>
+                                        <li><a href="@Url.Action("Partner_Agencies","AboutUs", null, Request.Url.Scheme)">Partner Agencies</a></li>
+                                    </ul>
+                                </li>
+                                @*<li class="nav-item"><a href="@Url.Action("TrainingManual", "Library", null, Request.Url.Scheme)" class="nav-link"> Programmes</a></li>
+                                    <li class="nav-item"><a href="@Url.Action("Index", "HomeGallery", null, Request.Url.Scheme)" class="nav-link">Project Gallery</a></li>*@
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">Programmes <span class="caret"><i class="fas fa-caret-down"></i></span></a> <i class="fas fa-caret-down"></i>
+                                    <ul class="submenu">
+                                        <li><a href="@Url.Action("BEE_SME_Programme","ProjectComponent", null, Request.Url.Scheme)">BEE-SME Programme</a></li>
+                                        <li class="nav-item">
+                                            <a href="javascript:void(0)" class="nav-link">
+                                                GEF Supported Programmes <span class="caret"><i class="fas fa-caret-right"></i></span>
+                                            </a>
+                                            <i class="fas fa-caret-right"></i>
+
+                                            <ul class="submenu_right">
+                                                <li><a href="@Url.Action("GEF_WorldBank","ProjectComponent", null, Request.Url.Scheme)">GEF-WorldBank</a></li>
+                                                <li><a href="@Url.Action("GEF_UNIDO","ProjectComponent", null, Request.Url.Scheme)">GEF-UNIDO</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="@Url.Action("Japan_India_Energy_Dialogue","ProjectComponent", null, Request.Url.Scheme)">Japan-India Energy Dialogue</a></li>
+                                        <li><a href="@Url.Action("Brick_Mission","ProjectComponent", null, Request.Url.Scheme)">Brick Mission</a></li>
+
+
+                                        @* <li><a href="@Url.Action("Indo_German_Energy_Programme","ProjectComponent", null, Request.Url.Scheme)">Indo-German Energy Programme (IGEN)</a></li>*@
+                                        <li><a href="@Url.Action("BEE_2021","ProjectComponent", null, Request.Url.Scheme)">BEE 2021-26</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">Digital Library <span class="caret"><i class="fas fa-caret-down"></i></span></a> <i class="fas fa-caret-down"></i>
+                                    <ul class="submenu">
+                                        <li class="nav-item">
+                                            <a href="/digital" class="nav-link">
+                                                SIDHIEE Digital Library<span class="caret"></i></span>
+                                            </a>
+                                            @*<ul class="submenu_right">
+                                                   <li><a href="@Url.Action("Index", "HomeGallery", null, Request.Url.Scheme)">Photos/Gallery</a></li>
+                                                    <li><a href="@Url.Action("Index", "VideoGallery")">Videos</a></li>
+                                                   <li><a href="@Url.Action("Index", "ClusterDetails", null, Request.Url.Scheme)">Cluster Profile</a></li>
+
+                                                </ul>*@
+                                        </li>
+
+
+
+
+                                        <li><a href="@Url.Action("SAMEEEKSHA", "Library", null, Request.Url.Scheme)">SAMEEEKSHA</a></li>
+                                        <li class="nav-item">
+                                            <a href="javascript:void(0)" class="nav-link">
+                                                Stakeholders <span class="caret"><i class="fas fa-caret-right"></i></span>
+                                            </a>
+                                            <ul class="submenu_right">
+                                                <li><a href="@Url.Action("Index", "MSME", null, Request.Url.Scheme)">Participating MSMEs</a></li>
+                                                <li><a href="@Url.Action("Index", "Manufacturers", null, Request.Url.Scheme)">Manufacturer and supplier</a></li>
+                                                <li><a href="@Url.Action("Index", "BankFinancial", null, Request.Url.Scheme)">Bank & Financial institutions</a></li>
+                                                <li><a href="@Url.Action("Energy_Management_Centres", "EnergyProfessional", null, Request.Url.Scheme)">Energy Management Centres</a></li>
+                                                <li><a href="@Url.Action("State_Designatted_Agencies", "EnergyProfessional", null, Request.Url.Scheme)">State Designatted Agencies (SDA)</a></li>
+                                                <li><a href="@Url.Action("Industrial_Associations", "EnergyProfessional", null, Request.Url.Scheme)">Industrial Associations</a></li>
+                                                <li><a href="@Url.Action("Index", "EnergyProfessional", null, Request.Url.Scheme)">Energy Expert</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="nav-item"><a href="@Url.Action("Index", "FAQ", null, Request.Url.Scheme)" class="nav-link">FAQs</a></li>
+
+                                        @*<li><a href="@Url.Action("ReportsAndPresentations", "Library", null, Request.Url.Scheme)">Reports</a></li>*@
+                                        @*   <li class="nav-item"><a href="@Url.Action("Digital", "Library", null, Request.Url.Scheme)" class="nav-link">Digital Library</a></li>
+
+
+                                            <li><a href="@Url.Action("Index", "ClusterDetails", null, Request.Url.Scheme)">Cluster Profile</a></li>
+                                            <li><a href="@Url.Action("Index", "FinancingScheme", null, Request.Url.Scheme)">Financing Scheme</a></li>
+                                            <li><a href="@Url.Action("Index", "VideoGallery")">Videos</a></li>
+                                            <li><a href="@Url.Action("Index", "HomeGallery", null, Request.Url.Scheme)">Photos/Gallery</a></li>*@
+
+                                    </ul>
+                                </li>
+                                @*<li class="nav-item">
+                                        <a href="#" class="nav-link">Project Details <span class="caret"><i class="fas fa-caret-down"></i></span></a> <i class="fas fa-caret-down"></i>
+                                        <ul class="submenu">
+                                            <li><a href="@Url.Action("Index", "ClusterDetails", null, Request.Url.Scheme)">Cluster Profile</a></li>
+                                            <li><a href="@Url.Action("Index", "MSME", null, Request.Url.Scheme)">Participating MSMEs</a></li>
+                                            <li><a href="@Url.Action("Index", "Manufacturers", null, Request.Url.Scheme)">Manufacturers and Suppliers</a></li>
+                                            <li><a href="@Url.Action("Index", "EnergyProfessional", null, Request.Url.Scheme)">Energy Experts</a></li>
+                                            <li><a href="@Url.Action("Index", "BankFinancial", null, Request.Url.Scheme)">Banks and Financial Institutions</a></li>
+                                            <li class="nav-item">
+                                                <a href="javascript:void(0)" class="nav-link">
+                                                    Financing Schemes <span class="caret"><i class="fas fa-caret-right"></i></span>
+                                                </a>
+                                                <i class="fas fa-caret-right"></i>
+
+                                                <ul class="submenu_right">
+                                                    <li><a href="@Url.Action("BankLoan", "FinancingScheme", null, Request.Url.Scheme)">Loan Schemes</a></li>
+                                                    <li><a href="@Url.Action("GovernmentSubsidy", "FinancingScheme", null, Request.Url.Scheme)">Subsidy Schemes</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>*@
+                                <li class="nav-item"><a href="@Url.Action("Index", "News", null, Request.Url.Scheme)" class="nav-link"> News Media</a></li>
+                                @*<li class="nav-item"><a href="@Url.Action("Digital", "Library", null, Request.Url.Scheme)" class="nav-link">Digital Library</a></li>*@
+                                @*<li class="nav-item"><a href="@Url.Action("Index", "FAQ", null, Request.Url.Scheme)" class="nav-link">FAQs</a></li>*@
+                                <li class="nav-item"><a href="@Url.Action("ContactUs", "Support", null, Request.Url.Scheme)" class="nav-link">Contact Us</a></li>
+                                <li class="nav-item"><a href="@Url.Action("Index", "Announcement", null, Request.Url.Scheme)" class="nav-link">Announcement</a></li>
+                                <li class="nav-item"><a href="@Url.Action("Index", "Calculator", null, Request.Url.Scheme)" class="nav-link">Calculator</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-content">
+        @RenderBody()
+    </div>
+    <footer class="footer bg-style wow fadeInUp">
+        <div class="container">
+            <div class="footer-upper">
+                <div class="row">
+
+                    <div class="col-lg-3 col-md-3">
+                        <div class="footer-widget quick-links">
+                            <h3 class="title">Quick links</h3>
+                            <ul>
+                                <li><a href="@Url.Action("Index", "ClusterDetails", null, Request.Url.Scheme)">Cluster Profile</a></li>
+                                <li><a href="@Url.Action("Index", "MSME", null, Request.Url.Scheme)">Participating MSMEs</a></li>
+                                <li><a href="@Url.Action("Index", "Manufacturers", null, Request.Url.Scheme)">Manufacturers and Suppliers</a></li>
+                                <li><a href="@Url.Action("Index", "EnergyProfessional", null, Request.Url.Scheme)">Energy Experts</a></li>
+                                <li><a href="@Url.Action("Index", "BankFinancial", null, Request.Url.Scheme)">Banks and Financial Institutions</a></li>
+                                <li><a href="@Url.Action("BankLoan", "FinancingScheme", null, Request.Url.Scheme)">Loan Schemes</a></li>
+                                <li><a href="@Url.Action("GovernmentSubsidy", "FinancingScheme", null, Request.Url.Scheme)">Subsidy Schemes</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-8">
+                        <div class="footer-widget quick-links">
+                            <h3 class="title">Quick Menu</h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <ul>
+                                        <li><a href="@Url.Action("Index", "Home", null, Request.Url.Scheme)">Home</a></li>
+                                        <li><a href="@Url.Action("AboutProject","AboutUs", null, Request.Url.Scheme)">About SIDHIEE</a></li>
+                                        <li><a href="@Url.Action("GEF","AboutUs", null, Request.Url.Scheme)">About the GEF</a></li>
+                                        <li><a href="@Url.Action("WorldBank","AboutUs", null, Request.Url.Scheme)">Partner Agencies</a></li>
+                                        <li><a href="@Url.Action("Digital", "Library", null, Request.Url.Scheme)">Digital Library</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul>
+                                        <li><a href="@Url.Action("Index", "FAQ", null, Request.Url.Scheme)">FAQs</a></li>
+                                        <li><a href="@Url.Action("Term_Condition", "UsefulLink", null, Request.Url.Scheme)">Terms &amp; Conditions</a></li>
+                                        <li><a href="@Url.Action("Policy", "UsefulLink", null, Request.Url.Scheme)">Privacy Policy</a></li>
+                                        <li><a href="@Url.Action("ContactUs", "Support", null, Request.Url.Scheme)">Contact Us</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4">
+                        <div class="footer-widget contact">
+                            <h3 class="title">Contact Info</h3>
+                            <ul class="footer-adress">
+                                <li class="footer_address"> <i class="fas fa-map-signs mr-2"></i> <span> <a>Government of India, Ministry of Power, 4th Floor, SEWA Bhawan, R. K.Puram, New Delhi - 110 066</a></span> </li>
+                                <li class="footer_email"> <i class="fas fa-envelope" aria-hidden="true"></i> <span>save-energy@beenet.in</span> </li>
+                                <li class="footer_phone"> <i class="fas fa-phone-alt"></i> <span><a href="tel:+91 11 26179699">+91 11 26179699</a></span> </li>
+                            </ul>
+                            <div class="social-icons footer_icon">
+                                <ul>
+                                    <li><a href="https://www.facebook.com/beeindiadigital/"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
+                                    <li><a href="https://twitter.com/beeindiadigital"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                                    <li><a href="https://plus.google.com/u/0/109460193888443102625/posts"><i class="fab fa-google-plus" aria-hidden="true"></i></a></li>
+                                    <li><a href="https://www.youtube.com/channel/UCgZ3hVD1_fIF2rwotvXDgqQ"><i class="fab fa-youtube" aria-hidden="true"></i></a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">Copyright © 2021 Financing Energy Efficiency at MSMEs. All rights reserved</div>
+    </footer>
+    <a href="javascript:" id="back-to-top" style="display: inline;"><i class="fas fa-chevron-up"></i></a>
+
+
+
+    <script>
+        function CallPrint(full_bd) {
+            var prtContent = document.getElementById(full_bd);
+            var WinPrint = window.open('', '', 'letf=100,top=100,width=600,height=600');
+            WinPrint.document.write(prtContent.innerHTML);
+            WinPrint.document.close();
+            WinPrint.focus();
+            WinPrint.print();
+            //WinPrint.close()
+        }
+    </script>
+    <script>
+        var $container = $('.gallery-isotope');
+        // initialize isotope
+        $container.isotope({
+            // options...
+
+            itemSelector: '.gallery-item'
+        });
+
+        // filter items when filter link is clicked
+        $('.portfolio-filter a').on('click', function () {
+            var selector = $(this).data('filter');
+            $container.isotope({
+                filter: selector
+            });
+        });
+
+        /*$(".filter-button").click(function () {
+            var value = $(this).attr('data-filter');
+
+            if (value == "all") {
+                //$('.filter').removeClass('hidden');
+                $('.filter').show('1000');
+            }
+            else {
+                //            $('.filter[filter-item="'+value+'"]').removeClass('hidden');
+                //            $(".filter").not('.filter[filter-item="'+value+'"]').addClass('hidden');
+                $(".filter").not('.' + value).hide('3000');
+                $('.filter').filter('.' + value).show('3000');
+
+            }
+        });
+
+        if ($(".filter-button").removeClass("active")) {
+            $(this).removeClass("active");
+        }
+        $(this).addClass("active");*/
+
+
+    </script>
+
+
+    <!-- partial:index.partial.html -->
+    <!---Chat Board Start-->
+    <div class="chat-board chatbot chat new trending"></div>
+    <div class="frame-content">
+        <div class="widget-position-right sidebar-position-right onlyBubble" id="chatContainer">
+
+            <div class="chat no-clip-path chrome moveFromRight-enter-done">
+                <div class="chat-header project-online" style="color: rgb(255, 255, 255); background: linear-gradient(135deg, rgb(42, 39, 218) 0%, rgb(0, 204, 255) 100%);">
+                    <h2 class="oneline"><span>Hi there!</span></h2>
+                    <button class="material-icons exit-chat ripple tidio-1s5t5ku" id="minimize-button" type="button" aria-label="Minimize" style="color: rgb(255, 255, 255);">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" id="ic-minimize">
+                            <path d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M11.67 3.87L9.9 2.1 0 12l9.9 9.9 1.77-1.77L3.54 12z"></path>
+                        </svg>
+                        <span>Minimize</span>
+                    </button>
+                    <div class="offline-message" style="background-image: linear-gradient(135deg, rgba(42, 39, 218, 0.72) 0%, rgba(0, 204, 255, 0.72) 100%);">
+                        <span class="online"><span>We are online</span></span>
+                    </div>
+                </div>
+                <div id="conversation-group" role="log">
+                    <div id="messages" aria-live="polite" aria-atomic="false" data-testid="messagesLog">
+                        <!-- <div class="message message-operator">
+                            <span class="message-content">
+                            <p>  Please select the sector </p>
+
+                            <input     Iron & Steel</p> <p>2. Pulp & Paper </p> <p>3. Other  </p>
+                            <input type="radio"> Iron & Steel
+                            <input type="radio"> Pulp & Paper
+                            <input type="radio"> Other
+                            </span>
+                        </div>  -->
+                        <div class="message message-operator bots-quick-replies">
+                            <div class="button-wrapper" id="button-wrapper">
+                                <!-- <p>Hi</p> -->
+                            </div>
+                        </div>
+                        <div class="" id="sectorid">
+                            <div class="message-content">
+
+                                <div class="message message-operator inner_ifyes_steel">
+                                    <p>  Please select the Sector </p>
+                                    <div class="answer_div">
+                                        <div class="symptoms_selector_shi">
+                                            <div class="round">
+                                                <input type="radio" class="onclickcheckfor_yes" name="radio_medical_prob_ques1" id="assesment_checkbox_radio_prb1" onchange="valueChanged()">
+                                                <label for="assesment_checkbox_radio_prb1"></label>
+                                            </div>
+                                            <div class="div_terms_accept_text">
+                                                Iron & Steel
+                                            </div>
+                                        </div>
+
+                                        <div class="symptoms_selector_shi">
+                                            <div class="round">
+                                                <input type="radio" class="onclickcheckfor_yes" name="radio_medical_prob_ques1" id="assesment_checkbox_radio_prb2" onchange="valueChanged()">
+                                                <label for="assesment_checkbox_radio_prb2"></label>
+                                            </div>
+                                            <div class="div_terms_accept_text">
+                                                Pulp & Paper
+                                            </div>
+                                        </div>
+                                        <div class="symptoms_selector_shi">
+                                            <div class="round">
+                                                <input type="radio" class="onclickcheckfor_yes" name="radio_medical_prob_ques1" id="assesment_checkbox_radio_prb3" onchange="valueChanged()">
+                                                <label for="assesment_checkbox_radio_prb3"></label>
+                                            </div>
+                                            <div class="div_terms_accept_text">
+                                                Other
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="message message-operator inner_ifyes_div">
+                                    <div class="ques_ans_main_div">
+                                        <div class="ques_div">
+                                            <p> Please select the Sub-sector </p>
+
+                                        </div>
+                                        <div class="symptoms_selector_shi">
+                                            <div class="round">
+                                                <input type="radio" class="onclickcheckfor_sub" name="radio_medical_prob_ques2" id="assesment_checkbox_radio_prbf" onchange="valueChanged()">
+                                                <label for="assesment_checkbox_radio_prbf"></label>
+                                            </div>
+                                            <div class="div_terms_accept_text">
+                                                Foundry
+                                            </div>
+                                        </div>
+
+                                        <div class="symptoms_selector_shi">
+                                            <div class="round">
+                                                <input type="radio" class="onclickcheckfor_sub" name="radio_medical_prob_ques2" id="assesment_checkbox_radio_prbfor" onchange="valueChanged()">
+                                                <label for="assesment_checkbox_radio_prbfor"></label>
+                                            </div>
+                                            <div class="div_terms_accept_text">
+                                                Forging
+                                            </div>
+                                        </div>
+                                        <div class="symptoms_selector_shi">
+                                            <div class="round">
+                                                <input type="radio" class="onclickcheckfor_sub" name="radio_medical_prob_ques2" id="assesment_checkbox_radio_prbsteel" onchange="valueChanged()">
+                                                <label for="assesment_checkbox_radio_prbsteel"></label>
+                                            </div>
+                                            <div class="div_terms_accept_text">
+                                                Steel Re-rolling
+                                            </div>
+                                        </div>
+                                        <div class="symptoms_selector_shi">
+                                            <div class="round">
+                                                <input type="radio" class="onclickcheckfor_sub" name="radio_medical_prob_ques2" id="assesment_checkbox_radio_prbind" onchange="valueChanged()">
+                                                <label for="assesment_checkbox_radio_prbind"></label>
+                                            </div>
+                                            <div class="div_terms_accept_text">
+                                                Induction units
+                                            </div>
+                                        </div>
+                                        <div class="symptoms_selector_shi">
+                                            <div class="round">
+                                                <input type="radio" class="onclickcheckfor_sub" name="radio_medical_prob_ques2" id="assesment_checkbox_radio_prbeaf" onchange="valueChanged()">
+                                                <label for="assesment_checkbox_radio_prbeaf"></label>
+                                            </div>
+                                            <div class="div_terms_accept_text">
+                                                EAF
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="message message-operator inner_ifyes_foundry">
+                                    <div class="ques_ans_main_div">
+                                        <div class="ques_div">
+                                            <p>Please select the Type of Foundry</p>
+                                        </div>
+                                        <div class="symptoms_selector_shi">
+                                            <div class="round">
+                                                <input type="radio" class="onclickcheckfor_foun" name="radio_medical_prob_ques3" id="assesment_checkbox_radio_prbcup" onchange="valueChanged()">
+                                                <label for="assesment_checkbox_radio_prbcup"></label>
+                                            </div>
+                                            <div class="div_terms_accept_text">
+                                                Cupola
+                                            </div>
+                                        </div>
+
+                                        <div class="symptoms_selector_shi">
+                                            <div class="round">
+                                                <input type="radio" class="onclickcheckfor_foun" name="radio_medical_prob_ques3" id="assesment_checkbox_radio_prbind" onchange="valueChanged()">
+                                                <label for="assesment_checkbox_radio_prbind"></label>
+                                            </div>
+                                            <div class="div_terms_accept_text">
+                                                Induction based meting
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="message message-operator inner_ifyes_cupola">
+                                    <div class="ques_ans_main_div">
+                                        <div class="ques_div">
+                                            <p>Please select the Type of Cupola</p>
+                                        </div>
+                                        <div class="symptoms_selector_shi">
+                                            <div class="round">
+                                                <input type="radio" class="onclickcheckfor_coup" name="radio_medical_prob_ques4" id="assesment_checkbox_radio_prbola" onchange="valueChanged()">
+                                                <label for="assesment_checkbox_radio_prbola"></label>
+                                            </div>
+                                            <div class="div_terms_accept_text">
+                                                Conventional design Cupola
+                                            </div>
+                                        </div>
+
+                                        <div class="symptoms_selector_shi">
+                                            <div class="round">
+                                                <input type="radio" class="onclickcheckfor_coup" name="radio_medical_prob_ques4" id="assesment_checkbox_radio_prbdbc" onchange="valueChanged()">
+                                                <label for="assesment_checkbox_radio_prbdbc"></label>
+                                            </div>
+                                            <div class="div_terms_accept_text">
+                                                DBC
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="message whatsappQuery">
+                                    <div class="ques_ans_main_div">
+                                        <div class="ques_div">
+                                            <p>If you have any specific query please connect us on WhatsApp!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div id="conversation-scroll">
+                        <div style="top: 0px; height: 55.8952px;"></div>
+                    </div>
+                </div>
+                <div class="input-group ">
+                    <hr>
+                    <button class="whatsappme" id="whatsappme"><i class="fa fa-whatsapp" aria-hidden="true"></i><a href="https://api.whatsapp.com/send?phone=9911646073&text=" target="_blank"> Connect on Whatsapp </a></button>
+                    <div class="drag-active-wrapper footer-input-wrapper" id="textmsg">
+
+                        <textarea id="chat-input" rows="1" placeholder="Enter your message " aria-label="New message" data-testid="newMessageTextarea"></textarea>
+
+                        <button id="SentButton" class="send-icon" title="SentButton" type="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" xml:space="preserve">
+                            <path fill="#d7d7d7" d="M22,11.7V12h-0.1c-0.1,1-17.7,9.5-18.8,9.1c-1.1-0.4,2.4-6.7,3-7.5C6.8,12.9,17.1,12,17.1,12H17c0,0,0-0.2,0-0.2c0,0,0,0,0,0c0-0.4-10.2-1-10.8-1.7c-0.6-0.7-4-7.1-3-7.5C4.3,2.1,22,10.5,22,11.7z"></path>
+                        </svg>
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+    <div id="chat-button" data-testid="widgetButton" class="chat-closed mobile-size__medium">
+        <div class="buttonWave"></div>
+        <button type="button" id="button-body" data-testid="widgetButtonBody" class="chrome" tabindex="0" aria-label="Open chat widget">
+            <i class="material-icons type1 for-closed active" style="color: rgb(255, 255, 255);">
+                <svg id="ic_bubble" fill="#FFFFFF" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"></path>
+                    <path d="M0 0h24v24H0z" fill="none"></path>
+                </svg>
+            </i>
+        </button>
+
+    </div>
+
+
+    <!---Chat Board End-->
+    <!-- partial -->
+
+    <script>
+        const chatButton = document.getElementById("chat-button");
+        const chatContainer = document.getElementById("chatContainer");
+        const minimizeButton = document.getElementById("minimize-button");
+        const chatInput = document.getElementById("chat-input");
+        const chatMessages = document.getElementById("conversation-group");
+        const sendButton = document.getElementById("SentButton");
+
+        if (chatButton) {
+            chatButton.addEventListener("click", function () {
+                if (chatContainer) {
+                    chatContainer.classList.add("open");
+                    $(".frame-content").show();
+                    chatButton.classList.add("clicked");
+                }
+            });
+        }
+
+        if (minimizeButton) {
+            minimizeButton.addEventListener("click", function () {
+                if (chatContainer) {
+                    chatContainer.classList.remove("open");
+                    $(".frame-content").hide();
+                    chatButton.classList.remove("clicked");
+                }
+            });
+        }
+
+        function createMessage(message, isUser = true) {
+            // const newMessage = document.createElement('div');
+            // console.log("",newMessage);
+            console.log("message", message);
+
+            // sectorid
+
+            const sendtext = $("#button-wrapper").append(message);
+
+            if (message.length > 0) {
+                $("#sectorid").show();
+                $(".inner_ifyes_steel").show();
+                $("#textmsg").hide();
+                $("#whatsappme").show();
+
+
+            }
+            else {
+                $("#sectorid").hide();
+            }
+
+
+            // console.log("a",a);
+            // const b=newMessage.textContent = message;
+            // const chatMessages = [];
+            // msgArray = [];
+            // msgArray.push(b);
+            // console.log("tt",msgArray)
+            // console.log(msgArray.length );
+            // if(msgArray.length == 1){
+            //     // chatbotResponse();
+            //     var divmsg = $("<div class='sentText'></div>").append("Please select the sector");
+            //     // chatMessages.append("Please select the sector");
+            //     // 1. Iron & Steel 2. Pulp and Paper 3. Other
+            // // return newMessage;
+            // }
+            // else{
+            //     console.log("false")
+            // }
+            // // chatMessages.appendChild(newMessage);
+            // return newMessage;
+        }
+
+        function chatbotResponse() {
+            // console.log("hii1s")
+            const messages = ["Please select the sector 1. Iron & Steel 2. Pulp and Paper 3. Other", "Please select the Sub-sector 1. Foundry 2. Forging 3. Steel Re-rolling 4. Induction units 5. EAF"];
+            const randomIndex = Math.floor(Math.random() * messages.length);
+            console.log(randomIndex, messages.length, Math.random())
+            const message = messages[randomIndex];
+            console.log("message", message);
+            console.log(message)
+
+
+            const botMessage = createMessage(message, false);
+            // botMessage.scrollIntoView();
+        }
+
+        chatInput.addEventListener("input", function (event) {
+            if (event.target.value) {
+                sendButton.classList.add("svgsent");
+            } else {
+                sendButton.classList.remove("svgsent");
+            }
+        });
+
+        chatInput.addEventListener("keypress", function (event) {
+            if (event.keyCode === 13) {
+                const message = chatInput.value;
+                chatInput.value = "";
+                const userMessage = createMessage(message);
+                // userMessage.scrollIntoView();
+                // setTimeout(chatbotResponse, 1000);
+                sendButton.classList.add("svgsent");
+            }
+        });
+
+        if (sendButton) {
+            sendButton.addEventListener("click", function () {
+                const message = chatInput.value;
+                chatInput.value = "";
+                const userMessage = createMessage(message);
+                // userMessage.scrollIntoView();
+                // setTimeout(chatbotResponse, 1000);
+                sendButton.classList.add("svgsent");
+            });
+        }
+    </script>
+    <script>
+        function valueChanged() {
+            if (jQuery('.onclickcheckfor_yes').is(":checked")) {
+                jQuery(".inner_ifyes_div").show();
+                // jQuery(".inner_ifyes_steel").hide();
+                {
+                    if (jQuery('.onclickcheckfor_sub').is(":checked")) {
+                        jQuery(".inner_ifyes_foundry").show();
+
+                    } else {
+                        jQuery(".inner_ifyes_foundry").hide();
+                    }
+
+
+                    if (jQuery('.onclickcheckfor_foun').is(":checked")) {
+                        jQuery(".inner_ifyes_cupola").show();
+                    } else {
+                        jQuery(".inner_ifyes_cupola").hide();
+                    }
+
+
+                    if (jQuery('.onclickcheckfor_coup').is(":checked")) {
+                        jQuery(".whatsappQuery").show();
+                    }
+
+
+
+
+
+                }
+            } else {
+
+                jQuery(".inner_ifyes_div").hide();
+                // jQuery(".inner_ifyes_steel").show();
+            }
+
+
+
+        }
+        // {
+        //     if(jQuery('.onclickcheckfor_no').is(":checked"))
+        //         jQuery(".inner_ifyes_div").hide();
+
+        // }
+
+
+        {
+            if (jQuery('.onclickcheckfor_foun').is(":checked"))
+                jQuery(".inner_ifyes_cupola").show();
+            else
+                jQuery(".inner_ifyes_cupola").hide();
+        }
+
+
+    </script>
+    <script>
+
+
+        $(document).ready(function () {
+            $(".click_show_second_div").click(function () {
+                $(".metal_heateing_furnace_second_div").show();
+                $(".metal_heateing-furnace_first_div").hide();
+
+            });
+
+
+            $(".click_div-third_next_advance").click(function () {
+                $(".metal_heateing_furnace_third_div").show();
+                $(".metal_heateing_furnace_second_div").hide();
+
+            });
+
+            $(".for_fourth_div_show").click(function () {
+                $(".metal_heateing_furnace_fourth_div").show();
+                $(".metal_heateing_furnace_third_div").hide();
+
+            });
+
+            $(".show_click_fifth_div").click(function () {
+                $(".metal_heateing_furnace_fifth_div").show();
+                $(".metal_heateing_furnace_fourth_div").hide();
+
+            });
+
+            $(".click_div-six_next_advance").click(function () {
+                $(".metal_heateing_furnace_six_div").show();
+                $(".metal_heateing_furnace_fifth_div").hide();
+
+            });
+            $(".for_seven_div_show").click(function () {
+                $(".metal_heateing_furnace_seven_div").show();
+                $(".metal_heateing_furnace_six_div").hide();
+
+            });
+            $(".click_div-eight_next_advance").click(function () {
+                $(".metal_heateing-furnace_eight_div").show();
+                $(".metal_heateing_furnace_seven_div").hide();
+
+            });
+
+            $(".click_div-nine_next_advance").click(function () {
+                $(".metal_heateing_furnace_nine_div").show();
+                $(".metal_heateing-furnace_eight_div").hide();
+
+            });
+
+
+
+
+
+        });
+
+
+
+    </script>
+    <script>
+
+        $(document).ready(function () {
+            $(".click_show_second_div").click(function () {
+                $(".metal_heateing_furnace_second_div").show();
+                $(".metal_heateing-furnace_first_div").hide();
+
+            });
+
+
+            $(".click_div-third_next_advance").click(function () {
+                $(".metal_heateing_furnace_third_div").show();
+                $(".metal_heateing_furnace_second_div").hide();
+
+            });
+
+            $(".for_fourth_div_show").click(function () {
+                $(".metal_heateing_furnace_fourth_div").show();
+                $(".metal_heateing_furnace_third_div").hide();
+
+            });
+
+            $(".show_click_fifth_div").click(function () {
+                $(".metal_heateing_furnace_fifth_div").show();
+                $(".metal_heateing_furnace_fourth_div").hide();
+
+            });
+
+            $(".click_div-six_next_advance").click(function () {
+                $(".metal_heateing_furnace_six_div").show();
+                $(".metal_heateing_furnace_fifth_div").hide();
+
+            });
+            $(".for_seven_div_show").click(function () {
+                $(".metal_heateing_furnace_seven_div").show();
+                $(".metal_heateing_furnace_six_div").hide();
+
+            });
+            $(".click_div-eight_next_advance").click(function () {
+                $(".metal_heateing-furnace_eight_div").show();
+                $(".metal_heateing_furnace_seven_div").hide();
+
+            });
+
+            $(".click_div-nine_next_advance").click(function () {
+                $(".metal_heateing_furnace_nine_div").show();
+                $(".metal_heateing-furnace_eight_div").hide();
+
+            });
+
+
+
+
+
+        });
+
+
+    </script>
+    <script>
+
+        $(document).ready(function () {
+            $(".click_show_second_div").click(function () {
+                $(".metal_heateing_furnace_second_div").show();
+                $(".metal_heateing-furnace_first_div").hide();
+
+            });
+
+
+            $(".click_div-third_next_advance").click(function () {
+                $(".metal_heateing_furnace_third_div").show();
+                $(".metal_heateing_furnace_second_div").hide();
+
+            });
+
+            $(".for_fourth_div_show").click(function () {
+                $(".metal_heateing_furnace_fourth_div").show();
+                $(".metal_heateing_furnace_third_div").hide();
+
+            });
+
+            $(".show_click_fifth_div").click(function () {
+                $(".metal_heateing_furnace_fifth_div").show();
+                $(".metal_heateing_furnace_fourth_div").hide();
+
+            });
+
+            $(".click_div-six_next_advance").click(function () {
+                $(".metal_heateing_furnace_six_div").show();
+                $(".metal_heateing_furnace_fifth_div").hide();
+
+            });
+            $(".for_seven_div_show").click(function () {
+                $(".metal_heateing_furnace_seven_div").show();
+                $(".metal_heateing_furnace_six_div").hide();
+
+            });
+            $(".click_div-eight_next_advance").click(function () {
+                $(".metal_heateing-furnace_eight_div").show();
+                $(".metal_heateing_furnace_seven_div").hide();
+
+            });
+
+            $(".click_div-nine_next_advance").click(function () {
+                $(".metal_heateing_furnace_nine_div").show();
+                $(".metal_heateing-furnace_eight_div").hide();
+
+            });
+
+
+
+
+
+        });
+
+    </script>
+    <script>
+        // bebgin line chart display
+        var lineChart = document.getElementById("line-chart").getContext('2d')
+
+        // line chart options
+        var options = {
+            borderWidth: 2,
+            cubicInterpolationMode: 'monotone', // make the line curvy over zigzag
+            pointRadius: 2,
+            pointHoverRadius: 5,
+            pointHoverBackgroundColor: '#fff',
+            pointHoverBorderWidth: 4
+        }
+
+        // create linear gradients for line chart
+        var gradientOne = lineChart.createLinearGradient(0, 0, 0, lineChart.canvas.clientHeight)
+        gradientOne.addColorStop(0, 'rgba(51, 169, 247, 0.3)')
+        gradientOne.addColorStop(1, 'rgba(0, 0, 0, 0)')
+
+        var gradientTwo = lineChart.createLinearGradient(0, 0, 0, lineChart.canvas.clientHeight)
+        gradientTwo.addColorStop(0, 'rgba(195, 113, 239, 0.15)')
+        gradientTwo.addColorStop(1, 'rgba(0, 0, 0, 0)')
+
+
+        new Chart(
+            lineChart,
+            {
+                type: 'line',
+                data: {
+                    labels: ['0', '2', '4', '8', '10', '12', '14', '16', '18', '20'],
+                    datasets: [
+                        {
+                            label: 'SEC (kgoe/tonne)',
+                            data: [110, 70, 50, 52, 52, 98, 120, 100, 120, 140, 170, 210, 240, 260, 245, 265, 250, 230],
+                            ...options,
+                            borderColor: '#30475D',
+                            fill: 'start',
+                            backgroundColor: gradientTwo
+                        },
+                        {
+                            label: 'Product (kg/piece)',
+                            data: [0, 10, 0, 10, 20, 30, 40, 40, 45, 50, 75, 145, 150, 170, 200, 270],
+                            ...options,
+                            borderColor: '#2186F4',
+                            fill: 'start',
+                            backgroundColor: gradientOne
+                        }
+                    ]
+                },
+                options: {
+                    plugins: {
+                        legend: {
+                            display: false, // hide display data about the dataset
+                        },
+                        tooltip: { // modify graph tooltip
+                            backgroundColor: 'rgba(53, 27, 92, 0.8)',
+                            caretPadding: 5,
+                            boxWidth: 5,
+                            usePointStyle: 'triangle',
+                            boxPadding: 3
+                        }
+                    },
+                    scales: {
+                        x: {
+                            grid: {
+                                display: false
+                            },
+                            beginAtZero: true
+                        },
+                        y: {
+                            ticks: {
+                                callback: function (value, index, values) {
+                                    return + value
+                                }
+                            },
+                            beginAtZero: true
+                        }
+                    }
+                }
+            }
+        )
+
+    </script>
+</body>
+</html>

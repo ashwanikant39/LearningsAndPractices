@@ -1,0 +1,211 @@
+﻿@model BEEKP.Models.MSMEViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*-------------Datatable CSS------------------*@
+<link href="~/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css" rel="stylesheet" />
+
+@*-------------Datatable JS------------------*@
+
+<script src="~/Scripts/jquery-3.6.0.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/assets/global/plugins/datatables/media/js/jquery.dataTables.js"></script>
+<script src="~/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js"></script>
+
+@using (Html.BeginForm("Index", "MSME", FormMethod.Post, new { @id = "frmMSME", @name = "frmMSME" }))
+{
+    @Html.AntiForgeryToken()
+
+    <!-- BEGIN PAGE CONTENT -->
+    <div class="container pt-10">
+        <!-- BEGIN PAGE CONTENT INNER -->
+        <div class="row">
+            <div class="col-md-12">
+                <h4 class="text-theme-colored">Participating MSMEs</h4>
+                <hr />
+                <div class="row">
+                    <div class="col-md-12 mb-15">
+                        <div class="bg-gray pt-7 clearfix">
+                            <div class="col-sm-3" id="vcluster">
+                                <div class="form-group">
+                                    <label>Cluster</label>
+                                    @Html.DropDownList("Cluster", new SelectList(Model.ListCluster, "cluster_id", "cluster_name", "--Select--"), new { @class = "form-control small-height-field", @id = "ddlcluster", @tabindex = "1", @onchange = "ClusterChanged(),PopulateMSME()" })
+                                </div>
+                            </div>
+                            <div class="col-sm-3" id="vsector">
+                                <div class="form-group">
+                                    <label>Sector</label>
+                                    @Html.DropDownList("Sector", new SelectList(Model.ListSector, "sector_id", "sector_name", ""), new { @class = "form-control small-height-field", @id = "ddlsector", @tabindex = "1", @onchange = "PopulateMSME()" })
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label>&nbsp;</label><br />
+                                    <button type="button" onclick="LoadEnergyProfessional()" class="btn btn-primary">Search</button>
+                                    <input type="button" class="btn btn-default" value="Reset" onclick="window.location.href='@Url.Action("Index","MSME")'" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class="portlet light">
+                    @*<div class="portlet-title">
+                            <div class="caption">
+                                <span class="caption-subject font-green-sharp bold uppercase">MSME List</span>
+                            </div>
+                        </div>*@
+                    <div id="divMSME" class="datatable-field-height">
+                        @Html.Partial("_MSMEPartial", Model)
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END PAGE CONTENT INNER -->
+
+    </div>
+
+}
+
+@*<script src="~/js/jquery-2.2.4.min.js"></script>*@
+<script>
+    $(document).ready(function () {
+
+        TableAdvanced_MSME()
+
+    });
+
+
+    AddAntiForgeryToken = function (data) {
+        data.__RequestVerificationToken = $('#frmMSME input[name=__RequestVerificationToken]').val();
+        return data;
+    };
+
+
+    function ClusterChanged() {
+        var cluster_id = $("#ddlcluster").val();
+
+        $("#ddlsector").html("");
+        $("#divMSME").html("");
+        //$("#ddlObligatoryEntity").html("<option value='0'>-- Select --</option>");
+        //$("#ddlFinancialYear").html("<option value='0'>-- Select --</option>");
+
+        $.ajax({
+
+            url: '/MSME/GetSectorList',
+            data: AddAntiForgeryToken({ _cluster_id: cluster_id }),
+            async: false,
+            type: 'POST',
+            success: function (result) {
+
+                if (result == 'sessionout') {
+                    window.location.href = "/Account/LogOff";
+                }
+                else if (result.Data == 'error') {
+                    window.location.href = "/Error/GeneralError";
+                }
+                else {
+
+                    var markup = "";
+                    for (var x = 0; x < result.length; x++) {
+                        markup += "<option value='" + result[x].sector_id + "'>" + result[x].sector_name + "</option>";
+                    }
+
+                    $("#ddlsector").html(markup);
+                }
+            },
+            error: function (result) {
+                isSuccess = result;
+            }
+
+        }).done(function () {
+
+        });
+    }
+
+    function PopulateMSME() {
+
+        var cluster_id = $("#ddlcluster").val();
+        var sector_id = $("#ddlsector").val();
+
+        $("#divMSME").html("");
+
+
+        $.ajax({
+
+            url: '/MSME/GetMSMEListByClusterIdAndSectorId',
+            data: AddAntiForgeryToken({ _cluster_id: cluster_id, _sector_id: sector_id }),
+            async: false,
+            type: 'POST',
+            success: function (result) {
+
+                if (result.Data == 'error') {
+                    window.location.href = "/Error/GeneralError";
+                }
+                else {
+                    $("#divMSME").html(result).show();
+                    TableAdvanced_MSME();
+                    //Metronic.init();
+                }
+            },
+            error: function (result) {
+                isSuccess = result;
+            }
+
+        }).done(function () {
+        });
+
+
+
+    }
+
+    function TableAdvanced_MSME() {
+
+        if (!jQuery().dataTable) {
+            return;
+        }
+
+        var table = $('#tblMSME');
+
+        var oTable = table.dataTable({
+
+            "language": {
+                "aria": {
+                    "sortAscending": ": activate to sort column ascending",
+                    "sortDescending": ": activate to sort column descending"
+                },
+                "emptyTable": "No data available in table",
+                "info": "Showing _START_ to _END_ of _TOTAL_ entries",
+                "infoEmpty": "No entries found",
+                "infoFiltered": "(filtered1 from _MAX_ total entries)",
+                "lengthMenu": "Show _MENU_ entries",
+                "search": "Search:",
+                "zeroRecords": "No matching records found"
+            },
+
+            "columnDefs": [{
+                "orderable": false, // false = sorting not applicale
+                "targets": [3] //for the columns
+            }],
+            //"order": [
+            //    [0, 'asc'] // default column sorting
+            //],
+            "lengthMenu": [
+                [10, 25, 50, 100, -1], // value - change per page values here
+                [10, 25, 50, 100, "All"] // display- change per page values here
+            ],
+            // set the initial value
+            "pageLength": 10
+        });
+
+
+    }
+
+</script>

@@ -1,0 +1,76 @@
+﻿@model BEEKP.Areas.Admin.Models.AdminCaseStudyViewModel
+
+@if (Model.ListCaseStudy != null)
+{
+
+
+
+    <table id="tblCaseStudy" class="table table-striped table-hover table-bordered action-column-custom">
+
+        <thead>
+            <tr>
+                <th>
+                    Cluster Name
+                </th>
+                <th>
+                    CaseStudy Details
+                </th>
+                <th>
+                    Documents
+                </th>
+                <th align="center" valign="middle">
+                    Action
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @{
+
+
+                for (Int32 i = 0; i < Model.ListCaseStudy.Count; i++)
+                {
+
+
+
+                    <tr>
+                        <td>
+                            <label>@Model.ListCaseStudy[i].cluster_name</label>
+                        </td>
+                        <td>
+                            <label>@Model.ListCaseStudy[i].ee_keywords </label>
+                        </td>
+                        <td style="text-align:center">
+                            <a href="~/documents/Case_Study/@Model.ListCaseStudy[i].file_name" target="_blank">
+                                @*@Model.ListKnowledgeBankModel[i].ListKnowledgeBank[j].file_name*@
+                                <i class="fa fa-file-pdf-o" style="color:red"></i>
+                            </a>
+                        </td>
+
+                        <td align="center" valign="middle">
+                            @if (Model.PagePermission.role_edit == BEEKP.Class.Constants.PAGE_PERMISSION_YES)
+                            {
+                                <a href="@Url.Action("ManageCaseStudy", "AdminCaseStudy", new { scasestudy_id = BEEKP.Class.Encryption.Encrypt(Model.ListCaseStudy[i].casestudy_id.ToString(), true) })" title="" class="custom-edit-tooltip"><i class="fa fa-pencil"></i></a>
+
+                            }
+                            
+                            @if (Model.PagePermission.role_delete == BEEKP.Class.Constants.PAGE_PERMISSION_YES)
+                            {
+                                @Html.Raw("|");
+                                <a href="@Url.Action("DeleteCaseStudy", "AdminCaseStudy", new { scasestudy_id = BEEKP.Class.Encryption.Encrypt(Model.ListCaseStudy[i].casestudy_id.ToString(), true) })" title="" data-toggle="confirmation" data-original-title="Are you sure ?"><i class="fa fa-trash-o"></i></a>
+                            }
+                        </td>
+
+
+                    </tr>
+                }
+
+            }
+
+
+        </tbody>
+    </table>
+
+
+
+                }         

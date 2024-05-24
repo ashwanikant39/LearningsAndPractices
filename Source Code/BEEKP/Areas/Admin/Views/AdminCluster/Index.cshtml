@@ -1,0 +1,67 @@
+﻿@model BEEKP.Areas.Admin.Models.AdminClusterViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+    @Html.HiddenFor(model => Model.PagePermission.role_view)
+    @Html.HiddenFor(model => Model.PagePermission.role_add)
+    @Html.HiddenFor(model => Model.PagePermission.role_edit)
+    @Html.HiddenFor(model => Model.PagePermission.role_delete)
+
+
+    <div class="page-head">
+        <div class="container">
+            <!-- BEGIN PAGE TITLE -->
+            <div class="page-title">
+                <h1>View Cluster</h1>
+                @*<h1>@Model.PagePermission.file_name</h1>*@
+            </div>
+            <!-- END PAGE TITLE -->
+
+        </div>
+    </div>
+    <!-- END PAGE HEAD -->
+    <!-- BEGIN PAGE CONTENT -->
+    <div class="page-content">
+        <div class="container">
+            <!-- BEGIN PAGE CONTENT INNER -->
+            <div class="row">
+                <div class="col-md-12">
+
+                    <div class="portlet light">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <span class="caption-subject font-green-sharp bold uppercase">List Cluster</span>
+                            </div>
+                        </div>
+                        <div class="portlet-body">
+                            @Html.Partial("_Cluster", Model)
+                        </div>
+
+
+                        <div class="form-actions">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    @*@if (Model.PagePermission.role_add == BEEKP.Class.Constants.PAGE_PERMISSION_YES){}*@
+
+                                    <button type="button" class="btn green" onclick="location.href='@Url.Action("ClusterAddEdit", "AdminCluster")'">Add</button>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- END PAGE CONTENT INNER -->
+
+        </div>
+    </div>
+
+@Scripts.Render("~/bundles/area/js/global")
+@Scripts.Render("~/bundles/area/js/datatables")
+@Scripts.Render("~/bundles/area/appjs/news_index")

@@ -1,0 +1,49 @@
+﻿@model BEEKP.Areas.Admin.Models.NewsLetterViewModel
+  
+@if (Model.ListNewsLetterMail != null)
+{
+
+    <table id="tblListNewsletter" class="table table-striped table-hover table-bordered">
+
+        <thead>
+            <tr>
+                <th>
+                    Subject
+                </th>
+                <th>
+                    Sent On
+                </th>
+                <th align="center" valign="middle">
+                    View
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @for (Int32 i = 0; i < Model.ListNewsLetterMail.Count; i++)
+                {
+                <tr>
+                    <td>
+                        <label>@Model.ListNewsLetterMail[i].subject</label>
+                    </td>
+
+                    <td>
+                        <label>@Model.ListNewsLetterMail[i].sent_on </label>
+                    </td>
+                    <td align="center" valign="middle">
+                      
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+}

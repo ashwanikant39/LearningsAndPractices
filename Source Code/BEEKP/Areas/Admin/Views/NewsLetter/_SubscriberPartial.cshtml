@@ -1,0 +1,17 @@
+﻿@model BEEKP.Areas.Admin.Models.NewsletterManageModel
+
+@if (Model.ListAdminSubscription != null)
+{
+    <div class="form-group">
+            <div class="checkbox-list">
+
+                @for (Int32 i = 0; i < Model.ListAdminSubscription.Count; i++)
+                {
+                    <label class="checkbox-inline">
+                        @Html.CheckBoxFor(model => Model.ListAdminSubscription[i].is_checked, new { @class = "icheck", @id = "status", @Placeholder = "Status" })  @Model.ListAdminSubscription[i].email_id
+                        @Html.HiddenFor(model => Model.ListAdminSubscription[i].email_id)
+                    </label>
+                }
+            </div>
+    </div>
+}

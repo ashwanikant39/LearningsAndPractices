@@ -102,6 +102,7 @@ string add(string a, string b)
 
 int main()
 {
+    while(true){
     int choice, choice1, choice3, length, fromBase, toBase, baseRange = true;
     string number;
     int underBase = true;
@@ -556,7 +557,7 @@ int main()
             break;
         default:
             cout << "Wrong choice**";
-        }
+        }  
 
         break;
 
@@ -564,6 +565,6 @@ int main()
         cout << "You entered wrong choice**";
         break;
     }
-
+    }
     return 0;
 }

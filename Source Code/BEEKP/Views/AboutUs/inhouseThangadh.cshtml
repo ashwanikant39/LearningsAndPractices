@@ -1,0 +1,770 @@
+﻿
+@{
+    ViewBag.Title = "inhouseThangadh";
+    Layout = "~/Views/Shared/_LayoutGef.cshtml";
+}
+<link rel="stylesheet" href="~/css/bootstrap.min.css">
+<link href="~/css/all.css" rel="stylesheet">
+<link rel="stylesheet" href="~/css/elements.css">
+<link rel="stylesheet" href="~/webfonts/fonts/flaticon.css">
+<link rel="shortcut icon" href="~/images/favicon.png" type="image/x-icon">
+<link rel="icon" href="~/images/favicon.png" type="image/x-icon">
+<style>
+         .tag_point {
+         margin-top: 40px;
+         box-shadow: 0px 0px 10px #8080805c;
+         border-radius: 5px;
+         padding: 10px 30px;
+         }
+         /* Style the tab */
+         .tab {
+         overflow: hidden;
+         border: 1px solid #19a6e0;
+         background-color: #edfaff;
+         }
+         /* Style the buttons inside the tab */
+         .tab button {
+         background-color: inherit;
+         float: left;
+         border: none;
+         outline: none;
+         cursor: pointer;
+         padding: 10px 8px;
+         transition: 0.3s;
+         font-size: 15px;
+         }
+         /* Change background color of buttons on hover */
+         .tab button:hover {
+         background-color: #78aee3;
+         color: white;
+         }
+         /* Create an active/current tablink class */
+         .tab button.active {
+         background-color: #009cdc;
+         color: white;
+         }
+         /* Style the tab content */
+         .tabcontent {
+         display: none;
+         padding: 6px 12px;
+         border: 1px solid #ccc;
+         border-top: none;
+         margin-bottom: 50px;
+         }
+         .tabcontent {
+         animation: fadeEffect 3s;
+         }
+        
+         .center {
+         display: block;
+         margin-left: auto;
+         margin-right: auto;
+         width: 60%;
+         }
+         .report-container .report-thumb a {
+         background: #4990e1;
+         display: block;
+         position: relative;
+         padding: 4px 10px;
+         color: #fff;
+         border-radius: 0;
+         font-size: .9rem;
+         text-decoration: none;
+         text-align: center;
+         margin-top:20px;
+         }
+         .rs-carousel.nav-style2 .owl-nav .owl-prev, .rs-carousel.nav-style2 .owl-nav .owl-next {
+         display: none;
+         }
+         .tiles-wrap.small-wrap .btn-part .read-more {
+         margin-bottom: -23px;
+         margin-left: -15px;
+         width: 100%;
+         text-align: center;
+         }
+</style>
+<style type="text/css">
+    .sector-box.doc-slider > div {
+        margin: 0px;
+        width: auto;
+        position: relative;
+    }
+
+    .sector-box > div .tiles-wrap:before {
+        background: linear-gradient(45deg, rgb(73 216 223 / 46%), rgb(130 135 193 / 86%));
+    }
+
+    .sector-box.doc-slider .tiles-wrap {
+        min-height: 386px;
+        min-width: 100%;
+        min-width: 100%;
+        max-height: 100%;
+        border-radius: 0;
+    }
+
+        .sector-box.doc-slider .tiles-wrap > .content-part.small-tab h4.title a, .sector-box.doc-slider .tiles-wrap > .content-part.small-tab h4.title {
+            font-size: 18px;
+            text-align: center;
+            margin-top: 33px;
+            margin-bottom: 37px;
+        }
+
+    .sector-box.doc-slider .content-part .icon-wrap, .sector-box .icon-wrap {
+        display: block;
+        width: 112px;
+        height: 112px;
+        padding: 0px;
+        border-radius: 50%;
+        overflow: hidden;
+        background: #fff;
+        border: 4px solid #e5e5e5;
+        position: relative;
+        top: 0;
+        margin: 0 auto;
+        z-index: 1;
+        text-align: center;
+        left: 0;
+    }
+
+    .sector-box.doc-slider .tiles-wrap.small-wrap .tile-bg .project-hover-div .content-part {
+        padding: 20px;
+        padding-top: 30px;
+        background: rgb(73 190 209 / 32%);
+        height: 100%;
+        width: 100%;
+        top: 0;
+        margin: 0;
+        position: absolute;
+    }
+
+    .sector-box.doc-slider .tiles-wrap .content-part.small-tab h4.title, .sector-box.doc-slider .tiles-wrap .content-part.small-tab h4.title a {
+        text-align: center;
+    }
+
+    .sector-box.doc-slider .tiles-wrap .content-part.small-tab h4.title {
+        margin-top: 20px;
+    }
+
+    .sector-box.doc-slider .tiles-wrap .content-part.small-tab .icon-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+        .sector-box.doc-slider .tiles-wrap .content-part.small-tab .icon-wrap i {
+            font-size: 50px;
+            color: #e71006;
+        }
+
+    .sector-box.doc-slider.rs-carousel.nav-style2 .owl-nav {
+        display: block;
+        position: absolute;
+        top: -95px;
+    }
+    /*photo slider*/
+    body.gef4 .owl-carousel.owl-loaded {
+        display: block;
+        margin-top: 0px;
+    }
+
+    .video-box.inner-view .video-thumb a {
+        background: rgba(0,0,0,0);
+    }
+
+    .video-box .video-thumb a {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+    }
+
+        .video-box .video-thumb a i {
+            width: 60px;
+            height: 60px;
+            background: #ed303b;
+            color: #fff;
+            padding: 4px;
+            border-radius: 50%;
+            font-size: 18px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transform: scale(1);
+            transition: all .3s ease-in-out;
+        }
+
+    .video-data {
+        display: flex;
+        flex-direction: column;
+        min-height: 38px;
+        justify-content: center;
+        background: #297e46eb;
+        padding: 8px 10px;
+        font-color: white;
+        font-weight: 600;
+        color: white;
+    }
+
+    .video-slider-carousel .owl-nav {
+        display: flex;
+        justify-content: flex-end;
+        position: absolute;
+        top: -25px;
+        right: 0;
+    }
+
+    .video-box {
+        border: 1px solid #4990e1;
+        padding: 15px;
+        margin-bottom: 20px;
+        border-radius: 7px;
+        background: #fff;
+        min-height: 330px;
+    }
+
+    .sld-item .readmore a {
+        font-size: 11px;
+        color: #fff;
+        padding: 5px 19px;
+        border-radius: 61px;
+        float: right;
+        margin-top: 20px;
+    }
+</style>
+
+
+<body class="gef4">
+    <?php include( 'include/header1.php'); ?>
+    <section class="breadcrumb-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="inner-content clearfix">
+                        <div class="title_breadcrumb float-left">
+                            <h1>In- House Training programs</h1>
+                        </div>
+                        <div class="breadcrumb-menu float-right">
+                            <ul class="clearfix">
+                                <li><a href="/GEF">GEF4</a></li>
+                                <li class="active">Thangadh Ceramic Cluster</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="pb-4 pt-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pb-4">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-12">
+
+                    <div class="rs-carousel nav-style2 owl-carousel mt-0 sector-box doc-slider" data-rewind="true" data-loop="false" data-items="5" data-margin="15" data-autoplay="true" data-hoverpause="true" data-autoplay-timeout="5000" data-smart-speed="800" data-dots="true" data-nav="false" data-nav-speed="false" data-center-mode="false" data-mobile-device="1" data-mobile-device-nav="false" data-mobile-device-dots="false" data-ipad-device="1" data-ipad-device-nav="false" data-ipad-device-dots="false" data-ipad-device2="1" data-ipad-device-nav2="true" data-ipad-device-dots2="false" data-md-device="3" data-md-device-nav="false" data-md-device-dots="false">
+
+                        <div class="ct-box">
+                            <div class="tiles-wrap small-wrap">
+                                <div class="tile-bg">
+                                    <div class="project-hover-div">
+                                        <div class="content-part small-tab">
+                                            <div class="icon-wrap">
+                                                <i class="fa fa-file-powerpoint"></i>
+                                            </div>
+                                            <h4 class="title project-flag" data-project="disha">
+                                                <a href="pdf/inhouse-thangadh/1.pdf">Thangadh Ceramics Cluster  Attendance & Registration</a>
+                                            </h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="content-part small-tab">
+                                    <img src="images/thangadh_ceramic_cluster/programme_material/7.PNG">
+                                </div>
+                                <div class="btn-part"><a href="pdf/inhouse-thangadh/1.pdf" class="read-more">Download File <span></span></a></div>
+                            </div>
+                        </div>
+
+                        <div class="ct-box">
+                            <div class="tiles-wrap small-wrap">
+                                <div class="tile-bg">
+                                    <div class="project-hover-div">
+                                        <div class="content-part small-tab">
+                                            <div class="icon-wrap">
+                                                <i class="fa fa-file-pdf"></i>
+                                            </div>
+                                            <h4 class="title project-flag" data-project="disha">
+                                                <a href="pdf/inhouse-thangadh/2.pdf">Thangadh Ceramics Cluster Feedback form</a>
+                                            </h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="content-part small-tab">
+                                    <img src="images/thangadh_ceramic_cluster/programme_material/8.PNG">
+                                </div>
+                                <div class="btn-part"> <a href="pdf/inhouse-thangadh/2.pdf" class="read-more">Download File <span></span></a></div>
+                            </div>
+                        </div>
+
+
+                        <div class="ct-box">
+                            <div class="tiles-wrap small-wrap">
+                                <div class="tile-bg">
+                                    <div class="project-hover-div">
+                                        <div class="content-part small-tab">
+                                            <div class="icon-wrap">
+                                                <i class="fa fa-file-powerpoint"></i>
+                                            </div>
+                                            <h4 class="title project-flag" data-project="disha">
+                                                <a href="pdf/inhouse-thangadh/1.docx">TRP PRG Schedule</a>
+                                            </h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="content-part small-tab">
+                                    <img src="images/thangadh_ceramic_cluster/programme_material/9.PNG">
+                                </div>
+                                <div class="btn-part"> <a href="pdf/inhouse-thangadh/3.pdf" class="read-more">Download File <span></span></a></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </section>
+
+    <section class="pt-4 pb-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="title title_center text-center">
+                        <h1 style="color:#297b37;">npc ceramics Programme Material</h1>
+                    </div>
+                    <div class="tab" id="tab">
+                        <button class="tablinks active" onclick="openCity(event, 'npc_training')">NPC Training</button>
+                        <button class="tablinks" onclick="openCity(event, 'day1_session1')">Day 1, Session_1</button>
+                        <button class="tablinks" onclick="openCity(event, 'day1_session2')">Day 1, Session_2</button>
+                    </div>
+                    <div id="npc_training" class="tabcontent" id="tabcontent" style="display: block!important;">
+                        <section class="pb-4">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="rs-carousel nav-style2 owl-carousel mt-0 sector-box doc-slider" data-rewind="true" data-loop="false" data-items="5" data-margin="15" data-autoplay="true" data-hoverpause="true" data-autoplay-timeout="5000" data-smart-speed="800" data-dots="true" data-nav="false" data-nav-speed="false" data-center-mode="false" data-mobile-device="1" data-mobile-device-nav="false" data-mobile-device-dots="false" data-ipad-device="1" data-ipad-device-nav="false" data-ipad-device-dots="false" data-ipad-device2="1" data-ipad-device-nav2="true" data-ipad-device-dots2="false" data-md-device="4" data-md-device-nav="false" data-md-device-dots="false">
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-powerpoint"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="ppt\inhouse-thangadh\NPC Training/1.ppt">01 ISSOJET PROFILE</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/thangadh_ceramic_cluster/npc_training/1.PNG">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="ppt\inhouse-thangadh\NPC Training/1.ppt" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-powerpoint"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="ppt\inhouse-thangadh\NPC Training/2.ppt">02 ISSOJET PRODUCT LIST 2018 R1</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/thangadh_ceramic_cluster/npc_training/2.PNG">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="ppt\inhouse-thangadh\NPC Training/2.ppt" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-powerpoint"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="ppt\inhouse-thangadh\NPC Training/3.ppt">03 Game</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/thangadh_ceramic_cluster/npc_training/3.PNG">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="ppt\inhouse-thangadh\NPC Training/3.ppt" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-powerpoint"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="ppt\inhouse-thangadh\NPC Training/4.ppt">04 Energy use in Ceramic Manufacturing Process</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/thangadh_ceramic_cluster/npc_training/4.PNG">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="ppt\inhouse-thangadh\NPC Training/4.ppt" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-powerpoint"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="ppt\inhouse-thangadh\NPC Training/5.ppt">05 Energy Efficiency in Ceramic Tunnel Kiln</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/thangadh_ceramic_cluster/npc_training/5.PNG">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="ppt\inhouse-thangadh\NPC Training/5.ppt" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-powerpoint"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="ppt\inhouse-thangadh\NPC Training/6.pptx">Fans Ceramics</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/thangadh_ceramic_cluster/programme_material/1.PNG">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="ppt\inhouse-thangadh\NPC Training/6.pptx" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-powerpoint"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="ppt\inhouse-thangadh\NPC Training/7.ppt">Compressor Presentation - Ceramics</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/thangadh_ceramic_cluster/programme_material/2.PNG">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="ppt\inhouse-thangadh\NPC Training/7.ppt" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-powerpoint"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="ppt\inhouse-thangadh\NPC Training/8.ppt">Lighting Lab</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/thangadh_ceramic_cluster/programme_material/3.PNG">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="ppt\inhouse-thangadh\NPC Training/8.ppt" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-powerpoint"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="ppt\inhouse-thangadh\NPC Training/9.ppt">Pump CETEE</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/thangadh_ceramic_cluster/programme_material/4.PNG">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="ppt\inhouse-thangadh\NPC Training/9.ppt" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-powerpoint"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="ppt\inhouse-thangadh\NPC Training/10.pptx">pumping system</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/thangadh_ceramic_cluster/programme_material/5.PNG">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="ppt\inhouse-thangadh\NPC Training/10.pptx" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-powerpoint"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="ppt\inhouse-thangadh\NPC Training/11.pptx">SOLAR PV</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/thangadh_ceramic_cluster/programme_material/6.PNG">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="ppt\inhouse-thangadh\NPC Training/11.pptx" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <div id="day1_session1" class="tabcontent" id="tabcontent">
+                        <section class="pb-4">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="rs-carousel nav-style2 owl-carousel mt-0 sector-box doc-slider" data-rewind="true" data-loop="false" data-items="5" data-margin="15" data-autoplay="true" data-hoverpause="true" data-autoplay-timeout="5000" data-smart-speed="800" data-dots="true" data-nav="false" data-nav-speed="false" data-center-mode="false" data-mobile-device="1" data-mobile-device-nav="false" data-mobile-device-dots="false" data-ipad-device="1" data-ipad-device-nav="false" data-ipad-device-dots="false" data-ipad-device2="1" data-ipad-device-nav2="true" data-ipad-device-dots2="false" data-md-device="4" data-md-device-nav="false" data-md-device-dots="false">
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-word"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="ppt\inhouse-thangadh\Day_1 Session_1/1.ppt">Ceramics ppt</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/thangadh_ceramic_cluster/day_1_session_1/1.PNG">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="ppt\inhouse-thangadh\Day_1 Session_1/1.ppt" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+
+                    <div id="day1_session2" class="tabcontent" id="tabcontent">
+                        <section class="pb-4">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="rs-carousel nav-style2 owl-carousel mt-0 sector-box doc-slider" data-rewind="true" data-loop="false" data-items="5" data-margin="15" data-autoplay="true" data-hoverpause="true" data-autoplay-timeout="5000" data-smart-speed="800" data-dots="true" data-nav="false" data-nav-speed="false" data-center-mode="false" data-mobile-device="1" data-mobile-device-nav="false" data-mobile-device-dots="false" data-ipad-device="1" data-ipad-device-nav="false" data-ipad-device-dots="false" data-ipad-device2="1" data-ipad-device-nav2="true" data-ipad-device-dots2="false" data-md-device="4" data-md-device-nav="false" data-md-device-dots="false">
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-word"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="doc/inhouse-thangadh/2.doc">Ceramic Industry LTM Merits</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/thangadh_ceramic_cluster/day_1_session_2/1.PNG">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="doc/inhouse-thangadh/2.doc" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-word"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="ppt\inhouse-thangadh\Day_1 Session_2/1.ppt">NPC_LLOYD2018</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/thangadh_ceramic_cluster/day_1_session_2/2.PNG">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="ppt\inhouse-thangadh\Day_1 Session_2/1.ppt" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+    <!--Newsletter Start-->
+    <div class="newsletter-wrap wow fadeInUp">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--Newsletter End-->
+    <script src="js/all.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+         function openCity(evt, cityName) {
+
+           var i, tabcontent, tablinks;
+
+           tabcontent = document.getElementsByClassName("tabcontent");
+
+           for (i = 0; i < tabcontent.length; i++) {
+
+             tabcontent[i].style.display = "none";
+
+           }
+
+           tablinks = document.getElementsByClassName("tablinks");
+
+           for (i = 0; i < tablinks.length; i++) {
+
+             tablinks[i].className = tablinks[i].className.replace(" active", "");
+
+           }
+
+           document.getElementById(cityName).style.display = "block";
+
+           evt.currentTarget.className += " active";
+
+         }
+
+    </script>
+
+</body>
+

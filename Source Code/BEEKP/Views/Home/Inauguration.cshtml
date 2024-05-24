@@ -1,0 +1,357 @@
+﻿<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+    <link href="~/css/colors/theme-skin-color-set-1.css" rel="stylesheet" />
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/style-main.css" rel="stylesheet" />
+    <link href="~/css/style-custom.css" rel="stylesheet" />
+
+    <style type="text/css">
+        /* ---- reset ---- */ body {
+            margin: 0;
+            font: normal 75% Arial, Helvetica, sans-serif;
+        }
+        /* ---- particles.js container ---- */
+        canvas {
+            display: block;
+            vertical-align: bottom;
+        }
+
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #b61924;
+            background-image: url("");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 50% 50%;
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 0;
+        }
+
+        .count-particles {
+            background: #000022;
+            position: absolute;
+            top: 48px;
+            left: 0;
+            width: 80px;
+            color: #13E8E9;
+            font-size: .8em;
+            text-align: left;
+            text-indent: 4px;
+            line-height: 14px;
+            padding-bottom: 2px;
+            font-family: Helvetica, Arial, sans-serif;
+            font-weight: bold;
+        }
+
+        .js-count-particles {
+            font-size: 1.1em;
+        }
+
+        #stats, .count-particles {
+            -webkit-user-select: none;
+            margin-top: 5px;
+            margin-left: 5px;
+        }
+
+        #stats {
+            border-radius: 3px 3px 0 0;
+            overflow: hidden;
+        }
+
+        .count-particles {
+            border-radius: 0 0 3px 3px;
+        }
+        /* ---- particles.js container End ---- */
+
+        /* ---- Login Style Start ---- */
+
+        *, *:before, *:after {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        .limiter {
+            width: 100%;
+            margin: 0 auto;
+            position: absolute; /* For particles */
+            z-index: 9999; /* For particles */
+            top: 0; /* For particles */
+        }
+
+        .container-login100 {
+            width: 100%;
+            min-height: 100vh;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            position: relative;
+            z-index: 1;
+        }
+
+            .container-login100::before {
+                content: "";
+                display: block;
+                position: absolute;
+                z-index: -1;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                /*  background-color: rgba(255,255,255,0.9);*/
+            }
+
+        .wrap-login100 {
+            width: 480px;
+            /*  border-radius: 10px;*/
+            overflow: hidden;
+            padding: 60px 35px;
+            background-color: #f1d82b;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+            -webkit-box-shadow: #54040a 0px 0px 6px;
+            -moz-box-shadow: #54040a 0px 0px 6px;
+            box-shadow: #54040a 0px 0px 6px;
+            /*
+          background: #9152f8;
+          background: -webkit-linear-gradient(top, #7579ff, #b224ef);
+          background: -o-linear-gradient(top, #7579ff, #b224ef);
+          background: -moz-linear-gradient(top, #7579ff, #b224ef);
+          background: linear-gradient(top, #7579ff, #b224ef);
+        */
+        }
+
+            .wrap-login100 h1 {
+                font-size: 26px;
+                margin-top: 0;
+            }
+
+            .wrap-login100 a:hover {
+                color: #fff;
+            }
+
+            .wrap-login100 .btn.focus, .wrap-login100 .btn:focus, .wrap-login100 .btn:hover {
+                color: #fff;
+                text-decoration: none;
+            }
+            .container-login100-form-btn{
+                margin-top:20px;
+            }
+        /* ---- Login Style Start ---- */
+    </style>
+
+</head>
+<body>
+    @using (Html.BeginForm("Inauguration", "Home", FormMethod.Post, new { @id = "frmInauguration", @name = "frmInauguration" }))
+    {
+    <!-- particles.js container -->
+        <div id="particles-js"></div>
+        <!-- stats - count particles -->
+        @*<div class="count-particles">
+                <span class="js-count-particles">--</span> particles
+            </div>*@
+
+        <div class="limiter">
+            <div class="container-login100">
+                <div class="wrap-login100">
+                    <h3 style="text-align: center;">Launch of</h3>
+					<h3 style="text-align: center;">MSME Knowledge Portal</h3>
+                    <h1 style="text-align: center;font-size: 50px;"> <strong>SIDHIEE</strong></h1>
+                    <h5 class="text-align-center">(Simplified Digital Hands-on Information on Energy Efficiency in MSMEs)</h5>
+
+                    @*<span class="bottom-padding-35px">
+                            <span class="login100-form-title p-b-34 p-t-27">
+                                Inauguration of 'MSME Knowledge Portal'<br />
+                            </span>
+                        </span>
+                        <br /><br />*@
+
+
+                    <div class="container-login100-form-btn text-center">
+                        <button id="GFG_Button" class="login100-form-btn btn btn-theme-colored" type="button" onclick="document.location.href='@Url.Action("Index","Home")';">
+                            Click Here
+                        </button>
+                        @*<a href="#" title="" class="btn btn-theme-colored">Click Here</a>*@
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    }
+
+</body>
+</html>
+
+
+<script src="~/Scripts/jquery-3.6.0.min.js"></script>
+
+
+@*<script src="~/js/particles.js"></script>*@
+<script src="~/js/particles.min.js"></script>
+
+
+<script type="text/javascript">
+
+    jQuery(document).ready(function () {
+
+
+        $('#frmInauguration').keypress(function (e) {
+            alert("keypress");
+            if (e.which == 13) {
+                document.location.href = 'Index';
+            }
+        });
+
+    });
+
+    particlesJS("particles-js", {
+        "particles": {
+            "number": {
+                "value": 400,
+                "density": {
+                    "enable": true,
+                    "value_area": 800
+                }
+            },
+            "color": {
+                "value": "#fff"
+            },
+            "shape": {
+                "type": "circle",
+                "stroke": {
+                    "width": 0,
+                    "color": "#000000"
+                },
+                "polygon": {
+                    "nb_sides": 5
+                },
+                "image": {
+                    "src": "img/github.svg",
+                    "width": 100,
+                    "height": 100
+                }
+            },
+            "opacity": {
+                "value": 0.5,
+                "random": true,
+                "anim": {
+                    "enable": false,
+                    "speed": 1,
+                    "opacity_min": 0.1,
+                    "sync": false
+                }
+            },
+            "size": {
+                "value": 10,
+                "random": true,
+                "anim": {
+                    "enable": false,
+                    "speed": 40,
+                    "size_min": 0.1,
+                    "sync": false
+                }
+            },
+            "line_linked": {
+                "enable": false,
+                "distance": 500,
+                "color": "#ffffff",
+                "opacity": 0.4,
+                "width": 2
+            },
+            "move": {
+                "enable": true,
+                "speed": 6,
+                "direction": "bottom",
+                "random": false,
+                "straight": false,
+                "out_mode": "out",
+                "bounce": false,
+                "attract": {
+                    "enable": false,
+                    "rotateX": 600,
+                    "rotateY": 1200
+                }
+            }
+        },
+        "interactivity": {
+            "detect_on": "canvas",
+            "events": {
+                "onhover": {
+                    "enable": true,
+                    "mode": "bubble"
+                },
+                "onclick": {
+                    "enable": true,
+                    "mode": "repulse"
+                },
+                "resize": true
+            },
+            "modes": {
+                "grab": {
+                    "distance": 400,
+                    "line_linked": {
+                        "opacity": 0.5
+                    }
+                },
+                "bubble": {
+                    "distance": 400,
+                    "size": 4,
+                    "duration": 0.3,
+                    "opacity": 1,
+                    "speed": 3
+                },
+                "repulse": {
+                    "distance": 200,
+                    "duration": 0.4
+                },
+                "push": {
+                    "particles_nb": 4
+                },
+                "remove": {
+                    "particles_nb": 2
+                }
+            }
+        },
+        "retina_detect": true
+    });
+    var count_particles, stats, update;
+    stats = new Stats;
+    stats.setMode(0);
+    stats.domElement.style.position = 'absolute';
+    stats.domElement.style.left = '0px';
+    stats.domElement.style.top = '0px';
+    document.body.appendChild(stats.domElement);
+    count_particles = document.querySelector('.js-count-particles');
+    update = function () {
+        stats.begin();
+        stats.end();
+        if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+            count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+        }
+        requestAnimationFrame(update);
+    };
+    requestAnimationFrame(update);
+
+
+
+
+
+</script>

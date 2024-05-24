@@ -1,0 +1,86 @@
+﻿@model BEEKP.Areas.Admin.Models.AdminDigitalLibraryViewModel
+
+@if (Model.ListDigitalLibrarys != null)
+{
+    <table id="tblNewsActive" class="table table-striped table-hover table-bordered">
+
+        <thead>
+            <tr>
+                <th>
+                    Image
+                </th>
+                <th>
+                    File Title
+                </th>
+                <th>
+                    Type
+                </th>
+                <th>
+                    Sector
+                </th>
+                <th>
+                    Cluster
+                </th>
+                <th>
+                    Craeted Date
+                </th>
+
+                <th align="center" valign="middle">
+                    Action
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @for (Int32 i = 0; i < Model.ListDigitalLibrarys.Count; i++)
+            {
+
+            <tr>
+                <td>
+                    @if (Model.ListDigitalLibrarys[i].FileUrl != null && Model.ListDigitalLibrarys[i].FileUrl != "" && Model.ListDigitalLibrarys[i].FileType == "Image")
+                    {
+                        if (Model.ListDigitalLibrarys[i].FileType == "Others")
+                        {
+                            <img src="~/images/DigitalLibrary/@Model.ListDigitalLibrarys[i].ImageUrl" alt="Image" width="100px">
+                        }
+                        else
+                        {
+                            <img src="~/images/DigitalLibrary/@Model.ListDigitalLibrarys[i].FileUrl" alt="Image" width="100px">
+                        }
+                    }
+                    else
+                    {
+                        <img src=@BEEKP.Class.Constants.NO_IMAGE alt="No Image" width="100px">
+                    }
+                </td>
+                <td>
+                    <label>@Model.ListDigitalLibrarys[i].ImageUrl</label>
+                </td>
+                <td>
+                    <label>@Model.ListDigitalLibrarys[i].Description</label>
+                </td>
+                <td>
+                    <label>@Model.ListDigitalLibrarys[i].SectorName</label>
+                </td>
+                <td>
+                    <label>@Model.ListDigitalLibrarys[i].ClusterName </label>
+                </td>
+                <td>
+                    <label>@Model.ListDigitalLibrarys[i].CreatedDate </label>
+                </td>
+                <td align="center" valign="middle">
+                    @*@if (Model.PagePermission.role_edit == BEEKP.Class.Constants.PAGE_PERMISSION_YES){}*@
+                    <a href="@Url.Action("DigitalLibraryAddEdit", "AdminDigitalLibrary", new { _id = BEEKP.Class.Encryption.Encrypt(Model.ListDigitalLibrarys[i].Id.ToString(), true) })" title="" class="custom-edit-tooltip"><i class="fa fa-pencil"></i></a>
+
+                    @*@if (Model.PagePermission.role_delete == BEEKP.Class.Constants.PAGE_PERMISSION_YES)
+            {
+                @Html.Raw("|");
+                <a href="@Url.Action("DeleteNews", "AdminNews", new { sNewsID = BEEKP.Class.Encryption.Encrypt(Model.ListDigitalLibrarys[i].Id.ToString(),true)})" title="" data-toggle="confirmation" data-original-title="Are you sure ?"><i class="fa fa-trash-o"></i></a>
+            }*@
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+}
+

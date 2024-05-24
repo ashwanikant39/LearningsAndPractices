@@ -1,0 +1,2458 @@
+﻿@{
+    ViewBag.Title = "EnergyAudits";
+    Layout = "~/Views/Shared/_LayoutGef.cshtml";
+}
+<style>
+
+  .tag_point {
+    margin-top: 40px;
+    box-shadow: 0px 0px 10px #8080805c;
+    border-radius: 5px;
+    padding: 10px 30px;
+}
+
+
+
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 1px solid #19a6e0;
+    background-color: #edfaff;
+}
+/* Style the buttons inside the tab */
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 8px;
+    transition: 0.3s;
+    font-size: 15px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #78aee3;
+    color: white;
+}
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #009cdc;
+  color: white;
+
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+  margin-bottom: 50px;
+}
+
+.tabcontent {
+  animation: fadeEffect 3s;
+}
+
+
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
+
+.report-container .report-thumb a {
+    background: #4990e1;
+    display: block;
+    position: relative;
+    padding: 4px 10px;
+    color: #fff;
+    border-radius: 0;
+    font-size: .9rem;
+    text-decoration: none;
+    text-align: center;
+    margin-top:20px;
+}
+.rs-carousel.nav-style2 .owl-nav .owl-prev, .rs-carousel.nav-style2 .owl-nav .owl-next {
+    display: none;
+}
+.tiles-wrap.small-wrap .btn-part .read-more {
+    margin-bottom: -23px;
+    margin-left: -15px;
+    width: 100%;
+    text-align: center;
+}
+</style>
+
+<style type="text/css">
+    .sector-box.doc-slider > div {
+        margin: 0px;
+        width: auto;
+        position: relative;
+    }
+
+    .sector-box > div .tiles-wrap:before {
+        background: linear-gradient(45deg, rgb(73 216 223 / 46%), rgb(130 135 193 / 86%));
+    }
+
+    .sector-box.doc-slider .tiles-wrap {
+        min-height: 311px;
+        min-width: 100%;
+        min-width: 100%;
+        max-height: 100%;
+        border-radius: 0;
+    }
+
+        .sector-box.doc-slider .tiles-wrap > .content-part.small-tab h4.title a, .sector-box.doc-slider .tiles-wrap > .content-part.small-tab h4.title {
+            font-size: 18px;
+            text-align: center;
+            margin-top: 33px;
+            margin-bottom: 37px;
+        }
+
+    .sector-box.doc-slider .content-part .icon-wrap, .sector-box .icon-wrap {
+        display: block;
+        width: 112px;
+        height: 112px;
+        padding: 0px;
+        border-radius: 50%;
+        overflow: hidden;
+        background: #fff;
+        border: 4px solid #e5e5e5;
+        position: relative;
+        top: 0;
+        margin: 0 auto;
+        z-index: 1;
+        text-align: center;
+        left: 0;
+    }
+
+    .sector-box.doc-slider .tiles-wrap.small-wrap .tile-bg .project-hover-div .content-part {
+        padding: 20px;
+        padding-top: 30px;
+        background: rgb(73 190 209 / 32%);
+        height: 100%;
+        width: 100%;
+        top: 0;
+        margin: 0;
+        position: absolute;
+    }
+
+    .sector-box.doc-slider .tiles-wrap .content-part.small-tab h4.title, .sector-box.doc-slider .tiles-wrap .content-part.small-tab h4.title a {
+        text-align: center;
+    }
+
+    .sector-box.doc-slider .tiles-wrap .content-part.small-tab h4.title {
+        margin-top: 20px;
+    }
+
+    .sector-box.doc-slider .tiles-wrap .content-part.small-tab .icon-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+        .sector-box.doc-slider .tiles-wrap .content-part.small-tab .icon-wrap i {
+            font-size: 50px;
+            color: #e71006;
+        }
+
+    .sector-box.doc-slider.rs-carousel.nav-style2 .owl-nav {
+        display: block;
+        position: absolute;
+        top: -95px;
+    }
+    /*photo slider*/
+    body.gef4 .owl-carousel.owl-loaded {
+        display: block;
+        margin-top: 0px;
+    }
+
+    .video-slider-carousel .owl-nav {
+        display: flex;
+        justify-content: flex-end;
+        position: absolute;
+        top: -65px;
+        right: 0;
+    }
+
+    .video-box {
+        border: 1px solid #4990e1;
+        padding: 15px;
+        margin-bottom: 20px;
+        border-radius: 7px;
+        background: #fff;
+        min-height: 330px;
+    }
+
+    .sld-item .readmore a {
+        font-size: 11px;
+        color: #fff;
+        padding: 5px 19px;
+        border-radius: 61px;
+        float: right;
+        margin-top: 20px;
+    }
+</style>
+
+<body class="gef4">
+    <?php include( 'include/header1.php'); ?>
+    <section class="breadcrumb-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="inner-content clearfix">
+                        <div class="title_breadcrumb float-left">
+                            <h1>Energy Audits</h1>
+                        </div>
+                        <div class="breadcrumb-menu float-right">
+                            <ul class="clearfix">
+                                <li><a href="/GEF">GEF4</a></li>
+                                <li class="active">Energy Audits</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section class="about-wrap pt-4 pb-5 bg-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-12 order-lg-2">
+                    <div class="tag_point">
+                        <!--<h5>Quick Links</h5>-->
+                        <ul>
+                            <li><a href="#s1"> Energy Audits</a></li>
+                            <li><a href="#s1"> EMC and its Activities</a></li>
+                            <li><a href="#s2"> Capacity Building Training Programs</a></li>
+                            <li><a href="#s3"> In- House Training programs</a></li>
+                            <li><a href="#s4"> International Study tours/ Inter cluster visits</a></li>
+                            <li><a href="#s5"> Pilot Demonstration Projects</a></li>
+                            <li><a href="#s6"> Knowledge Dissemination Materials</a></li>
+                            <li><a href="#s2"> Upscaling activities</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-9 col-12 order-lg-1">
+                    <div class="about_inner">
+                        <img src="images/activity/1.jpg" alt="">
+                        <h3>Energy Audits</h3>
+                        <p class="text-justify">Cluster leaders and consultants visits to the industries on a regular basis and promote adoption of these best operating practice and help industries not only saving energy but also improving productivity, quality and resource conservation. This project has also promoted adoption of renewable energy and carbon neutral fuels as substitute to fossil fuels and electricity in utilities and process applications.</p>
+
+                        <p class="text-justify"><strong>The project has promoted adoption of various zero cost measures by following best operating practices and common monitorable parameters through series of workshops and training programs.</strong></p>
+
+
+                        <ul class="bullet_icons din">
+                            <li>Identified more than 1116 potential units in 23 clusters</li>
+                            <li>Conducted more than 300 walk- through audits</li>
+                            <li>Conducted around 150 Detailed Energy Audits (DEA) – (Cluster Leaders & Consultants)</li>
+                        </ul>
+
+
+                    </div>
+                </div>
+    </section>
+
+
+
+    <section class="pt-4">
+        <div class="container">
+            <div class="row">
+
+
+
+                <div class="col-md-9">
+                    <div class="title title_center text-center">
+                        <h1 style="color:#297b37;">Energy Audits Reports</h1>
+                    </div>
+
+
+
+
+
+                    <div class="tab" id="tab">
+
+                        <button class="tablinks active" onclick="openCity(event, 'Belgaum')">Belgaum</button>
+                        <button class="tablinks" onclick="openCity(event, 'Coimbatore')">Coimbatore</button>
+                        <button class="tablinks" onclick="openCity(event, 'Gujarat')">Gujarat</button>
+                        <button class="tablinks" onclick="openCity(event, 'Indore')">Indore</button>
+                        <button class="tablinks" onclick="openCity(event, 'Jalandhar')">Jalandhar</button>
+                        <button class="tablinks" onclick="openCity(event, 'Jamnagar')">Jamnagar</button>
+                        <button class="tablinks" onclick="openCity(event, 'Kerala')">Kerala</button>
+                        <button class="tablinks" onclick="openCity(event, 'Khurja')">Khurja</button>
+                        <button class="tablinks" onclick="openCity(event, 'Morbi')">Morbi</button>
+                        <button class="tablinks" onclick="openCity(event, 'Naguar')">Naguar</button>
+                        <button class="tablinks" onclick="openCity(event, 'Sikkim')">Sikkim</button>
+                        <button class="tablinks" onclick="openCity(event, 'Thangadh')">Thangadh</button>
+
+                    </div>
+
+
+                    <div id="Belgaum" class="tabcontent" id="tabcontent" style="display: block!important;">
+
+                        <section class="pb-4">
+                            <div class="container">
+                                <div class="row">
+
+                                    <div class="col-md-12">
+                                        <div class="rs-carousel nav-style2 owl-carousel mt-0 sector-box doc-slider" data-rewind="true" data-loop="false" data-items="5" data-margin="15" data-autoplay="true" data-hoverpause="true" data-autoplay-timeout="5000" data-smart-speed="800" data-dots="true" data-nav="false" data-nav-speed="false" data-center-mode="false" data-mobile-device="1" data-mobile-device-nav="false" data-mobile-device-dots="false" data-ipad-device="1" data-ipad-device-nav="false" data-ipad-device-dots="false" data-ipad-device2="1" data-ipad-device-nav2="true" data-ipad-device-dots2="false" data-md-device="2" data-md-device-nav="false" data-md-device-dots="false">
+
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="pdf/audit-report/Belgaum/1.pdf">M/s Fluid Metals</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/audit report/belgaum/1.png">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="pdf/audit-report/Belgaum/1.pdf" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="pdf/audit-report/Belgaum/2.pdf">Kudale Iron Works</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/audit report/belgaum/2.png">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="pdf/audit-report/Belgaum/2.pdf" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="pdf/audit-report/Belgaum/3.pdf">M/s Glow Cast</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/audit report/belgaum/3.png">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="pdf/audit-report/Belgaum/3.pdf" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="pdf/audit-report/Belgaum/4.pdf">The Allied Foundries</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/audit report/belgaum/4.png">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="pdf/audit-report/Belgaum/4.pdf" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="pdf/audit-report/Belgaum/5.pdf">Abhishek Alloys</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/audit report/belgaum/5.png">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="pdf/audit-report/Belgaum/5.pdf" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="pdf/audit-report/Belgaum/6.pdf">Vinsavi Indotechs</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/audit report/belgaum/6.png">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="pdf/audit-report/Belgaum/6.pdf" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                    </div>
+
+                    <div id="Coimbatore" class="tabcontent">
+
+                        <section class="pb-4">
+                            <div class="container">
+                                <div class="row">
+
+                                    <div class="col-md-12">
+                                        <div class="rs-carousel nav-style2 owl-carousel mt-0 sector-box doc-slider" data-rewind="true" data-loop="false" data-items="5" data-margin="15" data-autoplay="true" data-hoverpause="true" data-autoplay-timeout="5000" data-smart-speed="800" data-dots="true" data-nav="false" data-nav-speed="false" data-center-mode="false" data-mobile-device="1" data-mobile-device-nav="false" data-mobile-device-dots="false" data-ipad-device="1" data-ipad-device-nav="false" data-ipad-device-dots="false" data-ipad-device2="1" data-ipad-device-nav2="true" data-ipad-device-dots2="false" data-md-device="2" data-md-device-nav="false" data-md-device-dots="false">
+
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="pdf/audit-report/Coimbatore/1.pdf">Sri Ramakrishna Industries</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/audit report/coimbatore/1.png">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="pdf/audit-report/Coimbatore/1.pdf" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="pdf/audit-report/Coimbatore/2.pdf">M/s Integra Automation Foundry</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/audit report/coimbatore/2.png">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="pdf/audit-report/Coimbatore/2.pdf" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="pdf/audit-report/Coimbatore/3.pdf">Sri Seethalakshmi Castings</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/audit report/coimbatore/3.png">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="pdf/audit-report/Coimbatore/3.pdf" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="pdf/audit-report/Coimbatore/4.pdf">Bright Foundries Coimbatore</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/audit report/coimbatore/4.png">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="pdf/audit-report/Coimbatore/4.pdf" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="pdf/audit-report/Coimbatore/5.pdf">M/s Sri Jayram Foundry</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/audit report/coimbatore/5.png">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="pdf/audit-report/Coimbatore/5.pdf" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="pdf/audit-report/Coimbatore/6.pdf">M/s Ranba Castings Limited</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/audit report/coimbatore/6.png">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="pdf/audit-report/Coimbatore/6.pdf" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                    </div>
+
+
+
+
+                    <div id="Gujarat" class="tabcontent">
+
+                        <section class="pb-4">
+                            <div class="container">
+                                <div class="row">
+
+                                    <div class="col-md-12">
+                                        <div class="rs-carousel nav-style2 owl-carousel mt-0 sector-box doc-slider" data-rewind="true" data-loop="false" data-items="5" data-margin="15" data-autoplay="true" data-hoverpause="true" data-autoplay-timeout="5000" data-smart-speed="800" data-dots="true" data-nav="false" data-nav-speed="false" data-center-mode="false" data-mobile-device="1" data-mobile-device-nav="false" data-mobile-device-dots="false" data-ipad-device="1" data-ipad-device-nav="false" data-ipad-device-dots="false" data-ipad-device2="1" data-ipad-device-nav2="true" data-ipad-device-dots2="false" data-md-device="2" data-md-device-nav="false" data-md-device-dots="false">
+
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="pdf/audit-report/Gujarat/1.pdf">Amul Fed dairy</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/audit report/gujarat/1.png">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="pdf/audit-report/Gujarat/1.pdf" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="pdf/audit-report/Gujarat/2.pdf">Cattle Feed Plant</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/audit report/gujarat/2.png">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="pdf/audit-report/Gujarat/2.pdf" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="pdf/audit-report/Gujarat/3.pdf">KDCMPUL - Anand</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/audit report/gujarat/3.png">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="pdf/audit-report/Gujarat/3.pdf" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="pdf/audit-report/Gujarat/4.pdf">PFP - Gandhinagar</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/audit report/gujarat/4.png">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="pdf/audit-report/Gujarat/4.pdf" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="pdf/audit-report/Gujarat/5.pdf">Rajkot Diary - Rajkot</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/audit report/gujarat/5.png">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="pdf/audit-report/Gujarat/5.pdf" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="pdf/audit-report/Gujarat/6.pdf">Sumul Diary - Surat</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/audit report/gujarat/6.png">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="pdf/audit-report/Gujarat/6.pdf" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                    </div>
+
+
+                    <div id="Indore" class="tabcontent">
+
+                        <section class="pb-4">
+                            <div class="container">
+                                <div class="row">
+
+                                    <div class="col-md-12">
+                                        <div class="rs-carousel nav-style2 owl-carousel mt-0 sector-box doc-slider" data-rewind="true" data-loop="false" data-items="5" data-margin="15" data-autoplay="true" data-hoverpause="true" data-autoplay-timeout="5000" data-smart-speed="800" data-dots="true" data-nav="false" data-nav-speed="false" data-center-mode="false" data-mobile-device="1" data-mobile-device-nav="false" data-mobile-device-dots="false" data-ipad-device="1" data-ipad-device-nav="false" data-ipad-device-dots="false" data-ipad-device2="1" data-ipad-device-nav2="true" data-ipad-device-dots2="false" data-md-device="2" data-md-device-nav="false" data-md-device-dots="false">
+
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="pdf/audit-report/Indore/1.pdf">Jash_Final</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/audit report/indore/1.png">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="pdf/audit-report/Indore/1.pdf" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="pdf/audit-report/Indore/2.pdf">Malika_Final</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/audit report/indore/2.png">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="pdf/audit-report/Indore/2.pdf" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="pdf/audit-report/Indore/3.pdf">Mangala_Final</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/audit report/indore/3.png">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="pdf/audit-report/Indore/3.pdf" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="pdf/audit-report/Indore/4.pdf">Mitasha_Final</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/audit report/indore/4.png">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="pdf/audit-report/Indore/4.pdf" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="pdf/audit-report/Indore/5.pdf">Pioneer_Final</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/audit report/indore/5.png">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="pdf/audit-report/Indore/5.pdf" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="pdf/audit-report/Indore/6.pdf">Porwal_Final</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/audit report/indore/6.png">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="pdf/audit-report/Indore/6.pdf" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                    </div>
+
+
+                    <div id="Jalandhar" class="tabcontent">
+
+                        <section class="pb-4">
+                            <div class="container">
+                                <div class="row">
+
+                                    <div class="col-md-12">
+                                        <div class="rs-carousel nav-style2 owl-carousel mt-0 sector-box doc-slider" data-rewind="true" data-loop="false" data-items="5" data-margin="15" data-autoplay="true" data-hoverpause="true" data-autoplay-timeout="5000" data-smart-speed="800" data-dots="true" data-nav="false" data-nav-speed="false" data-center-mode="false" data-mobile-device="1" data-mobile-device-nav="false" data-mobile-device-dots="false" data-ipad-device="1" data-ipad-device-nav="false" data-ipad-device-dots="false" data-ipad-device2="1" data-ipad-device-nav2="true" data-ipad-device-dots2="false" data-md-device="2" data-md-device-nav="false" data-md-device-dots="false">
+
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="pdf/audit-report/Jalandhar/1.pdf">Gripwell Tools </a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/audit report/jalandhar/1.png">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="pdf/audit-report/Jalandhar/1.pdf" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="pdf/audit-report/Jalandhar/2.pdf">Humma Tools</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/audit report/jalandhar/2.png">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="pdf/audit-report/Jalandhar/2.pdf" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="pdf/audit-report/Jalandhar/3.pdf">Juneja Forgings</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/audit report/jalandhar/3.png">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="pdf/audit-report/Jalandhar/3.pdf" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="pdf/audit-report/Jalandhar/4.pdf">Sabro Tools</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/audit report/jalandhar/4.png">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="pdf/audit-report/Jalandhar/4.pdf" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="pdf/audit-report/Jalandhar/5.pdf">Victor tools</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/audit report/jalandhar/5.png">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="pdf/audit-report/Jalandhar/5.pdf" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="pdf/audit-report/Jalandhar/6.pdf">Vishal Tools & Forgings</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/audit report/jalandhar/6.png">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="pdf/audit-report/Jalandhar/6.pdf" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                    </div>
+
+                    <div id="Jamnagar" class="tabcontent">
+
+                        <section class="pb-4">
+                            <div class="container">
+                                <div class="row">
+
+                                    <div class="col-md-12">
+                                        <div class="rs-carousel nav-style2 owl-carousel mt-0 sector-box doc-slider" data-rewind="true" data-loop="false" data-items="5" data-margin="15" data-autoplay="true" data-hoverpause="true" data-autoplay-timeout="5000" data-smart-speed="800" data-dots="true" data-nav="false" data-nav-speed="false" data-center-mode="false" data-mobile-device="1" data-mobile-device-nav="false" data-mobile-device-dots="false" data-ipad-device="1" data-ipad-device-nav="false" data-ipad-device-dots="false" data-ipad-device2="1" data-ipad-device-nav2="true" data-ipad-device-dots2="false" data-md-device="2" data-md-device-nav="false" data-md-device-dots="false">
+
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="pdf/audit-report/Jamnagar/1.pdf">Atlas Metal_final</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/audit report/jamnagar/1.png">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="pdf/audit-report/Jamnagar/1.pdf" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="pdf/audit-report/Jamnagar/2.pdf">Gold Metal_final</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/audit report/jamnagar/2.png">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="pdf/audit-report/Jamnagar/2.pdf" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="pdf/audit-report/Jamnagar/3.pdf">Metal Alloys_final</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/audit report/jamnagar/3.png">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="pdf/audit-report/Jamnagar/3.pdf" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="pdf/audit-report/Jamnagar/4.pdf">Ravi Brass_final</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/audit report/jamnagar/4.png">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="pdf/audit-report/Jamnagar/4.pdf" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="pdf/audit-report/jamnagar/5.pdf">Satyanam Industries_final</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/audit report/jamnagar/5.png">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="pdf/audit-report/Jamnagar/5.pdf" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="pdf/audit-report/Jamnagar/6.pdf">Turn and Forge_final</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/audit report/jamnagar/6.png">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="pdf/audit-report/Jamnagar/6.pdf" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                    </div>
+                    <div id="Kerala" class="tabcontent">
+
+                        <section class="pb-4">
+                            <div class="container">
+                                <div class="row">
+
+                                    <div class="col-md-12">
+                                        <div class="rs-carousel nav-style2 owl-carousel mt-0 sector-box doc-slider" data-rewind="true" data-loop="false" data-items="5" data-margin="15" data-autoplay="true" data-hoverpause="true" data-autoplay-timeout="5000" data-smart-speed="800" data-dots="true" data-nav="false" data-nav-speed="false" data-center-mode="false" data-mobile-device="1" data-mobile-device-nav="false" data-mobile-device-dots="false" data-ipad-device="1" data-ipad-device-nav="false" data-ipad-device-dots="false" data-ipad-device2="1" data-ipad-device-nav2="true" data-ipad-device-dots2="false" data-md-device="2" data-md-device-nav="false" data-md-device-dots="false">
+
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="pdf/audit-report/Kerala/1.pdf">DEA_CPD Allapuzha Dairy</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/audit report/kerala/1.png">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="pdf/audit-report/Kerala/1.pdf" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="pdf/audit-report/Kerala/2.pdf">DEA_Ernakulam Dairy</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/audit report/kerala/2.png">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="pdf/audit-report/Kerala/2.pdf" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="pdf/audit-report/Kerala/3.pdf">DEA_Kottayam Dairy</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/audit report/kerala/3.png">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="pdf/audit-report/Kerala/3.pdf" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="pdf/audit-report/Kerala/4.pdf">DEA_Kozhikode Dairy</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/audit report/kerala/4.png">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="pdf/audit-report/Kerala/4.pdf" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="pdf/audit-report/Kerala/5.pdf">DEA_Trivandrum Dairy</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/audit report/kerala/6.png">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="pdf/audit-report/Kerala/5.pdf" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="pdf/audit-report/Kerala/6.pdf">DEA_Wayanad Dairy</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/audit report/kerala/6.png">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="pdf/audit-report/Kerala/6.pdf" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                    </div>
+
+                    <div id="Khurja" class="tabcontent">
+
+                        <section class="pb-4">
+                            <div class="container">
+                                <div class="row">
+
+                                    <div class="col-md-12">
+                                        <div class="rs-carousel nav-style2 owl-carousel mt-0 sector-box doc-slider" data-rewind="true" data-loop="false" data-items="5" data-margin="15" data-autoplay="true" data-hoverpause="true" data-autoplay-timeout="5000" data-smart-speed="800" data-dots="true" data-nav="false" data-nav-speed="false" data-center-mode="false" data-mobile-device="1" data-mobile-device-nav="false" data-mobile-device-dots="false" data-ipad-device="1" data-ipad-device-nav="false" data-ipad-device-dots="false" data-ipad-device2="1" data-ipad-device-nav2="true" data-ipad-device-dots2="false" data-md-device="2" data-md-device-nav="false" data-md-device-dots="false">
+
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="pdf/audit-report/Khurja/1.pdf">Hindustan Chemicals</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/audit report/khurja/1.png">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="pdf/audit-report/Khurja/1.pdf" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="pdf/audit-report/Khurja/2.pdf">Minhas Pottery</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/audit report/khurja/2.png">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="pdf/audit-report/Khurja/2.pdf" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="pdf/audit-report/Khurja/3.pdf">Nawal Ceramics</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/audit report/khurja/3.png">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="pdf/audit-report/Khurja/3.pdf" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="pdf/audit-report/Khurja/4.pdf"> RK Potteries</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/audit report/khurja/4.png">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="pdf/audit-report/Khurja/4.pdf" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="pdf/audit-report/Khurja/5.pdf">Royal International</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/audit report/khurja/5.png">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="pdf/audit-report/Khurja/5.pdf" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="pdf/audit-report/Khurja/6.pdf">SCK Insulators</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/audit report/khurja/6.png">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="pdf/audit-report/Khurja/6.pdf">class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                    </div>
+
+                    <div id="Morbi" class="tabcontent">
+
+                        <section class="pb-4">
+                            <div class="container">
+                                <div class="row">
+
+                                    <div class="col-lg-12 col-12">
+                                        <div class="row report-box">
+
+
+                                            <div class="col-md-12">
+                                                <div class="rs-carousel nav-style2 owl-carousel mt-0 sector-box doc-slider" data-rewind="true" data-loop="false" data-items="5" data-margin="15" data-autoplay="true" data-hoverpause="true" data-autoplay-timeout="5000" data-smart-speed="800" data-dots="true" data-nav="false" data-nav-speed="false" data-center-mode="false" data-mobile-device="1" data-mobile-device-nav="false" data-mobile-device-dots="false" data-ipad-device="1" data-ipad-device-nav="false" data-ipad-device-dots="false" data-ipad-device2="1" data-ipad-device-nav2="true" data-ipad-device-dots2="false" data-md-device="2" data-md-device-nav="false" data-md-device-dots="false">
+
+
+                                                    <div class="ct-box">
+                                                        <div class="tiles-wrap small-wrap">
+                                                            <div class="tile-bg">
+                                                                <div class="project-hover-div">
+                                                                    <div class="content-part small-tab">
+                                                                        <div class="icon-wrap">
+                                                                            <i class="fa fa-file-pdf"></i>
+                                                                        </div>
+                                                                        <h4 class="title project-flag" data-project="disha">
+                                                                            <a href="pdf/audit-report/Morbi/1.pdf">FT 01_CEA Final Report_Rev1_Lexus Granito</a>
+                                                                        </h4>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="content-part small-tab">
+                                                                <img src="images/audit report/morbi/1.png">
+                                                            </div>
+                                                            <div class="btn-part"> <a href="pdf/audit-report/Morbi/1.pdf" class="read-more">Download File <span></span></a></div>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="ct-box">
+                                                        <div class="tiles-wrap small-wrap">
+                                                            <div class="tile-bg">
+                                                                <div class="project-hover-div">
+                                                                    <div class="content-part small-tab">
+                                                                        <div class="icon-wrap">
+                                                                            <i class="fa fa-file-pdf"></i>
+                                                                        </div>
+                                                                        <h4 class="title project-flag" data-project="disha">
+                                                                            <a href="pdf/audit-report/Morbi/2.pdf">FT 28_CEA Final rpeort_Rev1_Landgrace Ceramic</a>
+                                                                        </h4>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="content-part small-tab">
+                                                                <img src="images/audit report/morbi/2.png">
+                                                            </div>
+                                                            <div class="btn-part"> <a href="pdf/audit-report/Morbi/2.pdf" class="read-more">Download File <span></span></a></div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="ct-box">
+                                                        <div class="tiles-wrap small-wrap">
+                                                            <div class="tile-bg">
+                                                                <div class="project-hover-div">
+                                                                    <div class="content-part small-tab">
+                                                                        <div class="icon-wrap">
+                                                                            <i class="fa fa-file-pdf"></i>
+                                                                        </div>
+                                                                        <h4 class="title project-flag" data-project="disha">
+                                                                            <a href="pdf/audit-report/Morbi/3.pdf">SP05_CEA Final Report_Rev1__Osho Sanitaryware</a>
+                                                                        </h4>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="content-part small-tab">
+                                                                <img src="images/audit report/morbi/3.png">
+                                                            </div>
+                                                            <div class="btn-part"> <a href="pdf/audit-report/Morbi/3.pdf" class="read-more">Download File <span></span></a></div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="ct-box">
+                                                        <div class="tiles-wrap small-wrap">
+                                                            <div class="tile-bg">
+                                                                <div class="project-hover-div">
+                                                                    <div class="content-part small-tab">
+                                                                        <div class="icon-wrap">
+                                                                            <i class="fa fa-file-pdf"></i>
+                                                                        </div>
+                                                                        <h4 class="title project-flag" data-project="disha">
+                                                                            <a href="pdf/audit-report/Morbi/4.pdf">SP11_CEA Final Report_Rev1__Eagle Ceramics</a>
+                                                                        </h4>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="content-part small-tab">
+                                                                <img src="images/audit report/morbi/4.png">
+                                                            </div>
+                                                            <div class="btn-part"> <a href="pdf/audit-report/Morbi/4.pdf" class="read-more">Download File <span></span></a></div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="ct-box">
+                                                        <div class="tiles-wrap small-wrap">
+                                                            <div class="tile-bg">
+                                                                <div class="project-hover-div">
+                                                                    <div class="content-part small-tab">
+                                                                        <div class="icon-wrap">
+                                                                            <i class="fa fa-file-pdf"></i>
+                                                                        </div>
+                                                                        <h4 class="title project-flag" data-project="disha">
+                                                                            <a href="pdf/audit-report/Morbi/5.pdf">SP20_CEA Final report _Rev1_Home Decor Sanitary Complex</a>
+                                                                        </h4>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="content-part small-tab">
+                                                                <img src="images/audit report/morbi/5.png">
+                                                            </div>
+                                                            <div class="btn-part"> <a href="pdf/audit-report/Morbi/5.pdf" class="read-more">Download File <span></span></a></div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="ct-box">
+                                                        <div class="tiles-wrap small-wrap">
+                                                            <div class="tile-bg">
+                                                                <div class="project-hover-div">
+                                                                    <div class="content-part small-tab">
+                                                                        <div class="icon-wrap">
+                                                                            <i class="fa fa-file-pdf"></i>
+                                                                        </div>
+                                                                        <h4 class="title project-flag" data-project="disha">
+                                                                            <a href="pdf/audit-report/Morbi/6.pdf">VT-01 CEA Final Report_Rev1_Excel Ceramic</a>
+                                                                        </h4>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="content-part small-tab">
+                                                                <img src="images/audit report/morbi/6.png">
+                                                            </div>
+                                                            <div class="btn-part"> <a href="pdf/audit-report/Morbi/6.pdf" class="read-more">Download File <span></span></a></div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="ct-box">
+                                                        <div class="tiles-wrap small-wrap">
+                                                            <div class="tile-bg">
+                                                                <div class="project-hover-div">
+                                                                    <div class="content-part small-tab">
+                                                                        <div class="icon-wrap">
+                                                                            <i class="fa fa-file-pdf"></i>
+                                                                        </div>
+                                                                        <h4 class="title project-flag" data-project="disha">
+                                                                            <a href="pdf/audit-report/Morbi/7.pdf">VT02_CEA Final report_Rev1-Ambani Vitrified</a>
+                                                                        </h4>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="content-part small-tab">
+                                                                <img src="images/audit report/morbi/7.png">
+                                                            </div>
+                                                            <div class="btn-part"> <a href="pdf/audit-report/Morbi/7.pdf" class="read-more">Download File <span></span></a></div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="ct-box">
+                                                        <div class="tiles-wrap small-wrap">
+                                                            <div class="tile-bg">
+                                                                <div class="project-hover-div">
+                                                                    <div class="content-part small-tab">
+                                                                        <div class="icon-wrap">
+                                                                            <i class="fa fa-file-pdf"></i>
+                                                                        </div>
+                                                                        <h4 class="title project-flag" data-project="disha">
+                                                                            <a href="pdf/audit-report/Morbi/8.pdf">VT-53 CEA Final report_Rev1_-Metrocity Tiles</a>
+                                                                        </h4>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="content-part small-tab">
+                                                                <img src="images/audit report/morbi/8.png">
+                                                            </div>
+                                                            <div class="btn-part"> <a href="pdf/audit-report/Morbi/8.pdf" class="read-more">Download File <span></span></a></div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="ct-box">
+                                                        <div class="tiles-wrap small-wrap">
+                                                            <div class="tile-bg">
+                                                                <div class="project-hover-div">
+                                                                    <div class="content-part small-tab">
+                                                                        <div class="icon-wrap">
+                                                                            <i class="fa fa-file-pdf"></i>
+                                                                        </div>
+                                                                        <h4 class="title project-flag" data-project="disha">
+                                                                            <a href="pdf/audit-report/Morbi/9.pdf">VT56_ CEA Final report_Rev1_Kevin Ceramic</a>
+                                                                        </h4>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="content-part small-tab">
+                                                                <img src="images/audit report/morbi/9.png">
+                                                            </div>
+                                                            <div class="btn-part"> <a href="pdf/audit-report/Morbi/9.pdf" class="read-more">Download File <span></span></a></div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="ct-box">
+                                                        <div class="tiles-wrap small-wrap">
+                                                            <div class="tile-bg">
+                                                                <div class="project-hover-div">
+                                                                    <div class="content-part small-tab">
+                                                                        <div class="icon-wrap">
+                                                                            <i class="fa fa-file-pdf"></i>
+                                                                        </div>
+                                                                        <h4 class="title project-flag" data-project="disha">
+                                                                            <a href="pdf/audit-report/Morbi/10.pdf">VT-61 CEA Final Report_Rev1_Sanskar_Johnson</a>
+                                                                        </h4>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="content-part small-tab">
+                                                                <img src="images/audit report/morbi/10.png">
+                                                            </div>
+                                                            <div class="btn-part"> <a href="pdf/audit-report/Morbi/10.pdf" class="read-more">Download File <span></span></a></div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="ct-box">
+                                                        <div class="tiles-wrap small-wrap">
+                                                            <div class="tile-bg">
+                                                                <div class="project-hover-div">
+                                                                    <div class="content-part small-tab">
+                                                                        <div class="icon-wrap">
+                                                                            <i class="fa fa-file-pdf"></i>
+                                                                        </div>
+                                                                        <h4 class="title project-flag" data-project="disha">
+                                                                            <a href="pdf/audit-report/Morbi/11.pdf">VT-68 CEA Final report_Rev1-Latigres</a>
+                                                                        </h4>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="content-part small-tab">
+                                                                <img src="images/audit report/morbi/11.png">
+                                                            </div>
+                                                            <div class="btn-part"> <a href="pdf/audit-report/Morbi/11.pdf" class="read-more">Download File <span></span></a></div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="ct-box">
+                                                        <div class="tiles-wrap small-wrap">
+                                                            <div class="tile-bg">
+                                                                <div class="project-hover-div">
+                                                                    <div class="content-part small-tab">
+                                                                        <div class="icon-wrap">
+                                                                            <i class="fa fa-file-pdf"></i>
+                                                                        </div>
+                                                                        <h4 class="title project-flag" data-project="disha">
+                                                                            <a href="pdf/audit-report/Morbi/12.pdf">WT-04_CEA Final report_Rev1-Lexicon Ceramic Pvt Ltd</a>
+                                                                        </h4>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="content-part small-tab">
+                                                                <img src="images/audit report/morbi/12.png">
+                                                            </div>
+                                                            <div class="btn-part"> <a href="pdf/audit-report/Morbi/12.pdf" class="read-more">Download File <span></span></a></div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="ct-box">
+                                                        <div class="tiles-wrap small-wrap">
+                                                            <div class="tile-bg">
+                                                                <div class="project-hover-div">
+                                                                    <div class="content-part small-tab">
+                                                                        <div class="icon-wrap">
+                                                                            <i class="fa fa-file-pdf"></i>
+                                                                        </div>
+                                                                        <h4 class="title project-flag" data-project="disha">
+                                                                            <a href="pdf/audit-report/Morbi/13.pdf">WT-05_CEA Final Report_Sisam Ceramics</a>
+                                                                        </h4>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="content-part small-tab">
+                                                                <img src="images/audit report/morbi/13.png">
+                                                            </div>
+                                                            <div class="btn-part"> <a href="pdf/audit-report/Morbi/13.pdf" class="read-more">Download File <span></span></a></div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="ct-box">
+                                                        <div class="tiles-wrap small-wrap">
+                                                            <div class="tile-bg">
+                                                                <div class="project-hover-div">
+                                                                    <div class="content-part small-tab">
+                                                                        <div class="icon-wrap">
+                                                                            <i class="fa fa-file-pdf"></i>
+                                                                        </div>
+                                                                        <h4 class="title project-flag" data-project="disha">
+                                                                            <a href="pdf/audit-report/Morbi/14.pdf">WT-07 CEA Final rpeort_Rev1_Pengvin ceramic</a>
+                                                                        </h4>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="content-part small-tab">
+                                                                <img src="images/audit report/morbi/14.png">
+                                                            </div>
+                                                            <div class="btn-part"> <a href="pdf/audit-report/Morbi/14.pdf" class="read-more">Download File <span></span></a></div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="ct-box">
+                                                        <div class="tiles-wrap small-wrap">
+                                                            <div class="tile-bg">
+                                                                <div class="project-hover-div">
+                                                                    <div class="content-part small-tab">
+                                                                        <div class="icon-wrap">
+                                                                            <i class="fa fa-file-pdf"></i>
+                                                                        </div>
+                                                                        <h4 class="title project-flag" data-project="disha">
+                                                                            <a href="pdf/audit-report/Morbi/15.pdf">WT-30 CEA Final report_Rev1-Hitco ceramic</a>
+                                                                        </h4>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="content-part small-tab">
+                                                                <img src="images/audit report/morbi/15.png">
+                                                            </div>
+                                                            <div class="btn-part"> <a href="pdf/audit-report/Morbi/15.pdf" class="read-more">Download File <span></span></a></div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="ct-box">
+                                                        <div class="tiles-wrap small-wrap">
+                                                            <div class="tile-bg">
+                                                                <div class="project-hover-div">
+                                                                    <div class="content-part small-tab">
+                                                                        <div class="icon-wrap">
+                                                                            <i class="fa fa-file-pdf"></i>
+                                                                        </div>
+                                                                        <h4 class="title project-flag" data-project="disha">
+                                                                            <a href="pdf/audit-report/Morbi/16.pdf">WT-36_CEA Final report_Rev1-Senis Ceramics</a>
+                                                                        </h4>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="content-part small-tab">
+                                                                <img src="images/audit report/morbi/16.png">
+                                                            </div>
+                                                            <div class="btn-part"> <a href="pdf/audit-report/Morbi/16.pdf" class="read-more">Download File <span></span></a></div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="ct-box">
+                                                        <div class="tiles-wrap small-wrap">
+                                                            <div class="tile-bg">
+                                                                <div class="project-hover-div">
+                                                                    <div class="content-part small-tab">
+                                                                        <div class="icon-wrap">
+                                                                            <i class="fa fa-file-pdf"></i>
+                                                                        </div>
+                                                                        <h4 class="title project-flag" data-project="disha">
+                                                                            <a href="pdf/audit-report/Morbi/17.pdf">WT-40_CEA Report_Rev1-Airson Ceramic-converted</a>
+                                                                        </h4>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="content-part small-tab">
+                                                                <img src="images/audit report/morbi/17.png">
+                                                            </div>
+                                                            <div class="btn-part"> <a href="pdf/audit-report/Morbi/17.pdf" class="read-more">Download File <span></span></a></div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="ct-box">
+                                                        <div class="tiles-wrap small-wrap">
+                                                            <div class="tile-bg">
+                                                                <div class="project-hover-div">
+                                                                    <div class="content-part small-tab">
+                                                                        <div class="icon-wrap">
+                                                                            <i class="fa fa-file-pdf"></i>
+                                                                        </div>
+                                                                        <h4 class="title project-flag" data-project="disha">
+                                                                            <a href="pdf/audit-report/Morbi/18.pdf">WT-42_CEA Final Report_Rev1_Itaca Ceramic -converted</a>
+                                                                        </h4>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="content-part small-tab">
+                                                                <img src="images/audit report/morbi/18.png">
+                                                            </div>
+                                                            <div class="btn-part"> <a href="pdf/audit-report/Morbi/18.pdf" class="read-more">Download File <span></span></a></div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="ct-box">
+                                                        <div class="tiles-wrap small-wrap">
+                                                            <div class="tile-bg">
+                                                                <div class="project-hover-div">
+                                                                    <div class="content-part small-tab">
+                                                                        <div class="icon-wrap">
+                                                                            <i class="fa fa-file-pdf"></i>
+                                                                        </div>
+                                                                        <h4 class="title project-flag" data-project="disha">
+                                                                            <a href="pdf/audit-report/Morbi/19.pdf">WT-50 CEA Final report_Rev1_Sonex Ind -converted</a>
+                                                                        </h4>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="content-part small-tab">
+                                                                <img src="images/audit report/morbi/19.png">
+                                                            </div>
+                                                            <div class="btn-part"> <a href="pdf/audit-report/Morbi/19.pdf" class="read-more">Download File <span></span></a></div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="ct-box">
+                                                        <div class="tiles-wrap small-wrap">
+                                                            <div class="tile-bg">
+                                                                <div class="project-hover-div">
+                                                                    <div class="content-part small-tab">
+                                                                        <div class="icon-wrap">
+                                                                            <i class="fa fa-file-pdf"></i>
+                                                                        </div>
+                                                                        <h4 class="title project-flag" data-project="disha">
+                                                                            <a href="pdf/audit-report/Morbi/20.pdf">WT-58 CEA Final Report_Rev1_Italake -converted</a>
+                                                                        </h4>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="content-part small-tab">
+                                                                <img src="images/audit report/morbi/20.png">
+                                                            </div>
+                                                            <div class="btn-part"> <a href="pdf/audit-report/Morbi/20.pdf" class="read-more">Download File <span></span></a></div>
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                        </section>
+
+                    </div>
+
+
+
+
+
+                    <div id="Naguar" class="tabcontent">
+
+                        <section class="pb-4">
+                            <div class="container">
+                                <div class="row">
+
+                                    <div class="col-md-12">
+                                        <div class="rs-carousel nav-style2 owl-carousel mt-0 sector-box doc-slider" data-rewind="true" data-loop="false" data-items="5" data-margin="15" data-autoplay="true" data-hoverpause="true" data-autoplay-timeout="5000" data-smart-speed="800" data-dots="true" data-nav="false" data-nav-speed="false" data-center-mode="false" data-mobile-device="1" data-mobile-device-nav="false" data-mobile-device-dots="false" data-ipad-device="1" data-ipad-device-nav="false" data-ipad-device-dots="false" data-ipad-device2="1" data-ipad-device-nav2="true" data-ipad-device-dots2="false" data-md-device="2" data-md-device-nav="false" data-md-device-dots="false">
+
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="pdf/audit-report/Naguar/1.pdf">M/s Jaina Forging</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/audit report/naguar/1.png">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="pdf/audit-report/Naguar/1.pdf" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="pdf/audit-report/Naguar/2.pdf">M/s Haroon Works</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/audit report/naguar/2.png">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="pdf/audit-report/Naguar/2.pdf" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="pdf/audit-report/Naguar/3.pdf">Karim Bux Handtools</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/audit report/naguar/3.png">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="pdf/audit-report/Naguar/3.pdf" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="pdf/audit-report/Naguar/4.pdf">Kohinoor Forgings</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/audit report/naguar/4.png">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="pdf/audit-report/Naguar/4.pdf" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="pdf/audit-report/Naguar/5.pdf">M/s Neelam Forgings</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/audit report/naguar/5.png">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="pdf/audit-report/Naguar/5.pdf" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="pdf/audit-report/Naguar/6.pdf">Rajasthan Tools</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/audit report/naguar/6.png">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="pdf/audit-report/Naguar/6.pdf" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                    </div>
+
+
+
+                    <div id="Sikkim" class="tabcontent">
+
+                        <section class="pb-4">
+                            <div class="container">
+                                <div class="row">
+
+                                    <div class="col-md-12">
+                                        <div class="rs-carousel nav-style2 owl-carousel mt-0 sector-box doc-slider" data-rewind="true" data-loop="false" data-items="5" data-margin="15" data-autoplay="true" data-hoverpause="true" data-autoplay-timeout="5000" data-smart-speed="800" data-dots="true" data-nav="false" data-nav-speed="false" data-center-mode="false" data-mobile-device="1" data-mobile-device-nav="false" data-mobile-device-dots="false" data-ipad-device="1" data-ipad-device-nav="false" data-ipad-device-dots="false" data-ipad-device2="1" data-ipad-device-nav2="true" data-ipad-device-dots2="false" data-md-device="2" data-md-device-nav="false" data-md-device-dots="false">
+
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="pdf/audit-report/Sikkim/1.pdf">DEA _ Jorethang Dairy</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/audit report/sikkim/1.png">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="pdf/audit-report/Sikkim/1.pdf" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="pdf/audit-report/Sikkim/2.pdf">DEA _Gangtok Dairy</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/audit report/sikkim/2.png">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="pdf/audit-report/Sikkim/2.pdf" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                    </div>
+
+
+                    <div id="Thangadh" class="tabcontent">
+
+                        <section class="pb-4">
+                            <div class="container">
+                                <div class="row">
+
+                                    <div class="col-md-12">
+                                        <div class="rs-carousel nav-style2 owl-carousel mt-0 sector-box doc-slider" data-rewind="true" data-loop="false" data-items="5" data-margin="15" data-autoplay="true" data-hoverpause="true" data-autoplay-timeout="5000" data-smart-speed="800" data-dots="true" data-nav="false" data-nav-speed="false" data-center-mode="false" data-mobile-device="1" data-mobile-device-nav="false" data-mobile-device-dots="false" data-ipad-device="1" data-ipad-device-nav="false" data-ipad-device-dots="false" data-ipad-device2="1" data-ipad-device-nav2="true" data-ipad-device-dots2="false" data-md-device="2" data-md-device-nav="false" data-md-device-dots="false">
+
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="pdf/audit-report/Thangadh/1.pdf">Gurukrupa_Ceramic</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/audit report/thangadh/1.png">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="pdf/audit-report/Thangadh/1.pdf" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="pdf/audit-report/Thangadh/2.pdf">Jay_Refractories</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/audit report/thangadh/2.png">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="pdf/audit-report/Thangadh/2.pdf" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="pdf/audit-report/Thangadh/3.pdf">New Light_Report</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/audit report/thangadh/3.png">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="pdf/audit-report/Thangadh/3.pdf" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="pdf/audit-report/Thangadh/4.pdf">Oswal Pottery</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/audit report/thangadh/4.png">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="pdf/audit-report/Thangadh/4.pdf" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="pdf/audit-report/Thangadh/5.pdf">Synnova_Report</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/audit report/thangadh/5.png">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="pdf/audit-report/Thangadh/5.pdf" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="ct-box">
+                                                <div class="tiles-wrap small-wrap">
+                                                    <div class="tile-bg">
+                                                        <div class="project-hover-div">
+                                                            <div class="content-part small-tab">
+                                                                <div class="icon-wrap">
+                                                                    <i class="fa fa-file-pdf"></i>
+                                                                </div>
+                                                                <h4 class="title project-flag" data-project="disha">
+                                                                    <a href="pdf/audit-report/Thangadh/6.pdf">Tamco Ceramics</a>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="content-part small-tab">
+                                                        <img src="images/audit report/thangadh/6.png">
+                                                    </div>
+                                                    <div class="btn-part"> <a href="pdf/audit-report/Thangadh/6.pdf" class="read-more">Download File <span></span></a></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="title title_center text-center">
+                        <h1 style="color:#297b37;">Photos</h1>
+                    </div>
+                    <div class="video-box">
+
+                        <div class="video-slider-carousel strnix-carousel owl-theme owl-carousel" data-options='{"rewind": true,"autoplayHoverPause":true, "loop": false, "margin": 30, "autoheight":true, "lazyload":true, "nav": true, "dots": false, "autoplay": true, "autoplayTimeout": 9000, "smartSpeed": 1500, "responsive":{ "0" :{ "items": "1" }, "600" :{ "items" : "1" }, "768" :{ "items" : "1" }, "800":{ "items" : "1" }, "1024":{ "items" : "1" }}}' id="campaign">
+
+
+                            <div class="sld-item">
+                                <div class="video-item">
+                                    <div class="video-thumb">
+                                        <div class="gallery-img">
+                                            <a href="images/energy/4.jpg" class="image-popup"><img src="images/energy/4.jpg" style="width:auto; height: 250px;float:left;padding:0px;"></a>
+                                        </div>
+                                        <div class="readmore mb-0"><a href="gallery.php">View More</a></div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                            <div class="sld-item">
+                                <div class="video-item">
+                                    <div class="video-thumb">
+                                        <div class="gallery-img">
+                                            <a href="images/energy/2.jpg" class="image-popup"><img src="images/energy/2.jpg" style="width:auto; height: 250px;float:left;padding:0px;"></a>
+                                        </div>
+                                        <div class="readmore mb-0"><a href="gallery.php">View More</a></div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                            <div class="sld-item">
+                                <div class="video-item">
+                                    <div class="video-thumb">
+                                        <div class="gallery-img">
+                                            <a href="images/energy/3.jpg" class="image-popup"><img src="images/energy/3.jpg" style="width:auto; height: 250px;float:left;padding:0px;"></a>
+                                        </div>
+                                        <div class="readmore mb-0"><a href="gallery.php">View More</a></div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+
+
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+    </script>
+
+
+
+
+    <!--Newsletter Start-->
+    <div class="newsletter-wrap wow fadeInUp">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--Newsletter End-->
+    <?php include( 'include/footer1.php'); ?>
+    <script src="js/all.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+
+

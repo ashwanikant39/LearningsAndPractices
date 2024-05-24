@@ -1,0 +1,55 @@
+﻿@model BEEKP.Areas.Admin.Models.AdminPhasesViewModel
+
+@if (Model.ListPhasesInactive != null)
+{
+    <table id="tblPhasesInactive" class="table table-striped table-hover table-bordered">
+
+        <thead>
+            <tr>
+                <th>
+                    Phase Title
+                </th>
+                <th>
+                    Phase Date
+                </th>
+                <th>
+                    Phases Short Description
+                </th>
+                <th align="center" valign="middle">
+                    Action
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @for (Int32 i = 0; i < Model.ListPhasesInactive.Count; i++)
+            {
+
+                <tr>
+                    <td>
+                        <label>@Model.ListPhasesInactive[i].phases_title</label>
+                    </td>
+                    <td>
+                        <label>@Model.ListPhasesInactive[i].phases_start_date </label>
+                    </td>
+                    <td>
+                        <label>@Model.ListPhasesInactive[i].phases_short_description </label>
+                    </td>
+                    <td align="center" valign="middle">
+                        @if (Model.PagePermission.role_edit == BEEKP.Class.Constants.PAGE_PERMISSION_YES)
+                        {
+                            <a href="@Url.Action("PhasesAddEdit", "AdminPhases", new { sPhasesID = BEEKP.Class.Encryption.Encrypt(Model.ListPhasesInactive[i].phases_id.ToString(), true) })" title="" class="custom-edit-tooltip"><i class="fa fa-pencil"></i></a>
+                        }
+
+                        @if (Model.PagePermission.role_delete == BEEKP.Class.Constants.PAGE_PERMISSION_YES)
+                        {
+                            @Html.Raw("|");
+                            <a href="@Url.Action("DeletePhases", "AdminPhases", new { sPhases_id =  BEEKP.Class.Encryption.Encrypt(Model.ListPhasesInactive[i].phases_id.ToString(),true)})" title="" data-toggle="confirmation" data-original-title="Are you sure ?"><i class="fa fa-trash-o"></i></a>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+

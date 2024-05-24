@@ -1,0 +1,426 @@
+﻿
+@{
+    ViewBag.Title = "BasicRolling";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<section class="bg-blue">
+
+    <div class="container">
+        <div class="row">
+            <div class="row_mainbackdiv">
+                <div class="row_mainbackdiv-img">
+                    <a href="@Url.Action("Proceed", "Calculator", null, Request.Url.Scheme)"><img src="~/images/back_btn.png"></a>
+                </div>
+            </div>
+        </div>
+        <div class="row divcalcu calculatedivrolling">
+            <div class="col-md-4">
+                <div class="positionrelative">
+                    <div class="bg-white calculatediv">
+                        <h1>Specific Energy Consumption</h1>
+                        <h2> (kgoe/tonne)</h2>
+                        <div class="rangeSlider__tooltip rangeSlider__tooltip--from">163</div>
+                        <div class="tri-color-line"></div>
+                        <p>
+                            Your SEC falls in the moderate range and is better than most of the per units. However, there is a scope to further improve your SEC. For details on SEC reduction please refer to the advanced version of this tool.
+
+                        </p>
+                        <div class="advancedtoolbtn">
+                            <a href="@Url.Action("AdvancedRolling", "Calculator", null, Request.Url.Scheme)" class=""><p>Try advanced tool</p></a>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="weightstyle">Disclaimer: Data is as per energy audit carried out in the last 5 years.</p>
+            </div>
+            <div class="col-md-8 ">
+
+                <div class="proceedpage-sec">
+                    <div class="tri-line1">
+                        <img src="~/images/triangle-line.png" class="">
+                    </div>
+
+                    <div class="forging1 popup-trigger_rolling ">
+                        <img src="~/images/rolling.png">
+                        <div class="subline subline_rolling proceedbtn">
+                            <img src="~/images/rolling-subline.png">
+                            <a href="">
+                                <p>Rolling</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="foundry1 popup-trigger_foundry">
+                        <img src="~/images/foundry.png">
+                        <div class="subline-foundry proceedbtn">
+                            <img src="~/images/foundry-subline.png">
+                            <a href="">
+                                <p>Foundry</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="rolling1 popup-trigger_forging">
+                        <div class="subline proceedbtn">
+                            <img src="~/images/forging-subline.png">
+                            <a href="">
+                                <p>Forging</p>
+                            </a>
+                        </div>
+                        <img src="~/images/forging.png">
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- ---------------------- foundry popup start-------------------- -->
+            <div class="popup_foundry">
+                <div class="popup-container_foundry popup_bg_img">
+                    <div class="slidepopup for_basic_foundry_slidepopup">
+                        <div class="slide_img">
+                            <img src="~/images/foundry.png">
+                        </div>
+                        <div class="slide_text">
+                            <p>You have chosen Foundry. </p>
+                            <h3>Select the type of calculator to proceed.</h3>
+                        </div>
+                        <div class="slide_action_btn">
+                            <button type="button" class="basic_advance_btn show_foundry_basic_div">Basic</button>
+                            <a href="@Url.Action("AdvancedRolling", "Calculator", null, Request.Url.Scheme)" class="basic_advance_btn">Advanced</a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="foundry_basic_popup display_none">
+                        <div class="basic_form">
+                            <h2 class="basic_cal_heading">Basic Calculator - Foundry</h2>
+                            <div class="basic_foundry_field_form">
+                                <div class="form_fields">
+                                    <label>Type of casting</label>
+                                    <select class="form_select_option">
+                                        <option>Cast Iron (Gray)</option>
+                                        <option>Cast Iron (Gray)</option>
+                                        <option>Cast Iron (Gray)</option>
+                                        <option>Cast Iron (Gray)</option>
+                                    </select>
+
+                                </div>
+                                <div class="form_fields">
+                                    <label>Type of process</label>
+                                    <select class="form_select_option">
+                                        <option>Green sand moulding</option>
+                                        <option>Green sand moulding</option>
+                                        <option>Green sand moulding</option>
+                                        <option>Green sand moulding</option>
+                                    </select>
+
+                                </div>
+                                <div class="form_fields">
+                                    <label>Type of fuel</label>
+                                    <select class="form_select_option">
+                                        <option>Coal</option>
+                                        <option>Petrol</option>
+                                        <option>Coal</option>
+                                        <option>Petrol</option>
+
+                                    </select>
+
+                                </div>
+                                <div class="form_fields">
+                                    <label>Electricity consumption  <span>kWh/month</span> </label>
+                                    <input type="text" class="form_feilds_inputs" placeholder="Enter here">
+
+                                </div>
+                                <div class="form_fields">
+                                    <label>Fuel consumption  <span>kg/lit/SCM per month</span> </label>
+                                    <input type="text" class="form_feilds_inputs" placeholder="Enter here">
+
+                                </div>
+                                <div class="form_fields">
+                                    <label>Plant installed capacity</label>
+                                    <input type="text" class="form_feilds_inputs" placeholder="Enter here">
+                                </div>
+                                <div class="form_fields">
+                                    <label>Plant actual production</label>
+                                    <input type="text" class="form_feilds_inputs" placeholder="Enter here">
+                                </div>
+                                <div class="form_fields">
+                                    <label>Major product</label>
+                                    <input type="text" class="form_feilds_inputs" placeholder="Enter here">
+                                </div>
+                                <div class="cal_btn">
+                                    <a href="calculate-foundry.html" class="Cal_href_btn">Calculate</a>
+
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+            </div>
+
+
+            <!-- ---------------------- foundry popup end-------------------- -->
+            <!-- ---------------------- forging popup start-------------------- -->
+            <div class="popup_forging">
+                <div class="popup-container_forging popup_bg_img">
+                    <div class="slidepopup for_basic_forging_slidepopup">
+                        <div class="slide_img">
+                            <img src="~/images/forging.png">
+                        </div>
+                        <div class="slide_text">
+                            <p>You have chosen Forging. </p>
+                            <h3>Select the type of calculator to proceed.</h3>
+                        </div>
+                        <div class="slide_action_btn">
+                            <button type="button" class="basic_advance_btn show_forging_basic_div">Basic</button>
+                            <a href="advanced-calculator-forging.html" class="basic_advance_btn">Advanced</a>
+
+                        </div>
+
+                    </div>
+
+                    <div class="forging_basic_popup display_none">
+                        <div class="basic_form">
+                            <h2 class="basic_cal_heading">Basic Calculator - Forging</h2>
+                            <div class="basic_foundry_field_form">
+
+                                <div class="form_fields">
+                                    <label>Final Finished Product <span>(tpm)</span> </label>
+                                    <input type="text" class="form_feilds_inputs" placeholder="Enter here">
+                                </div>
+                                <div class="form_fields">
+                                    <h3 class="formfld_inner_heading">Total Monthly Energy Consumption</h3>
+                                </div>
+                                <div class="form_fields">
+                                    <label>Type of Fuel</label>
+                                    <div class="fuel_checkbox_forging">
+
+                                        <div class="type_fuel_checkboxes">
+                                            <label class="checkbox-wrapper">
+                                                <input type="radio" class="checkbox-input" name="fuel_type_radio" />
+                                                <span class="checkbox-tile">
+                                                    <span class="checkbox-icon">
+                                                        <img src="~/images/Oil_barrel.png">
+                                                    </span>
+                                                    <span class="checkbox-label">FO</span>
+                                                </span>
+                                            </label>
+                                            <label class="checkbox-wrapper">
+                                                <input type="radio" class="checkbox-input" name="fuel_type_radio" />
+                                                <span class="checkbox-tile">
+                                                    <span class="checkbox-icon">
+                                                        <img src="~/images/Fuel.png">
+                                                    </span>
+                                                    <span class="checkbox-label">PNG</span>
+                                                </span>
+                                            </label>
+                                            <label class="checkbox-wrapper">
+                                                <input type="radio" class="checkbox-input" name="fuel_type_radio" />
+                                                <span class="checkbox-tile">
+                                                    <span class="checkbox-icon">
+                                                        <img src="~/images/Gas_cylinder.png">
+                                                    </span>
+                                                    <span class="checkbox-label">LPG</span>
+                                                </span>
+                                            </label>
+                                            <label class="checkbox-wrapper">
+                                                <input type="radio" class="checkbox-input" name="fuel_type_radio" />
+                                                <span class="checkbox-tile">
+                                                    <span class="checkbox-icon">
+                                                        <img src="~/images/Electricity.png">
+                                                    </span>
+                                                    <span class="checkbox-label">Electricity</span>
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form_fields">
+                                    <label>GCV of FO (kcal/kg)</label>
+                                    <div class="fuel_checkbox_forging forging_gcv_check">
+
+                                        <div class="type_fuel_checkboxes">
+                                            <label class="checkbox-wrapper">
+                                                <input type="radio" class="checkbox-input" name="fuel_type_radio" />
+                                                <span class="checkbox-tile">
+                                                    <span class="checkbox-icon check_gcv">9500</span>
+
+                                                </span>
+                                            </label>
+                                            <label class="checkbox-wrapper">
+                                                <input type="radio" class="checkbox-input" name="fuel_type_radio" />
+                                                <span class="checkbox-tile">
+                                                    <span class="checkbox-icon check_gcv">10,000</span>
+                                                </span>
+                                            </label>
+                                            <label class="checkbox-wrapper">
+                                                <input type="radio" class="checkbox-input" name="fuel_type_radio" />
+                                                <span class="checkbox-tile">
+                                                    <span class="checkbox-icon check_gcv">10,500</span>
+                                                </span>
+                                            </label>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form_fields">
+                                    <label>Quantity of Fuel</label>
+                                    <input type="text" class="form_feilds_inputs" placeholder="Enter here">
+                                </div>
+                                <div class="form_fields">
+                                    <label>Unit</label>
+                                    <div class="fuel_checkbox_forging forging_gcv_check">
+
+                                        <div class="type_fuel_checkboxes unit_type-forging_div">
+                                            <label class="checkbox-wrapper">
+                                                <input type="radio" class="checkbox-input" name="fuel_type_radio" />
+                                                <span class="checkbox-tile">
+                                                    <span class="checkbox-icon check_gcv">Tonne</span>
+
+                                                </span>
+                                            </label>
+                                            <label class="checkbox-wrapper">
+                                                <input type="radio" class="checkbox-input" name="fuel_type_radio" />
+                                                <span class="checkbox-tile">
+                                                    <span class="checkbox-icon check_gcv">Litres</span>
+                                                </span>
+                                            </label>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="cal_btn">
+                                    <a href="calculate-forging.html" class="Cal_href_btn">Calculate</a>
+
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+            <!-- ---------------------- forging popup end-------------------- -->
+            <!-- ---------------------- rolling popup start-------------------- -->
+            <div class="popup_rolling">
+                <div class="popup-container_rolling popup_bg_img">
+                    <div class="slidepopup for_basic_rolling_slidepopup">
+                        <div class="slide_img">
+                            <img src="~/images/rolling.png">
+                        </div>
+                        <div class="slide_text">
+                            <p>You have chosen Rolling. </p>
+                            <h3>Select the type of calculator to proceed.</h3>
+                        </div>
+                        <div class="slide_action_btn">
+                            <button type="button" class="basic_advance_btn show_rolling_basic_div">Basic</button>
+                            <a href="advanced-calculator-rolling.html" class="basic_advance_btn">Advanced</a>
+
+                        </div>
+
+                    </div>
+
+                    <div class="rolling_basic_popup display_none">
+                        <div class="basic_form">
+                            <h2 class="basic_cal_heading">Basic Calculator - Rolling</h2>
+                            <div class="basic_foundry_field_form">
+                                <div class="form_fields">
+                                    <label>Type of re-rolling</label>
+                                    <select class="form_select_option">
+                                        <option>Batch</option>
+                                        <option>Batch</option>
+                                        <option>Batch</option>
+                                        <option>Batch</option>
+                                    </select>
+
+                                </div>
+                                <div class="form_fields">
+                                    <label>Type of re-heating furnace</label>
+                                    <select class="form_select_option">
+                                        <option>Batch</option>
+                                        <option>Batch</option>
+                                        <option>Batch</option>
+                                        <option>Batch</option>
+                                    </select>
+
+                                </div>
+                                <div class="form_fields">
+                                    <label>Type of fuel</label>
+                                    <select class="form_select_option">
+                                        <option>FO</option>
+                                        <option>FO</option>
+                                        <option>FO</option>
+                                        <option>FO</option>
+
+                                    </select>
+
+                                </div>
+                                <div class="form_fields">
+                                    <label>Electricity consumption</label>
+                                    <input type="text" class="form_feilds_inputs" placeholder="Enter here">
+
+                                </div>
+                                <div class="form_fields">
+                                    <label>Plant installed capacity</label>
+                                    <input type="text" class="form_feilds_inputs" placeholder="Enter here">
+
+                                </div>
+                                <div class="form_fields">
+                                    <label>Plant actual production</label>
+                                    <input type="text" class="form_feilds_inputs" placeholder="Enter here">
+                                </div>
+
+                                <div class="form_fields">
+                                    <label>Major product</label>
+                                    <select class="form_select_option">
+                                        <option>Multiple</option>
+                                        <option>Multiple</option>
+                                        <option>Multiple</option>
+                                        <option>Multiple</option>
+
+                                    </select>
+
+                                </div>
+                                <div class="form_fields">
+                                    <label>Billets  <span>Additional input in case "single" option is selected</span></label>
+                                    <input type="text" class="form_feilds_inputs" placeholder="Enter here">
+                                </div>
+                                <div class="cal_btn">
+                                    <a href="calculate-rolling.html" class="Cal_href_btn">Calculate</a>
+
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+            <!-- ---------------------- rolling popup end-------------------- -->
+
+
+        </div>
+    </div>
+</section>

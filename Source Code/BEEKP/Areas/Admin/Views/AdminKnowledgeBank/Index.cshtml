@@ -1,0 +1,75 @@
+﻿@model BEEKP.Areas.Admin.Models.AdminKnowledgeBankViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<!-- END PAGE LEVEL STYLES -->
+
+@using (Html.BeginForm("Index", "AdminKnowledgeBank", FormMethod.Post, new { @id = "frmAdminKnowledgeBank", @name = "frmAdminKnowledgeBank" }))
+{
+    @Html.AntiForgeryToken()
+
+
+  
+
+
+    <div class="page-head">
+        <div class="container">
+            <!-- BEGIN PAGE TITLE -->
+            <div class="page-title">
+               
+            </div>
+            <!-- END PAGE TITLE -->
+
+        </div>
+    </div>
+        <!-- END PAGE HEAD -->
+        <!-- BEGIN PAGE CONTENT -->
+    <div class="page-content">
+        <div class="container">
+            <!-- BEGIN PAGE CONTENT INNER -->
+            <div class="row">
+                <div class="col-md-12">
+
+                    <div class="portlet light">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <span class="caption-subject font-green-sharp bold uppercase">Knowledge Bank Inactive</span>
+                            </div>
+                        </div>
+                        <div class="portlet-body">
+                            @Html.Partial("_KnowledgeBankInactivePartial", Model)
+                        </div>
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <span class="caption-subject font-green-sharp bold uppercase">Knowledge Bank Active</span>
+                            </div>
+                        </div>
+                        <div class="portlet-body">
+                            @Html.Partial("_KnowledgeBankActivePartial", Model)
+                        </div>
+                        <div class="form-actions">
+                            <div class="row">
+                                <div class="col-md-12">
+                                        <button type="button" class="btn green" onclick="location.href='@Url.Action("ManageKnowledgeBank", "AdminKnowledgeBank", new { sknowledge_bank_id = BEEKP.Class.Encryption.Encrypt("0", true) })'">Add</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+            <!-- END PAGE CONTENT INNER -->
+
+        </div>
+    </div>
+
+
+}
+@Scripts.Render("~/bundles/area/js/global")
+@Scripts.Render("~/bundles/area/js/datatables")
+@Scripts.Render("~/bundles/area/appjs/knowledgebank_index")

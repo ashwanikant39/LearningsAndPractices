@@ -1,0 +1,665 @@
+﻿
+
+@{
+    ViewBag.Title = "sector_detail";
+    Layout = "~/Views/Shared/_LayoutGef.cshtml";
+}
+<link rel="stylesheet" href="~/css/bootstrap.min.css">
+<link href="~/css/all.css" rel="stylesheet">
+<link rel="stylesheet" href="~/css/elements.css">
+<link rel="stylesheet" href="~/webfonts/fonts/flaticon.css">
+<link rel="shortcut icon" href="~/images/favicon.png" type="image/x-icon">
+<link rel="icon" href="~/images/favicon.png" type="image/x-icon">
+<style>
+    .tab {
+        overflow: hidden;
+        border: 1px solid #19a6e0;
+        background-color: #edfaff;
+    }
+
+        /* Style the buttons inside the tab */
+
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 20px;
+        }
+
+
+
+            /* Change background color of buttons on hover */
+
+            .tab button:hover {
+                background-color: #78aee3;
+                color: white;
+            }
+
+            /* Create an active/current tablink class */
+
+            .tab button.active {
+                background-color: #009cdc;
+                color: white;
+            }
+
+
+
+    /* Style the tab content */
+
+    .tabcontent {
+        display: none;
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        border-top: none;
+        margin-bottom: 50px;
+    }
+
+    .tabcontent {
+        animation: fadeEffect 3s;
+    }
+</style>
+<section class="breadcrumb-area">
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-xl-12">
+
+                <div class="inner-content clearfix">
+
+                    <div class="title_breadcrumb float-left">
+
+                        <h1>Sector Detail</h1>
+
+                    </div>
+
+                    <div class="breadcrumb-menu float-right">
+
+                        <ul class="clearfix">
+
+                            <li><a href="/GEF">GEF</a></li>
+
+                            <li class="active">Sector Detail</li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="gef_sections">
+
+    <div class="container pt-4 pb-4 ">
+
+        <div class="row">
+
+            <div class="col-md-12 col-12">
+
+                <div class="sec-title wow fadeInUp" data-wow-delay="300ms" data-wow-duration="2000ms">
+
+                    <!-- <div class="sub-title primary">MSME's</div> -->
+
+                    <h2 class="title inner-title mb-20 mb-3">Foundry</h2>
+
+                </div>
+
+                <div class="project_bg">
+
+                    <div class="project_info">
+
+                        <img src="/images/sectors/ceramics.png" style="margin-top: -60px; width:100%; max-width:250px;" alt="" class="img-thumbnail">
+
+                        <p class="text-justify">
+                            The United Nations Industrial Development Organization (UNIDO), in collaboration with the
+
+                            Bureau of Energy Efficiency (BEE), a statutory body under the Ministry of Power, Government of India, is executing a Global Environment Facility (GEF) funded national project titled 'Promoting energy efficiency and renewable energy in selected MSME clusters in India'. The project aims to develop and promote a market environment for introducing energy efficiency (EE) and enhanced use of renewable energy (RE) technologies in process
+
+                            applications in selected energy intensive industrial clusters, comprising micro, small and medium enterprises (MSMEs).
+                        </p>
+
+                        <div class="clearfix"></div>
+
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<div class="about-wrap cluster-section bg-white pt-3 pb-3">
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-12">
+
+                <div class="sec-title wow fadeInUp" data-wow-delay="300ms" data-wow-duration="2000ms">
+
+                    <h2 class="title inner-title mb-20 mb-3">Clusters </h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+
+        <div class="tab">
+
+            <button class="tablinks" onclick="openCity(event, 'Ahmedabad')">Ahmedabad</button>
+
+            <button class="tablinks" onclick="openCity(event, 'Belgaum')">Belgaum</button>
+
+            <button class="tablinks" onclick="openCity(event, 'Howrah')">Howrah</button>
+
+            <button class="tablinks" onclick="openCity(event, 'Coimbatore')">Coimbatore</button>
+
+        </div>
+
+
+
+        <div id="Ahmedabad" class="tabcontent">
+
+            <h3>Ahmedabad</h3>
+
+            <p>London is the capital city of England.</p>
+
+        </div>
+
+
+
+        <div id="Belgaum" class="tabcontent">
+
+
+
+            <h3 class="text-primary">Belgaum Foundry Cluster profile</h3><br>
+
+            <h5>Overview of Cluster </h5>
+
+            <p class="text-justify">Belgaum (also known as Belagavi) is one of the old, strong, prominent and cultured historical places nestled high in the Western Ghats in Karnataka. It has an enviable heritage and lies in the zone of cultural transition between Karnataka, Maharashtra, and Goa. Belgaum is also known as the foundry hub of north Karnataka. Belgaum is a pioneer in the development of foundry industrial sector in Karnataka, manufacturing iron & steel castings catering to the needs of General Engineering, Machine Tools, Automobiles, Tractor Components, Pumps, and Motor Body Castings.</p>
+
+            <p class="text-justify">The foundry industry in Belgaum has its origins dating back to the 1940s, when the first cupola was set up for manufacturing agricultural implements for local farming community. The industry grew rapidly between 1950 and 1960 with a surge in demand for castings for machine tools, diesel oil engines, electric motors and pump sets. The growth of automobile industry in and around Pune and the setting up of public sector plants such as BHEL and HMT in Bengaluru gave further boost to the demand for castings from the Belgaum cluster.</p>
+
+            <p class="text-justify">
+                Belgaum has the presence of more than 150 foundries. Ashok Iron Works is the only large foundry in the cluster and the other units belong to the category of Micro, Small & Medium Enterprises (MSMEs). Foundries in Belgaum cluster are located in five major industrial areas/ estates as follows
+
+            </p>
+
+
+
+            <h5 class="text-primary">Process Flow</h5>
+
+
+
+            <p class="text-justify">
+                <span style="font-weight: 700;"> The major steps in the production process of castings include mould sand preparation, charge preparation, melting, pouring, knockout and finishing. The steps are briefed below </span> :
+
+                <ul class="bullet_icons din">
+
+                    <li><strong>Mould sand preparation:</strong> Fresh sand is mixed with bentonite and other additives and mixed in muller to make green sand.</li>
+
+                    <li><strong>Moulding:</strong> The mould sand is pressed by machines or manually on the pattern to prepare the mould. The upper and lower halves of mould are assembled together to prepare the complete mould.</li>
+
+                    <li><strong>Charging:</strong> Charging is the process of weighing and adding the raw material to furnace for melting. Raw material includes pig iron, scrap, foundry returns and other alloys.</li>
+
+                    <li><strong>Melting:</strong> The metal charge is melted either in a cupola or induction furnace. The typical temperature requirement is around 1,5000C for CI casting, 1,6500C for steel casting, and 7500C for aluminium casting.</li>
+
+                    <li><strong>Pouring:</strong> Once the melting is completed, the molten metal is poured into the sand moulds that were prepared in the first stage, using a ladle operated either manually or automatically with the help of cranes. The poured material is then allowed to cooldown and harden.</li>
+
+
+
+                    <li><strong>Knock-out:</strong> After the moulds are left for cooling for the required time, the castings are knocked out from the mould either manually or using a machine.</li>
+
+                    <li><strong>Finishing:</strong> The finishing operation involves removal of runners/ risers shot blasting and cleaning of the castings.</li>
+
+
+
+
+
+                </ul>
+
+            </p>
+
+
+
+
+
+            <img src="/images/sectors/belgaun.png" style=" width:350px; height: 400px; alt="" class="center">
+
+
+
+            <h5 class="text-primary"><u>About GEF-UNIDO- BEE project</u></h5>
+
+
+
+            <p class="text-justify">
+                <span style="font-weight: 700;">The project through it various measures has created a real impact on Energy Efficiency in the cluster. Some of the initiatives are as follows:</span> :
+
+                <ul class="bullet_icons din">
+
+                    <li>Capacity building workshops for enterprises and local service providers.</li>
+
+                    <li>Energy measurement centres.</li>
+
+                    <li>Detailed energy audits.</li>
+
+                    <li>Identification of technology on Energy Efficiency.</li>
+
+                    <li>Financial assistance for demonstration projects.</li>
+
+                </ul>
+
+            </p>
+
+
+
+        </div>
+
+
+
+        <div id="Howrah" class="tabcontent">
+
+            <h3>Howrah</h3>
+
+            <p>London is the capital city of England.</p>
+
+        </div>
+
+
+
+        <div id="Coimbatore" class="tabcontent">
+
+            <h3>Coimbatore Foundry Cluster profile</h3><br>
+
+            <h5 class="text-primary">Overview of Cluster </h5>
+
+            <p class="text-justify">
+                Coimbatore, located in the state of Tamil Nadu, is an important industrial cluster in India. The industrial activities in the cluster developed in the 1930s, with the setting-up of many textiles and spinning units since the local weather was suitable for yarn processing. Initially, the metal casting industry flourished in Coimbatore to cater to the needs of the local textile machinery manufacturers. Subsequently with the start of pump manufacturing in Coimbatore in 1930 and electric motors in 1937, it became an important cluster for manufacture of monoblocs, domestic pumps and subsequently submersible pumps. In 1970s, the wet-grinder was developed in Coimbatore for grinding of rice and lentils used in local recipes. The motor and drive-system of wet-grinders use casting components. Till date, the cluster is by far the largest producer of wet-grinders in India. Subsequently, major automobile manufacturing units like Hyundai, Honda, Leyland, Nissan, LMW and Mahindras have set up auxiliary units to manufacture automobile components. The setting-up of these automobile units created a great demand for castings as well.
+
+            </p>
+
+
+
+            <h5 class="text-primary">Product types and production capacities</h5>
+
+
+
+            <img src="/images/sectors/coimbatore1.png" alt="" style=" width:40%; float:right;">
+
+            <p class="text-justify" style=" width:60%; float:left;">
+                The major raw materials used include base metals (pig iron, steel, borings, scrap and foundry return) and alloys (ferro-silicon, ferro-manganese, iron sulphide, silicon carbide, etc). In addition, small quantities of other metals like copper and tin are added for special grades and SG iron castings.
+
+                There are about 535 foundry units in Coimbatore cluster. They are scattered both within and outside the city. Some of  the larger foundry units are located in Arasur, Annur, Avinashi Road, Ganapathy, Kanuvai, Manikkampalayam, Mettupalayam, Peelamedu and SIDCO Industrial Estate (Refer the map).<br>
+
+                About 15 foundries are of large-scale, 70 in medium scale and others in small and micro category. The production of castings of the cluster is about 2,000 tonne per day (about 0.6 million tonne per annum). The foundry industry employs about 10,000 direct employees and roughly about 25,000 in-direct employees. The estimated turnover of the foundries in the cluster is approximately Rs 3,400 crore per annum.<br>
+
+                Several of the foundries in the cluster are of captive type i.e. they produce castings for use in the end-products being manufactured for different end-use applications.
+
+            </p>
+
+
+
+            <h5 class="text-primary">Energy scenario in the cluster</h5>
+
+            <p class="text-justify">
+                Coke and electricity are the major sources of energy for the foundries. Electricity is sourced from Tamil Nadu Generation and Distribution Corporation Ltd. (TANGEDCO) or from wind farms operating in the southern part of the state. Coke is procured from different distributors. It may be noted that the growth of foundries in the cluster has been adversely affected due to the power shortage in the state. Electricity utilities have put a ceiling of the maximum power demand (called quota demand) that can be used by the industry.<br>
+
+                The quota demand has been fixed at 80% of the average demand utilised by the industry during previous year. The industry is required to pay 20% higher tariff if it uses electricity in the peak hours (6 am – 9 am and 6 pm – 10 pm). There is a 5% rebate on the power tariff in the off-peak hours (11 pm – 5 am). Hence most of the foundry units in the cluster are operating in two shifts at present (a) 8 am to 6 pm and (b) and 10 pm to 8 am. The details of major energy sources and tariffs are shown in table.
+
+
+
+            </p>
+
+
+
+            <h6 class="text-primary"><i>Table I: Prices of major energy sources </i></h6>
+
+
+
+            <img src="/images/sectors/coimbatore3.png" alt="" style=" width:70%; float:center;"><br><br>
+
+
+
+
+
+
+
+            <h5 class="text-primary">Production process</h5>
+
+
+
+            <img src="/images/sectors/coimbatore2.png" alt="" style=" width:40%; float:right; margin-top: 25px">
+
+            <p class="text-justify">
+                <span style="font-weight: 700;"> The major steps in the production process of castings include mould sand preparation, charge preparation, melting, pouring, knockout and finishing. The steps are briefed below </span> :
+
+                <ul class="bullet_icons din">
+
+                    <li><strong>Mould sand preparation:</strong> Fresh sand is mixed with bentonite and other additives and mixed in muller to make green sand.</li>
+
+                    <li><strong>Moulding:</strong> The mould sand is pressed by machines or manually on the pattern to prepare the mould. The upper and lower halves of mould are assembled together to prepare the complete mould.</li>
+
+                    <li><strong>Charging:</strong> Charging is the process of weighing and adding the raw material to furnace for melting. Raw material includes pig iron, scrap, foundry returns and other alloys.</li>
+
+                    <li><strong>Melting:</strong> The metal charge is melted either in a cupola or induction furnace. The typical temperature requirement is around 1,5000C for CI casting, 1,6500C for steel casting, and 7500C for aluminium casting.</li>
+
+                    <li><strong>Pouring:</strong> Once the melting is completed, the molten metal is poured into the sand moulds that were prepared in the first stage, using a ladle operated either manually or automatically with the help of cranes. The poured material is then allowed to cooldown and harden.</li>
+
+
+
+                    <li><strong>Knock-out:</strong> After the moulds are left for cooling for the required time, the castings are knocked out from the mould either manually or using a machine.</li>
+
+                    <li><strong>Finishing:</strong> The finishing operation involves removal of runners/ risers shot blasting and cleaning of the castings.</li>
+
+
+
+
+
+                </ul>
+
+            </p>
+
+
+
+
+
+            <h5 class="text-primary"><u>GEF-UNIDO-BEE Project Impact in the cluster</u></h5>
+
+
+
+            <p class="text-justify">
+                <span style="font-weight: 700;">The project through it various measures has created a real impact on Energy Efficiency in the cluster. Some of the initiatives are as follows:</span> :
+
+                <ul class="bullet_icons din">
+
+                    <li>Capacity building workshops for enterprises and local service providers.</li>
+
+                    <li>Energy measurement centres.</li>
+
+                    <li>Detailed energy audits.</li>
+
+                    <li>Identification of technology on Energy Efficiency.</li>
+
+                    <li>Financial assistance for demonstration projects.</li>
+
+                </ul>
+
+            </p>
+
+
+
+
+
+        </div>
+
+
+
+        <script>
+
+            function openCity(evt, cityName) {
+
+                var i, tabcontent, tablinks;
+
+                tabcontent = document.getElementsByClassName("tabcontent");
+
+                for (i = 0; i < tabcontent.length; i++) {
+
+                    tabcontent[i].style.display = "none";
+
+                }
+
+                tablinks = document.getElementsByClassName("tablinks");
+
+                for (i = 0; i < tablinks.length; i++) {
+
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+
+                }
+
+                document.getElementById(cityName).style.display = "block";
+
+                evt.currentTarget.className += " active";
+
+            }
+
+        </script>
+
+        <div class="row pb-4">
+
+            <div class="col-lg-3 col-12">
+
+                <!-- <div class="nav flex-column nav-pills cluster-tabs" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+
+                        <a class="nav-link active" id="forging" data-toggle="pill" href="#forging-pill" role="tab" aria-controls="forging-pill" aria-selected="true">Forging</a>
+
+
+
+                        <a class="nav-link" id="chemical" data-toggle="pill" href="#chemical-pill" role="tab" aria-controls="chemical-pill" aria-selected="false">Chemical</a>
+
+
+
+                        <a class="nav-link" id="lime" data-toggle="pill" href="#lime-pill" role="tab" aria-controls="lime-pill" aria-selected="false">Lime kiln</a>
+
+
+
+                        <a class="nav-link" id="foundry" data-toggle="pill" href="#foundry-pill" role="tab" aria-controls="foundry-pill" aria-selected="false">Foundry</a>
+
+
+
+                        <a class="nav-link" id="mixed" data-toggle="pill" href="#mixed-pill" role="tab" aria-controls="mixed-pill" aria-selected="false">Mixed Industries</a>
+
+
+
+                        <a class="nav-link" id="pharmaceutical" data-toggle="pill" href="#pharmaceutical-pill" role="tab" aria-controls="pharmaceutical-pill" aria-selected="false">Pharmaceutical</a>
+
+
+
+                        <a class="nav-link" id="brick" data-toggle="pill" href="#brick-pill" role="tab" aria-controls="brick-pill" aria-selected="false">Brick Kiln</a>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-9 col-12">
+
+                    <div class="tab-content cluster-tab-content" id="v-pills-tabContent">
+
+                        <div class="tab-pane fade show active" id="forging-pill" role="tabpanel" aria-labelledby="forging">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque quaerat ex cum laudantium facilis omnis minima doloremque tenetur nulla qui ipsam esse culpa numquam voluptate, alias eaque fugiat accusamus vero?Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem harum itaque tempora asperiores laboriosam, labore magni eaque consectetur! Velit eaque provident minima commodi in excepturi nihil incidunt officiis adipisci cumque totam, doloremque nobis facere, eos deleniti reprehenderit molestiae sed reiciendis eum. Accusamus quas vitae odio tempore facere consectetur itaque minus.</div>
+
+
+
+                        <div class="tab-pane fade" id="chemical-pill" role="tabpanel" aria-labelledby="chemical">Chemical Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, omnis in. Amet natus deserunt asperiores voluptas, repellat temporibus nobis omnis iusto animi provident deleniti nemo ex unde, modi excepturi at perspiciatis odit possimus reiciendis accusantium aut doloribus ipsa, ad inventore.</div>
+
+
+
+                        <div class="tab-pane fade" id="lime-pill" role="tabpanel" aria-labelledby="lime">Lime kiln Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo in commodi facilis dignissimos, soluta debitis. Debitis officia dolorum maiores id perspiciatis? Ad adipisci, obcaecati incidunt commodi, corrupti magnam deleniti cupiditate dolor ea quia aperiam ab consequatur? Voluptates dolor quisquam dolorem eos nihil molestias sequi sed! Dolore deleniti rem ipsam dolores?</div>
+
+
+
+                        <div class="tab-pane fade" id="foundry-pill" role="tabpanel" aria-labelledby="foundry">Foundry Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non consequatur voluptas inventore eligendi sunt assumenda laudantium excepturi, debitis ipsum odio.</div>
+
+
+
+                        <div class="tab-pane fade" id="mixed-pill" role="tabpanel" aria-labelledby="mixed">Mixed Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non consequatur voluptas inventore eligendi sunt assumenda laudantium excepturi, debitis ipsum odio.</div>
+
+
+
+                        <div class="tab-pane fade" id="pharmaceutical-pill" role="tabpanel" aria-labelledby="pharmaceutical">Pharmaceutical Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non consequatur voluptas inventore eligendi sunt assumenda laudantium excepturi, debitis ipsum odio.</div>
+
+
+
+                        <div class="tab-pane fade" id="brick-pill" role="tabpanel" aria-labelledby="brick">Brick Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non consequatur voluptas inventore eligendi sunt assumenda laudantium excepturi, debitis ipsum odio.</div>
+
+                    </div>-->
+
+            </div>
+
+        </div>
+
+
+
+        <div class="row">
+
+            <div class="col-lg-12 col-12">
+
+                <div class="sec-title wow fadeInUp" data-wow-delay="300ms" data-wow-duration="2000ms">
+
+                    <h2 class="title inner-title mb-20 mb-3">Videos </h2>
+
+                </div>
+
+                <div class="rs-slider sdg-slider">
+
+                    <div class="rs-carousel nav-style2 owl-carousel" data-rewind="true" data-loop="false" data-items="3" data-margin="15" data-autoplay="true" data-hoverpause="true" data-autoplay-timeout="5000" data-smart-speed="800" data-dots="true" data-nav="true" data-nav-speed="false" data-center-mode="false" data-mobile-device="1" data-mobile-device-nav="false" data-mobile-device-dots="false" data-ipad-device="1" data-ipad-device-nav="false" data-ipad-device-dots="false" data-ipad-device2="1" data-ipad-device-nav2="true" data-ipad-device-dots2="false" data-md-device="3" data-md-device-nav="true" data-md-device-dots="false">
+
+                        <div class="res-box">
+
+                            <iframe width="100%" height="266" src="https://www.youtube.com/embed/0V9_tbbMADE?start=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                        </div>
+
+                        <div class="res-box">
+
+                            <iframe width="100%" height="266" src="https://www.youtube.com/embed/L3LqBl8_mq8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                        </div>
+
+                        <div class="res-box">
+
+                            <iframe width="100%" height="266" src="https://www.youtube.com/embed/0V9_tbbMADE?start=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                        </div>
+
+                        <div class="res-box">
+
+                            <iframe width="100%" height="266" src="https://www.youtube.com/embed/0V9_tbbMADE?start=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+<!--Newsletter Start-->
+
+<div class="newsletter-wrap wow fadeInUp">
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-12">
+
+
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+</div>
+
+<!--Newsletter End-->
+
+<script src="~/Scripts/jquery-3.6.0.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/js/all.js"></script>
+<script src="~/js/script.js"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5-ed0P7eZL44UHUnOF_WB-BN3XaUk4zk&callback=initMap&sensor=false&region=IN"></script>
+<script type="text/javascript">
+    var markers = [{
+        "title": 'Pune',
+        "lat": '18.5196',
+        "lng": '73.8553',
+        "description": 'Pune is a mixed cluster in Maharastra <a href="abc.php">Read More</a>',
+        "icon": 'https://lav.indevconsultancy.com/energy/d17/images/icons/mixed-industries.png'
+    },
+    {
+        "title": 'Navi Mumbai',
+        "lat": '18.990713',
+        "lng": '73.116844',
+        "description": 'Navi Mumbai is Foundry Cluster in Maharastra <a href="abc.php">Read More</a>',
+        "icon": 'https://lav.indevconsultancy.com/energy/d17/images/icons/foundry.png'
+    }
+    ];
+    window.onload = function () {
+        LoadMap();
+    }
+
+    function LoadMap() {
+        var mapOptions = {
+            center: new google.maps.LatLng(markers[0].lat, markers[0].lng),
+            zoom: 4,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map = new google.maps.Map(document.getElementById("dvMap"), mapOptions);
+
+        //Create and open InfoWindow.
+        var infoWindow = new google.maps.InfoWindow();
+
+        for (var i = 0; i < markers.length; i++) {
+            var data = markers[i];
+            var myLatlng = new google.maps.LatLng(data.lat, data.lng);
+            var marker = new google.maps.Marker({
+                position: myLatlng,
+                map: map,
+                title: data.title,
+                icon: data.icon
+            });
+
+            //Attach click event to the marker.
+            (function (marker, data) {
+                google.maps.event.addListener(marker, "click", function (e) {
+                    //Wrap the content inside an HTML DIV in order to set height and width of InfoWindow.
+                    infoWindow.setContent("<div style = 'width:200px;min-height:40px'>" + data.description + "</div>");
+                    infoWindow.open(map, marker);
+                });
+            })(marker, data);
+        }
+    }
+</script>
+

@@ -1,0 +1,175 @@
+﻿@model BEEKP.Areas.Admin.Models.NewsImageAddEditViewModel
+
+@{
+    ViewBag.Title = "NewsImageAddEdit";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@using (Html.BeginForm("NewsImageAddEdit", "AdminNews", FormMethod.Post, new { @id = "frmNewsImageAddEdit", @name = "frmNewsImageAddEdit", enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => Model.news_id)
+    @Html.HiddenFor(model => Model.NewsImage.news_image_id)
+
+
+    <div class="page-head">
+        <div class="container">
+            <!-- BEGIN PAGE TITLE -->
+            <div class="page-title">
+                @*<h1>@Model.PagePermission.file_name</h1>*@
+            </div>
+            <!-- END PAGE TITLE -->
+        </div>
+    </div>
+    <div class="page-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- BEGIN VALIDATION STATES-->
+                    <div class="portlet light">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <span class="caption-subject font-green-sharp bold uppercase">Manage News Image</span> <small class="small-font-cuatom">Fields marked with asterisk (<span class="required-asterisk"> * </span>) are mandatory to fill in </small>
+                            </div>
+                        </div>
+                        <div class="portlet-body form">
+                            <div class="horizontal-form ">
+                                <div class="form-body form-body-small-padding">
+                                    @*<h3 class="form-section page-title mandatory-note">&nbsp <small>Fields marked with asterisk (<span class="required-asterisk"> * </span>) are mandatory to fill in </small></h3>*@
+
+                                    <!--body start-->
+                                    <div class="row">
+
+                                        <div class="col-md-6">
+                                            <div class="form-group clearfix">
+                                                <label class="control-label col-md-4">News Image<span class="required">* </span></label>
+                                                <div class="col-md-8">
+                                                    <div class="input-group">
+                                                        <span class="input-group-btn">
+                                                            <span class="btn btn-default btn-file">
+                                                                Browse&hellip;
+                                                                @Html.TextBoxFor(m => m.NewsImage.news_image_name, new { type = "file", Name = "file", placeholder = Html.DisplayNameFor(m => m.NewsImage.news_image_name), @id = "fileNewsImage", @class = "form-control", accept = ".png,.jpg,.jpeg,.tiff,.bmp" })
+                                                                @Html.HiddenFor(m => m.NewsImage.news_image_name)
+                                                            </span>
+                                                        </span>
+                                                        <input type="text" class="form-control" value="@Model.NewsImage.news_image_name" readonly>
+                                                    </div>
+                                                    <span class="help-block">Max file size 1MB (.jpg/.png/.TIF) </span>
+                                                    <span id="spnDocumentUpload" style="color:red" class="file-error-message"></span>
+                                                    <br />
+                                                    @if (Model.NewsImage.news_image_name != null && Model.NewsImage.news_image_name != "")
+                                                    {
+                                                        <img src="~/images/News/@Model.NewsImage.news_image_name" alt="News Image" id="imgNewsImage" width="100px">
+                                                    }
+                                                    else
+                                                    {
+                                                        <img src="~/images/NoImage.png" alt="News Image" id="imgNewsImage" width="100px">
+                                                    }
+
+
+                                                    @*@Html.TextBox("file", "", new { type = "file", @id="fileEventImage" })*@
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Footer-->
+                                <div class="form-actions right">
+                                    <div class="row">
+                                        <div class="col-md-offset-3 col-md-9">
+                                            <button type="button" class="btn default" onclick="location.href='@Url.Action("NewsAddEdit", "AdminNews", new {sNewsID = BEEKP.Class.Encryption.Encrypt(Convert.ToString(Model.news_id), true) })'">Back</button>
+                                            <button type="submit" class="btn blue blue-custom" name="btnAction"><i class="fa fa-check"></i>Save</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- END FORM-->
+                        </div>
+                        <!-- END VALIDATION STATES-->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+}
+@Scripts.Render("~/bundles/area/js/global")
+@Scripts.Render("~/bundles/area/js/validate")
+<script>
+    jQuery(document).ready(function () {
+
+
+
+        function readURL(input) {
+
+            if (input.files && input.files[0]) {
+
+                //------------------ SIZE CHECK ----------------
+                var file_size = input.files[0].size;
+                if (file_size > 10485760) {
+                    $('#txtShowMessage').val('true');
+                    $('#txtMessageType').val('error');
+                    $('#txtMessageTitle').val('Error');
+                    $('#txtMessage').val('Invalid File Size, Maximum File Size 10MB !');
+                    Toastr();
+                    $("#imgNewsImage").attr("src", "/images/NoImage.png");
+                    return;
+                }
+                //------------------END SIZE CHECK ----------------
+
+
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#imgNewsImage').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+            else {
+                $("#imgNewsImage").attr("src", "/images/NoImage.png");
+            }
+        }
+
+        $("#fileNewsImage").change(function () {
+            readURL(this);
+        });
+
+        //$('.form_datetime').datetimepicker({
+        //    format: 'dd/mm/yyyy hh:mm',
+        //    weekStart: 1,
+        //    todayBtn:  1,
+        //	autoclose: 1,
+        //	todayHighlight: 1,
+        //	startView: 2,
+        //	forceParse: 0,
+        //    showMeridian: 1
+        //});
+
+        $('.btn-file :file').change(
+             function () {
+                 var input = $(this),
+                 numFiles = input.get(0).files ? input.get(0).files.length : 1,
+                 label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+                 input.trigger('fileselect', [numFiles, label]);
+             });
+
+        $('.btn-file :file').on('fileselect', function (event, numFiles, label) {
+            var input = $(this).parents('.input-group').find(':text'),
+                log = numFiles > 1 ? numFiles + ' files selected' : label;
+
+            if (input.length) {
+                input.val(log);
+            } else {
+                if (log) alert(log);
+            }
+
+        });
+    });
+</script>
+

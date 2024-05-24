@@ -1,0 +1,215 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <title>BEE KP | Admin Panel</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="" name="description">
+    <meta content="" name="author">
+
+
+
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    @*<link href="~/assets/admin/layout3/css/google-fontawesome.css" rel="stylesheet" />*@
+
+    <link href="~/assets/global/plugins/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css">
+    @*<link href="~/assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="~/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css">
+        <link href="~/assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="~/assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css">
+        <!-- END GLOBAL MANDATORY STYLES -->
+        <!-- BEGIN PAGE LEVEL STYLES -->
+        <link rel="stylesheet" type="text/css" href="~/assets/global/plugins/select2/select2.css" />
+        <link rel="stylesheet" type="text/css" href="~/assets/global/plugins/datatables/extensions/Scroller/css/dataTables.scroller.min.css" />
+        <link rel="stylesheet" type="text/css" href="~/assets/global/plugins/datatables/extensions/ColReorder/css/dataTables.colReorder.min.css" />
+        <link rel="stylesheet" type="text/css" href="~/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css" />
+        <!-- END PAGE LEVEL STYLES -->
+        <link rel="stylesheet" type="text/css" href="~/assets/global/plugins/bootstrap-toastr/toastr.min.css" />
+
+        <!-- BEGIN THEME STYLES -->
+        <link href="~/assets/global/css/components-rounded.css" id="style_components" rel="stylesheet" type="text/css">
+        <link href="~/assets/global/css/plugins.css" rel="stylesheet" type="text/css">
+        <link href="~/assets/admin/layout3/css/layout.css" rel="stylesheet" type="text/css">
+        <link href="~/assets/admin/layout3/css/themes/default.css" rel="stylesheet" type="text/css" id="style_color">
+        <link href="~/assets/admin/layout3/css/custom.css" rel="stylesheet" type="text/css">
+        <link href="~/assets/admin/layout3/css/style-bootstrap-file.css" rel="stylesheet" />
+        <link href="~/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />*@
+
+    @Styles.Render("~/bundles/area/css")
+
+    <link href="~/assets/admin/layout3/css/style-admin.css" rel="stylesheet" />
+
+    <!-- END THEME STYLES -->
+    <link href="~/images/favicon.png" rel="shortcut icon" type="image/png">
+    <script src="~/Scripts/jquery-3.6.0.min.js"></script>
+    <script src="~/Scripts/jquery-migrate.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.13.0.min.js"></script>
+    <script src="~/Scripts/jquery.webui-popover.min.js"></script> 
+</head>
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+<!-- DOC: Apply "page-header-menu-fixed" class to set the mega menu fixed  -->
+<!-- DOC: Apply "page-header-top-fixed" class to set the top menu fixed  -->
+<body>
+    <!-- BEGIN HEADER -->
+    <div class="page-header">
+        <!-- BEGIN HEADER TOP -->
+        <div class="page-header-top">
+            <div class="container">
+                <!-- BEGIN LOGO -->
+                <div class="page-logo">
+                    <a href="@Url.Action("Index","Home")"><img src="~/assets/admin/layout3/img/logo.png" alt="logo" class="logo-default"></a>
+                </div>
+                <div class="admin-title">
+                    <span>Control Panel</span>
+                </div>
+                <!-- END LOGO -->
+                <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+                <a href="javascript:;" class="menu-toggler"></a>
+                <!-- END RESPONSIVE MENU TOGGLER -->
+                <!-- BEGIN TOP NAVIGATION MENU -->
+                <div class="top-menu">
+                    <ul class="nav navbar-nav pull-right">
+                        <!-- BEGIN USER LOGIN DROPDOWN -->
+                        <li class="dropdown dropdown-user dropdown-dark">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                <img alt="" class="img-circle" src="~/assets/admin/layout3/img/avatar12.jpg">
+                                <span class="username username-hide-mobile">@Html.Raw(Convert.ToString(Session[BEEKP.Class.ApplicationSession.first_name])) </span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-default">
+                                <li>
+                                    <a href="@Url.Action("Index", "ChangePassword",new { Area = "Admin" })">
+                                        <i class="icon-user"></i> Change Password
+                                    </a>
+                                </li>
+                                <li class="divider">
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Logout", "Account",new { Area = "Admin" })">
+                                        <i class="icon-key"></i> Log Out
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- END USER LOGIN DROPDOWN -->
+                    </ul>
+                </div>
+                <!-- END TOP NAVIGATION MENU -->
+            </div>
+        </div>
+        <!-- END HEADER TOP -->
+        <!-- BEGIN HEADER MENU -->
+        <div class="page-header-menu">
+            <div class="container">
+                <!-- BEGIN MEGA MENU -->
+                @Html.Partial("_LayoutAdminMenu")
+                <!-- END MEGA MENU -->
+            </div>
+        </div>
+        <!-- END HEADER MENU -->
+    </div>
+    <!-- END HEADER -->
+    <!-- BEGIN PAGE CONTAINER -->
+    <div class="page-container">
+
+        <!-- BEGIN PAGE HEAD -->
+        @RenderBody()
+
+    </div>
+    <!-- END PAGE CONTAINER -->
+    <!-- BEGIN FOOTER -->
+    <div class="page-footer">
+        <div class="container">
+            Copyright &copy; 2021 Financing Energy Efficiency at MSMEs. All rights reserved
+        </div>
+    </div>
+    <div class="scroll-to-top">
+        <i class="icon-arrow-up"></i>
+    </div>
+
+    <!-- END FOOTER -->
+
+    <script src="~/assets/global/plugins/respond.min.js"></script>
+    <script src="~/assets/global/plugins/bootstrap-toastr/toastr.js"></script>
+
+    <!-- BEGIN JAVASCRIPTS (Load javascripts at bottom, this will reduce page load time) -->
+    @*<!-- BEGIN CORE PLUGINS -->
+        <!--[if lt IE 9]>
+
+        <script src="~/assets/global/plugins/excanvas.min.js"></script>
+        <![endif]-->
+        <script src="~/assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+        <script src="~/assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+        <!-- IMPORTANT! Load jquery-ui-1.10.3.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+        <script src="~/assets/global/plugins/jquery-ui/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+        <script src="~/assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="~/assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+        <script src="~/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+        <script src="~/assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+        <script src="~/assets/global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
+        <script src="~/assets/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+        <!-- END CORE PLUGINS -->*@
+    <div style="display: none;">
+        @Html.TextBox("txtShowMessage", (string)TempData["ShowMessage"])
+        @Html.TextBox("txtMessageType", (string)TempData["MessageType"])
+        @Html.TextBox("txtMessageTitle", (string)TempData["MessageTitle"])
+        @Html.TextBox("txtMessage", (string)TempData["Message"])
+    </div>
+
+    <script>
+        jQuery(document).ready(function () {
+            if ($('#txtShowMessage').val() == "true") {
+                Toastr();
+            }
+        });
+    </script>
+    <!-- END JAVASCRIPTS -->
+    <script type="text/javascript">
+
+        function Toastr() {
+
+            var i = -1,
+                toastCount = 0,
+                $toastlast;
+
+            var shortCutFunction = $('#txtMessageType').val();
+            var msg = $('#txtMessage').val();
+            var title = $('#txtMessageTitle').val();
+
+            var toastIndex = toastCount++;
+
+            toastr.options = {
+                closeButton: true,
+                debug: false,
+                positionClass: "toast-top-right",
+                onclick: null
+            };
+
+            toastr.options.showDuration = "2000";
+            toastr.options.hideDuration = "2000";
+            toastr.options.timeOut = "5000";
+            toastr.options.extendedTimeOut = "1000";
+            toastr.options.showEasing = "swing";
+            toastr.options.hideEasing = "linear";
+            toastr.options.showMethod = "fadeIn";
+            toastr.options.hideMethod = "fadeOut";
+
+            $("#toastrOptions").text("Command: toastr[" + shortCutFunction + "](\"" + msg + (title ? "\", \"" + title : '') + "\")\n\ntoastr.options = " + JSON.stringify(toastr.options, null, 2));
+
+            var $toast = toastr[shortCutFunction](msg, title); // Wire up an event handler to a button in the toast, if it exists
+            $toastlast = $toast;
+
+        }
+
+    </script>
+
+
+
+
+    
+</body>
+<!-- END BODY -->
+</html>

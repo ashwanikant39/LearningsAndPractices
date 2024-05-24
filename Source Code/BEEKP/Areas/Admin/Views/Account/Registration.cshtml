@@ -1,0 +1,94 @@
+﻿@model BEEKP.Areas.Admin.Models.RegistrationViewModel   
+@{
+    ViewBag.Title = "Registration";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/assets/admin/layout3/css/style-admin.css" rel="stylesheet" />
+@using (Html.BeginForm("Registration", "Account", FormMethod.Post, new { @id = "frmRegistration", @name = "frmRegistration" }))
+{
+    @Html.AntiForgeryToken()
+
+    <!-- Section: home -->
+    <section id="home" class="divider bg-lighter">
+        <div class="display-table">
+            <div class="display-table-cell">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-md-push-3">
+                            <div class="text-center width-100 mb-10 margin-auto"><a href="../Home/Index"><img alt="" src="~/images/login-logo.png"></a></div>
+
+                            <div class="text-align-center">
+                                <p>
+                                    <strong>
+                                        The GEF - World Bank Project<br />
+                                        Financing Energy Efficiency at MSMEs
+                                    </strong>
+                                </p>
+                            </div>
+
+
+                            <hr />
+
+                            <h4 class="text-theme-colored mt-0 pt-5"> Registration</h4>
+
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    <label for="form_username_email">Email-Id</label>
+                                    @*<input id="form_username_email" name="form_username_email" class="form-control" type="text">*@
+                                    @Html.TextBoxFor(model => Model.Registration.emailid, new { @class = "form-control", @tabindex = "1", autocomplete = "off", @placeholder = "Email-Id", @name = "Email-Id", })
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    <label for="form_password">Mobile Number</label>
+                                    @*<input id="form_password" name="form_password" class="form-control" type="text">*@
+                                    @Html.TextBoxFor(model => Model.Registration.mobile, new { @class = "form-control", @tabindex = "2", autocomplete = "off", @placeholder = "Mobile Number", @name = "Mobile Number" })
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    <label for="form_password">First Name</label>
+                                    @*<input id="form_password" name="form_password" class="form-control" type="text">*@
+                                    @Html.TextBoxFor(model => Model.Registration.first_name, new { @class = "form-control", @tabindex = "2", autocomplete = "off", @placeholder = "First Name", @name = "First Name"})
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    <label for="form_password">Last Name</label>
+                                    @*<input id="form_password" name="form_password" class="form-control" type="text">*@
+                                    @Html.TextBoxFor(model => Model.Registration.last_name, new { @class = "form-control", @tabindex = "2", autocomplete = "off", @placeholder = "Last Name", @name = "Last Name" })
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    <label for="form_password">Address</label>
+                                    @*<input id="form_password" name="form_password" class="form-control" type="text">*@
+                                    @Html.TextAreaFor(model => Model.Registration.address, new { @class = "form-control", @tabindex = "2", autocomplete = "off", @placeholder = "Address", @name = "Address", @row="17" })
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    <label for="form_password">State</label>
+                                    @*<input id="form_password" name="form_password" class="form-control" type="text">*@
+                                   @Html.DropDownListFor(model => Model.Registration.State.state_id, new SelectList(Model.ListState, "state_id", "state_name", ""), new { @class = "form-control required", @id = "ddlstate", autocomplete = "off" })
+                                </div>
+                            </div>
+
+                            <div class="form-group pull-right mt-10">
+                                <button type="submit" class="btn btn-sm btn-theme-colored">Register</button>
+                            </div>
+                            <div class="clear pull-left pt-10">
+                                <a class="text-theme-colored font-weight-600 font-12" href="#">Forgot Your Password?</a>
+                            </div>
+                            <div class="text-denger">@Html.ValidationSummary(true)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+}
+
+
+

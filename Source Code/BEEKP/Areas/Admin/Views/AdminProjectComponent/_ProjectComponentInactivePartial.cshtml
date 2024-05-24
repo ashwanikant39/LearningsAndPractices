@@ -1,0 +1,73 @@
+﻿@model BEEKP.Areas.Admin.Models.AdminProjectComponentViewModel
+
+@if (Model.ListProjectComponentInactive != null)
+{
+    <table id="tblProjectComponentInactive" class="table table-striped table-hover table-bordered">
+
+        <thead>
+            <tr>
+                <th>
+                    Project Component Image
+                </th>
+                <th>
+                   Title
+                </th>
+                @*<th>
+                   Short Description
+                </th>*@
+                <th>
+                    Full Description
+                </th>
+                <th align="center" valign="middle">
+                    Action
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @for (Int32 i = 0; i < Model.ListProjectComponentInactive.Count; i++)
+                {
+                <tr>
+                    <td>
+                        @if (Model.ListProjectComponentInactive[i].project_component_image_name != null && Model.ListProjectComponentInactive[i].project_component_image_name != "")
+                        {
+                            <img src="~/images/ProjectComponent/@Model.ListProjectComponentInactive[i].project_component_image_name" alt="Photo" width="100px">
+                        }
+                        else
+                        {
+                            <img src=@BEEKP.Class.Constants.NO_IMAGE alt="Photo" width="100px">
+                        }
+                    </td>
+                    <td>
+                        <label>@Model.ListProjectComponentInactive[i].project_component_title </label>
+                    </td>
+                    @*<td>
+                        <label>@Model.ListProjectComponentInactive[i].project_component_short_description </label>
+                    </td>*@
+                    <td>
+                        <p>@Html.Raw(Model.ListProjectComponentInactive[i].project_component_full_description)</p>
+                    </td>
+                    
+                    <td align="center" valign="middle">
+                        @if (Model.PagePermission.role_edit == BEEKP.Class.Constants.PAGE_PERMISSION_YES)
+                        {
+                            <a href="@Url.Action("ManageProjectComponent", "AdminProjectComponent", new { sproject_component_id =BEEKP.Class.Encryption.Encrypt(Model.ListProjectComponentInactive[i].project_component_id.ToString(), true)})" title="" class="custom-edit-tooltip"><i class="fa fa-pencil"></i></a>
+                        }
+                        
+                        @if (Model.PagePermission.role_delete == BEEKP.Class.Constants.PAGE_PERMISSION_YES)
+                        {
+                            @Html.Raw("|");
+                            <a href="@Url.Action("DeleteProjectComponent", "AdminProjectComponent", new { sproject_component_id = BEEKP.Class.Encryption.Encrypt(Model.ListProjectComponentInactive[i].project_component_id.ToString(), true), sproject_component_name = Model.ListProjectComponentInactive[i].project_component_image_name})" title="" data-toggle="confirmation" data-original-title="Are you sure ?"><i class="fa fa-trash-o"></i></a>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+
+
+
+
+

@@ -1,0 +1,64 @@
+﻿@model BEEKP.Areas.Admin.Models.AdminCityViewModel
+
+
+@if (Model.ListCity != null)
+{
+
+    <table id="tblCity" class="table table-striped table-hover table-bordered action-column-custom">
+
+        <thead>
+            <tr>
+                <th>
+                   City Name
+                </th>
+                <th>
+                   State Name
+                </th>
+                <th align="center" valign="middle">
+                    Action
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @{
+
+
+                for (Int32 i = 0; i < Model.ListCity.Count; i++)
+                {
+
+
+
+                    <tr>
+                        <td>
+                            <label>@Model.ListCity[i].city_name</label>
+                        </td>
+                        <td>
+                            <label>@Model.ListCity[i].state_name </label>
+                        </td>
+                        
+                        <td align="center" valign="middle">
+                            @if (Model.PagePermission.role_edit == BEEKP.Class.Constants.PAGE_PERMISSION_YES)
+                            {
+                                <a href="@Url.Action("ManageCity", "AdminCity", new { scity_id = BEEKP.Class.Encryption.Encrypt(Model.ListCity[i].city_id.ToString(), true)})" title="" class="custom-edit-tooltip"><i class="fa fa-pencil"></i></a>
+                            }
+                            
+                            @if (Model.PagePermission.role_delete == BEEKP.Class.Constants.PAGE_PERMISSION_YES)
+                            {
+                                @Html.Raw("|");
+                                <a href="@Url.Action("DeleteCity", "AdminCity", new { scity_id =BEEKP.Class.Encryption.Encrypt(Model.ListCity[i].city_id.ToString(),true)})" title="" data-toggle="confirmation" data-original-title="Are you sure ?"><i class="fa fa-trash-o"></i></a>
+                            }
+                        </td>
+                    </tr>
+                }
+
+            }
+
+
+        </tbody>
+    </table>
+                }
+
+
+
+

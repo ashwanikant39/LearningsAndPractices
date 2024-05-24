@@ -1,0 +1,126 @@
+﻿@model BEEKP.Areas.Admin.Models.AdminEventViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<!-- END PAGE LEVEL STYLES -->
+
+@using (Html.BeginForm("Index", "AdminEvent", FormMethod.Post, new { @id = "frmEventAddEdit", @name = "frmEventAddEdit" }))
+{
+    @Html.AntiForgeryToken()
+
+   
+    @Html.HiddenFor(model => Model.PagePermission.role_view)
+    @Html.HiddenFor(model => Model.PagePermission.role_add)
+    @Html.HiddenFor(model => Model.PagePermission.role_edit)
+    @Html.HiddenFor(model => Model.PagePermission.role_delete)
+
+
+    <div class="page-head">
+        <div class="container">
+            <!-- BEGIN PAGE TITLE -->
+            <div class="page-title">
+                <h1>@Model.PagePermission.file_name</h1>
+            </div>
+            <!-- END PAGE TITLE -->
+
+        </div>
+    </div>
+        <!-- END PAGE HEAD -->
+        <!-- BEGIN PAGE CONTENT -->
+    <div class="page-content">
+        <div class="container">
+            <!-- BEGIN PAGE CONTENT INNER -->
+            <div class="row">
+                <div class="col-md-12">
+
+                    <div class="portlet light">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <span class="caption-subject font-green-sharp bold uppercase">Event List Inactive</span>
+                            </div>
+                        </div>
+                        <div class="portlet-body">
+                            @Html.Partial("_EventInactivePartial", Model)
+                        </div>
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <span class="caption-subject font-green-sharp bold uppercase">Event List Active</span>
+                            </div>
+                        </div>
+                        <div class="portlet-body">
+                            @Html.Partial("_EventActivePartial", Model)
+                        </div>
+                        <div class="form-actions">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    @if (Model.PagePermission.role_add == BEEKP.Class.Constants.PAGE_PERMISSION_YES)
+                                    {
+                                    <button type="button" class="btn green" onclick="location.href='@Url.Action("EventAddEdit", "AdminEvent", new { sEventID = BEEKP.Class.Encryption.Encrypt("0", true) })'">Add</button>
+                                   
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+            <!-- END PAGE CONTENT INNER -->
+
+        </div>
+    </div>
+
+
+}
+
+@Scripts.Render("~/bundles/area/js/global")
+@Scripts.Render("~/bundles/area/js/datatables")
+@Scripts.Render("~/bundles/area/appjs/event_index")
+
+@*<script src="~/assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+    <script src="~/assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+    <!-- IMPORTANT! Load jquery-ui-1.10.3.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+    <script src="~/assets/global/plugins/jquery-ui/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+    <script src="~/assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="~/assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+    <script src="~/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+    <script src="~/assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+    <script src="~/assets/global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
+    <script src="~/assets/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+    <!-- END CORE PLUGINS -->
+    <!-- BEGIN PAGE LEVEL PLUGINS -->
+    <script type="text/javascript" src="~/assets/global/plugins/select2/select2.min.js"></script>
+    <script type="text/javascript" src="~/assets/global/plugins/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="~/assets/global/plugins/datatables/extensions/TableTools/js/dataTables.tableTools.min.js"></script>
+    <script type="text/javascript" src="~/assets/global/plugins/datatables/extensions/ColReorder/js/dataTables.colReorder.min.js"></script>
+    <script type="text/javascript" src="~/assets/global/plugins/datatables/extensions/Scroller/js/dataTables.scroller.min.js"></script>
+    <script type="text/javascript" src="~/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js"></script>
+    <!-- END PAGE LEVEL PLUGINS -->
+
+    <script type="text/javascript" src="~/assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" src="~/assets/global/plugins/bootstrap-timepicker/js/bootstrap-timepicker.min.js"></script>
+    <script type="text/javascript" src="~/assets/global/plugins/clockface/js/clockface.js"></script>
+    <script type="text/javascript" src="~/assets/global/plugins/bootstrap-daterangepicker/moment.min.js"></script>
+    <script type="text/javascript" src="~/assets/global/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script type="text/javascript" src="~/assets/global/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
+    <script type="text/javascript" src="~/assets/global/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+
+    <script src="~/assets/global/plugins/bootstrap-confirmation/bootstrap-confirmation.min.js" type="text/javascript"></script>*@
+@*<script src="~/AppJS/Event/Event.js"></script>
+
+
+
+
+<script src="~/assets/global/scripts/metronic.js" type="text/javascript"></script>
+<script>
+    jQuery(document).ready(function () {
+        // initiate layout and plugins
+        Metronic.init(); // init metronic core components
+
+    });
+</script>*@

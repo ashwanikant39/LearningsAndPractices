@@ -1,0 +1,2610 @@
+﻿
+@{
+    ViewBag.Title = "sector_detail";
+    Layout = "~/Views/Shared/_LayoutGef.cshtml";
+}
+<link rel="stylesheet" href="~/css/bootstrap.min.css">
+<link href="~/css/all.css" rel="stylesheet">
+<link rel="stylesheet" href="~/css/elements.css">
+<link rel="stylesheet" href="~/webfonts/fonts/flaticon.css">
+<link rel="shortcut icon" href="~/images/favicon.png" type="image/x-icon">
+<link rel="icon" href="~/images/favicon.png" type="image/x-icon">
+
+<style>
+    button.tablinks.active {
+        background: #009cdc !important;
+        color: white !important;
+    }
+    /* Style the tab */
+    .tab {
+        overflow: hidden;
+        border: 1px solid #ccc;
+        background-color: #f1f1f1;
+    }
+
+        /* Style the buttons inside the tab */
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+
+            /* Change background color of buttons on hover */
+            .tab button:hover {
+                background-color: #ddd;
+            }
+
+            /* Create an active/current tablink class */
+            .tab button.active {
+                background-color: #ccc;
+            }
+
+    /* Style the tab content */
+    .tabcontent {
+        display: none;
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        border-top: none;
+    }
+</style>
+
+<body class="gef4">
+    <section class="breadcrumb-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="inner-content clearfix">
+                        <div class="title_breadcrumb float-left">
+                            <h1>Participating MSMEs</h1>
+                        </div>
+                        <div class="breadcrumb-menu float-right">
+                            <ul class="clearfix">
+                                <li><a href="/GEF">Home</a></li>
+                                <li class="active">Participating MSMEs</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="about-wrap pt-4 pb-5 bg-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-12 order-lg-3 mt-4">
+                    <div class="tab" id="tab">
+                        <button class="tablinks active" onclick="openCity(event, 'Belgaum')">Belgaum</button>
+                        <button class="tablinks" onclick="openCity(event, 'Indore')">Indore</button>
+                        <button class="tablinks" onclick="openCity(event, 'Sikkim')">Sikkim</button>
+                        <button class="tablinks" onclick="openCity(event, 'Jalandhar')">Jalandhar</button>
+                        <button class="tablinks" onclick="openCity(event, 'Naguar')">Naguar</button>
+                        <button class="tablinks" onclick="openCity(event, 'Gujarat')">Gujarat</button>
+                        <button class="tablinks" onclick="openCity(event, 'Kerala')">Kerala</button>
+                        <button class="tablinks" onclick="openCity(event, 'Jamnagar')">Jamnagar</button>
+                        <button class="tablinks" onclick="openCity(event, 'Khurja')">Khurja</button>
+                        <button class="tablinks" onclick="openCity(event, 'Morbi')">Morbi</button>
+                        <button class="tablinks" onclick="openCity(event, 'Thangadh')">Thangadh</button>
+                        <button class="tablinks" onclick="openCity(event, 'Coimbatore')">Coimbatore</button>
+                    </div>
+                    <!--tab start-->
+                    <div id="Belgaum" class="tabcontent" id="tabcontent" style="display: block!important;">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Unit Name</th>
+                                    <th scope="col">Owner</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Mobile</th>
+                                    <th scope="col">Address</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Aakash Met Form Pvt Ltd</td>
+                                    <td>Milind Dolli</td>
+                                    <td>amfplbgm@gmail.com</td>
+                                    <td>9741177800</td>
+                                    <td>Plot No. 77, KIADB Industrial Area, Honaga,Belgaum, Karnataka.-591 113.</td>
+                                </tr>
+                                <tr>
+                                    <td>Abhishek Alloys Pvt.Ltd.</td>
+                                    <td>M.N.Acharya</td>
+                                    <td>abhishekalloysbgm@gmail.com</td>
+                                    <td>9448146799</td>
+                                    <td>Plot no.58, Machhe Ind. Estate, Machhe Belgaum-590014</td>
+                                </tr>
+                                <tr>
+                                    <td>AKP Ferrocast Pvt.Ltd.</td>
+                                    <td>Gautam R. Bhandare </td>
+                                    <td>gautam@akpferrocast.com</td>
+                                    <td>9448497512</td>
+                                    <td>663, Waghwade Road, Machhe, Belgaum, - 590014</td>
+                                </tr>
+                                <tr>
+                                    <td>AKP Foundries(P) Ltd.</td>
+                                    <td>Ram Bhandare</td>
+                                    <td>rambhandare@akpfoundries.com</td>
+                                    <td>9448497588</td>
+                                    <td>689, Udyambag, Belgaum-590008</td>
+                                </tr>
+                                <tr>
+                                    <td>AKP Foundries(P) Ltd.</td>
+                                    <td></td>
+                                    <td>akpfdy@akpfoundries.com</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Alloy Steels</td>
+                                    <td>Jaidev Dolli</td>
+                                    <td>alloysteelsbgm@gmail.com</td>
+                                    <td>9980127800</td>
+                                    <td>M-27, Govt, Ind. Estate, Udyamabg belgaum 590008</td>
+                                </tr>
+                                <tr>
+                                    <td>Alucast Autocast Parts Ltd</td>
+                                    <td>Sanjay A Bichu</td>
+                                    <td>sanjaybichu@alucastgroup.com</td>
+                                    <td>9845402479</td>
+                                    <td>B-16, K.S.S.I.D.C., Angol Industrial Estate, Udyambag, Belgaum - 590008, Karnataka, India </td>
+                                </tr>
+                                <tr>
+                                    <td>Amijeet Founders</td>
+                                    <td>Ajit Hangirgekar</td>
+                                    <td>amijeet_founders@rediff.com</td>
+                                    <td>9448147291</td>
+                                    <td>Plot No.182, Udyambag, Belgaum -590008</td>
+                                </tr>
+                                <tr>
+                                    <td>Amit Ferro Cast</td>
+                                    <td>Shiva Astekar</td>
+                                    <td>afc_bgm@yahoo.co.in</td>
+                                    <td>9449867598</td>
+                                    <td>Sy.No.608/2 &3, Machhe Industrial Estate, Machhe, Belgaum. -590014</td>
+                                </tr>
+                                <tr>
+                                    <td>Aqua Alloys</td>
+                                    <td>Amritraj Bhat</td>
+                                    <td>amritraj.bhat@aqualloys.com </td>
+                                    <td>9243220917</td>
+                                    <td>Add.for Correspondance:--Javali Building,Club Road,Belgaum.</td>
+                                </tr>
+                                <tr>
+                                    <td>Ashok Iron Works Pvt Ltd</td>
+                                    <td>Jayant A.Humbarwadi</td>
+                                    <td>corporate@ashokiron.com</td>
+                                    <td>0831-2442599</td>
+                                    <td>Add.for Correspondance:Corporate Office,Majgaon Road,Udyambag,Belgaum-590008.</td>
+                                </tr>
+                                <tr>
+                                    <td>Atuni Steel Cast</td>
+                                    <td>Sanchit Ajit kittur</td>
+                                    <td>atunisteelcast@gmail.com</td>
+                                    <td>9141673729</td>
+                                    <td>Plot no:50 Machhe Industrial Estate, Machhe Belgaum-590014</td>
+                                </tr>
+                                <tr>
+                                    <td>Belgaum Alluminium Industries </td>
+                                    <td>Pushkaraj M. Mangale</td>
+                                    <td>mm.pushkaraj@gmail.com engineershindustan2@gmail.com</td>
+                                    <td>9686376789</td>
+                                    <td>Plot 8A, S. No. 34, Kangrali BK Belgaum -590 010</td>
+                                </tr>
+                                <tr>
+                                    <td>Belgaum Ferrocast (I)Pvt .Ltd.</td>
+                                    <td>Sachin S.Sabnis</td>
+                                    <td>sachinsabnis@bfplindia.com</td>
+                                    <td>9480839900</td>
+                                    <td>Plot no.150, RS.no.585 & 589 BEMCIEL, Machhe, Belgaum-590014</td>
+                                </tr>
+                                <tr>
+                                    <td>Bharat iron & Steel Works</td>
+                                    <td>Sudhir M.Patil</td>
+                                    <td>bharatisw@gmail.com</td>
+                                    <td>9448142595</td>
+                                    <td>371 / 1+2 B,P.B.Road,Belgaum-590016</td>
+                                </tr>
+                                <tr>
+                                    <td>Bharat Iron Works</td>
+                                    <td>Sunay S. Patil</td>
+                                    <td>bharat.biw@gmail.com</td>
+                                    <td>9448363555</td>
+                                    <td>227, Santibastwad Road, Belgaum-590014</td>
+                                </tr>
+                                <tr>
+                                    <td>Big Castings Pvt Ltd</td>
+                                    <td>Dolli C.S.</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>Plot No.75,KIADB Industrial Area, Honaga, Belagavi-591 113, Karnataka, India.</td>
+                                </tr>
+                                <tr>
+                                    <td>Damodar Iron Works</td>
+                                    <td>Sameer S. Angolkar</td>
+                                    <td>damodargroup@gmail.com</td>
+                                    <td>9448102189</td>
+                                    <td>Near railway gate, Dharwad road, Belgaum -590 001 </td>
+                                </tr>
+                                <tr>
+                                    <td>Divya Metals</td>
+                                    <td>Pramod G.Patil</td>
+                                    <td>divya_metals@rediffmail.com</td>
+                                    <td>9241750782</td>
+                                    <td>Sy.No.108 / 2, Pl.No.13,14,15, Shinoli (BK),Tal. Chandgad, Dist. Kolhapur-416508, Maharashtra State,INDIA.Shinoli.</td>
+                                </tr>
+                                <tr>
+                                    <td>Ductile Iron works,Unit -II</td>
+                                    <td>Mallikarjun B.Holli</td>
+                                    <td>ductileironworks@yahoo.co.in</td>
+                                    <td>9448077378</td>
+                                    <td>
+                                        57/10 & Khanapur road, Zadshahapur,
+                                        Belgaum.-590014.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Fluid Metals (India) Pvt.Ltd.</td>
+                                    <td>Satish Nerlekar.</td>
+                                    <td>snerlekar@gmail.com</td>
+                                    <td>9845651291</td>
+                                    <td>
+                                        Sy No.58/1, Off Navage Jamboti Road,
+                                        At Post Navage. Belgaum.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Girnar Alloys Pvt.ltd.</td>
+                                    <td>Hemant B. Latthe </td>
+                                    <td>girnar.alloy@gamail.com</td>
+                                    <td>9341100904</td>
+                                    <td>
+                                        90C2,Mangalwar Peth,Tilakwadi,
+                                        Belgaum-590 006
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Glow Cast</td>
+                                    <td>Ashalata Girish Maliye</td>
+                                    <td>glowcast14@gmail.com</td>
+                                    <td>9448132413/ 9448482809</td>
+                                    <td>Plot  No. 76 & 104, Machhe Industrial Estate (Vishweshwariah  Industrial  Park), Machhe, Belgaum-590014</td>
+                                </tr>
+                                <tr>
+                                    <td>Gokul ferrocast Pvt.ltd.</td>
+                                    <td>Nitin Landge</td>
+                                    <td>md@gokulferrocast.com</td>
+                                    <td>9845568039</td>
+                                    <td>172/2, GP 509, Waghwade, Belgaum</td>
+                                </tr>
+                                <tr>
+                                    <td>Grihalaxmi Metal Industries</td>
+                                    <td>Maruti Yallappa Kono</td>
+                                    <td>grihalaxmimetals@hotmail.com</td>
+                                    <td>9448144745</td>
+                                    <td>N 13, Industrial Area, Udyambag, Belgaum</td>
+                                </tr>
+                                <tr>
+                                    <td>Harsha Enterprises</td>
+                                    <td>C.C.Hondadkatti.</td>
+                                    <td>harsha.enterprises06@gmail.com</td>
+                                    <td>9448110506</td>
+                                    <td>
+                                        81/2, BEMCIEL Machhe Industrial Estate,
+                                        Machhe, Belgaum-590014
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Hindustan Engineers</td>
+                                    <td>Shailesh Y Mangale</td>
+                                    <td>Shailesh.mangale@gmail.com</td>
+                                    <td>9901774080</td>
+                                    <td>
+                                        Plot No. 40/1 & 40/2 (s.No. 689/2),
+                                        New S.No. 341/2, Udyambag, Belgaum 590008
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>I H Castings</td>
+                                    <td>Anand Desai</td>
+                                    <td>ihcastings@yahoo.com </td>
+                                    <td>9341770117/ 09845772117</td>
+                                    <td>B-1,C-27, Angol Indl.Estate, Udyambag, Belgaum-590008</td>
+                                </tr>
+                                <tr>
+                                    <td>J.P.F Metacast Pvt. Ltd.-Unit I</td>
+                                    <td>Gaurav Pandit</td>
+                                    <td>gauravpandit@jpfmetacast.com</td>
+                                    <td>9620201518</td>
+                                    <td>
+                                        Plot No.7,16,29 S.No., 589 & 607,
+                                        Machhe Industrial Estate, Machhe,Belgaum
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>J.P.F Metacast Pvt. Ltd.-Unit II</td>
+                                    <td>Prakash Pandit</td>
+                                    <td>prakashpandit@jpfmetacast.com</td>
+                                    <td>9845055646</td>
+                                    <td>Plot No. 24,38,39, Machhe Industrial Estate, Belgaum</td>
+                                </tr>
+                                <tr>
+                                    <td>Jineshwar Malleable and Alloys</td>
+                                    <td>Manoj H.Dhawaleshwar</td>
+                                    <td>jineshwarma@yahoo.co.in</td>
+                                    <td>9341103252</td>
+                                    <td>Angol Ind. Estate, Rani Chennamma Nagar</td>
+                                </tr>
+                                <tr>
+                                    <td>K.T.N. Metals</td>
+                                    <td>Bhairu Saple </td>
+                                    <td>ktn@ktntechno.com</td>
+                                    <td>9448148086</td>
+                                    <td>Plot no.149-150-151, Udyambag, Belgaum-590008</td>
+                                </tr>
+                                <tr>
+                                    <td>Kapeel Founders</td>
+                                    <td>Anant P. Patil</td>
+                                    <td>kapeelfounders@yahoo.com</td>
+                                    <td>9448146697</td>
+                                    <td>Plot No.69, Udyambag, Belgaum - 590008</td>
+                                </tr>
+                                <tr>
+                                    <td>Kudle Iron Works  Unit -I</td>
+                                    <td>Shrinath Kudale</td>
+                                    <td>shreekudalebgm@gmail.com </td>
+                                    <td>9448420732</td>
+                                    <td>709/4, Industrial Estate, Rajaram nagar, near GIT college, Udyambag,Belgaum-590008</td>
+                                </tr>
+                                <tr>
+                                    <td>Kudle Iron Works  Unit -II</td>
+                                    <td>Mahesh Kudale</td>
+                                    <td>kudaleiw@gmail.com</td>
+                                    <td>9845436315</td>
+                                    <td>72 ,Macche Indl.Estate Area, Machhe -590014</td>
+                                </tr>
+                                <tr>
+                                    <td>Mangal Founders</td>
+                                    <td>Rahul M.Haibati</td>
+                                    <td>mangalf77@yahoo.com</td>
+                                    <td>9448115956</td>
+                                    <td>Sr. No. 634/1, Jamboti Road, Machhe -590014</td>
+                                </tr>
+                                <tr>
+                                    <td>Prabhat Castings</td>
+                                    <td>Vikram L. Sainuche</td>
+                                    <td>vikram@prabhatcastings.com</td>
+                                    <td>9880100255</td>
+                                    <td>R.S.No.374, P.B.Road, Shahapur, Belgaum-590003  </td>
+                                </tr>
+                                <tr>
+                                    <td>Prism Enterprises</td>
+                                    <td>Sachin V.Hanji</td>
+                                    <td>prismentp@gmail.com</td>
+                                    <td>9448191926</td>
+                                    <td>B 1/2, BMCIL Indust.Estate, Udyambag Belgaum -590008</td>
+                                </tr>
+                                <tr>
+                                    <td>Protech founders Pvt.ltd</td>
+                                    <td>Anand Bogar</td>
+                                    <td>protechfounders@gmail.com</td>
+                                    <td>9880034855</td>
+                                    <td>739, Khanapur Road, Udyambag, Belgaum-590008</td>
+                                </tr>
+                                <tr>
+                                    <td>Qualytech Founders</td>
+                                    <td>Yogesh Bichu</td>
+                                    <td>qualytechindia@gmail.com</td>
+                                    <td>9448190866</td>
+                                    <td>Plot No.106, Machhe Indl.Estate, Belgaum- 590014</td>
+                                </tr>
+                                <tr>
+                                    <td>REC Engg Prod Pvt Ltd- FDY DIV</td>
+                                    <td>Omkar C Hashilkar</td>
+                                    <td>foundry@recengg.com</td>
+                                    <td>9980073577</td>
+                                    <td>R S 56/4, Navage cross, Jamboti Road,Belgaum</td>
+                                </tr>
+                                <tr>
+                                    <td>Shanti Iron & Steel</td>
+                                    <td>Santosh K. Porwal</td>
+                                    <td>skp@shantiiron.net</td>
+                                    <td>9945026332</td>
+                                    <td>SY No.342, Plot No. 690,Udyambag, Belgaum – 590 008</td>
+                                </tr>
+                                <tr>
+                                    <td>Siddarameshwar Alloys</td>
+                                    <td>Sanjay R.Birdi</td>
+                                    <td>siddeshwarfounders@gmail.com</td>
+                                    <td>9448113488, </td>
+                                    <td>Plot no.1111-A/1112, Autonagar, Belgaum-590015</td>
+                                </tr>
+                                <tr>
+                                    <td>Sound Cast Founders and Engineers </td>
+                                    <td>Vinayak Kadolkar</td>
+                                    <td>soundcastbgm@gmail.com</td>
+                                    <td>9449861740</td>
+                                    <td>Ganeshpur, RamGhat Road Hindlaga, Belgaum-591108 AND Plot No. 113 KIADB, Industrial Estate Honaga Belgaum - 591156</td>
+                                </tr>
+                                <tr>
+                                    <td>Technosystem (Foundry)</td>
+                                    <td>Brijmohan Lahoti </td>
+                                    <td>tecnosysbm@bsnl.in</td>
+                                    <td>9448148398</td>
+                                    <td>
+                                        R.S. No.-711 (323) Khadarwadi Cross,
+                                        Udyambag , Belgaum-590008
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>The Allied Founders Pvt.Ltd. </td>
+                                    <td>Ram R.Mallya</td>
+                                    <td>ram@alliedfoundersindia.com</td>
+                                    <td>9448110957</td>
+                                    <td>N-3, Industrial Estate, Udyambag, Belgaum-590008</td>
+                                </tr>
+                                <tr>
+                                    <td>Varsha Iron (Shree Enterprises)</td>
+                                    <td>Rajesh Muchandikar</td>
+                                    <td>rajee_r7@yahoo.com </td>
+                                    <td></td>
+                                    <td>
+                                        Plot 182/A,186, S.No.347/1B,Udyambag,
+                                        Belgaum -590008
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Trimurty Founders</td>
+                                    <td>Vijay M. Muchandikar</td>
+                                    <td>vijaym3@yahoo.com</td>
+                                    <td>9845274882</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Victor Entreprises</td>
+                                    <td>Aditya S. Parikh</td>
+                                    <td>aditya_parikh@ymail.com</td>
+                                    <td>9980011144</td>
+                                    <td>
+                                        Plot no. M/N-16, Industrial Estate,
+                                        Udyambag,Belgaum-590008
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Vimal Enterprises</td>
+                                    <td>Vijay J. Legade</td>
+                                    <td>vimalbgm@gmail.com</td>
+                                    <td>9448110673</td>
+                                    <td>
+                                        R.S.No.8, M-30,Indl.Estate, Udyambag,
+                                        Belgaum - 590008
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Vinsavi Indotech</td>
+                                    <td>Sunil Kangralkar</td>
+                                    <td>vinsavi_indotechs@yahoo.co.in </td>
+                                    <td>9448484740</td>
+                                    <td>
+                                        R.S.No.8, M-30, Indl.Estate, Udyambag,
+                                        Belgaum - 590008
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>YCP Industries</td>
+                                    <td>Mahesh patil</td>
+                                    <td>info@ycpindustries.com</td>
+                                    <td>9482279286</td>
+                                    <td>
+                                        Plot B118, Angol Ind.Estate, Udyambag
+                                        Belgaum -590008
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Hindustan Engineers Unit II </td>
+                                    <td>Arvind mangale </td>
+                                    <td>engineershindustan2@gmail.com</td>
+                                    <td>9845228540</td>
+                                    <td>Plot 8A, Sy. no. 34, Kangrali  BK  Belgaum -590 010</td>
+                                </tr>
+                                <tr>
+                                    <td>Shree Datta Metal Industries</td>
+                                    <td>Digambr Maruti Raul </td>
+                                    <td>gajananenggworks@gmail.com</td>
+                                    <td>9448482937</td>
+                                    <td>
+                                        495/1 Wagaavade  Road, Omkar Nagar,
+                                        Machhe, Belgaum - 590014 Ph.No.2482937
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Venktesh ind</td>
+                                    <td>Arun Halemani</td>
+                                    <td>VENKATESHINDS1@gmail.com</td>
+                                    <td>9448635015</td>
+                                    <td>
+                                        Plot no.46, Machhe industrial estate,
+                                        Machhe ,Belgaum
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Neutron </td>
+                                    <td>Vinayak Patil</td>
+                                    <td>neutronpatil@gmail.com</td>
+                                    <td>9844211467</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Vinayak founders</td>
+                                    <td>Prasad Hangirgekar</td>
+                                    <td>vinayakfounders99@gmail.com </td>
+                                    <td>9845321099, 09845321099</td>
+                                    <td>
+                                        Sy. No. 496 1/2, waghwade Road,
+                                        Machhe, Belgaum - 590014
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Vinayak Founders and Fabrications</td>
+                                    <td>Narayan B. Patil</td>
+                                    <td>vinayakfoundersfab@gmail.com</td>
+                                    <td>9743088920, 9916226867</td>
+                                    <td>Plot no. 495/1,waghwade road , Machhe, Belgaum </td>
+                                </tr>
+                                <tr>
+                                    <td>U K Metals</td>
+                                    <td>Bisawjit Harekrishna Nai</td>
+                                    <td>ukmetals06@gmail.com</td>
+                                    <td>9901643695</td>
+                                    <td>Plot no. 2454, Sy. No. 610/2A/A, Waghawade road, Machhe, Belgaum</td>
+                                </tr>
+                                <tr>
+                                    <td>Accurate Engineers</td>
+                                    <td>Balkrishna Marathe</td>
+                                    <td>accurateengg@gmail.com</td>
+                                    <td>9448989576</td>
+                                    <td>B10/2 BEMCIEL Udyambag near State Bank of Mysore Udyambag,Belgaum - 590008 </td>
+                                </tr>
+                                <tr>
+                                    <td>G.P Ferro Cast</td>
+                                    <td>Gautam Patil</td>
+                                    <td>gpspares77@gmail.com</td>
+                                    <td>9448191377</td>
+                                    <td>#365/1, plot No. A1, Palki Industrial Estate, Near Rawoot Indl Estate, Majgoan Cross, Udyambag,Belgaum-590008.</td>
+                                </tr>
+                                <tr>
+                                    <td>Trident Steels</td>
+                                    <td>Hemant Kamat</td>
+                                    <td>tridentsteels@gmail.com hemant_kamat2001@yahoo.com</td>
+                                    <td>9448147807</td>
+                                    <td>40, Machhe Industrial Area,Machhe, Belgaum - 590014,</td>
+                                </tr>
+                                <tr>
+                                    <td>SAM Castings </td>
+                                    <td>Indrajit Ajit Doddanavar</td>
+                                    <td>samcastings.bgm@gmail.com</td>
+                                    <td>9880027555/8123885788</td>
+                                    <td>Plot No. 42/A, Honaga KIADB Industrial Area, Honaga, Belgaum - 591135</td>
+                                </tr>
+                                <tr>
+                                    <td>Mukund Ispat</td>
+                                    <td>Mukund Bang</td>
+                                    <td>mukundispat@yahoo.com</td>
+                                    <td>9341112977</td>
+                                    <td>R.S.No. 58/2, Navage Village, Jambotiu Road, Belgaum - 590 014</td>
+                                </tr>
+                                <tr>
+                                    <td>SRI Ramling Castings</td>
+                                    <td>Prasad Angolkar</td>
+                                    <td>prasad.angolkar@gmail.com</td>
+                                    <td>9886643887</td>
+                                    <td>30 & 45 BEMCIEL INDUSTRIAL AREA,MACHE, BELGAUM -590014</td>
+                                </tr>
+                                <tr>
+                                    <td>Fine Metal</td>
+                                    <td>Rakesh Singh.</td>
+                                    <td>
+                                        finemetalbgm@gmail.com
+                                        rrsinghbgm@gmail.com
+                                    </td>
+                                    <td>9880020829</td>
+                                    <td>350/3/1/1, Majgoan Road Udyambag, Belgaum-590008</td>
+                                </tr>
+                                <tr>
+                                    <td>Vikrant Iron & Steel</td>
+                                    <td>Sunil Gurav</td>
+                                    <td>vikrant_vis@yahoo.com</td>
+                                    <td>9449650256</td>
+                                    <td>Plot No.74,Udyambag, Belgaum  -590008</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!--tab start-->
+                    <div id="Indore" class="tabcontent" id="tabcontent">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Unit Name</th>
+                                    <th scope="col">Address</th>
+                                    <th scope="col">Contact Information</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Scope of Work</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Kaira Energy Consultants Pvt.Ltd.</td>
+                                    <td>111, Ashirwad Complex, Kanadia Road, Indore 452001</td>
+                                    <td>Kuldeep Varma<br>9893630936</td>
+                                    <td>info@kairaenergy.com</td>
+                                    <td>Solar Eqip. & project</td>
+                                </tr>
+                                <tr>
+                                    <td>Essen Energy Technologies Pvt. Ltd.</td>
+                                    <td>109, DH , IDA Scheme 74  INDORE-452 015</td>
+                                    <td>Navin Goyal<br>9425056286 </td>
+                                    <td>essenenergytech@gmail.com</td>
+                                    <td>Energy Audit</td>
+                                </tr>
+                                <tr>
+                                    <td>MPCON Ltd</td>
+                                    <td>203, Sunrise Tower, 579 M.G. Road, Indore 452001</td>
+                                    <td>0731-4060031 0731-4091848</td>
+                                    <td>ganeshswamymhow@yahoo.co. in</td>
+                                    <td>Solar Eqip. & project</td>
+                                </tr>
+                                <tr>
+                                    <td>SGM Electric Power System</td>
+                                    <td>330, Malwa m=Market, Shop No.2, opp. Relience Petrol Pump. Udyog Nagar, Nemawar Road , Indore</td>
+                                    <td>V.K. Bhosle<br>9300627464</td>
+                                    <td>vkbhosle@yahoo.co.in</td>
+                                    <td>Energy Audit</td>
+                                </tr>
+                                <tr>
+                                    <td>Power Flow Consultants</td>
+                                    <td>1st Floor , Shalimar Plaza, RNT Road, Indore</td>
+                                    <td> Saleem Khan<br>0731-2705987 9425057919</td>
+                                    <td>hslmpower65@yahoo.co.in</td>
+                                    <td>Energy Audit</td>
+                                </tr>
+                                <tr>
+                                    <td>SRS Engineers & Consultants</td>
+                                    <td>161, Schem No.74,Near Ashish Nursing Home, Vijay Nagar, Indore</td>
+                                    <td>0731-2550402 9907002898</td>
+                                    <td></td>
+                                    <td>Energy Audit</td>
+                                </tr>
+                                <tr>
+                                    <td>Abhinav Enterprises</td>
+                                    <td>8, Gambhir Bhavan, Near Kanch Mandir, Etwaria Bazar, Hukumchand Marg, Indore</td>
+                                    <td>9826288612</td>
+                                    <td></td>
+                                    <td>Energy Audit</td>
+                                </tr>
+                                <tr>
+                                    <td>Quantam Urja Pvt. Ltd.</td>
+                                    <td>401, Saphire House, Sapna Sangeeta Road, Indore</td>
+                                    <td>0731-2366586  9826076100</td>
+                                    <td></td>
+                                    <td>Energy Audit</td>
+                                </tr>
+                                <tr>
+                                    <td>Schneider Electric Industries</td>
+                                    <td>A/L Sukhalia, opp Dena Bank  Near Bapat Square, Indore</td>
+                                    <td>0731-4230061 9300751464</td>
+                                    <td></td>
+                                    <td>Energy Audit</td>
+                                </tr>
+                                <tr>
+                                    <td>Enviornment First Energy Services Pvt. Ltd.</td>
+                                    <td>401, Prakrati Corporate, Y N Road, Indore</td>
+                                    <td>8871094494</td>
+                                    <td></td>
+                                    <td>Energy Audit</td>
+                                </tr>
+                                <tr>
+                                    <td>Bhargav Energy( Akshay Urja Shop)</td>
+                                    <td>F-107, Kataria Complex, Dewas Naka , Indore </td>
+                                    <td>9770819121 9754301432</td>
+                                    <td>bhargav.energy@gmail.com</td>
+                                    <td>Solar Products, Motors</td>
+                                </tr>
+                                <tr>
+                                    <td>Bipin Engineering Pvt. Ltd.</td>
+                                    <td>Dewaraj Complex, 29, Patel Nagar, Sneh nagar Main Road, opp Sapna Sangeeta, Indore</td>
+                                    <td>o731-2470118 9926146303</td>
+                                    <td>indore@bipsun.com</td>
+                                    <td>Solar Products</td>
+                                </tr>
+                                <tr>
+                                    <td>Suntron Energy</td>
+                                    <td>141 Electronics Complex, indore - 452001</td>
+                                    <td>7389244224</td>
+                                    <td></td>
+                                    <td>Solar Products</td>
+                                </tr>
+                                <tr>
+                                    <td>LCG Energy Consultant Pvt. Ltd.  </td>
+                                    <td>C-8 Chanakyapuri, Chuna bhatti, Kolar Road, Bhopal</td>
+                                    <td>0755-4265451 9907270259</td>
+                                    <td></td>
+                                    <td>Energy Audit</td>
+                                </tr>
+                                <tr>
+                                    <td>Active Energy Associates</td>
+                                    <td>501 Kalpana Building , Tilak Nagar, Chambur, Mumbai -400009</td>
+                                    <td>Prabodh Kala, Vikas Apte <br>9004346637   9820336218</td>
+                                    <td></td>
+                                    <td>Certified Energy Auditor </td>
+                                </tr>
+                                <tr>
+                                    <td>Eco Energy Enterprises</td>
+                                    <td>256 B Indore </td>
+                                    <td>0731-2613012  9755743323</td>
+                                    <td></td>
+                                    <td>Energy Audit</td>
+                                </tr>
+                                <tr>
+                                    <td>Jethanand & Sons </td>
+                                    <td>20/1 Jawahar Marg I dore</td>
+                                    <td>0731-2475910</td>
+                                    <td></td>
+                                    <td>Energy Efficient Equipment</td>
+                                </tr>
+                                <tr>
+                                    <td>Midex Energy</td>
+                                    <td>403-4  Apolo Trade Centre, 2 B , Rajgarh Kothi, Indore</td>
+                                    <td>0731-4066666</td>
+                                    <td></td>
+                                    <td>Solar Products, Motors</td>
+                                </tr>
+                                <tr>
+                                    <td>Prudent System Pvt. Ltd</td>
+                                    <td>G3 , 3rd Floor Malwa Tower,7 Ashok nagar ,Tower chouraha, Indore</td>
+                                    <td> Mahesh Vaishav<br>0731-4066043 9826017970  9826200032</td>
+                                    <td></td>
+                                    <td>Solar Products</td>
+                                </tr>
+                                <tr>
+                                    <td>ACV Incrporation</td>
+                                    <td>No. G/1, Nirmala Apartment, Pragati Vihar, near Bangali Square, Indore- 452016</td>
+                                    <td>Ajay Jaiswal<br>0731-2591877 7415906888</td>
+                                    <td>ajay@acvincorporation.com</td>
+                                    <td>Solar products </td>
+                                </tr>
+                                <tr>
+                                    <td>Bhaskar Solar Energy</td>
+                                    <td>Pardesi Pura  Indore</td>
+                                    <td>7509851668   7566733330</td>
+                                    <td></td>
+                                    <td>Solar Eqip. & project</td>
+                                </tr>
+                                <tr>
+                                    <td>Technocrats</td>
+                                    <td>91, Industrial Area Extn. , Rau, Dis. Indore</td>
+                                    <td>Kishor Bhand <br>9302100438</td>
+                                    <td>technocrats_indore@rediffmail.co.in</td>
+                                    <td>APFC Panel</td>
+                                </tr>
+                                <tr>
+                                    <td>Right Engineering</td>
+                                    <td>G4/282, Siddhi Vinayak Plaza, Goyal Nagar, Kanadia Road , Indore - 452016</td>
+                                    <td>PC Dubey<br>9425066479</td>
+                                    <td>rightengineering4@gmail.com</td>
+                                    <td>APFC Panel</td>
+                                </tr>
+                                <tr>
+                                    <td>Shree Radhe Govind Industry</td>
+                                    <td>15 Dhenu Market, Indore</td>
+                                    <td>SN Muchhal<br>0731-2533152  0731-2431141</td>
+                                    <td>shreenivasmuchhal@gmail.com</td>
+                                    <td>APFC Panel</td>
+                                </tr>
+                                <tr>
+                                    <td>Getway Solution</td>
+                                    <td>46, Plasikar colony, Indore-452004  </td>
+                                    <td>Rakesh Vijaywargiya<br>9425052516</td>
+                                    <td>getwaysolutions@yahoo.co.in</td>
+                                    <td>VFD Panel</td>
+                                </tr>
+                                <tr>
+                                    <td> Digital Marketing Systems Pvt. Ltd., </td>
+                                    <td>122 Kanchanbagh, Indore – 452001</td>
+                                    <td></td>
+                                    <td>digicontrols@gmail.com</td>
+                                    <td>VFD Panel</td>
+                                </tr>
+                                <tr>
+                                    <td>Dynatech Engineers</td>
+                                    <td>B22, New Siyaganj, VIP Rout No.1   Near Patthar Godown,  Indore- 452007</td>
+                                    <td>Manoj Trivedi<br>9425058750 0731-2546828</td>
+                                    <td>dynatechindore@gmail.com</td>
+                                    <td>VFD Panel</td>
+                                </tr>
+                                <tr>
+                                    <td>Darling Pumps</td>
+                                    <td>36-F Sector B, Sanwer Road Indore- 452008</td>
+                                    <td>Anket Singh (Sales Engineer)<br>9981992837</td>
+                                    <td>ars@darlingpumps.in</td>
+                                    <td>Pump   </td>
+                                </tr>
+                                <tr>
+                                    <td>Dronkar & Bros.</td>
+                                    <td>G37, Chetak Chebbers, 14 RNT Marg, Indore 452001</td>
+                                    <td>Nilesh Meena<br>9993918736    0731-2703585</td>
+                                    <td>Marketing@dronkarbros.com   </td>
+                                    <td>Pump   </td>
+                                </tr>
+                                <tr>
+                                    <td>Shakti Pumps India Ltd,</td>
+                                    <td>226 Shastri Market, Second Floor, M.G. Road, Indore.</td>
+                                    <td>7389904165    0731-4000610</td>
+                                    <td>info@shaktipumps.com</td>
+                                    <td>Pump   </td>
+                                </tr>
+                                <tr>
+                                    <td>Electronic Applyances</td>
+                                    <td>A 39, 40 New Siyaganj,  Indore -452007</td>
+                                    <td>8042957673</td>
+                                    <td></td>
+                                    <td>Siemens Motor</td>
+                                </tr>
+                                <tr>
+                                    <td>Bharmal Traders</td>
+                                    <td>20 Udhyog puri Nemawar Road Opp.Agrawal Toll Kanta , Indore - 452001,</td>
+                                    <td>9654335194</td>
+                                    <td></td>
+                                    <td>Kirloskar Motor </td>
+                                </tr>
+                                <tr>
+                                    <td>Pradhan Engeineering Enterprises Private Limited</td>
+                                    <td>
+                                        No. 36-37/C, Industrial Area ,
+                                        Dewas - 455 001
+                                    </td>
+                                    <td>9926002544</td>
+                                    <td></td>
+                                    <td>Motor</td>
+                                </tr>
+                                <tr>
+                                    <td>Siddhika Enterprises</td>
+                                    <td>126-e, 3rd Floor, Lavkush Vihar, Sukhliya, Indore - </td>
+                                    <td>UD Naik<br>7315047583</td>
+                                    <td></td>
+                                    <td>Industrial furnace, dryers, allied heat treatment equipments air dryers</td>
+                                </tr>
+                                <tr>
+                                    <td>Jain Transmission (I)  Pvt. Ltd.</td>
+                                    <td>101-a, Mourya Centre, 16 Race Course Road, Indore - 452003, </td>
+                                    <td>Santanu Sengupta <br>7312721543</td>
+                                    <td></td>
+                                    <td>Power transmission belts power transmission equipment</td>
+                                </tr>
+                                <tr>
+                                    <td>Emerold InfraStructure</td>
+                                    <td>A-9/5 Mahananda Nagar Ujjain</td>
+                                    <td>Dharm Sharma<br>9926067886</td>
+                                    <td>Dharma_sharmaa@hotmail.com</td>
+                                    <td>Scrap Baling Press</td>
+                                </tr>
+                                <tr>
+                                    <td>Pragya Equipments Pvt. Ltd.</td>
+                                    <td>208-209  Modi Towear MTH Compound                                       Indore 452001</td>
+                                    <td>L C Tolani<br>8048411148    9826047777   0731-2430399</td>
+                                    <td></td>
+                                    <td>Scrap Baling Press</td>
+                                </tr>
+                                <tr>
+                                    <td>Aseatic traders</td>
+                                    <td>36, shastri Market Indore- 452001</td>
+                                    <td>9425065906</td>
+                                    <td></td>
+                                    <td>Pumps , Motors</td>
+                                </tr>
+                                <tr>
+                                    <td>S R Ghodgaonkar</td>
+                                    <td>103 Sumangal Appt., 65 Narayanbagh, Indore</td>
+                                    <td>Sharad Ghodgaonkar<br>9000002275 0731-2421334</td>
+                                    <td>sharadghodgaonkar@yahoo.com</td>
+                                    <td>Foundry Consultant</td>
+                                </tr>
+                                <tr>
+                                    <td>FOUNDRY TECHNOLOGY & MANAGEMENT CONSULTANT</td>
+                                    <td>60 EH, Scheme No.54, Vijaynagar, Indore</td>
+                                    <td>MR ASHOK KHANNA<br>9669033303</td>
+                                    <td>ashokjkhanna@gmail.com</td>
+                                    <td>Foundry Consultant</td>
+                                </tr>
+                                <tr>
+                                    <td>Manikanta Engg & Entp</td>
+                                    <td>87 B sanchar nagar, Kanadia Road Indore </td>
+                                    <td>HS Ranganath<br>9826056234</td>
+                                    <td>ranganatha_5@rediffmail.com</td>
+                                    <td>Foundry Consultant</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!--tab start-->
+                    <div id="Jalandhar" class="tabcontent" id="tabcontent">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Company</th>
+                                    <th scope="col">Address</th>
+                                    <th scope="col">Contact Person</th>
+                                    <th scope="col">Designation</th>
+                                    <th scope="col">Contact No</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Specialization</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Sahil Oil Furnace</td>
+                                    <td>Reru Cold Store, Focal Point : Focal Point, Gudaipur Road, Gudaipur Road, Jalandhar, Punjab 144001</td>
+                                    <td>Mr.Charanjit Joshi</td>
+                                    <td>PROPRIETOR</td>
+                                    <td>0 9865456020,0181 260 2720</td>
+                                    <td></td>
+                                    <td>Oil - Mineral</td>
+                                </tr>
+                                <tr>
+                                    <td>Sahil Oil Furnace</td>
+                                    <td>Reru Cold Store, Focal Point : Focal Point, Gudaipur Road, Gudaipur Road, Jalandhar, Punjab 144001</td>
+                                    <td>Mr.Charanjit Joshi</td>
+                                    <td>PROPRIETOR</td>
+                                    <td>0 9865456020,0181 260 2720</td>
+                                    <td></td>
+                                    <td>Burner,Roatory ,Blower,Furnace fittings etc.</td>
+                                </tr>
+                                <tr>
+                                    <td>Plasma Induction</td>
+                                    <td>330/1p, Hajipur, Nr. J K Laxmi Cement, Ta. Kalol, Dist. Gandhinagar, Via Ahmedabad Vadsar Road - 382721.</td>
+                                    <td>Mr. Harshad Choudhari</td>
+                                    <td>Owner</td>
+                                    <td>0  898 0000 550</td>
+                                    <td>support@plasmainduction.com</td>
+                                    <td>Induction Furnace</td>
+                                </tr>
+                                <tr>
+                                    <td>Inductotherm India Pvt. Ltd.</td>
+                                    <td>Shri Kishorebhai D. Vyas Building, Ambli-Bopal Road, Opposite Bharat Petrol Pump, Ahmedabad, Gujarat 380058</td>
+                                    <td>Mr. Sorabh Shah</td>
+                                    <td>Sales Engiineer</td>
+                                    <td>0 9375202161,02717 231961 </td>
+                                    <td> sales@inductothermindia.com</td>
+                                    <td>Induction Furnace</td>
+                                </tr>
+                                <tr>
+                                    <td>Vinayak Steel </td>
+                                    <td>MOTIA KHAN, Mandi Gobindgarh - 147301, Punjab, India</td>
+                                    <td>Mr. Shyam LAL Goyal </td>
+                                    <td>Proprietor</td>
+                                    <td>9877301908,91-1765-507120</td>
+                                    <td>vinayaksteels@in.com</td>
+                                    <td>Raw Material</td>
+                                </tr>
+                                <tr>
+                                    <td>DG ENERGYTECH</td>
+                                    <td>B.O - 15-B Sidhu Market Near Phagwara Gate , Jalandhar ( Punjab)</td>
+                                    <td>Mr.Shivam Sharma</td>
+                                    <td> Branch Manager</td>
+                                    <td>0750884100 09988257269,</td>
+                                    <td></td>
+                                    <td>Furnace Manufacturer, consultants,manufactures</td>
+                                </tr>
+                                <tr>
+                                    <td>Delta energy nature</td>
+                                    <td>F-187 industrial area phase,8-b mohali 160059</td>
+                                    <td>Mr.Gurinder jeet singh</td>
+                                    <td>CEO</td>
+                                    <td>0 9316523651,0172-3297657</td>
+                                    <td>dengjss@yahoo.com</td>
+                                    <td>Furnace Manufacturer, consultants,manufactures</td>
+                                </tr>
+                                <tr>
+                                    <td>Jindal Electric & Machinery Corpn</td>
+                                    <td>C – 57, Phase – IV, Focal Point, Ludhiana, Punjab 141010</td>
+                                    <td>Mr. Maunish Sharma</td>
+                                    <td>Sales & Service Engineer </td>
+                                    <td>0 9041770688,0161 267 6968</td>
+                                    <td> jemc@jindalelectric.com</td>
+                                    <td>Electrical Equipment Manufacturer</td>
+                                </tr>
+                                <tr>
+                                    <td> DALBIR MAKKAR ELECTRICALS </td>
+                                    <td>567, Phase-1, Urban Estate, Dugri, Ludhiana-141002 (PB) INDIA</td>
+                                    <td>Mr.Dalbir Makkar</td>
+                                    <td>Owner</td>
+                                    <td>0 98140 26167, 98142 15411,0 161 2490337</td>
+                                    <td>info@dalbirelectricals.com,dalbirmakkar@gmail.com</td>
+                                    <td>Electrical Equipment Manufacturer</td>
+                                </tr>
+                                <tr>
+                                    <td>Seasoned Electricals</td>
+                                    <td>25 - J, 100 Feet Rd, East Mohan Nagar, Amritsar, Punjab 143006</td>
+                                    <td>Mr.Kirpal Singh</td>
+                                    <td>Owner</td>
+                                    <td>0 96460 27925</td>
+                                    <td></td>
+                                    <td>HT Equipment supplier & Manufacturer</td>
+                                </tr>
+                                <tr>
+                                    <td>Super Link Trade India Pvt Ltd</td>
+                                    <td> S C O 24, First Floor, Sector 20-d, Sector 20-d, Chandigarh, 160020</td>
+                                    <td>Mr.Balbir Singh</td>
+                                    <td>Sr. Engineer</td>
+                                    <td>0 9797713539,0172 271 2004</td>
+                                    <td>superlinkajaysoni@yahoo.com</td>
+                                    <td>Power Sloutions</td>
+                                </tr>
+                                <tr>
+                                    <td>The Tristar Agencies</td>
+                                    <td>83,DB Road, RS Puram, CBE - 02</td>
+                                    <td>Mr.M.Dwarakesh</td>
+                                    <td>Officer -  Business Dev</td>
+                                    <td>0 82200 88807</td>
+                                    <td>tristarled@gmail.com</td>
+                                    <td>Lighting solutions</td>
+                                </tr>
+                                <tr>
+                                    <td>V Smart Thermotech Pvt Ltd</td>
+                                    <td></td>
+                                    <td>Mr.S.Sevugaraj</td>
+                                    <td>Sr.Engineer - Business Dev</td>
+                                    <td>0 93605 04405</td>
+                                    <td>coimbatore@vsmartindia.com</td>
+                                    <td>Optical Pyrometers, Foundry Process Heat analyzing instruments,</td>
+                                </tr>
+                                <tr>
+                                    <td>Sinetec Automation</td>
+                                    <td>14,Thirumalaisamy Road, Kavundampalayam, CBE - 30</td>
+                                    <td>Mr.A.Velusamy</td>
+                                    <td>Director</td>
+                                    <td>0 93607 08009</td>
+                                    <td>sales@sinetecautomation.com</td>
+                                    <td>Harmonics Mitigation solutions, Power quality analysis</td>
+                                </tr>
+                                <tr>
+                                    <td>Kashyap Consultancy Services</td>
+                                    <td>Sreevatsa Gardens, Thudiyalur, CBE - 34</td>
+                                    <td>Mr.A.D.Thirumoorthy</td>
+                                    <td></td>
+                                    <td>0 99655 49894</td>
+                                    <td>adtmoorthy@gmail.com</td>
+                                    <td>Energy Consultant</td>
+                                </tr>
+                                <tr>
+                                    <td>Foretec Engineers</td>
+                                    <td>108 Tex Spares Complex, Katoor, CBE - 09</td>
+                                    <td>Mr.K.Ravichandran</td>
+                                    <td>Director</td>
+                                    <td>0 97900 04030</td>
+                                    <td>ravi@foretecengineers.com</td>
+                                    <td>Harmonics Mitigation solutions, Power quality analysis, Energy Management</td>
+                                </tr>
+                                <tr>
+                                    <td>BEE Accredited Energy Auditor</td>
+                                    <td>VG Rao Nagar, Ganapathy, CBE - 06</td>
+                                    <td>Mr.S.Ashok</td>
+                                    <td>Consultant</td>
+                                    <td>0 94437 20220</td>
+                                    <td>ashok.anbesivam@gmail.com</td>
+                                    <td>Energy Advisor</td>
+                                </tr>
+                                <tr>
+                                    <td>Furnace India</td>
+                                    <td>F-339, TNHB Colony, Ganapathy, CBE-06</td>
+                                    <td>Mr.C.Dhakshinamoorthy</td>
+                                    <td>PROPRIETOR</td>
+                                    <td>0 98430 15339,0422 - 2512431</td>
+                                    <td>furnaceindia@yahoo.co.in</td>
+                                    <td>Cupola Furnace Brick supplier and Consultant</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!--tab start-->
+                    <div id="Naguar" class="tabcontent" id="tabcontent">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Company</th>
+                                    <th scope="col">Contact Information</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Address</th>
+                                    <th scope="col">Scope of Work</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Vinayak Steel </td>
+                                    <td>Mr. Shyam LAL Goyal(PROPRIETOR): 0 9815815878</td>
+                                    <td>vinayaksteels@in.co</td>
+                                    <td>Motia Khan, Mandi Gobindgarh - 147301, Punjab, India</td>
+                                    <td> Raw Material Steel EN-8 </td>
+                                </tr>
+                                <tr>
+                                    <td>Kirorimal & Company</td>
+                                    <td>Mr.Rupendra Gupta(PROPRIETOR): 0 8046050223</td>
+                                    <td></td>
+                                    <td>A No. 130F, Road No. 9D, Vishwa Karma Industrial Area Jaipur - 302013 Rajasthan, India</td>
+                                    <td> Raw Material Steel EN-8 </td>
+                                </tr>
+                                <tr>
+                                    <td>Laxmi Steel Rolling Mill</td>
+                                    <td>Mr. Vinod Vashisht(PROPRIETOR): 0 9814203261</td>
+                                    <td></td>
+                                    <td>Talwara Road Mandi, Gobindgarh Mandi Gobindgarh - 147 301 Punjab, India</td>
+                                    <td> Raw Material Steel EN-8 </td>
+                                </tr>
+                                <tr>
+                                    <td>Bhushan Steels</td>
+                                    <td>Mr. Bhushan(PROPRIETOR): 0 93145 06337</td>
+                                    <td></td>
+                                    <td>30 VKIA, Jaipur, Rajasthan ( North ) - 302013 Land Mark : Opposite Road No 3</td>
+                                    <td>Raw Material Die Block</td>
+                                </tr>
+                                <tr>
+                                    <td>Shree G K Steels</td>
+                                    <td>(PROPRIETOR): 0 93145 06337</td>
+                                    <td></td>
+                                    <td>30 Road No 3 ,VKIA, Jaipur, Rajasthan ( North ) - 302013</td>
+                                    <td>Raw Material Die Block</td>
+                                </tr>
+                                <tr>
+                                    <td>Mahesh Iron Works</td>
+                                    <td>Mr. Mahesh (PROPRIETOR)</td>
+                                    <td></td>
+                                    <td>Bhistiyon Ka Bas, Jodhpur, Rajasthan 342003</td>
+                                    <td>Raw Material Die Block</td>
+                                </tr>
+                                <tr>
+                                    <td>Steel Yard</td>
+                                    <td>Mr.  AFTAB Akber Kapadia(PROPRIETOR): 0 9869777777</td>
+                                    <td></td>
+                                    <td>25, Nesbit Road, Mazgaon, Mumbai-400010</td>
+                                    <td>Raw Material </td>
+                                </tr>
+                                <tr>
+                                    <td>Upper India Steel Manufacturing & Engineering Co Limited</td>
+                                    <td>Mr.  Jaswinder Singh(Purchase Executive): 0 9872209297</td>
+                                    <td></td>
+                                    <td>Dhandari Industrial Focal Point, Focal Point, Ludhiana, Punjab 141010</td>
+                                    <td>Raw Material</td>
+                                </tr>
+                                <tr>
+                                    <td>Bansal Alloys & Metals (P) Ltd</td>
+                                    <td> Mr. Vijay Bansal(PROPRIETOR): 0 9814015500,</td>
+                                    <td> bansalalloys2@yahoo.com</td>
+                                    <td>G.T. Road, Sirhind Side, Mandi Gobindgarh - 147301 (Punjab) INDIA.</td>
+                                    <td>Raw Material & Testing</td>
+                                </tr>
+                                <tr>
+                                    <td>Stylex Gadgests India</td>
+                                    <td>Mr. Suresh Mathur(PROPRIETOR)</td>
+                                    <td></td>
+                                    <td>Below Dena Bank,, M.G.Hospital Road,, Jodhpur, Rajasthan 342001</td>
+                                    <td>Furnace Insulation</td>
+                                </tr>
+                                <tr>
+                                    <td>Arihant Refractories & Material</td>
+                                    <td>Mr. Vijay Porwal(PROPRIETOR): 0 9829023480</td>
+                                    <td></td>
+                                    <td>New Power House, Ind. Area, Jodhpur 342002(Raj.)</td>
+                                    <td>Furnace Insulation</td>
+                                </tr>
+                                <tr>
+                                    <td>Inductotherm India Pvt. Ltd.</td>
+                                    <td>Mr. Sorabh Shah(Sales Engiineer): 0 9375202161</td>
+                                    <td> sales@inductothermindia.com</td>
+                                    <td>Shri Kishorebhai D. Vyas Building, Ambli-Bopal Road, Opposite Bharat Petrol Pump, Ahmedabad, Gujarat 380058</td>
+                                    <td>Induction Furnace</td>
+                                </tr>
+                                <tr>
+                                    <td>electrotherm india ltd</td>
+                                    <td>Mr. Nitin Jain(Assistant Manager – Sales & Marketing): 7046088877,</td>
+                                    <td> nitin.sjain@electrotherm.com</td>
+                                    <td>Survey No. 72Palodia (Via Thaltej)Ahmedabad – 382115Gujarat, India.</td>
+                                    <td>Induction Furnace</td>
+                                </tr>
+                                <tr>
+                                    <td>Chanay Oil Furnace Co</td>
+                                    <td> Mr. Kamaljeet Singh Channa( Managing Partner): 0 9872086073,</td>
+                                    <td></td>
+                                    <td>1211, Janta Nagar, Industrial Area-b, Janta Nagar, Ludhiana, Punjab 141003</td>
+                                    <td>Furnace Blower,Burner </td>
+                                </tr>
+                                <tr>
+                                    <td>Rattan Hammer</td>
+                                    <td>Mr. S.Sukhdial Singh(PROPRIETOR): 0 9876120925</td>
+                                    <td></td>
+                                    <td>Chandigarh Road, Near Radha Swami Satsang Bhawan, Near Fortis Hospital, Mundian Khurd, Ludhiana, Punjab 141123</td>
+                                    <td>Forging Hammer</td>
+                                </tr>
+                                <tr>
+                                    <td>Basant Press</td>
+                                    <td>Mr. Gurcharan Singh(PROPRIETOR): 0 98140-02728</td>
+                                    <td> info@basantgroup.com</td>
+                                    <td>720 721, Industrial Area-B, Ludhiana, Punjab 141003</td>
+                                    <td>Power Press</td>
+                                </tr>
+                                <tr>
+                                    <td>Gupta Manufacturing Co.</td>
+                                    <td>Mr. Ram Lubhaya Gupta(PROPRIETOR)</td>
+                                    <td></td>
+                                    <td>3- Sodal Road,Near State Bank Of India, Jalandhar 144004 Punjab.</td>
+                                    <td>Macine and machine tools & parts</td>
+                                </tr>
+                                <tr>
+                                    <td>Sargodha Sales Corporation</td>
+                                    <td>Mr. Inderjeet Singh(PROPRIETOR): 0 9872070424</td>
+                                    <td></td>
+                                    <td>G.T Rd, Near Manju Cinema, Dhalewal, Miller Ganj, Ludhiana, Punjab 141003</td>
+                                    <td>Workshop Machinery</td>
+                                </tr>
+                                <tr>
+                                    <td>Agarwal Electric & Machinery Stores</td>
+                                    <td>Mr. Agarwal(PROPRIETOR)</td>
+                                    <td></td>
+                                    <td>Inside Nakash Gate, Nagaur, Rajasthan - 341001 </td>
+                                    <td>Electric Machinery & Parts</td>
+                                </tr>
+                                <tr>
+                                    <td>Lahore Machinery Corp.</td>
+                                    <td>Mr. Surinder Chopra(PROPRIETOR): 0 9810036392</td>
+                                    <td></td>
+                                    <td>54, Shraddhanand Marg, G B Road, Shraddhanand Marg, New Delhi, Delhi 110006</td>
+                                    <td>Workshop Machinery & parts</td>
+                                </tr>
+                                <tr>
+                                    <td>Crompton Greaves Ltd</td>
+                                    <td>Mr. Ritesh(Branch Manager)</td>
+                                    <td></td>
+                                    <td>First Floor, Shanti Sadan, Church Road, M I Road, Jaipur - 302001</td>
+                                    <td>Electrical machinery & parts</td>
+                                </tr>
+                                <tr>
+                                    <td>Swastik Cable Industries </td>
+                                    <td>Mr. Bhandari(PROPRIETOR): 0 9414216642</td>
+                                    <td>tristarled@gmail.com</td>
+                                    <td>Bikaner Road ,New RIICO Industrial Area, Nagaur, Rajasthan ( East ) - 341001</td>
+                                    <td>Electric cables & accessories</td>
+                                </tr>
+                                <tr>
+                                    <td>Shree Manmohan Corporation</td>
+                                    <td>Mr. Banaram(Sales Manager): 9928405721 /77260097219928405721 /77260097219928405721 /77260097219928405721 /77260097219928405721</td>
+                                    <td>smc.anurag@gmail.com</td>
+                                    <td>Shop No.88 BC, Ground Floor, Ganpati Plaza, Jaipur 302001</td>
+                                    <td>Electrical Motors and ligting solutions</td>
+                                </tr>
+                                <tr>
+                                    <td>Waman Energy</td>
+                                    <td>Mr. Pankaj Kalwania(Director): 7232099001/7737770690</td>
+                                    <td>wamanenergy@gmail.com, kalwaniapankaj@gmail.com</td>
+                                    <td>F-109, City Plaza Mall, Banipark, Jaipur</td>
+                                    <td>Solar PV Power projects</td>
+                                </tr>
+                                <tr>
+                                    <td>Er.baljit Singh Ubhi</td>
+                                    <td>Mr. baljit Singh(Director): 9814285640</td>
+                                    <td>er_baljit@yahoo.com</td>
+                                    <td>Ludhiana</td>
+                                    <td>Thermal Conslutant</td>
+                                </tr>
+                                <tr>
+                                    <td>EN EFF Thermal Engineers</td>
+                                    <td>Mr. N.P.Singh(Partner): 9814187716</td>
+                                    <td>en_eff@rediffmail.com</td>
+                                    <td>536/25c/1a, Industrial Area-C, Sua road, Dhandari Kalan, Ludhiana, Punjab 141010</td>
+                                    <td>Furnace Modification</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!--tab start-->
+                    <div id="Kerala" class="tabcontent" id="tabcontent">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Unit Name</th>
+                                    <th scope="col">Owner</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Mobile</th>
+                                    <th scope="col">Address</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Milma Central Products Dairy, Alappuzha</td>
+                                    <td>Philip Thomas</td>
+                                    <td>cpd@milma.com</td>
+                                    <td>9496725814</td>
+                                    <td>NH 47, Punnapra, Alappuzha, Kerala- 688004</td>
+                                </tr>
+                                <tr>
+                                    <td>Milma Cattle Feed Plant, Pattanakkad</td>
+                                    <td>Satheesan. N</td>
+                                    <td>cfp@milma.com</td>
+                                    <td>9447354053</td>
+                                    <td>Pattanakkad P.O., Alapuzha-688 531</td>
+                                </tr>
+                                <tr>
+                                    <td>Milma Cattle Feed Plant, Malampuzha</td>
+                                    <td>T. Sreekumar</td>
+                                    <td>cfm@milma.com</td>
+                                    <td>9847523004</td>
+                                    <td>Malampuzha P.O., Palakkad- 678 651</td>
+                                </tr>
+                                <tr>
+                                    <td>Milma, Trivandrum Dairy</td>
+                                    <td>T. Sreenivas</td>
+                                    <td>milmatd@gmail.com</td>
+                                    <td>9446220637</td>
+                                    <td>Poonthura P.O, Ambalathara Trivandrum – 695 026</td>
+                                </tr>
+                                <tr>
+                                    <td>Milma, Kollam Dairy</td>
+                                    <td>G. Hariharan</td>
+                                    <td>milmaklm@gmail.com</td>
+                                    <td>9447259819</td>
+                                    <td>Thevally P.O, Kollam – 691 009</td>
+                                </tr>
+                                <tr>
+                                    <td>Milma, Pathanamthitta Dairy</td>
+                                    <td>Mohammed Ansari</td>
+                                    <td>milmapta@gmail.com</td>
+                                    <td>9496266737</td>
+                                    <td>Nariyapuram P.O, Mamoodu, Pathanamthitta – 689 513</td>
+                                </tr>
+                                <tr>
+                                    <td>Milma, Ernakulam Dairy</td>
+                                    <td>Wilson J Puravakkattu</td>
+                                    <td>ernakulamdairy@yahoo.co.in</td>
+                                    <td>9447078010</td>
+                                    <td>Thrippunithura P.O, Ernakulam  - 682 301</td>
+                                </tr>
+                                <tr>
+                                    <td>Milma, Kottayam Dairy</td>
+                                    <td>Tome Thomas</td>
+                                    <td>ktymdairy@yahoo.in</td>
+                                    <td>9447532106</td>
+                                    <td>Vadavathoor P.O, Kottayam  - 686 010</td>
+                                </tr>
+                                <tr>
+                                    <td>Milma, Trissur Dairy</td>
+                                    <td>K.K. Sreekantha</td>
+                                    <td>trichurdairy@yahoo.com</td>
+                                    <td>9447543276</td>
+                                    <td>Ramavarmapuram, Trissur – 680 631</td>
+                                </tr>
+                                <tr>
+                                    <td>Milma, Products Dairy, Edappally</td>
+                                    <td>G.V.S. Prasada Rao</td>
+                                    <td>productsdairy@gmail.com</td>
+                                    <td>9847068803</td>
+                                    <td>Edappally, Ernakulam- 682024</td>
+                                </tr>
+                                <tr>
+                                    <td>Milma, Kattappana Dairy</td>
+                                    <td>Bobby P.A.</td>
+                                    <td>ercmpukattappana@milma.com</td>
+                                    <td>04868-278244</td>
+                                    <td>Nirmala City, Mulakarameedu P.O, Kattappana – 685 515</td>
+                                </tr>
+                                <tr>
+                                    <td>Milma, Kozhikkode Dairy</td>
+                                    <td>K.K. Shajimon</td>
+                                    <td>kkddairy@malabarmilma.coop</td>
+                                    <td>9447229889</td>
+                                    <td>Kunnamangalam, Peringolam P.O, Kozhikkode- 673 015</td>
+                                </tr>
+                                <tr>
+                                    <td>Milma, Palakkad Dairy</td>
+                                    <td>P. Gopalakrishnan</td>
+                                    <td>pkddairy@malabarmilma.coop</td>
+                                    <td>9447029589</td>
+                                    <td>Kallepully P.O, Palakkad- 678 005</td>
+                                </tr>
+                                <tr>
+                                    <td>Milma, Kannur Dairy</td>
+                                    <td>Mary Samuel</td>
+                                    <td>knrdairy@malabarmilma.coop</td>
+                                    <td>9446239985</td>
+                                    <td>Podikunnu, Pallikunnu P.O, Kannur – 670 004</td>
+                                </tr>
+                                <tr>
+                                    <td>Milma, Kasargode Dairy</td>
+                                    <td>R.S. Vinod Kumar</td>
+                                    <td>kgddairy@malabarmilma.coop</td>
+                                    <td>9446594637</td>
+                                    <td>Kanghagad, Kasargode – 671 531</td>
+                                </tr>
+                                <tr>
+                                    <td>Milma, Malayora Dairy</td>
+                                    <td>Boby Kuriakose</td>
+                                    <td>mdsdairy@malabarmilma.coop</td>
+                                    <td>9447352596</td>
+                                    <td>Kaithapram P.O, Sreekandapuram, Kannur – 670 631</td>
+                                </tr>
+                                <tr>
+                                    <td>Milma, Wayanad Dairy</td>
+                                    <td>S. Radhakrishnan</td>
+                                    <td>wyddairy@malabarmilma.coop</td>
+                                    <td></td>
+                                    <td>Chuzhali, Kalpetta PO , Wayanad – 673 122</td>
+                                </tr>
+                                <tr>
+                                    <td>Milma Central Products Dairy, Kozhikode</td>
+                                    <td>Arun P</td>
+                                    <td>cpdkkd@malabarmilma.coop</td>
+                                    <td>9947472188</td>
+                                    <td>Naduvattam, Beypore, Kozhikode- 673015</td>
+                                </tr>
+                                <tr>
+                                    <td>Milma, Malappuram Dairy</td>
+                                    <td>R.K. Rakesh</td>
+                                    <td>mpm.mrcmpu@gmail.com</td>
+                                    <td>9495115666</td>
+                                    <td>Moorkkanad P.O, Kolathoor Via, Near AMLP School, Pottikuzhi, Malappuram -679338</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!--tab start-->
+                    <div id="Jamnagar" class="tabcontent" id="tabcontent">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Company Name</th>
+                                    <th scope="col">Contact Information</th>
+                                    <th scope="col">Website</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Address</th>
+                                    <th scope="col">Service</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Sujata Brass Industries</td>
+                                    <td>Mr. Dayaljibhai Nakum : 9824039649</td>
+                                    <td>www.sujatabrass.com</td>
+                                    <td>sujata@sujatabrass.com</td>
+                                    <td> Opposite Ravi Petrol Pump, Rajkot Highway, HAPA 361 120, Jamnagar Gujarat</td>
+                                    <td>Brass Machinary manufacturer</td>
+                                </tr>
+                                <tr>
+                                    <td>P. M. Products,</td>
+                                    <td>Mr. Prashant Bakrania : 9879173762</td>
+                                    <td></td>
+                                    <td>pmproducts07@rediffmail.com</td>
+                                    <td> B-4, Udyognagar, Shanker Tekri, Jamnagar 36104</td>
+                                    <td>Brass Machinary manufacturer</td>
+                                </tr>
+                                <tr>
+                                    <td>P.J.Engineering Works, </td>
+                                    <td>Mr. Haresh J. Patel : 9624670709</td>
+                                    <td>www.pjenggworks.com</td>
+                                    <td>pjengineeringworks@gmail.com</td>
+                                    <td>Plot no 267, GIDC, Phase-2, Dared Bypass, Jamnagar - 4, Gujarat</td>
+                                    <td>Brass Machinary manufacturer</td>
+                                </tr>
+                                <tr>
+                                    <td>Kelvin Machine Tools</td>
+                                    <td>Mr. Krishnakantbhai Makwana, Mr. Bharatbhai Makwana : 0288 256 0357, 98795 13826 , 99251 43826</td>
+                                    <td>www.kelvinmachinetools.com</td>
+                                    <td> kelvin_extreme@yahoo.com</td>
+                                    <td>Plot No 355/5, 49 Road, Jamnagar, Gujarat 361004</td>
+                                    <td>Brass Machinary manufacturer</td>
+                                </tr>
+                                <tr>
+                                    <td>S H Engineers, </td>
+                                    <td>288-2561580</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>Gidc Shed No K1/262, Udyognagar, Jamnagar - 361004, Shanker Tekri</td>
+                                    <td>Brass Machinary manufacturer</td>
+                                </tr>
+                                <tr>
+                                    <td>PMT MACHINES LTD.,</td>
+                                    <td>020 - 27426219 - 24 </td>
+                                    <td>www.pmtmachines.com</td>
+                                    <td>rd@pmtmachines.com, marketing@pmtmachines.com</td>
+                                    <td> Behind PCMC Building, Mumbai-Pune Road, Pimpri, Pune 411 018. Maharashtra, India. </td>
+                                    <td>Brass Machinary manufacturer</td>
+                                </tr>
+                                <tr>
+                                    <td>Ajanta Engineering Works,</td>
+                                    <td>Mr. Harshadbhai Devaliya : 9426049712</td>
+                                    <td></td>
+                                    <td>ajanta311@yahoo.con</td>
+                                    <td> C-2/311, GIDC-1, Shanker Tekri, Udyog Nagar, Jamnagar</td>
+                                    <td>Brass Machinary manufacturer</td>
+                                </tr>
+                                <tr>
+                                    <td>Dev Engineering Works</td>
+                                    <td>Mr. Devrajbhai M. Sureliya : 9824207153</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>B-53, GIDC-1, Shanker Tekri, Udyognagar, Jamnagar</td>
+                                    <td>Brass Machinary manufacturer</td>
+                                </tr>
+                                <tr>
+                                    <td>Energy Machine Tools, </td>
+                                    <td>Mr. Jay Prakashbhai S.Saparia : 2757474</td>
+                                    <td></td>
+                                    <td>energyindia@dataone.in</td>
+                                    <td>Pandit Nehru Road, Near Badeshwar, Jamnagar</td>
+                                    <td>Brass Machinary manufacturer</td>
+                                </tr>
+                                <tr>
+                                    <td>J.B. Engineering Works, </td>
+                                    <td>Mr. Jivanbhai Bhimjibhai : 2561669</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>Plot no. 356/6, GIDC-1, Shanker Tekri, Udyognagar, Jamnagar </td>
+                                    <td>Brass Machinary manufacturer</td>
+                                </tr>
+                                <tr>
+                                    <td>Pioneer Furnaces Private Limited, </td>
+                                    <td>Mr.B.G.Shah : 02692-236182,236197, 9327566679</td>
+                                    <td>http://www.pioneerfurnaces.com/</td>
+                                    <td>contact@pioneerfurnaces.com</td>
+                                    <td>Plot No 146-148, Gidc Estate, Vithal Udyognagar, Anand - 388121</td>
+                                    <td>Electrical Furnace Manufacturer</td>
+                                </tr>
+                                <tr>
+                                    <td>Indo Power Furnace Pvt Ltd, </td>
+                                    <td>Mr. Manoj Kumar : 9998694273</td>
+                                    <td>http://www.indopower.in/</td>
+                                    <td>indopowerfurnace@gmail.com</td>
+                                    <td>No. 56/ A - 4, Phase - 1, Road - B, Bharat Cement Compound, Opposite Shashavt Gum Industries, Bank Of India, G. I. D. C., Vatva, Ahmedabad - 382445, Gujarat, India</td>
+                                    <td>Electrical Furnace Manufacturer</td>
+                                </tr>
+                                <tr>
+                                    <td>Electrotherm (INDIA) Limited, </td>
+                                    <td>Mr. Kalpesh Chavda : 9825150066</td>
+                                    <td>http://www.electrotherm.com</td>
+                                    <td>ser@electrotherm.com</td>
+                                    <td>Engineering & Projects Division, Survey No. 72,Village : Palodia, Taluka : Kalol,Dist. : Gandhinagar - 382 115,Gujarat, India.</td>
+                                    <td>Electrical Furnace Manufacturer</td>
+                                </tr>
+                                <tr>
+                                    <td>Gujarat Nre Coke LTD, </td>
+                                    <td>288-2556793,2556794,2551727</td>
+                                    <td></td>
+                                    <td> </td>
+                                    <td>45/A, Nre House, Saru Section Road, Opp Government Quarter, Patel Colony, Jamnagar - 361008</td>
+                                    <td>Coal Provider</td>
+                                </tr>
+                                <tr>
+                                    <td>Prakash Coal Corporation, </td>
+                                    <td>9426458347, 288-2754634,2750754</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>11 Indl Area 8, Patel Colony, Jamnagar - 361008</td>
+                                    <td>Coal Provider</td>
+                                </tr>
+                                <tr>
+                                    <td>Mandeep Minerals, </td>
+                                    <td>288-2730455</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>Plot No- E-107/108, Gidc Industrial Estate, Phase II, Lalpur Road, Dared, Jamnagar Ho, Jamnagar - 36100</td>
+                                    <td>Coal Provider</td>
+                                </tr>
+                                <tr>
+                                    <td>A M Coal Corporation, </td>
+                                    <td>79-27543528,9825245224</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>B/4, Ghanshyam Avenue, Income Tax,Near C U Shah College, Ahmedabad - 380014, </td>
+                                    <td>Coal Provider</td>
+                                </tr>
+                                <tr>
+                                    <td>Jai Bajrang Coal Traders, </td>
+                                    <td>8873350001, 9471782466</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>Katras More, Jharia Main Road,Opposite Chandrakant Petrol, Jharia, Dhanbad - 828111, </td>
+                                    <td>Coal Provider</td>
+                                </tr>
+                                <tr>
+                                    <td>Silver Leaf Energy, </td>
+                                    <td>79-33014757</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>910, Safal Prelude, Corporate Road, Satellite,Prahladnagar Ahmedabad - 380015,</td>
+                                    <td>Coal Provider</td>
+                                </tr>
+                                <tr>
+                                    <td>Hiralaxmi Coal Industries, </td>
+                                    <td>8295561591, 8295561592</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>C/O Sindhu Flowers Pvt Ltd, Village Charnia Tehsil Kalka Pinjore Nalagarh Road, Panchkula, Panchkula - 134109 </td>
+                                    <td>Coal Provider</td>
+                                </tr>
+                                <tr>
+                                    <td>Shiv Coal Trading </td>
+                                    <td>9825075735, 288-2730894, 2730114</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>Co, 123 Gidc II, Udyognagar, Jamnagar - 361004, Dared</td>
+                                    <td>Coal Provider</td>
+                                </tr>
+                                <tr>
+                                    <td>Metal Scrap India, </td>
+                                    <td>9426730760, 288-2560127, 9426209971</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>348/12 GIDC, Phase-1, Udyognagar, Jamnagar - 361004, Shanker Tekr</td>
+                                    <td>Copper Scrap Provider</td>
+                                </tr>
+                                <tr>
+                                    <td>New Mukesh Scrap Re Processing Industries</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>Copper Scrap Provider</td>
+                                </tr>
+                                <tr>
+                                    <td>Shree Ram Impex, </td>
+                                    <td>9824898008</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>326, Shree Ram Plot, Dared, Jamnagar - 361004, Near Vishal Chowk</td>
+                                    <td>Copper Scrap Provider</td>
+                                </tr>
+                                <tr>
+                                    <td>Milan Traders,</td>
+                                    <td>9904172900, 9924228370</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>Copper Scrap Provider</td>
+                                </tr>
+                                <tr>
+                                    <td>Dynamic Trading, </td>
+                                    <td>9898409770</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>Digvijay Plot, Jamnagar - 361005, Shanker Tekari, Panakhan, Udyog Nagar</td>
+                                    <td>Copper Scrap Provider</td>
+                                </tr>
+                                <tr>
+                                    <td>Ravi Enterprise, </td>
+                                    <td>9998112160</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>222,Near Shree extrusions, Gidc, Phase :- 2,Dared, Jamnagar HO, Jamnagar - 361001, Jamnagar</td>
+                                    <td>Copper Scrap Provider</td>
+                                </tr>
+                                <tr>
+                                    <td>Bajrang Enterprise, </td>
+                                    <td>9824866883, 288-2846215</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>3/3, Mirambika Complex, Jamnagar Ho, Jamnagar - 361001, Near Syndicete Bank, Opp. Rpl Main Gate, Motikhavd</td>
+                                    <td>Copper Scrap Provider</td>
+                                </tr>
+                                <tr>
+                                    <td>Tirupati Metals, </td>
+                                    <td>288-2562451, 9429798491</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>435/1 Gidc, Udyognagar, Jamnagar - 361004</td>
+                                    <td>Copper Scrap Provider</td>
+                                </tr>
+                                <tr>
+                                    <td>Prakash Engg. Services, </td>
+                                    <td>288-2566086</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>50,Digvijay Plot, Jamnagar</td>
+                                    <td>Copper Scrap Provider</td>
+                                </tr>
+                                <tr>
+                                    <td>A S R K Wall Arts Pvt Ltd, </td>
+                                    <td>9928084185</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>Solanki Talkies Road, Near Solanki Vatika, Bhilwara Ho, Bhilwara - 311001, Shastri nagar</td>
+                                    <td>Copper Scrap Provider</td>
+                                </tr>
+                                <tr>
+                                    <td>Pyramid Switchgear Private Limited, </td>
+                                    <td>Mr. Mayank Thaker : 9824255462, 91-2717-241940</td>
+                                    <td>http://www.pyramid-engineers.com/contact.asp</td>
+                                    <td>info@pyramid-engineers.com</td>
+                                    <td>6-A, Shree Meldi Ind. Estate, Near Gota Rly. Crossing, Gota Village, Ahmedabad, Pin - 382481, Gujarat, India</td>
+                                    <td>Electrical Panel manufacturer</td>
+                                </tr>
+                                <tr>
+                                    <td>Alfa Electric Corporation, </td>
+                                    <td>Mr. Paresh Hansaliya : 9426935644</td>
+                                    <td></td>
+                                    <td>alfaelectriccorporation@yahoo.com</td>
+                                    <td>2, Shreeji complex, Satyam Colony Road, Near Air Force-2 Gate, Jamnagar, Gujarat</td>
+                                    <td>Electrical Panel manufacturer</td>
+                                </tr>
+                                <tr>
+                                    <td>AJAY ENTERPRISE, </td>
+                                    <td>9909926419, 261-2471217</td>
+                                    <td>http://www.ajayenterprise.net/</td>
+                                    <td>info@ajayenterprise.net</td>
+                                    <td>1/660, Bunder Street, Nera Sailor Club, Nanpura, Surat - 395001, Behind Civil Court</td>
+                                    <td>Electrical Panel manufacturer</td>
+                                </tr>
+                                <tr>
+                                    <td>industrybuying.com,</td>
+                                    <td>11-33435422</td>
+                                    <td>www.industrybuying.com</td>
+                                    <td></td>
+                                    <td> Khasra Number 401-402, Ghitorni, Delhi - 110030, Near Ghitorni Metro Station</td>
+                                    <td>Electrical Panel manufacturer</td>
+                                </tr>
+                                <tr>
+                                    <td>S S Engineering Works, </td>
+                                    <td>40-33120388</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>F-7, Road no.12, Nacharam, Hyderabad - 500076, Behind baba cafe</td>
+                                    <td>Electrical Panel manufacturer</td>
+                                </tr>
+                                <tr>
+                                    <td>Nyle Technologies, </td>
+                                    <td>422-2668570,9585855570</td>
+                                    <td>www.nyletechnologies.com</td>
+                                    <td>nyletechnologies@gmail.com</td>
+                                    <td>3 Kaani illam, Saravanampatti, Coimbatore - 641035, near Ruby school</td>
+                                    <td>Electrical Panel manufacturer</td>
+                                </tr>
+                                <tr>
+                                    <td>Vishwakarma Electro Tech, </td>
+                                    <td>9924633713</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>326, Dared, Jamnagar - 361004, Gidc, phase-2</td>
+                                    <td>Electrical Panel manufacturer</td>
+                                </tr>
+                                <tr>
+                                    <td>Synergy Transformer, "Diksha Parva</td>
+                                    <td>Mr. Rajesh Patel  : 02871 231791/253077</td>
+                                    <td>http://www.synergytransformers.com/</td>
+                                    <td>info@synergytransformers.com</td>
+                                    <td>
+                                        Maheshwar Madhi Main Road, Pipaliya Nagar,
+                                        Mangrol Road, Keshod.
+                                        Dist: Junagadh. (Gujarat) INDIA
+                                    </td>
+                                    <td>Transformer Supplier</td>
+                                </tr>
+                                <tr>
+                                    <td>Voltamp Transformers Limited, </td>
+                                    <td>Mr. Arvind H. Gadhavi  : 91-265-264 2011 / 3041480 / 403 / 8128675078 / 8128675080</td>
+                                    <td>http://www.voltamptransformers.com/</td>
+                                    <td>voltamp@voltamptransformers.com, vtl_brd@voltamptransformers.com </td>
+                                    <td>Markarpura,Vadodara- 390014</td>
+                                    <td>Transformer Supplier</td>
+                                </tr>
+                                <tr>
+                                    <td>SKP TRANSFORMERS, </td>
+                                    <td>Shri Jayeshbhai : 079 22823339, 22831939</td>
+                                    <td>www.skptransformers.com</td>
+                                    <td>info@skptransformers.com, skptrans@rediffmail.com</td>
+                                    <td>C-1, 51/1, Phase III, G.I.D.C. Ind. Estate Naroda, Ahmedabad - 382 330</td>
+                                    <td>Transformer Supplier</td>
+                                </tr>
+                                <tr>
+                                    <td>Gujarat Transformers Private Limited, </td>
+                                    <td>
+                                        Shri Umangbhai
+                                        : 9376222233, 98250 51233
+                                    </td>
+                                    <td>http://gujarattransformers.com/</td>
+                                    <td>sales@gujarattransformers.com</td>
+                                    <td>Po Maneja, Baroda – 390 013, Gujarat, India</td>
+                                    <td>Transformer Supplier</td>
+                                </tr>
+                                <tr>
+                                    <td>B & C ENERGY INFRA PVT. LTD, </td>
+                                    <td>Mr. Maheshbhai Prajapati : 02762-224270, 9099940623 </td>
+                                    <td>www.powertransformerindia.com</td>
+                                    <td>response@powertransformerindia.com</td>
+                                    <td>307/A, G.I.D.C.- 2, Dediyasan, Mehsana, Gujarat, India</td>
+                                    <td>Transformer Supplier</td>
+                                </tr>
+                                <tr>
+                                    <td>ATLANTA ELECTRICALS PVT. LTD., </td>
+                                    <td>2692 235023 / 237185</td>
+                                    <td>http://www.atlantaelectricals.com</td>
+                                    <td>sales@atlantaelectricals.com</td>
+                                    <td> Plot No. 1503/4, GIDC Estate, Vithal Udyognagar, Anand – 388 121 Gujarat, INDIA.</td>
+                                    <td>Transformer Supplier</td>
+                                </tr>
+                                <tr>
+                                    <td>Kotsons Private Limited, </td>
+                                    <td>011-43537540</td>
+                                    <td>http://kotsons.com</td>
+                                    <td>kotsons@kotsons.com</td>
+                                    <td>Motia Khan, Pahar Ganj, New Delhi-110055 INDIA.</td>
+                                    <td>Transformer Supplier</td>
+                                </tr>
+                                <tr>
+                                    <td>UTTAM (BHARAT) ELECTRICALS PVT. LTD.,</td>
+                                    <td>141-2332949, +91-141-2330112</td>
+                                    <td>www.uttam-bharat.com</td>
+                                    <td>sales@uttam-bharat.com</td>
+                                    <td>B-189/A , Road No.9 (F), VKI Area, Jaipur - 302013 Rajasthan India</td>
+                                    <td>Transformer Supplier</td>
+                                </tr>
+                                <tr>
+                                    <td>Danish Private Limited, </td>
+                                    <td>141-5164500, +91-8947822222/ 9929455455</td>
+                                    <td>http://www.danish.co.in</td>
+                                    <td></td>
+                                    <td>679, Sitapura Industrial Area, Jaipur- 302022. INDIA</td>
+                                    <td>Transformer Supplier</td>
+                                </tr>
+                                <tr>
+                                    <td>Urja Techniques (India) Private Limited, </td>
+                                    <td>22-24150505 / 40670500, 9820081474 / 9820401606</td>
+                                    <td>http://urjatransformers.com</td>
+                                    <td>response@urjatransformers.com </td>
+                                    <td>B-17, Shriram Industrial Estate, G. D. Ambekar Road, Wadala Mumbai - 400 031, Maharashtra, (India)</td>
+                                    <td>Transformer Supplier</td>
+                                </tr>
+                                <tr>
+                                    <td>Jyoti CNC Automation Pvt Ltd, </td>
+                                    <td>2827-287412,287081,287082,306100,306101</td>
+                                    <td>www.jyoti.co.in</td>
+                                    <td></td>
+                                    <td>Plot No. G-506 & 2839, Gidc, Lodhika Gidc, Kalawad Road, Metoda Gidc, Rajkot - 360021, Lodhika</td>
+                                    <td>CNC Machine Manufacturer</td>
+                                </tr>
+                                <tr>
+                                    <td>Mico Hydraulic, </td>
+                                    <td>Mr.Prakash Parati : 9824283806</td>
+                                    <td>www.micohydraulics.com, www.extrusionpress.in</td>
+                                    <td>prakash@micohydraulics.com</td>
+                                    <td>Plot No. 3653/3654, N Road, Phase-3 Dared, Jamnagar</td>
+                                    <td>Hydraulic Press Manufacturer</td>
+                                </tr>
+                                <tr>
+                                    <td>Siddharth Heavy Industries Pvt. Ltd, </td>
+                                    <td>Mr.Prashant Jadhav : 9845273840</td>
+                                    <td>www.siddharthindustries.com</td>
+                                    <td>siddhartindus@gmail.com</td>
+                                    <td>
+                                        492/A, Waghawade Road, Machhe
+                                        Belgaum 590014, Karnataka
+                                        INDIA
+                                    </td>
+                                    <td>Hydraulic Press Manufacturer</td>
+                                </tr>
+                                <tr>
+                                    <td>SPM CONTROLS</td>
+                                    <td>Mr. L.S.Savant : 98454 48718</td>
+                                    <td>www.spmcontrols.com</td>
+                                    <td>responce@spmcontrols.com</td>
+                                    <td>S. No. 686 / 1 / A / 2, Near Ashok Iron Works, Plant I, Udyambag, Belgaum - 590 008 </td>
+                                    <td>Hydraulic Press Manufacturer</td>
+                                </tr>
+                                <tr>
+                                    <td>Shree Mahalaxmi Electrical,</td>
+                                    <td>Mr. H D Patel </td>
+                                    <td></td>
+                                    <td></td>
+                                    <td> Plot No 3147, Face 3 Gidc, Road No 4, Jamnagar Ho, Jamnagar - 361001, Near Mahavir Circle</td>
+                                    <td>Motor Rewinding</td>
+                                </tr>
+                                <tr>
+                                    <td>Brijesh Electricals, </td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>Shop No 22, Panchmukhi Hanuman Complex, Pandit Nehru Marg,Opposite Nava Nagar Co-Oporative Bank Jamnagar - 361001, </td>
+                                    <td>Motor Rewinding</td>
+                                </tr>
+                                <tr>
+                                    <td>Bansi Electric & Engineering, </td>
+                                    <td>Mr. Dhaval Patel</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>C 30/2, Udyog Nagar Saru Section Rd, Jamnagar - 361002, </td>
+                                    <td>Motor Rewinding</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!--tab start-->
+                    <div id="Morbi" class="tabcontent" id="tabcontent">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Service Provider</th>
+                                    <th scope="col">Contact Information</th>
+                                    <th scope="col">Address</th>
+                                    <th scope="col">Type of Service</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Jagdish Automation</td>
+                                    <td>9925726456</td>
+                                    <td>41 Srinath Complex, 8 A National Highway, Morbi - 363641, Near Kuber Cinema </td>
+                                    <td>AC Drive Repair and Services,AC Drive Distributors </td>
+                                </tr>
+                                <tr>
+                                    <td>Venus Compressor</td>
+                                    <td>9152866919</td>
+                                    <td>60 3 Diamond Industrial Estate, Natioanl Highway Number 8, Naroda GIDC, Ahmedabad - 382330, Near Unnati Industrial Corporation</td>
+                                    <td>Screw Compressor Dealer</td>
+                                </tr>
+                                <tr>
+                                    <td>Umiya Electricals</td>
+                                    <td>9913307872</td>
+                                    <td>Shop No 15, Shreenath Complex, National Highway No 8, Morbi - 363641, Near Pashwanath Complex </td>
+                                    <td>Electrical Goods Dealer</td>
+                                </tr>
+                                <tr>
+                                    <td>Vaibhavi Enterprise</td>
+                                    <td>9152925125</td>
+                                    <td>217, V.V. Commercial Complex, Dhebar Road, Rajkot - 360002, Bhutkhana Chok</td>
+                                    <td>Comtech Air Compressor Dealer</td>
+                                </tr>
+                                <tr>
+                                    <td>Honey Electrical Works</td>
+                                    <td>9824089875</td>
+                                    <td>Shop No 1, Lalpar Chambers, National Highway No 8, Lalpar, Morbi - 363642, Near Hotel Ravi Residency</td>
+                                    <td>AC Drive Repair and Services,AC Drive Distributors </td>
+                                </tr>
+                                <tr>
+                                    <td>Amerys Special Refractory</td>
+                                    <td>8758566738</td>
+                                    <td>Amerys Special Refractory</td>
+                                    <td>Kiln Furniture</td>
+                                </tr>
+                                <tr>
+                                    <td>Saathi Automation services</td>
+                                    <td>9879491018</td>
+                                    <td>2nd Floor, 5/6, Ceramic Plaza 1, National Highway 8 A, Morbi - 363641, Near Vishal Furniture</td>
+                                    <td>PLC System Repair & Services </td>
+                                </tr>
+                                <tr>
+                                    <td>Shree Bhagwati Engineering Works </td>
+                                    <td>02822 242393</td>
+                                    <td>8-A, National Highway, Lalpar,Morbi-363641, Gujarat, INDIA</td>
+                                    <td>ABB Motor Dealer</td>
+                                </tr>
+                                <tr>
+                                    <td>Parishram Technologies</td>
+                                    <td>9825487400</td>
+                                    <td>Shivshakti Chamber, Near Shakti Chambers, Opp. Aadarsh Hotel, 8-A National Highway, Dist. Rajkot,Morbi-363641, Gujarat, INDIA</td>
+                                    <td>Ball Mill Motor Dealer</td>
+                                </tr>
+                                <tr>
+                                    <td>Samay Hydraulic Traders</td>
+                                    <td>9825223163</td>
+                                    <td>49/50 Shakti Chambers, Morbi - 363641, Nr Mani Manek Chamber</td>
+                                    <td>Pneumatic System Dealers</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!--tab start-->
+                    <div id="Thangadh" class="tabcontent" id="tabcontent">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Contact Information</th>
+                                    <th scope="col">Type of Service</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>MAHESH BHAI</td>
+                                    <td>99792 85117</td>
+                                    <td>BATTERY CASTING</td>
+                                </tr>
+                                <tr>
+                                    <td>PRABHU BHAI</td>
+                                    <td></td>
+                                    <td>BATTERY CASTING</td>
+                                </tr>
+                                <tr>
+                                    <td>MANSUKH BHAI</td>
+                                    <td></td>
+                                    <td>BATTERY CASTING</td>
+                                </tr>
+                                <tr>
+                                    <td>JIGNESH BHAI</td>
+                                    <td></td>
+                                    <td>BATTERY CASTING</td>
+                                </tr>
+                                <tr>
+                                    <td>ASHVIN BHAI, VAGADIYA</td>
+                                    <td>96386 36262</td>
+                                    <td>BATTERY CASTING</td>
+                                </tr>
+                                <tr>
+                                    <td>BHARAT BHAI</td>
+                                    <td>94287 20684</td>
+                                    <td>BURNERS</td>
+                                </tr>
+                                <tr>
+                                    <td>KARSHAN BHAI</td>
+                                    <td></td>
+                                    <td>BURNERS</td>
+                                </tr>
+                                <tr>
+                                    <td>RAJDEEP BHAI (SIVCON)</td>
+                                    <td>98254 31631</td>
+                                    <td>THERMOCOPULE ('R' TYPE/'K' TYPE)</td>
+                                </tr>
+                                <tr>
+                                    <td>BHANU BHAI</td>
+                                    <td>98248 69829</td>
+                                    <td>THERMOCOPULE ('R' TYPE/'K' TYPE)</td>
+                                </tr>
+                                <tr>
+                                    <td>MAMU BHAI</td>
+                                    <td>94276 67874</td>
+                                    <td>TUNNEL KILN</td>
+                                </tr>
+                                <tr>
+                                    <td>ASLAM BHAI</td>
+                                    <td>90992 14106</td>
+                                    <td>TUNNEL KILN</td>
+                                </tr>
+                                <tr>
+                                    <td>VALAM BHAI</td>
+                                    <td>98253 31220</td>
+                                    <td>TUNNEL KILN</td>
+                                </tr>
+                                <tr>
+                                    <td>ASHA BLOWERS, SURENDRANAGAR</td>
+                                    <td>98255 98477</td>
+                                    <td>BLOWER</td>
+                                </tr>
+                                <tr>
+                                    <td>YASHVANT HYDROLIC</td>
+                                    <td>98252 60293</td>
+                                    <td>PUSHER</td>
+                                </tr>
+                                <tr>
+                                    <td>SUN HYDROLIC, AHMEDABAD</td>
+                                    <td>99090 38003</td>
+                                    <td>PUSHER</td>
+                                </tr>
+                                <tr>
+                                    <td>KAUSHIK BHAI, THAN</td>
+                                    <td>97253 27008</td>
+                                    <td>ENGINEERING WORKS</td>
+                                </tr>
+                                <tr>
+                                    <td>YOGESH BHAI, THAN</td>
+                                    <td>98255 47164</td>
+                                    <td>INSULATING BRICKS</td>
+                                </tr>
+                                <tr>
+                                    <td>MUKESH BHAI (ANMOL CERAMIC), THAN</td>
+                                    <td>98253 23616</td>
+                                    <td>INSULATING BRICKS</td>
+                                </tr>
+                                <tr>
+                                    <td>RAJESH PATEL (ANJALI CERAMIC), THAN</td>
+                                    <td></td>
+                                    <td>INSULATING BRICKS</td>
+                                </tr>
+                                <tr>
+                                    <td>YOGESH BHAI, THAN</td>
+                                    <td>98255 47164</td>
+                                    <td>CERA WOOL</td>
+                                </tr>
+                                <tr>
+                                    <td>UDAY BHAI</td>
+                                    <td>98257 66016</td>
+                                    <td>CERA WOOL</td>
+                                </tr>
+                                <tr>
+                                    <td>UDAY BHAI (SOMNATH POTTERY)</td>
+                                    <td>98257 66016</td>
+                                    <td>THERMOTECH</td>
+                                </tr>
+                                <tr>
+                                    <td>M. NEELVARNAM (ABREF PRIVATE LTD.)</td>
+                                    <td>98401 61597</td>
+                                    <td>CORDORITE PLATE</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="Coimbatore" class="tabcontent" id="tabcontent">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Unit Name</th>
+                                    <th scope="col">Name of Owner</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Mobile Number</th>
+                                    <th scope="col">Address</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Ammarun Foundry</td>
+                                    <td>Mr.N.Visvanathan</td>
+                                    <td>visvanathan@ammarun.com</td>
+                                    <td>98422 86661</td>
+                                    <td>Ammarun Foundries, Vilankurichi Coimbatore</td>
+                                </tr>
+                                <tr>
+                                    <td>Bright Castings</td>
+                                    <td>Mr.S.Balraj</td>
+                                    <td>balraj@brightcastings.in</td>
+                                    <td>99444 13654</td>
+                                    <td>Bright Castings, VK Road, Thannerpanthal Coimbatore - 641 014</td>
+                                </tr>
+                                <tr>
+                                    <td>Bright Foundries</td>
+                                    <td>Mr.S.Balraj</td>
+                                    <td>balraj@brightcastings.in</td>
+                                    <td>99444 13654</td>
+                                    <td>Bright Foundry, Kattampatti Village, Near Annur Coimbatore - 641 104</td>
+                                </tr>
+                                <tr>
+                                    <td>Best Pumps - Foundry</td>
+                                    <td>Mrs.Sripriya Gowrishankar</td>
+                                    <td>sripriyacg@gmail.com</td>
+                                    <td>0422 - 2432396, 2432195, 2432155</td>
+                                    <td>Best Engineering Foundry, Somayam Palayam, Coimbatore - 641 025</td>
+                                </tr>
+                                <tr>
+                                    <td>Best Pumps </td>
+                                    <td>Mrs.Sripriya Gowrishankar</td>
+                                    <td>sripriyacg@gmail.com</td>
+                                    <td>0422 - 2432396, 2432195, 2432155</td>
+                                    <td>Best Engineering Pumps Ltd, 59-B Thadagam Road, Edrayar Palayam, Coimbatore - 641 025</td>
+                                </tr>
+                                <tr>
+                                    <td>EnBest Pumps</td>
+                                    <td>Mrs.Sripriya Gowrishankar</td>
+                                    <td>sripriyacg@gmail.com</td>
+                                    <td>0422 - 2432396, 2432195, 2432155</td>
+                                    <td>EnBest Pumps Ltd, Somayam Palayam, Coimbatore - 641 025</td>
+                                </tr>
+                                <tr>
+                                    <td>Gowri Metals</td>
+                                    <td>Mrs.Sripriya Gowrishankar</td>
+                                    <td>sripriyacg@gmail.com</td>
+                                    <td>0422 - 2432396, 2432195, 2432155</td>
+                                    <td>Gowri Metals, Somayam Palayam, Coimbatore - 641 025</td>
+                                </tr>
+                                <tr>
+                                    <td>Babu Engg Foundry</td>
+                                    <td>Mr.Boopendra Babu</td>
+                                    <td>babu@babuengg.com</td>
+                                    <td>99947 02223</td>
+                                    <td>Babu Engg Foundry, Pappampatti Road, Kannampalayam Coimbatore - 641 402</td>
+                                </tr>
+                                <tr>
+                                    <td>Nandhini Castings</td>
+                                    <td>Mr.V.Muthukrishnan</td>
+                                    <td>nandhinicasting@gmail.com</td>
+                                    <td>99651 - 99911</td>
+                                    <td>Nandhini Castings, SF.No.299/2-B, Nagamanaicken Palayam, Pattanam, Coimbatore - 641 016</td>
+                                </tr>
+                                <tr>
+                                    <td>Jairam Foundries</td>
+                                    <td>Mr.A.Sivashankughakumar</td>
+                                    <td>angannansiva@gmail.com</td>
+                                    <td>98433 50505</td>
+                                    <td>Jairam Foundry, Cosmafan Clust Park - 1, Arasur, Coimbatore - 641 407</td>
+                                </tr>
+                                <tr>
+                                    <td>Vasanthi Foundry</td>
+                                    <td>Mr.Prakash</td>
+                                    <td>vasanthifoundry@gmail.com</td>
+                                    <td>94430 52979</td>
+                                    <td>Vasanthi Foundry, Cosmafan Clust Park - 1, Arasur, Coimbatore - 641 407</td>
+                                </tr>
+                                <tr>
+                                    <td>Perumal Foundry</td>
+                                    <td>Mr.Santhosh</td>
+                                    <td>perumalfoundry@gmail.com</td>
+                                    <td>98422 02034</td>
+                                    <td>Perumal Foundry, Cosmafan Clust Park - 1, Arasur, Coimbatore - 641 407</td>
+                                </tr>
+                                <tr>
+                                    <td>Ferromax Foundry</td>
+                                    <td>Mr.R.Satheesh Kumar</td>
+                                    <td>ferromaxfoundries@gmail.com</td>
+                                    <td>95244 22377</td>
+                                    <td>Ferromax Foundry, Cosmafan Clust Park - 1, Arasur, Coimbatore - 641 407</td>
+                                </tr>
+                                <tr>
+                                    <td>SSA Castings</td>
+                                    <td>Mr.S.Sureh</td>
+                                    <td>venkatesh@ssacastings.com</td>
+                                    <td>98430 77110</td>
+                                    <td>SSA Castings, Cosmafan Clust Park - 1, Arasur, Coimbatore - 641 407</td>
+                                </tr>
+                                <tr>
+                                    <td>Sri Gnanamurugan Foundry</td>
+                                    <td>Mr.Eswaramoorthy</td>
+                                    <td>srignanamuruganfoundry@gmail.com</td>
+                                    <td>9842266608</td>
+                                    <td>Gana Murugan Foundry, Cosmafan Clust Park - 1, Arasur, Coimbatore - 641 407</td>
+                                </tr>
+                                <tr>
+                                    <td>Om Muruga Industries</td>
+                                    <td>Mr.Karthikeyan</td>
+                                    <td>omipumps@gmail.com</td>
+                                    <td>93600 70093</td>
+                                    <td>Om Muruga Industries, Sathy Main Road, Coimbatore- 641 004</td>
+                                </tr>
+                                <tr>
+                                    <td>Dhanalakshmi Foundry</td>
+                                    <td>Mr.Prabhuraj</td>
+                                    <td>dlfpumps@gmail.com</td>
+                                    <td>98430 77866</td>
+                                    <td>Dhanlakshmi Pumps, Sathy Main Road, Vellakinar, Coimbatore</td>
+                                </tr>
+                                <tr>
+                                    <td>Bakgiyam Foundry</td>
+                                    <td>Mr.Praveen</td>
+                                    <td>praveen@bakgiyam.com</td>
+                                    <td>94888 71111</td>
+                                    <td>Bakgiyam Foundry, Saravanampatti Road, Coimbatore - 641 410</td>
+                                </tr>
+                                <tr>
+                                    <td>Veesaa Foundry</td>
+                                    <td>Mr.Arjun Ramamoorthy</td>
+                                    <td>veesaafoundry@gmail.com</td>
+                                    <td>98430 49937</td>
+                                    <td>Veesaa Foundry, SS Kulam, Kovilpalayam Post, Coimbatore </td>
+                                </tr>
+                                <tr>
+                                    <td>Vasumathi Castings</td>
+                                    <td>Mr.Dhanapal</td>
+                                    <td>vasumathicastings@gmail.com</td>
+                                    <td>99440 96555</td>
+                                    <td>Vasumathi Castings, Cosmafan Clust Park - 2, Manikampalayam, Coimbatore</td>
+                                </tr>
+                                <tr>
+                                    <td>MJK Enterprises</td>
+                                    <td>Mr.Jagetheesh</td>
+                                    <td>mjenter@gmail.com</td>
+                                    <td>94433 17951</td>
+                                    <td>MJK Enterprises - Foudry, Kalapatti, Coimbatore - 641 014</td>
+                                </tr>
+                                <tr>
+                                    <td>Mahendra Pumps - Unit 1</td>
+                                    <td>Mr.Mahendra Ramdass</td>
+                                    <td>mramdas@mahendrapumps.in</td>
+                                    <td>98940 43025</td>
+                                    <td>Mahendra Pumps, Puliakulam Main Road, P.N.Palayam, Coimbatore - 641 037</td>
+                                </tr>
+                                <tr>
+                                    <td>Mahendra Pumps - Unit 2</td>
+                                    <td>Mr.Mahendra Ramdass</td>
+                                    <td>mramdas@mahendrapumps.in</td>
+                                    <td>98940 43025</td>
+                                    <td>Mahendra Pumps, Puliakulam Main Road, P.N.Palayam, Coimbatore- 641 038</td>
+                                </tr>
+                                <tr>
+                                    <td>Mahendra Pumps - Unit 3</td>
+                                    <td>Mr.Mahendra Ramdass</td>
+                                    <td>mramdas@mahendrapumps.in</td>
+                                    <td>98940 43025</td>
+                                    <td>Mahendra Pumps, Puliakulam Main Road, P.N.Palayam, Coimbatore - 641 039</td>
+                                </tr>
+                                <tr>
+                                    <td>Mahendra Pumps - Unit 4</td>
+                                    <td>Mr.Jayakumar Ramdas</td>
+                                    <td>jramdass@mahendrapumps.in</td>
+                                    <td>98940 43045</td>
+                                    <td>Mahendra Pumps, Kalapatti Main Road, SITRA Post, Coimbatore - 641 014</td>
+                                </tr>
+                                <tr>
+                                    <td>Suguna Machine Works - Foundry</td>
+                                    <td>Mr.Arun Ranganathan</td>
+                                    <td>arun@sugunagroup.com</td>
+                                    <td>95246 83333</td>
+                                    <td>Suguna Machine Works -  Foudry, VK Road, Cheran managar, Coimbatore</td>
+                                </tr>
+                                <tr>
+                                    <td>PSG Foundry</td>
+                                    <td>Mr.S.Kuppusamy</td>
+                                    <td>kuppusamy.s@gmail.com</td>
+                                    <td>99524 27227</td>
+                                    <td>PSG & Sons Charities - Foundry, Cosmafan Clust Park - 1, Arsur, Coimbatore </td>
+                                </tr>
+                                <tr>
+                                    <td>Seethalakshmi Castings</td>
+                                    <td>Mr.N.Ramasamy</td>
+                                    <td>ennar2002sscpl@gmail.com</td>
+                                    <td>98422 91111</td>
+                                    <td>Seethalakshmi Castings, Pollachi Main Road, SIDCO  Kurichi, Coimbatore - 641 020</td>
+                                </tr>
+                                <tr>
+                                    <td>Integra Automation - Foundry Unit</td>
+                                    <td>Mr.Vikram Sokkalingam</td>
+                                    <td>vikram@integraautomation.net</td>
+                                    <td>98433 34455</td>
+                                    <td>Integra Automation  Foundry, Kurunallipalaym, Kinathukadavu Post, Coimbatore</td>
+                                </tr>
+                                <tr>
+                                    <td>Viking Industries</td>
+                                    <td>Mr.Soundarajan</td>
+                                    <td>vikingpumps@gmail.com</td>
+                                    <td>99949 19082</td>
+                                    <td>Viking Industries, Pollachi Main Road, SIDCO  Kurichi, Coimbatore - 641 020</td>
+                                </tr>
+                                <tr>
+                                    <td>Indo Shell Castings - Unit 2</td>
+                                    <td>Mr.J.Ganesh Kumar</td>
+                                    <td>ganesjkj@indoshellcast.com</td>
+                                    <td>99444 76070</td>
+                                    <td>Indo Shell Cast Pvt Ltd, Pollachi Main Road, Malumichampatti, Coimbatore </td>
+                                </tr>
+                                <tr>
+                                    <td>Indo Shell Castings - Unit 1</td>
+                                    <td>Mr.J.Ganesh Kumar</td>
+                                    <td>ganesjkj@indoshellcast.com</td>
+                                    <td>99444 76070</td>
+                                    <td>Indo Shell Cast Pvt Ltd, Pollachi Main Road, SIDCO  Kurichi, Coimbatore - 641 020</td>
+                                </tr>
+                                <tr>
+                                    <td>Unique Shell Mould - Unit 1</td>
+                                    <td>Mr.Jagadeesh Kumar</td>
+                                    <td>mtc1@uniqeshell.com</td>
+                                    <td>0422 3011400</td>
+                                    <td>Unique Shell Cast Pvt Ltd, Pollachi Main Road, SIDCO  Kurichi, Coimbatore - 641 020</td>
+                                </tr>
+                                <tr>
+                                    <td>Unique Shell Mould - Unit 2</td>
+                                    <td>Mr.Jagadeesh Kumar</td>
+                                    <td>mtc2@uniqeshell.com</td>
+                                    <td>422 3011400</td>
+                                    <td>Unique Shell Cast Pvt Ltd, Pollachi Main Road, SIDCO  Kurichi, Coimbatore - 641 020</td>
+                                </tr>
+                                <tr>
+                                    <td>Suresh Engineering Works</td>
+                                    <td>Mr.Subramanian</td>
+                                    <td>sew.info@gmail.com</td>
+                                    <td>98430 99556</td>
+                                    <td>Suresh Engg Works, Ganapthi Industrial Estate, Coimbatore - 641 004</td>
+                                </tr>
+                                <tr>
+                                    <td>Abhirami Foundry</td>
+                                    <td>Mr.Shivakumar</td>
+                                    <td>abhiramifoundries@gmail.com</td>
+                                    <td>90039 18026</td>
+                                    <td>Abhirami Foundry, Saravanampatti main Road, Vellakinar, Coimbatore</td>
+                                </tr>
+                                <tr>
+                                    <td>Aquasub Enginnering </td>
+                                    <td>Mr.Kanagaraj</td>
+                                    <td>ase1electrical@gmail.com</td>
+                                    <td>99945 01080</td>
+                                    <td>Aquasub Engineering, Mettupalayam Road, Thudiyalur, Coimbatore</td>
+                                </tr>
+                                <tr>
+                                    <td>Blue mount Castings</td>
+                                    <td>Dr.Senthil Kumar</td>
+                                    <td>bluemountcastings@gmail.com</td>
+                                    <td>93631 44885</td>
+                                    <td>Blue Mount Castings, Mettupalayam Road, Chinamathampalayam, Coimbatore</td>
+                                </tr>
+                                <tr>
+                                    <td>Eltex castings</td>
+                                    <td>Mr.Victor</td>
+                                    <td>eltex@klrf.in</td>
+                                    <td>94421 94490</td>
+                                    <td>Eltex Castings, Mettupalayam Road, Narasimanaickenpalayam, Coimbatore</td>
+                                </tr>
+                                <tr>
+                                    <td>Allied Castings</td>
+                                    <td>Mr.Rajendran</td>
+                                    <td>alliedcast@yahoo.in</td>
+                                    <td>94422 12376</td>
+                                    <td>Allied Castings, Cosmafan Clust Park - 1, Arasur, Coimbatore - 641 432</td>
+                                </tr>
+                                <tr>
+                                    <td>Ramakrishna Industries</td>
+                                    <td>Mr.D.Gunashekar</td>
+                                    <td>guna.shekar05@gmail.com</td>
+                                    <td>72004 28295</td>
+                                    <td>Ramakrishna Industries, Avinashi Road, Near Civil Aerodrome, Coimbatore - 641 014</td>
+                                </tr>
+                                <tr>
+                                    <td>Ranba Castings</td>
+                                    <td>Mr.R.Arun Kumar</td>
+                                    <td>arunkumarr@ranbacastings.com</td>
+                                    <td>98430 55690</td>
+                                    <td>Ranba Castings, Sulur Railay Feeder Road, Arasur, Coimbatore</td>
+                                </tr>
+                                <tr>
+                                    <td>VR Foundries</td>
+                                    <td>Mr.R.Arun Kumar</td>
+                                    <td>arunkumarr@ranbacastings.com</td>
+                                    <td>98430 55690</td>
+                                    <td>VR Foudries, Arasur, Coimbatore</td>
+                                </tr>
+                                <tr>
+                                    <td>Anugraha valves - Unit 1</td>
+                                    <td>Mr.Asaithambi</td>
+                                    <td>anugraha@anugrahavalvecastings.com</td>
+                                    <td>95855 40963</td>
+                                    <td>Anugraha Valves Foundries, Arasur Coimbatore</td>
+                                </tr>
+                                <tr>
+                                    <td>Anugraha valves - Unit 2</td>
+                                    <td>Mr.Kumarasamy</td>
+                                    <td>anugraha@anugrahavalvecastings.com</td>
+                                    <td>95855 40912</td>
+                                    <td>Anugraha Valves Foundries, Arasur Coimbatore</td>
+                                </tr>
+                                <tr>
+                                    <td>Anugraha valves - Unit 3</td>
+                                    <td>Mr.Sivakumar</td>
+                                    <td>anugraha@anugrahavalvecastings.com</td>
+                                    <td>95855 40914</td>
+                                    <td>Anugraha Valves Foundries, Arasur Coimbatore</td>
+                                </tr>
+                                <tr>
+                                    <td>Bharani Ferrocast</td>
+                                    <td>Mr.Rajasekar</td>
+                                    <td>admin@baraniferrocast.in</td>
+                                    <td>96597 44433</td>
+                                    <td>Barani Ferrocast Foudry, Cosmafan Clust Park - 1, Arasur, Coimbatore - 641 407</td>
+                                </tr>
+                                <tr>
+                                    <td>Uni Cast Alloys</td>
+                                    <td>Mr.Sivakumar</td>
+                                    <td>uc@unitedgroupcompanies.com</td>
+                                    <td>98423 21584</td>
+                                    <td>Uni Cast Alloys, Achipatti Pollachi, Coimbatore</td>
+                                </tr>
+                                <tr>
+                                    <td>Hi-Tech Die Cast Alloys</td>
+                                    <td>Mr.Soundarajan</td>
+                                    <td>hitechdiecast@gmail.com</td>
+                                    <td>98423 21585</td>
+                                    <td>HiTech Die  Cast Alloys, Achipatti Pollachi, Coimbatore</td>
+                                </tr>
+                                <tr>
+                                    <td>Flow Links Sevre - Foundry</td>
+                                    <td>Mr.T.Rajkumar</td>
+                                    <td>flsmail@flowlink.net</td>
+                                    <td>95971 46444</td>
+                                    <td>Flow Links -  Foudry, Arasur, Coimbatore - 641 407</td>
+                                </tr>
+                                <tr>
+                                    <td>Flow Links Serve - Machine Shop</td>
+                                    <td>Mr.T.Rajkumar</td>
+                                    <td>flsmail@flowlink.net</td>
+                                    <td>95971 46444</td>
+                                    <td>Flow Links -  Machine shop, Arasur, Coimbatore - 641 407</td>
+                                </tr>
+                                <tr>
+                                    <td>AGNA Inc</td>
+                                    <td>Mr.Suresh Kumar</td>
+                                    <td>admin@agnainc.in</td>
+                                    <td>94457 88720</td>
+                                    <td>AGNA INC, Ondipudur, Coimbatore - 641 005</td>
+                                </tr>
+                                <tr>
+                                    <td>Sri Selvalakshmi Foundry</td>
+                                    <td>Mr.V.Jagadeesan</td>
+                                    <td>vjslf@yahoo.com</td>
+                                    <td>93666 15060</td>
+                                    <td>Sri Selvalakshmi Foundry, 29, Aerodrome Road, Singanallur, Coimbatore - 641 005</td>
+                                </tr>
+                                <tr>
+                                    <td>Sree Meghala Foundry</td>
+                                    <td>Mr.G.M.Rajaram</td>
+                                    <td></td>
+                                    <td>98940 31820</td>
+                                    <td>Sri Meghala Foundry, 22, Rajaji nagar, Singanallur, Coimbatore - 641 005</td>
+                                </tr>
+                                <tr>
+                                    <td>Rajeswari Machine Tools - Foundry</td>
+                                    <td>Mr.S.Ramanujam</td>
+                                    <td>rajeswarimachinetools@gmail.com</td>
+                                    <td>93631 00484</td>
+                                    <td>Rajeswari Machine Tools, 16, Rajaji nagar, Singanallur, Coimbatore - 641 006</td>
+                                </tr>
+                                <tr>
+                                    <td>Vasantham Foundry</td>
+                                    <td>Mr.R.Ramachandran</td>
+                                    <td>vfoundry@vsnl.net</td>
+                                    <td>99429 03444</td>
+                                    <td>Vasantham Foundry, 4/10, Bharathi Puram, Pallapalayam post, Coimbatore - 641 103</td>
+                                </tr>
+                                <tr>
+                                    <td>Sri Meenachi Castings</td>
+                                    <td>Mr.T.Pannerselvam</td>
+                                    <td>meenachicastings@gmail.com</td>
+                                    <td>94421 74103</td>
+                                    <td>Sri Meenachi Castings, Thanner Pandal 6th Cross, VK Road, Peelamedu, Coimbatore - 641 104</td>
+                                </tr>
+                                <tr>
+                                    <td>Premier Tubes - Foundry</td>
+                                    <td>Mr.A.Velusamy</td>
+                                    <td>premierwtubes@gmail.com</td>
+                                    <td>98947 84744</td>
+                                    <td>Premier Tubes - Foundry, Kalaran Thottam, Saravanampatti Road, Vilankuruchi, Coimbatore - 641 035</td>
+                                </tr>
+                                <tr>
+                                    <td>Sri Deivam Foundry</td>
+                                    <td>Mr.R.Jaganathan</td>
+                                    <td>srideivam@deivamfoundry.com</td>
+                                    <td>93642 44404</td>
+                                    <td>Sri Deivam Foundry, Thanner Pandal 6th Cross, VK Road, Peelamedu, Coimbatore - 641 104</td>
+                                </tr>
+                                <tr>
+                                    <td>Balaji Castings</td>
+                                    <td>Mr.K.Mani</td>
+                                    <td>info@balajicasting.com</td>
+                                    <td>98429 67577</td>
+                                    <td>Balaji Castings, Irrugur, Coimbatore - 641 103</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+    <!--Newsletter Start-->
+    <div class="newsletter-wrap wow fadeInUp">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--Newsletter End-->
+    <script>
+        function openCity(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+</body>

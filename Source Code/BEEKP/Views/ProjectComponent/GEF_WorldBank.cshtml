@@ -1,0 +1,390 @@
+﻿@{
+    ViewBag.Title = "BEE_SME_Programme";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+           <style>
+.report-container .report-thumb a {
+    background: #4990e1;
+    display: block;
+    position: relative;
+    padding: 4px 10px;
+    color: #fff;
+    border-radius: 0;
+    font-size: .9rem;
+    text-decoration: none;
+    text-align: center;
+    margin-top:20px;
+}
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 1px solid #297b37;
+    background-color: #9ae3a6ed;
+}
+/* Style the buttons inside the tab */
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 35px;
+    transition: 0.3s;
+    font-size: 20px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #1da054d1;
+    color: white;
+}
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color:#262a8adb;
+  color: white;
+
+}
+
+/* Style the tab content */
+.tabcontent {
+  width:100%;
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+  margin-bottom: 50px;
+}
+
+.tabcontent {
+  animation: fadeEffect 3s; 
+}
+
+
+button.accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+button.accordion.active:after {
+    content: "\2212";
+}
+.accordion{
+    background-color: #a1e5ac52;
+    color: #297b37;
+    margin-bottom: 20px;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 16px;
+    transition: 0.4s;
+    font-weight: 700;
+}
+.active, .accordion:hover {
+    background-color: #339f4575;
+}
+.panel{
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+}
+</style>
+
+
+</head>
+
+<body>
+    <?php include('include/header.php'); ?>
+
+
+    <section class="breadcrumb-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="inner-content clearfix">
+                        <div class="title_breadcrumb float-left">
+                            <h1>GEF-WorldBank</h1>
+                        </div>
+                        <div class="breadcrumb-menu float-right">
+                            <ul class="clearfix">
+                                <li><a href="index.php">Home</a></li>
+                                <li class="active">GEF-WorldBank</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<style>
+    .fa-check-square:before {
+        content: "\f14a";
+        margin-left: 4rem;
+    }
+    </style>
+    <section>
+        <div class="container pt-4 pb-5">
+            <div class="row">
+                <div class="col-md-12 text-justify">
+
+                    <p>Financing Energy Efficiency at MSMEs” project (FEEMP) was envisaged to systematically support development of a programmatic approach to aggregate demand for EE investment in MSME industrial clusters, and to create a sustainable mechanism for identifying, preparing, and financing prospective proposals at the local level. The implemented at the MSMEs located in the MSME clusters pan India at various MSME sectors (Forging, Chemical, Limekiln, Foundry and Mixed Clusters).  The program has benefited most of the units in clusters, most units realised energy savings and appropriate CO2 emissions reduction potentials in their facility, facilitated for easy access for MSMEs and provision of dedicated financing mechanism for EE improvement projects within MSMEs. This programme has found useful for unit operators, associations, local service providers with adequate training, certification and awareness programmes in their clusters, further strengthened the bridge between associations and units in the clusters.</p>
+
+                    <h4>Achievements and Project Indicators:</h4>
+
+                    <ol  style="margin-left: 2rem;">
+                        <li><i class="fa-li fas fa-check-square disfa"></i>&nbsp;Key performance indicators (KPIs) and Energy Efficiency benchmarks were developed for forging and ceramic sectors</li><br>
+                        <li><i class="fa-li fas fa-check-square disfa"></i>&nbsp;Design and Implementation of EnMS (ISO 50001) at MSMEs in 50 MSME units, Certified more than 40 units. During the implementation process, more than 350 energy saving measures were identified which have potentials to provide monitory savings of about Rs 900 Lakh annually. About 350 professionals were trained and 100 were trained as ISO 50001 internal auditors.</li><br>
+                        <li><i class="fa-li fas fa-check-square disfa"></i>&nbsp;More than 133 shop floor employees were trained for best operating practices and energy efficiency measures</li><br>
+
+                     
+    <li><i class="fa-li fas fa-check-square disfa"></i><b>&nbsp;Capacity building workshops -</b><br>
+
+    <ol  style="margin-left: 2rem;">
+                        <li><b>a.</b> In order to raise awareness on benefits & potential of enhancing EE, and also to share information about the most appropriate / relevant resource efficient technologies for the industries in the MSME clusters. Series of workshops was organised at several cluster locations, observing participants of more than 2500 professionals.<li><br>
+                        <li><b>b.</b> Fourteen (14) certification programs were conducted and Learnings were shared through five (5) cross cluster knowledge sharing programmes. More than 600 participants took the benefits out these programmes</li>
+                        <br>
+                        <li><b>c.</b> Five (5) B2B forums were organised at Chandigarh, Surat, Rajkot, Tiruppur and Ludhiana. More than 150 stalls of energy efficient technology and service providers were on display for MSMEs from all over India. These exhibitions attracted more than 700 representatives from MSMEs</li>
+                        <br>
+
+
+                    </ol></li>
+
+  <li><i class="fa-li fas fa-check-square disfa"></i><b>&nbsp;Knowledge Management</b></li> 
+
+  <ol  style="margin-left: 2rem;">
+                        <li><b>a.</b>Knowledge management portal has been developed to showcase the success stories, KPIs, best operating practices, and repository of EE case studies and Technology videos, Newsletters, posters and more<li><br>
+                        <li><b>b.</b>12 Nos. documentaries on cluster level success stories were prepared at various stages during project implementation in clusters. These films captured the change in the perception of various stakeholders towards EE and Success stories from beneficiary units in the clusters.</li>
+                        <br>
+                        <li><b>c.</b>  More than 530 Felicitation and certification programmes were convened to felicitate top performing units in their respective industrial clusters
+This 10-year project has concluded on May 4th 2019 with satisfactory results and BEE has anticipated to replicate the framework for other energy intensive MSME clusters</li>
+                        <br>
+
+
+                    </ol></li>
+  </ol>
+
+                    
+                  
+                  
+             
+                            <!--  <h5 style="color:#000;"><b>ICR Report</b></h5> 
+                            
+
+               
+
+           <div class="row report-box">
+
+
+                <div class="col-md-2">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                               <a href="pdf\gef-wb\icr report/1.pdf" >Comments to the ICRR </a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+                <div class="col-md-2">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="pdf\gef-wb\icr report/2.pdf" >ICR Comments</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+                <div class="col-md-2">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                               <a href="pdf\gef-wb\icr report/3.pdf" >ICR DO Letter</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-2">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                                  <a href="pdf\gef-wb\icr report/4.pdf" >ICR-BEE Final</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+                <div class="col-md-2">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                               <a href="pdf\gef-wb\icr report/5.pdf" >WB ICR-2</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+              
+
+
+                 
+                </div>
+
+
+
+                  <h5 style="color:#000; margin-top: 10px;"><b>Project Document</b></h5> 
+                            
+
+               
+
+          
+           <div class="row report-box">
+
+
+                <div class="col-md-2">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                               <a href="pdf\gef-wb\project doc/1.pdf" >PAD Document</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+                <div class="col-md-2">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="pdf\gef-wb\project doc/2.pdf" >Project Paper</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+            
+
+              
+
+
+          
+                </div>-->
+                
+
+            </div>
+        </div>
+    </section>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="newsletter-wrap wow fadeInUp">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="title">
+                        <h3 class="text-white"><small>Stay in Loop</small><br> Join our Newsletter</h3>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="news-info">
+                        <form>
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="search" placeholder="Your Email Address">
+                                <div class="form_icon"><i class="fas fa-envelope"></i></div>
+                            </div>
+                            <input type="submit" class="sigup" value="Subscribe">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Newsletter End-->
+
+
+
+    <?php include('include/footer.php'); ?>
+    <script src="js/all.js"></script>
+    <script src="js/script.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5-ed0P7eZL44UHUnOF_WB-BN3XaUk4zk&callback=initMap&sensor=false&region=IN"></script>
+
+    <script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+<script>
+
+var acc = document.getElementsByClassName("accordion");
+
+var i;
+
+
+
+for (i = 0; i < acc.length; i++) {
+
+  acc[i].addEventListener("click", function() {
+
+    this.classList.toggle("active");
+
+    var panel = this.nextElementSibling;
+
+    if (panel.style.display === "block") {
+
+      panel.style.display = "none";
+
+    } else {
+
+      panel.style.display = "block";
+
+    }
+
+  });
+
+}
+
+</script>
+</body>

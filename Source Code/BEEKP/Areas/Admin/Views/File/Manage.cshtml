@@ -1,0 +1,102 @@
+﻿@model BEEKP.Areas.Admin.Models.AdminFileManageViewModel
+@{
+    ViewBag.Title = "Manage";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@using (Html.BeginForm("Manage", "File", FormMethod.Post, new { @id = "frmManage", @name = "frmManage", enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => Model.File.file_id)
+
+    <div class="page-head">
+        <div class="container">
+            <!-- BEGIN PAGE TITLE -->
+            <div class="page-title">
+                <h1>Manage File <small>statistics & reports</small></h1>
+            </div>
+            <!-- END PAGE TITLE -->
+        </div>
+    </div>
+    <div class="page-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- BEGIN VALIDATION STATES-->
+                    <div class="portlet light">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <span class="caption-subject font-green-sharp bold uppercase">Manage File</span>
+                            </div>
+                        </div>
+                        <div class="portlet-body form">
+                            <div class="horizontal-form ">
+                                <div class="form-body form-body-small-padding">
+                                    <h3 class="form-section page-title mandatory-note">&nbsp <small>Fields marked with asterisk (<span class="required-asterisk"> * </span>) are mandatory to fill in </small></h3>
+                                    <!--body start-->
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group clearfix">
+                                                <label class="control-label col-md-4">File Name<span class="required">* </span></label>
+                                                <div class="col-md-8">
+                                                    @Html.TextBoxFor(model => model.File.file_name, new { @class = "form-control required", @id = "txtview", @Placeholder = "View" })
+                                                    @Html.ValidationMessageFor(model => model.File.file_name, "", new { @class = "text-denger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group clearfix">
+                                                <label class="control-label col-md-4">File View<span class="required">* </span></label>
+                                                <div class="col-md-8">
+                                                    @Html.TextBoxFor(model => model.File.view, new { @class = "form-control required", @id = "txtview", @Placeholder = "View" })
+                                                    @Html.ValidationMessageFor(model => model.File.view, "", new { @class = "text-denger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group clearfix">
+                                                <label class="control-label col-md-4">File Controller<span class="required">* </span></label>
+                                                <div class="col-md-8">
+                                                    @Html.TextBoxFor(model => model.File.controller, new { @class = "form-control required", @id = "txtcontroller", @Placeholder = "Controller" })
+                                                    @Html.ValidationMessageFor(model => model.File.controller, "", new { @class = "text-denger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group clearfix">
+                                                <label class="control-label col-md-4">File Area<span class="required">* </span></label>
+                                                <div class="col-md-8">
+                                                    @Html.TextBoxFor(model => model.File.area, new { @class = "form-control required", @id = "txtarea", @Placeholder = "Area" })
+                                                    @Html.ValidationMessageFor(model => model.File.area, "", new { @class = "text-denger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Footer-->
+                                <div class="form-actions right">
+                                    <div class="row">
+                                        <div class="col-md-offset-3 col-md-9">
+                                            <button type="button" class="btn default" onclick="location.href='@Url.Action("Index", "File", new {})'">Back</button>
+                                            <button type="submit" class="btn blue blue-custom" name="btnAction"><i class="fa fa-check"></i>Save</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END FORM-->
+                        </div>
+                        <!-- END VALIDATION STATES-->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+}
+
+@Scripts.Render("~/bundles/area/js/global")
+@Scripts.Render("~/bundles/area/js/validate")
+@Scripts.Render("~/bundles/area/appjs/file_manage")
+

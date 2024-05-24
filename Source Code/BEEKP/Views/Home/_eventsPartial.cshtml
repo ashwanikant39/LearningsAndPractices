@@ -1,0 +1,150 @@
+﻿@model BEEKP.Models.HomeViewModel
+
+<div class="blog-wrap">
+    @if (Model.ListEventRecent != null && Model.ListEventRecent.Count > 0)
+    {
+        <div class="container">
+
+            <div class="title title_center">
+                <h1>Latest Events</h1>
+            </div>
+            <ul class="row blog_post">
+                @for (Int32 i = 0; i < Model.ListEventRecent.Count && i < 3; i++)
+                {
+                    <li class="col-lg-4">
+                        <div class="services_box wow fadeInUp">
+                            <div class="servicesImg"><img alt="" src="~/images/Event/@Model.ListEventRecent[i].event_image_name"></div>
+                            <h3><a href="@Url.Action("Detail", "Event", new { sid = BEEKP.Class.Encryption.Encrypt("0", true), period = BEEKP.Class.Encryption.Encrypt(BEEKP.Class.Constants.EVENT_PERIOD_ALL, true) })">@Model.ListEventRecent[i].event_title</a></h3>
+                            <div class="post-meta">
+                                <p class="event-date-time event-data-time-location">@Model.ListEventRecent[i].event_date &nbsp;| &nbsp;@Model.ListEventRecent[i].event_location</p>
+                            </div>
+                            <p class="event-date-time event-data-time-location">@Model.ListEventRecent[i].event_short_description</p>
+                        </div>
+                    </li>
+                }
+            </ul>
+            <div class="readmore text-center"><a href="@Url.Action("Detail", "Event", new { sid = BEEKP.Class.Encryption.Encrypt("0", true), period = BEEKP.Class.Encryption.Encrypt(BEEKP.Class.Constants.EVENT_PERIOD_ALL, true) })">View All</a></div>
+        </div>
+    }
+</div>
+<!--<div class="news-updates-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h3 class="heading-main">
+                    Updates/ Announcements
+                    <span class="controls">
+                        <a class="links-up" href="javascript:void(0);"><i class="fas fa-angle-up"></i></a>
+                        <a class="links-down" href="javascript:void(0);"><i class="fas fa-angle-down"></i></a>
+                    </span>
+                </h3>
+                <div class="useful-links">
+                    <div class="f-item link" id="useful-links">
+                        <ul class="v-scroll">
+                            <li><a href="#">5000 MSME Units Reached through the Project</a></li>
+                            <li><a href="#">Energy Saving Achieved to the Tune of 19000 TOE per year</a></li>
+                            <li><a href="#">INR 330 Crores of Invested by Participating MSME Units </a></li>
+                            <li><a href="#">Implemented more than 3000 Energy Efficiency Measures</a></li>
+                        </ul>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="text-right">
+                    <a href="@Url.Action("Detail", "Event", new { sid = BEEKP.Class.Encryption.Encrypt("0", true), period = BEEKP.Class.Encryption.Encrypt(BEEKP.Class.Constants.EVENT_PERIOD_ALL, true) })" class="btn btn-xs readmore2">View All</a>
+                </div>-->
+                @*<div class="text-right ">
+                    <a href="@Url.Action("NewsLetter", "Library", new { })" class="btn btn-xs readmore2">Read More</a>
+                </div>*@
+            <!--</div>
+            <div class="col-md-6">
+                <h3 class="heading-main xs-margin">
+                    News/ Media
+                    <span class="controls">
+                        <a class="news-up" href="javascript:void(0);"><i class="fas fa-angle-up"></i></a>
+                        <a class="news-down" href="javascript:void(0);"><i class="fas fa-angle-down"></i></a>
+                    </span>
+                </h3>
+                <div class="news-events">
+                    <ul>
+                        <li>
+                            <div class="thumb">
+                                <img src="images/gallery/1.jpg" />
+                            </div>
+                            <div class="info">
+                                <a href="#">ONGC pumps first gas from U1B deep-water well in K...</a>
+                                <div class="meta-title">
+                                    <span class="post-date">12 Feb, 2021</span>
+                                    <span class="categpory-name">Category: News</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="thumb">
+                                <img src="images/gallery/2.jpg" />
+                            </div>
+                            <div class="info">
+                                <a href="#">Indias August gasoil sales stay weak, gasoline jum.. </a>
+                                <div class="meta-title">
+                                    <span class="post-date">12 Feb, 2021</span>
+                                    <span class="categpory-name">Category: News</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="thumb">
+                                <img src="images/gallery/3.jpg" />
+                            </div>
+                            <div class="info">
+                                <a href="#">Indias power consumption up 18.6 pc to 129.51 bill...</a>
+                                <div class="meta-title">
+                                    <span class="post-date">12 Feb, 2021</span>
+                                    <span class="categpory-name">Category: News</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="thumb">
+                                <img src="images/gallery/4.jpg" />
+                            </div>
+                            <div class="info">
+                                <a href="#">Petrol, diesel prices cut by 15 paise. Heres what </a>
+                                <div class="meta-title">
+                                    <span class="post-date">12 Feb, 2021</span>
+                                    <span class="categpory-name">Category: News</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="thumb">
+                                <img src="images/gallery/5.jpg" />
+                            </div>
+                            <div class="info">
+                                <a href="#">LPG cylinder prices hiked second time in 15 days</a>
+                                <div class="meta-title">
+                                    <span class="post-date">12 Feb, 2021</span>
+                                    <span class="categpory-name">Category: News</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="thumb">
+                                <img src="images/gallery/6.jpg" />
+                            </div>
+                            <div class="info">
+                                <a href="#">Programmatic recommendations </a>
+                                <div class="meta-title">
+                                    <span class="post-date">12 Feb, 2020</span>
+                                    <span class="categpory-name">Category: News</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="text-right">
+                    <a href="#" class="btn btn-xs readmore2">View All</a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>-->

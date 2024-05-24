@@ -137,20 +137,32 @@ public class english_letter {
         System.out.println();
         System.out.println();
 
+        // k
+        // int k = 5;
+        for (int i = 5; i >= 1; i--) {
+            for (int j = 1; j <= i * 2; j++) {
+                if (j == 1 || j == i * 2) {
 
-        // int k = 10;
-        // for (int i = k; i >= 1; i--) {
-        //     for (int j = 5; j >= k / 2; j--) {
-        //         if (j == 1 || j == 5) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
 
-        //             System.out.print("*");
-        //         } else {
-        //             System.out.print(" ");
-        //         }
-        //     }
+            System.out.println("");
+        }
+        for (int i = 3; i <= 5; i++) {
+            for (int j = 1; j <= i * 2; j++) {
+                if (j == 1 || j == i * 2) {
 
-        //     System.out.println("");
-        // }
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+
+            System.out.println("");
+        }
 
         // System.out.println("hello");
 

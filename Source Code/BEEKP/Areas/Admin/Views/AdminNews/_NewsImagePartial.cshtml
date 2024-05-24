@@ -1,0 +1,47 @@
+﻿@model BEEKP.Areas.Admin.Models.NewsViewAddEditModel
+
+@if (Model.News.listNewsImage != null)
+{
+    <table id="tblNewsImage" class="table table-striped table-hover table-bordered">
+
+        <thead>
+            <tr>
+                <th>
+                    News Image
+                </th>
+                <th>
+                    News Image Name
+                </th>
+                <th align="center" valign="middle">
+                    Action
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (Int32 i = 0; i < Model.News.listNewsImage.Count; i++)
+            {
+
+                <tr>
+                    <td>
+                        @if (Model.News.listNewsImage[i].news_image_name != null && Model.News.listNewsImage[i].news_image_name != "")
+                        {
+                            <img src="~/images/News/@Model.News.listNewsImage[i].news_image_name" alt="News Inage" width="100px">
+                        }
+                        else
+                        {
+                            <img src=@BEEKP.Class.Constants.NO_IMAGE alt="News Inage" width="100px">
+                        }
+                    </td>
+                    <td>
+                        <label>@Model.News.listNewsImage[i].news_image_name</label>
+                    </td>
+                    <td align="center" valign="middle">
+                        <a href="@Url.Action("NewsImageAddEdit", "AdminNews", new { sNewsID = BEEKP.Class.Encryption.Encrypt(Model.News.listNewsImage[i].news_id.ToString(), true),sNewsImageID=BEEKP.Class.Encryption.Encrypt(Model.News.listNewsImage[i].news_image_id.ToString(), true) })" title="" class="custom-edit-tooltip"><i class="fa fa-pencil"></i></a>
+                        |
+                        <a href="@Url.Action("DeleteNewsImage", "AdminNews", new { sNewsID = BEEKP.Class.Encryption.Encrypt(Model.News.listNewsImage[i].news_id.ToString(), true), sNewsImageID = BEEKP.Class.Encryption.Encrypt(Model.News.listNewsImage[i].news_image_id.ToString(),true),sNews_image_name = Model.News.listNewsImage[i].news_image_name})" title="" data-toggle="confirmation" data-original-title="Are you sure ?"><i class="fa fa-trash-o"></i></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

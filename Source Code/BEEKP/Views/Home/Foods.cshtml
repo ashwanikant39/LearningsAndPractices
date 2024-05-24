@@ -1,0 +1,174 @@
+﻿@{
+    ViewBag.Title = "Hand_tool";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .img-fluid {
+        margin-top: 30px;
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Style the tab */
+    .tab {
+        overflow: hidden;
+        border: 1px solid #19a6e0;
+        background-color: #edfaff;
+    }
+        /* Style the buttons inside the tab */
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 10px 8px;
+            transition: 0.3s;
+            font-size: 15px;
+        }
+
+            /* Change background color of buttons on hover */
+            .tab button:hover {
+                background-color: #78aee3;
+                color: white;
+            }
+            /* Create an active/current tablink class */
+            .tab button.active {
+                background-color: #009cdc;
+                color: white;
+            }
+
+    /* Style the tab content */
+    .tabcontent {
+        width: 75%;
+        display: none;
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        border-top: none;
+        margin-bottom: 50px;
+    }
+
+    .tabcontent {
+        animation: fadeEffect 3s;
+    }
+
+    .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 60%;
+    }
+
+    .report-container .report-thumb a {
+        background: #4990e1;
+        display: block;
+        position: relative;
+        padding: 4px 10px;
+        color: #fff;
+        border-radius: 0;
+        font-size: .9rem;
+        text-decoration: none;
+        text-align: center;
+        margin-top: 20px;
+    }
+</style>
+
+
+<body>
+
+    <section class="breadcrumb-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="inner-content clearfix">
+                        <div class="title_breadcrumb float-left">
+                            <h1>Food Cluster Profile</h1>
+                        </div>
+                        <div class="breadcrumb-menu float-right">
+                            <ul class="clearfix">
+                                <li><a href="/">Home</a></li>
+                                <li class="active">Food Cluster Profile</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+    <section class="gef_sections">
+        <div class="container pt-4 pb-4 ">
+            <div class="container">
+                <div class="row">
+
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <div class="newsletter-wrap wow fadeInUp">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="title">
+                        <h3 class="text-white"><small>Stay in Loop</small><br> Join our Newsletter</h3>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="news-info">
+                        <form>
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="search" placeholder="Your Email Address">
+                                <div class="form_icon"><i class="fas fa-envelope"></i></div>
+                            </div>
+                            <input type="submit" class="sigup" value="Subscribe">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Newsletter End-->
+
+
+
+
+    <script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+    </script>
+
+
+
+
+
+    <script src="js/all.js"></script>
+    <script src="js/script.js"></script>
+</body>

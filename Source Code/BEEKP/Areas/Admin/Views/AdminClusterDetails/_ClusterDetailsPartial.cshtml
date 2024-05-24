@@ -1,0 +1,119 @@
+﻿@model BEEKP.Areas.Admin.Models.AdminClusterDetailsViewModel
+
+@Html.HiddenFor(model => Model.Cluster.cluster_id)
+@if (Model.ListCluster != null)
+{
+
+    <table id="tblCluster" class="table table-striped table-hover table-bordered action-column-custom">
+
+        <thead>
+            <tr>
+                <th>
+                    Phase
+                </th>
+                <th>
+                    Cluster Name
+                </th>
+                <th>
+                    Location
+                </th>
+                <th>
+                    Products Manufactured
+                </th>
+
+                <th>
+                    Fuel Used
+                </th>
+                <th>
+                    Number of Units
+                </th>
+                <th>
+                    Overall Turnover
+                </th>
+                <th>
+                   Document
+                </th>
+                <th align="center" valign="middle">
+                    Action
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @{
+
+
+                for (Int32 i = 0; i < Model.ListCluster.Count; i++)
+                {
+
+
+
+                    <tr>
+                        <td>
+                            <label>@Model.ListCluster[i].phases_title</label>
+                        </td>
+                        <td>
+                            <label>@Model.ListCluster[i].cluster_name</label>
+                        </td>
+                        <td>
+                            <label>@Model.ListCluster[i].location </label>
+                        </td>
+                        <td>
+                            <label>@Model.ListCluster[i].products_manufactured </label>
+                        </td>
+                        <td>
+                            <label>@Model.ListCluster[i].fuel_used </label>
+                        </td>
+                        <td>
+                            <label>@Model.ListCluster[i].number_of_units </label>
+                        </td>
+                        <td>
+                            <label>@Model.ListCluster[i].overall_turnover </label>
+                        </td>
+                        <td>
+                            @if (Model.ListCluster[i].cluster_doc_hindi != null && Model.ListCluster[i].cluster_doc_hindi != "")
+                            {
+                                <a href="/documents/Cluster/@Model.ListCluster[i].cluster_doc_hindi" target="_blank">
+                                  Doc_Hindi
+                                </a>
+                                <br/>
+                            }
+                            @if (Model.ListCluster[i].cluster_doc_english != null && Model.ListCluster[i].cluster_doc_english != "")
+                            {
+                                <a href="/documents/Cluster/@Model.ListCluster[i].cluster_doc_english" target="_blank">
+                                    Doc_English
+                                </a> 
+                                <br />
+                            }
+                            @if (Model.ListCluster[i].cluster_doc_marathi != null && Model.ListCluster[i].cluster_doc_marathi != "")
+                            {
+                                <a href="/documents/Cluster/@Model.ListCluster[i].cluster_doc_marathi" target="_blank">
+                                    Doc_Marathi
+                                </a>
+                            }
+                        </td>
+                        <td align="center" valign="middle">
+                            @if (Model.PagePermission.role_edit == BEEKP.Class.Constants.PAGE_PERMISSION_YES)
+                            {
+                                <a href="@Url.Action("ClusterDetailsAddEdit", "AdminClusterDetails", new { scluster_id =BEEKP.Class.Encryption.Encrypt(Model.ListCluster[i].cluster_id.ToString(), true)})" title="" class="custom-edit-tooltip"><i class="fa fa-pencil"></i></a>
+                            }
+                            
+                            @if (Model.PagePermission.role_delete == BEEKP.Class.Constants.PAGE_PERMISSION_YES)
+                            {
+                                @Html.Raw("|");
+                                <a href="@Url.Action("DeleteClusterDetails", "AdminClusterDetails", new { scluster_id =BEEKP.Class.Encryption.Encrypt(Model.ListCluster[i].cluster_id.ToString(), true),sdocument_hindi = Model.ListCluster[i].cluster_doc_hindi, sdocument_english=Model.ListCluster[i].cluster_doc_english, sdocument_marathi=Model.ListCluster[i].cluster_doc_marathi})" title="" data-toggle="confirmation" data-original-title="Are you sure ?"><i class="fa fa-trash-o"></i></a>
+                            }
+                        </td>
+                    </tr>
+                }
+
+            }
+
+
+        </tbody>
+    </table>
+                }
+
+
+
+

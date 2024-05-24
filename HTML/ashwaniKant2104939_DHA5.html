@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ashwani Kant-2104939</title>
+    <style>
+      /*
+        Name: Ashwani Kant
+        Roll no: 2104939
+        
+         */
+
+      body {
+        font-size: 16px; /* Default font size for rem calculation */
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        text-align: center;
+        border: 2px dotted gray;
+        background-color: tomato;
+        width: 500px;
+        margin: auto;
+      }
+      .container {
+        width: 80%; /* 80% of the viewport width */
+        margin: 0 auto;
+        position: relative;
+      }
+
+      .box {
+        width: 10em; /* 10 times the font-size of the parent element */
+        height: 5rem; /* 5 times the font-size of the root element */
+        background-color: #fe7e7e;
+        border: 2px solid #333;
+        /* position: absolute; */
+        top: 10%; /* 10% from the top of the containing block */
+        left: 10%; /* 10% from the left of the containing block */
+      }
+
+      .box2 {
+        width: 20vw; /* 50% of the viewport width */
+        height: 35vh; /* 30% of the viewport height */
+        background-color: #0cd52a;
+        position: relative;
+        top: 20px; /* 20 pixels from the top of the containing block */
+        left: 20px; /* 20 pixels from the left of the containing block */
+      }
+
+      .box3 {
+        width: 100px; /* 100 pixels */
+        height: 300px; /* 100 pixels */
+        background-color: #30b3e7;
+        position: fixed;
+
+        bottom: 30; /* Fixed to the bottom of the viewport */
+        right: 25; /* Fixed to the right of the viewport */
+      }
+
+      .box4 {
+        width: 40%;
+        height: 25%;
+        background-color: #48410a;
+        position: sticky;
+        top: 0; /* Stick to the top of the viewport*/
+        left: 50%; /* 50% from the left of the containing block */
+        transform: translateX(-20%); /* Center horizontally */
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Ashwani Kant-2104939</h1>
+    <div class="container">
+      <div class="box">10em x 5rem</div>
+      <div class="box2">20vw x 35vh</div>
+    </div>
+
+    <div class="box3">100px x 300px</div>
+
+    <div class="box4">40% x 25%</div>
+  </body>
+</html>

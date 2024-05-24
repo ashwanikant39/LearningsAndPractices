@@ -1,0 +1,110 @@
+﻿@model BEEKP.Areas.Admin.Models.ChangePasswordViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<link href="~/assets/admin/layout3/css/style-admin.css" rel="stylesheet" />
+@using (Html.BeginForm("Index", "ChangePassword", FormMethod.Post, new { @id = "frmChangePassword", @name = "frmChangePassword" }))
+{
+    @Html.AntiForgeryToken()
+
+    <!-- Section: home -->
+    <div class="page-head">
+        <div class="container">
+            <!-- BEGIN PAGE TITLE -->
+            <div class="page-title">
+                <h1>Change Password</h1>
+            </div>
+            <!-- END PAGE TITLE -->
+
+        </div>
+    </div>
+    <div class="page-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- BEGIN VALIDATION STATES-->
+                    <div class="portlet light">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <span class="caption-subject font-green-sharp bold uppercase">Change Password</span> <small class="small-font-cuatom">Fields marked with asterisk (<span class="required-asterisk"> * </span>) are mandatory to fill in </small>
+                            </div>
+                        </div>
+                        <div class="portlet-body form">
+                            <div class="horizontal-form ">
+                                <div class="form-body form-body-small-padding clearfix">
+                                    @*<h3 class="form-section page-title mandatory-note">&nbsp <small>Fields marked with asterisk (<span class="required-asterisk"> * </span>) are mandatory to fill in </small></h3>*@
+
+                                    <div class="col-md-offset-3 col-md-6">
+                                        <div class="row">
+                                            <div class="form-group col-md-12">
+                                                <div class="form-group clearfix">
+                                                    <label class="control-label col-md-4">Old Password<span class="required">* </span></label>
+                                                    @*<input id="form_password" name="form_password" class="form-control" type="text">*@
+                                                    <div class="col-md-8">
+                                                        @Html.TextBoxFor(model => model.ChangePassword.old_password, new { @class = "form-control required", @id = "old_password", @Placeholder = "Old Password", @type = "password", autocomplete = "off" })
+                                                        @Html.ValidationMessageFor(model => model.ChangePassword.old_password, "", new { @class = "text-denger" })
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-group col-md-12">
+                                                <div class="form-group clearfix">
+                                                    <label class="control-label col-md-4">New Password<span class="required">* </span></label>
+                                                    @*<input id="form_password" name="form_password" class="form-control" type="text">*@
+                                                    <div class="col-md-8">
+                                                        @Html.TextBoxFor(model => model.ChangePassword.new_password, new { @class = "form-control required", @id = "new_password", @Placeholder = "New Password", @type = "password", autocomplete = "off" })
+                                                        <span class="help-block">[Password should atleast contain 1 upper case, 1 lower case, 1 number, 1 special character and minimum 6 character] </span>
+                                                        @Html.ValidationMessageFor(model => model.ChangePassword.new_password, "", new { @class = "text-denger" })
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-group col-md-12">
+                                                <div class="form-group clearfix">
+                                                    <label class="control-label col-md-4">Confirm Password<span class="required">* </span></label>
+                                                    @*<input id="form_password" name="form_password" class="form-control" type="text">*@
+                                                    <div class="col-md-8">
+                                                        @Html.TextBoxFor(model => model.ChangePassword.confirm_password, new { @class = "form-control required", @id = "confirm_password", @Placeholder = "Confirm Password", @type = "password", autocomplete = "off" })
+                                                        @Html.ValidationMessageFor(model => model.ChangePassword.confirm_password, "", new { @class = "text-denger" })
+                                                        <div class="text-denger">@Html.ValidationSummary(true)</div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--body start-->
+
+
+
+                                </div>
+                                <!--Footer-->
+                                <div class="form-actions right">
+                                    <div class="row">
+                                        <div class="col-md-offset-3 col-md-9">
+                                            <button type="button" class="btn default" onclick="location.href='@Url.Action("Index", "Home", new {})'">Back</button>
+                                            <button type="submit" onclick="Encript()" class="btn blue blue-custom" id="btnChangePassword" name="btnAction"><i class="fa fa-check"></i>Save</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END FORM-->
+                        </div>
+                        <!-- END VALIDATION STATES-->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+}
+
+@Scripts.Render("~/bundles/area/js/global")
+@Scripts.Render("~/bundles/area/js/validate")
+<script src="~/Scripts/aes.js"></script>
+<script src="~/assets/global/plugins/jquery-validation/js/jquery.validate.min.js"></script>
+<script src="~/AppJS/ChangePassword/ChangePassword_Manage.js"></script>

@@ -1,0 +1,155 @@
+﻿@model BEEKP.Models.EventViewModel
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@*<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>*@
+@using (Html.BeginForm("Detail", "Event", FormMethod.Post, new { @id = "frmEventDetail", @name = "frmEventDetail" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="bg-lighter">
+        <div class="container pt-10 pb-20">
+            <h4 class="text-theme-colored">Event Details</h4>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="sidebar sidebar-left mt-sm-30">
+                        <div class="widget">
+                            @if (Model.Event_Period == BEEKP.Class.Constants.EVENT_PERIOD_UPCOMMING)
+                            {
+                                <h4 class="widget-title line-bottom">Upcoming Events</h4>
+
+                                <div class="widget-inner scroller">
+                                    @for (Int32 i = 0; i < Model.ListEventUpcomming.Count; i++)
+                                    {
+
+                                        <article class="post media-post clearfix pb-0 mb-10">
+                                            <a class="post-thumb" href="@Url.Action("Detail","Event", new { id = BEEKP.Class.Encryption.Encrypt(Model.ListEventUpcomming[i].event_id.ToString(), true), period=BEEKP.Class.Encryption.Encrypt(BEEKP.Class.Constants.EVENT_PERIOD_UPCOMMING, true) })"><img src="~/images/Event/@Model.ListEventUpcomming[i].event_image_name" alt="Event Image" height="75px" width="75px"></a>
+                                            <div class="post-right">
+                                                <h5 class="post-title mt-0"><a href="@Url.Action("Detail", "Event" , new { id = BEEKP.Class.Encryption.Encrypt(Model.ListEventUpcomming[i].event_id.ToString(), true) , period=BEEKP.Class.Encryption.Encrypt(BEEKP.Class.Constants.EVENT_PERIOD_UPCOMMING, true)})">@Model.ListEventUpcomming[i].event_title <br /> @Model.ListEventUpcomming[i].event_date</a></h5>
+                                                @*<p>@Model.ListEventUpcomming[i].event_short_description</p>*@
+                                            </div>
+                                        </article>
+
+                                    }
+                                </div>
+
+                            }
+                            @if (Model.Event_Period == BEEKP.Class.Constants.EVENT_PERIOD_ALL)
+                            {
+                                <h4 class="widget-title line-bottom">All Events</h4>
+
+                                <div class="widget-inner scroller">
+                                    @for (Int32 i = 0; i < Model.ListEventRecent.Count; i++)
+                                    {
+
+                                        <article class="post media-post clearfix pb-0 mb-10">
+                                            <a class="post-thumb" href="@Url.Action("Detail","Event", new { @sid = BEEKP.Class.Encryption.Encrypt(Model.ListEventRecent[i].event_id.ToString(), true), @period=BEEKP.Class.Encryption.Encrypt(BEEKP.Class.Constants.EVENT_PERIOD_ALL, true) })"><img src="~/images/Event/@Model.ListEventRecent[i].event_image_name" alt="Event Image" height="75px" width="75px"></a>
+                                            <div class="post-right">
+                                                <h5 class="post-title mt-0"><a href="@Url.Action("Detail", "Event",  new { @sid = BEEKP.Class.Encryption.Encrypt(Model.ListEventRecent[i].event_id.ToString(), true), @period=BEEKP.Class.Encryption.Encrypt(BEEKP.Class.Constants.EVENT_PERIOD_ALL, true) })">@Model.ListEventRecent[i].event_title <br /> @Model.ListEventRecent[i].event_date</a></h5>
+                                                @*<p>@Model.ListEventRecent[i].event_short_description</p>*@
+
+
+                                                @*<a href="/Event/Detail?id=@BEEKP.Class.Encryption.Encrypt(Model.ListEventRecent[i].event_id.ToString(), true)&period=@BEEKP.Class.Encryption.Encrypt(BEEKP.Class.Constants.EVENT_PERIOD_ALL, true)">url </a>*@
+
+                                            </div>
+                                        </article>
+
+                                    }
+                                </div>
+
+                            }
+                        </div>
+                    </div>
+                </div>
+                @if (Model.Event.event_title != null && Model.Event.event_title != "")
+                {
+                    <div class="col-md-8">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="thumb">
+                                    <img src="~/images/Event/@Model.Event.event_image_name" alt="Event Image">
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <h4 class="name font-24 mt-0 mb-0">@Model.Event.event_title</h4>
+                                <div class="mb-10">
+                                    <span class="mb-10 text-gray-darkgray mr-10 font-13 event-date-time">
+                                        <i class="fa fa-calendar mr-5 text-theme-colored"></i>@Model.Event.event_date <br>
+                                        <i class="fa fa-map-marker mr-5 text-theme-colored"></i> @Model.Event.event_location
+                                    </span>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 text-justify">
+                                <p>@Html.Raw(Model.Event.event_full_description)</p>
+                            </div>
+                        </div>
+                        @if (Model.Event.listEventImage != null)
+                    {
+                            <div class="row event-gallery-img">
+                                <div class="col-md-12">
+                                    <h4>Event Photos</h4>
+                                    <div class="row">
+                                        @for (Int32 i = 0; i < Model.Event.listEventImage.Count; i++)
+                                        {
+                                            <div class="col-md-3 mb-15"><a data-rel="prettyPhoto" href="~/images/Event/@Model.Event.listEventImage[i].event_image_name"><img src="~/images/Event/@Model.Event.listEventImage[i].event_image_name" alt="Event Image"></a></div>
+                                            @*<div class="col-md-3 mb-15"><a data-rel="prettyPhoto" href="~/images/Event/@Model.Event.event_image_name"><img src="~/images/Event/@Model.Event.event_image_name" alt="Event Image"></a></div>
+                                                <div class="col-md-3 mb-15"><a data-rel="prettyPhoto" href="~/images/Event/@Model.Event.event_image_name"><img src="~/images/Event/@Model.Event.event_image_name" alt="Event Image"></a></div>
+                                                <div class="col-md-3 mb-15"><a data-rel="prettyPhoto" href="~/images/Event/@Model.Event.event_image_name"><img src="~/images/Event/@Model.Event.event_image_name" alt="Event Image"></a></div>
+                                                <div class="col-md-3 mb-15"><a data-rel="prettyPhoto" href="~/images/Event/@Model.Event.event_image_name"><img src="~/images/Event/@Model.Event.event_image_name" alt="Event Image"></a></div>
+                                                <div class="col-md-3 mb-15"><a data-rel="prettyPhoto" href="~/images/Event/@Model.Event.event_image_name"><img src="~/images/Event/@Model.Event.event_image_name" alt="Event Image"></a></div>
+                                                <div class="col-md-3 mb-15"><a data-rel="prettyPhoto" href="~/images/Event/@Model.Event.event_image_name"><img src="~/images/Event/@Model.Event.event_image_name" alt="Event Image"></a></div>
+                                                <div class="col-md-3 mb-15"><a data-rel="prettyPhoto" href="~/images/Event/@Model.Event.event_image_name"><img src="~/images/Event/@Model.Event.event_image_name" alt="Event Image"></a></div>*@
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        <hr />
+                        @if (Model.Event.event_video_url1 != "" && Model.Event.event_video_url2 != "")
+                    {
+                            <div class="row event-gallery-img">
+                                <div class="col-md-12">
+                                    <h4>Event Video</h4>
+                                    <div class="row">
+                                        <div class="col-md-6 mb-15">
+                                            @Html.Raw(Model.Event.event_video_url1)
+                                            @*<iframe width="560" height="315" src="https://www.youtube.com/embed/2XWIiS6M_-g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>*@
+                                        </div>
+                                        <div class="col-md-6 mb-15">
+                                            @Html.Raw(Model.Event.event_video_url2)
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                }
+
+            </div>
+        </div>
+
+    </div>
+
+}
+
+<!-- Light Box Start -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".event-gallery-img a[data-rel^='prettyPhoto']").prettyPhoto({
+            hook: 'data-rel',
+            animation_speed: 'normal',
+            theme: 'light_square',
+            slideshow: 3000,
+            previous: true,
+            next: true,
+            autoplay_slideshow: false,
+            social_tools: false
+        });
+    });
+</script>
+<!-- Light Box End -->

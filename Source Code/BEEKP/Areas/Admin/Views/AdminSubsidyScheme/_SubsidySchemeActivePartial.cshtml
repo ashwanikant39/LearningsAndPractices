@@ -1,0 +1,49 @@
+﻿@model BEEKP.Areas.Admin.Models.AdminSubsidySchemeViewModel
+
+
+@if (Model.ListSubsidySchemeActive != null)
+{
+    <table id="tblSubsidySchemeActive" class="table table-striped table-hover table-bordered">
+
+        <thead>
+            <tr>
+                <th>
+                    Scheme name
+                </th>
+                <th>
+                    Scheme Details
+                </th>
+                <th align="center" valign="middle">
+                    Action
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @for (Int32 i = 0; i < Model.ListSubsidySchemeActive.Count; i++)
+            {
+                <tr>
+                    <td>
+                        <label>@Model.ListSubsidySchemeActive[i].subsidy_scheme_name </label>
+                    </td>
+
+                    <td>
+                        <label>@Model.ListSubsidySchemeActive[i].subsidy_scheme_short_description </label>
+                    </td>
+                    <td align="center" valign="middle">
+                        @if (Model.PagePermission.role_edit == BEEKP.Class.Constants.PAGE_PERMISSION_YES)
+                        {
+                            <a href="@Url.Action("ManageSubsidyScheme", "AdminSubsidyScheme", new { sSubsidySchemeID =BEEKP.Class.Encryption.Encrypt(Model.ListSubsidySchemeActive[i].subsidy_scheme_id.ToString(), true)})" title="" class="custom-edit-tooltip"><i class="fa fa-pencil"></i></a>
+                        }
+
+                        @if (Model.PagePermission.role_delete == BEEKP.Class.Constants.PAGE_PERMISSION_YES)
+                        {
+                            @Html.Raw("|");
+                            <a href="@Url.Action("DeleteSubsidyScheme", "AdminSubsidyScheme", new { sSubsidyScheme_id = BEEKP.Class.Encryption.Encrypt(Model.ListSubsidySchemeActive[i].subsidy_scheme_id.ToString(), true)})" title="" data-toggle="confirmation" data-original-title="Are you sure ?"><i class="fa fa-trash-o"></i></a>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

@@ -1,3 +1,5 @@
-num= int(input("Enter number for Table: "))
+# num= int(input("Enter number for Table: "))
+
+
 for i in range(1, 11):
-    print(i*num)
+    print(i*4)

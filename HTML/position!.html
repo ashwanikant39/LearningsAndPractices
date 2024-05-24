@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+/* Position and Size */
+
+.container {
+  position: relative;
+  width: 800px;
+  height: 600px;
+  margin: 0 auto;
+  border: 1px solid black;
+  overflow: hidden;
+}
+
+.box {
+  position: absolute;
+  width: 200px;
+  height: 100px;
+  background-color: #0099cc;
+  color: white;
+  padding: 10px;
+}
+
+/* Units */
+
+.em {
+  font-size: 2em;
+}
+
+.rem {
+  font-size: 2rem;
+}
+
+.vw {
+  font-size: 5vw;
+}
+
+.vh {
+  font-size: 5vh;
+}
+
+.percent {
+  font-size: 50%;
+}
+
+.pixel {
+  font-size: 50px;
+}
+
+/* Positioning */
+
+.top-left {
+  top: 20px;
+  left: 20px;
+}
+
+.top-right {
+  top: 20px;
+  right: 20px;
+}
+
+.bottom-left {
+  bottom: 20px;
+  left: 20px;
+}
+
+.bottom-right {
+  bottom: 20px;
+  right: 20px;
+}
+
+.center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Added styling for the name and roll number */
+
+.name-roll {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 16px;
+  color: black;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="box em top-left">2em (relative to the parent's font-size)</div>
+  <div class="box rem top-right">2rem (relative to the root's font-size)</div>
+  <div class="box vw bottom-left">5vw (relative to the viewport width)</div>
+  <div class="box vh bottom-right">5vh (relative to the viewport height)</div>
+  <div class="box percent center">50% (relative to the parent's size)</div>
+  <div class="box pixel center">
+    50px (fixed size)
+    <div class="name-roll">
+      Name: Agam Satsangi<br>
+      Roll No: 2104930
+    </div>
+  </div>
+</div>
+</body>
+</html>

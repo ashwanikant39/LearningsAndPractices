@@ -1,0 +1,120 @@
+﻿@model IEnumerable<BEEKP.Areas.Admin.Models.DigitalLibrary>
+
+@{
+    Layout = null;
+    var videos = Model.Where(x => x.FileType == "Video").ToList();
+    var images = Model.Where(x => x.FileType == "Image").ToList();
+    var others = Model.Where(x => x.FileType == "Others").ToList();
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-3.6.0.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<nav>
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Videos</button>
+        <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Images</button>
+        <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Documents</button>
+    </div>
+</nav>
+<div class="" style="margin-top:1%" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+        <div class="row">
+            @if (videos.Count > 0)
+            {
+                <br />
+                foreach (var item in videos)
+                {
+                    <div class="col-sm-4 col-md-4 col-xs-12">
+                        <div class="video-frame">
+                            <video style="width:100%; height:auto;" controls>
+                                <source src="@Url.Content("/videos/DigitalLibrary/"+@item.FileUrl)" type="video/mp4" />
+                            </video>
+                        </div>
+                         <div class="title">@item.Description</div>
+
+                    </div>
+                }
+            }
+            else
+            {
+                <div class="row" style="margin-left: 2%;"><h1>Videos Not Found!!</h1></div>
+            }
+        </div>
+    </div>
+    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+        <div class="row">
+            @if (images.Count > 0)
+            {
+                <br />
+                foreach (var item in images)
+                {
+                    <div class="col-sm-4 col-md-4 col-xs-12">
+                        
+                        <div class="">
+                            <div style="width:100%; height:auto;" controls>
+                                <img src="@Url.Content("/images/DigitalLibrary/"+item.FileUrl)" alt="@item.Description" />
+                            </div>
+                   <div class="title">@item.Description</div>
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                <div class="row" style="margin-left: 2%;"><h1>Images Not Found!!</h1></div>
+            }
+        </div>
+    </div>
+    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+        <div class="row">
+
+            @if (others.Count > 0)
+            {
+                <br />
+                foreach (var item in others)
+                {
+                    <div class="col-md-4">
+                        <div class="rs-carousel nav-style2 owl-carousel mt-0 sector-box doc-slider" data-rewind="true" data-loop="false" data-items="5" data-margin="15" data-autoplay="true" data-hoverpause="true" data-autoplay-timeout="5000" data-smart-speed="800" data-dots="true" data-nav="false" data-nav-speed="false" data-center-mode="false" data-mobile-device="1" data-mobile-device-nav="false" data-mobile-device-dots="false" data-ipad-device="1" data-ipad-device-nav="false" data-ipad-device-dots="false" data-ipad-device2="1" data-ipad-device-nav2="true" data-ipad-device-dots2="false" data-md-device="3" data-md-device-nav="false" data-md-device-dots="false">
+
+                        <div class="ct-box">
+                            <div class="tiles-wrap small-wrap">
+                                <div class="tile-bg">
+                                    <div class="project-hover-div">
+                                        <div class="content-part small-tab">
+                                            <div class="icon-wrap">
+                                                <i class="fa fa-file-pdf"></i>
+                                            </div>
+                                            <h4 class="title project-flag" data-project="disha">
+                                                <a href="@Url.Content("/images/DigitalLibrary/"+item.FileUrl)" target="_blank">@item.Description</a>
+                                            </h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="content-part small-tab">
+                                    <img src="@Url.Content("/images/DigitalLibrary/"+item.ImageUrl)">
+                                </div>
+                                <div class="btn-part"> <a href="@Url.Content("/images/DigitalLibrary/"+item.FileUrl)" target="_blank" class="read-more">Download File <span></span></a></div>
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+                    </div>
+                    
+                }
+            }
+            else
+            {
+                <div class="row" style="margin-left: 2%;"><h1>Documents Not Found!!</h1></div>
+            }
+
+        </div>
+    </div>
+</div>
+
+
+
+
+

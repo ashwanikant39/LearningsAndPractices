@@ -1,0 +1,66 @@
+﻿@model BEEKP.Areas.Admin.Models.NewsLetterViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<!-- END PAGE LEVEL STYLES -->
+
+@using (Html.BeginForm("Index", "NewsLetter", FormMethod.Post, new { @id = "frmNewsLetter", @name = "frmNewsLetter" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="page-head">
+        <div class="container">
+            <!-- BEGIN PAGE TITLE -->
+            <div class="page-title">
+                <h1>Newsletter Mail List</h1>
+            </div>
+            <!-- END PAGE TITLE -->
+
+        </div>
+    </div>
+        <!-- END PAGE HEAD -->
+        <!-- BEGIN PAGE CONTENT -->
+    <div class="page-content">
+        <div class="container">
+            <!-- BEGIN PAGE CONTENT INNER -->
+            <div class="row">
+                <div class="col-md-12">
+
+                    <div class="portlet light">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <span class="caption-subject font-green-sharp bold uppercase">Newsletter Mail List</span>
+                            </div>
+                        </div>
+                        <div class="portlet-body">
+                            @Html.Partial("_NewsLetterMailPartial", Model)
+
+                        </div>
+                        <div class="form-actions">
+                            <div class="row">
+                                <div class="col-md-12">
+                                  
+                                        <button type="button" class="btn green" onclick="location.href='@Url.Action("ManageNewsLetter", "NewsLetter", new { snews_letter_mail_id = BEEKP.Class.Encryption.Encrypt("0", true) })'">Add</button>
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+            <!-- END PAGE CONTENT INNER -->
+
+        </div>
+    </div>
+
+
+}
+@Scripts.Render("~/bundles/area/js/global")
+@Scripts.Render("~/bundles/area/js/datatables")
+@Scripts.Render("~/bundles/area/appjs/newsletter_index")

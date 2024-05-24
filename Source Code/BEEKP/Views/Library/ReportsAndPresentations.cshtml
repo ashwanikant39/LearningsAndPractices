@@ -1,0 +1,3530 @@
+﻿@model BEEKP.Models.KnowledgeBankModel
+@{
+    ViewBag.Title = "Reports and Presentation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@*-------------Datatable CSS------------------*@
+<link href="~/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css" rel="stylesheet" />
+
+@*-------------Datatable JS------------------*@
+
+<script src="~/Scripts/jquery-3.6.0.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/assets/global/plugins/datatables/media/js/jquery.dataTables.js"></script>
+<script src="~/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js"></script>
+
+<style>
+.breadcrumb-area .breadcrumb-menu ul li.active {
+    font-weight: 700;
+    color: #9ff3c2;
+}
+button.accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+button.accordion.active:after {
+    content: "\2212";
+}
+.accordion {
+    background-color: #1da0542b;
+    color: #297b37;
+    margin-bottom: 20px;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 16px;
+    transition: 0.4s;
+    font-weight: 600;
+}
+.active, .accordion:hover {
+    background-color: #1da054a1;
+}
+.panel {
+    border: 1px solid #70c393;
+    padding-bottom: 18px;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+ .title {
+    margin-bottom: 0px;
+    position: relative;
+    text-align: center;
+}
+
+.report-container .report-thumb a {
+    background: #4990e1;
+    display: block;
+    position: relative;
+    padding: 4px 10px;
+    color: #fff;
+    border-radius: 0;
+    font-size: .9rem;
+    text-decoration: none;
+    text-align: center;
+    margin-top:20px;
+}
+
+
+</style>
+
+
+<div class="container pt-10 min-height-400">
+    <!-- BEGIN PAGE CONTENT INNER -->
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="portlet light">
+
+                <div id="divmanufacturers" class="datatable-field-height">
+                    <section class="breadcrumb-area">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="inner-content clearfix">
+                                        <div class="title_breadcrumb float-left">
+                                            <h1>Reports and Presentations</h1>
+                                        </div>
+                                        <div class="breadcrumb-menu float-right">
+                                            <ul class="clearfix">
+                                                <li><a href="/">Resources</a></li>
+                                                <li class="active">Reports and Presentations</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    @*<h4 class="text-theme-colored">Reports and Presentations</h4>*@
+                    <hr />
+                    <ul class="list-group list-padding">
+                        @for (Int32 j = 0; j < Model.ListKnowledgeBank.Count; j++)
+                        {
+                            if (j % 2 == 0)
+                            {
+                                <li class="list-group-item odd-bg-color">
+                                    @if (Model.ListKnowledgeBank[j].file_name != null && Model.ListKnowledgeBank[j].file_name != "")
+                                    {
+                                        <span class="badge badge-custom"><a href="~/documents/Knowledge_Bank/@Model.ListKnowledgeBank[j].file_name" target="_blank">Preview</a><i class="fa fa-file-../pdf-o"></i> </span>
+                                    }
+                                    @Model.ListKnowledgeBank[j].knowledge_bank_name
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="list-group-item ">
+                                    @if (Model.ListKnowledgeBank[j].file_name != null && Model.ListKnowledgeBank[j].file_name != "")
+                                    {
+                                        <span class="badge badge-custom"><a href="~/documents/Knowledge_Bank/@Model.ListKnowledgeBank[j].file_name" target="_blank">Preview</a><i class="fa fa-file-../pdf-o"></i> </span>
+                                    }
+                                    @Model.ListKnowledgeBank[j].knowledge_bank_name
+                                </li>
+                            }
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END PAGE CONTENT INNER -->
+
+<section class="pt-4">
+    <div class="container">
+      <div class="row">
+    
+
+
+                 <div class="col-md-12">
+                            <div class="title title_center text-center">
+                              <h1 style="color:#297b37; margin-bottom: 20px;">Detailed Project Reports (DPRs)</h1> 
+                            </div>
+                      
+
+<button class="accordion">Ahmedabad Chemical Cluster</button>
+                    <div class="panel">
+
+<div class="col-lg-12 col-12">
+           <div class="row report-box">
+
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                               <a href="..\\DPRs\Ahmedabad Chemical Cluster/1.pdf" >JDPR on wood fired energy efficient hot air generator (60,000 kCal)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Ahmedabad Chemical Cluster/2.pdf" >DPR on wood fired energy efficient hot air generator (120,000 kCal)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Ahmedabad Chemical Cluster/3.pdf" >DPR on membrane filter press (40 Plates)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Ahmedabad Chemical Cluster/4.pdf" >DPR on membrane filter press (60 Plates)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Ahmedabad Chemical Cluster/5.pdf" >DPR on hybrid solar tray dryer (96 Trays)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Ahmedabad Chemical Cluster/6.pdf" >DPR on energy efficient tray dryer (200 trays)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Ahmedabad Chemical Cluster/7.pdf" >DPR on hybrid solar tray dryer1 (200 Trays)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Ahmedabad Chemical Cluster/8.pdf" >DPR on energy efficient tray dryer (400 trays)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Ahmedabad Chemical Cluster/9.pdf" >DPR on energy efficient vertical agitator (6000 liter)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Ahmedabad Chemical Cluster/10.pdf" >DPR on wood fired energy efficient hot air generator (30,000 kCal)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Ahmedabad Chemical Cluster/11.pdf" >DPR on energy efficient vertical agitator (32000 liter)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Ahmedabad Chemical Cluster/12.pdf" >DPR on energy efficient tray dryer (96 trays)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Ahmedabad Chemical Cluster/13.pdf" >DPR on energy efficient gas fired hot air generator (30000 kCal)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Ahmedabad Chemical Cluster/14.pdf" >DPR on energy efficient gas fired hot air generator (60000 kCal)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Ahmedabad Chemical Cluster/15.pdf" >DPR on energy efficient gas fired hot air generator (120000 kCal)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+               
+</div>
+</div>
+</div>
+
+
+
+
+
+<button class="accordion">Alwar oil mills cluster</button>
+ <div class="panel">
+
+<div class="col-lg-12 col-12">
+           <div class="row report-box">
+
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                               <a href="..\\DPRs\Alwar oil mills cluster/1.pdf" >Energy cost reduction by replacemt of reciprocatg comprsr with screw comprsr</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Alwar oil mills cluster/2.pdf" >Energy cost reduction by replacement of reciprocatg compresrs with screw comprsr</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Alwar oil mills cluster/3.pdf" >Energy cost reduction with e.e. expeller - (Alwar OM cluster)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Alwar oil mills cluster/4.pdf" >Energy cost reduction with e.e. seed cracker motor (15 HP)-(Alwar OM cluster)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Alwar oil mills cluster/5.pdf" >Energy cost reduction with energy efficient expeller</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Alwar oil mills cluster/6.pdf" >Energy cost reduction with flat belt in place of V-belt</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Alwar oil mills cluster/7.pdf" >Energy cost reduction with power factor Improvement-(Alwar OM cluster)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Alwar oil mills cluster/8.pdf" >Energy cost reduction with translucent sheet (Alwar OM cluster)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Alwar oil mills cluster/9.pdf" >Energy cost reduction with variable frequency drive over compressor</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Alwar oil mills cluster/10.pdf" >Energy efficient motor for expeller (30 HP)-Alwar OM cluster</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Alwar oil mills cluster/11.pdf" >Energy efficient motor for expeller (50 HP) - (Alwar OM cluster)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Alwar oil mills cluster/12.pdf" >Energy efficient motor for expeller (75 HP)- Alwar OM cluster)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Alwar oil mills cluster/13.pdf" >Energy efficient motor for kolhu (40 hp)-(Alwar OM cluster)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Alwar oil mills cluster/14.pdf" >Energy efficient motor for Kolhu (50 HP)-(Alwar OM cluster)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+            
+
+               
+</div>
+</div>
+</div>
+
+
+
+<button class="accordion">Bangalore machine tools cluster</button>
+ <div class="panel">
+
+<div class="col-lg-12 col-12">
+           <div class="row report-box">
+
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                               <a href="..\\DPRs\Bangalore machine tools cluster/1.pdf" >Conventional bending machine to CNC bending machine-BNG MTC</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Bangalore machine tools cluster/2.pdf" >Conventional cutting machine with CNC laser cutting machine-BNG MTC</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Bangalore machine tools cluster/3.pdf" >Conventional turret punch machine with CNC turret punch machine-BNG MTC</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Bangalore machine tools cluster/4.pdf" >Energy efficient motors 7.5 kW capacity-BNG MTC</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Bangalore machine tools cluster/5.pdf" >Installation of 5 – axis CNC machine-BNG MTC</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Bangalore machine tools cluster/6.pdf" >Replacement of conventional gear hobbing machine to CNC gear hobbing machine-BNG MTC</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Bangalore machine tools cluster/7.pdf" >Replacement of conventional grinding machine to CNC grinding machine-BNG MTC</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Bangalore machine tools cluster/8.pdf" >Replacement of conventional horizontal machine centre with CNC horizontal machine centre-BNG MTC</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Bangalore machine tools cluster/9.pdf" >Replacement of Conventional lathes-BNG MTC</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Bangalore machine tools cluster/10.pdf" >Replacement of conventional machine with CNC machine-BNG MTC</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Bangalore machine tools cluster/11.pdf" >Replacement of conventional milling machine to CNC milling machine-BNG MTC</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Bangalore machine tools cluster/12.pdf" >Replacement of conventional wire cut machine with CNC wire cut machine-BNG MTC</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Bangalore machine tools cluster/13.pdf" >Replacement of milling, turning machines to CNC turn–mill centre-BNG MTC</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Bangalore machine tools cluster/14.pdf" >Replacement of reciprocating compressors with screw compressors</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+           
+           <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Bangalore machine tools cluster/15.pdf" >Replacement of reciprocating compressors with screw compressors-BNG MTC</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+            
+
+               
+</div>
+</div>
+</div>
+
+
+<button class="accordion">Batala Jalandhar Ludhiana foundry cluster</button>
+ <div class="panel">
+
+<div class="col-lg-12 col-12">
+           <div class="row report-box">
+
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                               <a href="..\\DPRs\Batala Jalandhar Ludhiana foundry cluster/1.pdf" >Divided blast cupola furnace-Batala-Jlndr-Ludh Fdry Cluster</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Batala Jalandhar Ludhiana foundry cluster/2.pdf" >En cost reductn with kwh indicator cum integrator for inductn furnace-Batala-Jlndr-Ludh Fdry Cluster</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Batala Jalandhar Ludhiana foundry cluster/3.pdf" >En cost reductn with kwh indicator cum integrator for inductn furnace Batala Jlndr Ludh Fdry Cluster</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Batala Jalandhar Ludhiana foundry cluster/4.pdf" >Energy cost reduction with infrared thermometer-Batala-Jlndr-Ludh Fdry Cluster</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Batala Jalandhar Ludhiana foundry cluster/5.pdf" >Energy efficient motor for blower in cupola furnace (10 hp)-Batala-Jlndr-Ludh Fdry Cluster</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Batala Jalandhar Ludhiana foundry cluster/6.pdf" >Energy efficient motor in rotary furnace (10 HP)-Batala-Jlndr-Ludh Fdry Cluster</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Batala Jalandhar Ludhiana foundry cluster/7.pdf" >Energy efficient motor in rotary furnace (15 HP)-Batala-Jlndr-Ludh Fdry Cluster</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Batala Jalandhar Ludhiana foundry cluster/8.pdf" >Installation of eco ventilators in place of exhaust fan-Batala-Jlndr-Ludh Fdry Cluster</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Batala Jalandhar Ludhiana foundry cluster/9.pdf" >Installation of flue gas analyser to reduce excess air and optimising furnace combustion</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Batala Jalandhar Ludhiana foundry cluster/10.pdf" >Installation of VFD on screw compressor-Batala-Jlndr-Ludh Fdry Cluster</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Batala Jalandhar Ludhiana foundry cluster/11.pdf" >Medium frequency furnace in place of main frequency furnace-Batala-Jlndr-Ludh Fdry Cluster</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Batala Jalandhar Ludhiana foundry cluster/12.pdf" >PF improvement by installation of capacitor banks-Batala-Jlndr-Ludh Fdry Cluster</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Batala Jalandhar Ludhiana foundry cluster/13.pdf" >Replacement of arc furnace with medium frequency induction furnace-Batala-Jlndr-Ludh Fdry Cluster</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Batala Jalandhar Ludhiana foundry cluster/14.pdf" >Replacement of oil fired rotary furnace with induction furnace-Batala-Jlndr-Ludh Fdry Cluster</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                 <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Batala Jalandhar Ludhiana foundry cluster/15.pdf" >Spectrometer for analysing the molten metal-Batala-Jlndr-Ludh Fdry Cluster</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+            
+
+               
+</div>
+</div>
+</div>
+
+
+<button class="accordion">Bhimavaram ice making cluster</button>
+ <div class="panel">
+
+<div class="col-lg-12 col-12">
+           <div class="row report-box">
+
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                               <a href="..\\DPRs\Bhimavaram ice making cluster/1.pdf" >Energy efficient motor for agitator – 7.5hp-Bhimavrm IMC</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Bhimavaram ice making cluster/2.pdf" >Energy efficient motor for compressor-60HP-Bhimavrm IMC</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Bhimavaram ice making cluster/3.pdf" >Energy efficient motor for compressor-75 HP-Bhimavrm IMC</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Bhimavaram ice making cluster/4.pdf" >Energy efficient motor for compressor-150 HP-Bhimavrm IMC</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Alwar oil mills cluster/5.pdf" >Energy efficient pump for condenser water–3 hp-Bhimavrm IMC</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Bhimavaram ice making cluster/6.pdf" >Energy efficient pump for raw water– 2 hp-Bhimavrm IMC</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Bhimavaram ice making cluster/7.pdf" >New Refrigiration compressor-60 HP-Bhimavrm IMC</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Bhimavaram ice making cluster/8.pdf" >New Refrigiration compressor-75 HP-Bhimavrm IMC</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Bhimavaram ice making cluster/9.pdf" >New Refrigiration compressor-150 HP-Bhimavrm IMC</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Bhimavaram ice making cluster/10.pdf" >Tube ice plant-10 TPD-Bhimavrm IMC</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Bhimavaram ice making cluster/11.pdf" >Tube ice plant-15 TPD-Bhimavrm IMC</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Bhimavaram ice making cluster/12.pdf" >Tube ice plant-20 TPD-Bhimavrm IMC</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Bhimavaram ice making cluster/13.pdf" >VFD for compresor motor-60 HP-Bhimavrm IMC</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Bhimavaram ice making cluster/14.pdf" >VFD for compresor motor-75 HP-Bhimavrm IMC</a>
+                            </div>
+                        </div>
+                      </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Bhimavaram ice making cluster/15.pdf" >VFD for compresor motor-150  HP-Bhimavrm IMC</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+            
+
+               
+</div>
+</div>
+</div>
+
+<button class="accordion">Bhubaneshwar brass cluster</button>
+ <div class="panel">
+
+<div class="col-lg-12 col-12">
+           <div class="row report-box">
+
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                               <a href="..\\DPRs\Bhubaneshwar brass cluster/1.pdf" >DPR on Common Facility Melting and Re-Heating Furnace 250kg</a>
+                               </a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Bhubaneshwar brass cluster/2.pdf" >DPR on Common Facility Melting and Re-Heating Furnace 500kg</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Bhubaneshwar brass cluster/3.pdf" >DPR on common facility rice husk based Mordern Unit (250kg)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Bhubaneshwar brass cluster/4.pdf" >DPR on common facility rice husk based Mordern Unit (250kg)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Bhubaneshwar brass cluster/5.pdf" >DPR on Common Facility Rice Husk Gasification 2500kg</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Bhubaneshwar brass cluster/6.pdf" >DPR on Common Facility Rice Husk Gasification 5000kg</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Bhubaneshwar brass cluster/7.pdf" >DPR on energy efficient melting furncae (30kg)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Bhubaneshwar brass cluster/8.pdf" >DPR on energy efficient melting furncae (60kg)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Bhubaneshwar brass cluster/9.pdf" >DPR on Energy Efficient Melting Furncae 100kg</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Bhubaneshwar brass cluster/10.pdf" >DPR on Energy Efficient Re-Heating Furnace 30kg</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Bhubaneshwar brass cluster/11.pdf" >DPR on Energy Efficient Re-Heating Furnace 60kg</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Bhubaneshwar brass cluster/12.pdf" >DPR on Energy Efficient Re-Heating Furnace 100kg</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Bhubaneshwar brass cluster/13.pdf" >DPR on Rice Husk Gasification 30kg</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Bhubaneshwar brass cluster/14.pdf" >DPR on Rice Husk Gasification 60kg</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+              
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Bhubaneshwar brass cluster/15.pdf" >DPR on Rice Husk Gasification 100kg</a>
+                            </div>
+                        </div>
+                      </div>
+                </div>
+            
+
+               
+</div>
+</div>
+</div>
+
+
+
+<button class="accordion">East and West Godavari refractories cluster</button>
+ <div class="panel">
+
+<div class="col-lg-12 col-12">
+           <div class="row report-box">
+
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                               <a href="..\\DPRs\East and West Godavari refractories cluster/1.pdf" >Biomass gasifier system-up to 50ton capacity kiln-Godavari Refr cluster</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\East and West Godavari refractories cluster/2.pdf" >Biomass gasifier system-up to 100ton capacity kiln-Godavari Refr cluster</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\East and West Godavari refractories cluster/3.pdf" >Biomass gasifier system-up to 200ton capacity kiln-Godavari Refr cluster</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\East and West Godavari refractories cluster/4.pdf" >Coal gasifier system-50 tons capacity kiln-Godavari Ref cluster</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\East and West Godavari refractories cluster/5.pdf" >Coal gasifier system-100 tons capacity kiln-Godavari Ref cluster</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\East and West Godavari refractories cluster/6.pdf" >Coal gasifier system-200 tons capacity kiln-Godavari Ref cluster</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\East and West Godavari refractories cluster/7.pdf" >Tunnel Kiln-10 TPD-Godavari Refr cluster</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\East and West Godavari refractories cluster/8.pdf" >Tunnel Kiln-20 TPD-Godavari Refr cluster</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\East and West Godavari refractories cluster/9.pdf" >Tunnel Kiln-50 TPD-Godavari Refr cluster</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\East and West Godavari refractories cluster/10.pdf" >WHR 100 Ton kiln-Godavari Refr cluster</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\East and West Godavari refractories cluster/11.pdf" >Waste heat recovery system -200 tons capacity kiln-Godavari Refr cluster </a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\East and West Godavari refractories cluster/12.pdf" >Energy efficient motor for ball mills-20hp-Godavari Refract cluster </a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\East and West Godavari refractories cluster/13.pdf" >EE Motor for Brick Press -10HP</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\East and West Godavari refractories cluster/14.pdf" >EE Motor forCrushers -10HP-Godavari Refract cluster</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+          
+          <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\East and West Godavari refractories cluster/15.pdf" >WHR upto 50 Tons kiln-Godavari Refract cluster</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+            
+
+               
+</div>
+</div>
+</div>
+
+
+<button class="accordion">Ganjam rice mill cluster</button>
+
+ <div class="panel">
+
+<div class="col-lg-12 col-12">
+           <div class="row report-box">
+
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                               <a href="..\\DPRs\Ganjam rice mill cluster/1.pdf" >Energy efficient motor 30 hp-Ganjam Rice mill</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Ganjam rice mill cluster/2.pdf" >Energy efficient motor 40 hp-Ganjam Rice mill</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Ganjam rice mill cluster/3.pdf" >Energy efficient motor 50 hp-Ganjam Rice mill</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Ganjam rice mill cluster/4.pdf" >Replacement of cones polishers with Whitener 1.0 ton-Ganjam Rice mill</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Ganjam rice mill cluster/5.pdf" >Replacement of cones polishers with whitener-1.5 - 2 tph-Ganjam Rice mill</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Ganjam rice mill cluster/6.pdf" >Common shaft drive system (1.0 TPH)-Ganjam Rice mill</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Ganjam rice mill cluster/7.pdf" >Common shaft drive system (1.5 TPH)-Ganjam Rice mill</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Ganjam rice mill cluster/8.pdf" >Common shaft drive system (2.0 TPH)-Ganjam Rice mill</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Ganjam rice mill cluster/9.pdf" >Paddy cleaner 1.0 ton-Ganjam Rice mill</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Ganjam rice mill cluster/10.pdf" >Paddy cleaner 1.5 ton-Ganjam Rice mill</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Ganjam rice mill cluster/11.pdf" >Paddy separator 1.0 ton-Ganjam Rice mill</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Ganjam rice mill cluster/12.pdf" >Paddy separator 1.5 ton-Ganjam Rice mill</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Ganjam rice mill cluster/13.pdf" >Paddy separator 2.0 ton-Ganjam Rice mill</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Ganjam rice mill cluster/14.pdf" >Voltage stablizer 50 KVA-Ganjam Rice mill</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+             
+              <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Ganjam rice mill cluster/14.pdf" >Voltage stablizer 75 KVA-Ganjam Rice mill</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+            
+
+               
+</div>
+</div>
+</div>
+
+
+<button class="accordion">Gujarat dairy cluster</button>
+ <div class="panel">
+
+<div class="col-lg-12 col-12">
+           <div class="row report-box">
+
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                               <a href="..\\DPRs\Gujarat dairy cluster/1.pdf" >DPR on De-Super Heater System 100 TR</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Gujarat dairy cluster/2.pdf" >DPR on De-Super Heater System 210 TR</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Gujarat dairy cluster/3.pdf" >DPR on Effulent Methane Capture 500 CUBM</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Gujarat dairy cluster/4.pdf" >DPR on Effulent Methane Capture 1000 CUBM</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Gujarat dairy cluster/5.pdf" >DPR on Energy Efficient Motor_30kW</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Gujarat dairy cluster/6.pdf" >DPR on Energy Efficient Motor_55kW</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Gujarat dairy cluster/7.pdf" >DPR on Energy Efficient Motor_75kW</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Gujarat dairy cluster/8.pdf" >DPR on Energy Efficient Thermal Storage System 65 TRH</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Gujarat dairy cluster/9.pdf" >DPR on Energy Efficient Thermal Storage System 300 TRH</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Gujarat dairy cluster/10.pdf" >DPR on Energy Efficient Thermal Storage System 420 TRH</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Gujarat dairy cluster/11.pdf" >DPR on Soft Starter for Motor_30kW</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Gujarat dairy cluster/12.pdf" >DPR on Soft Starter for Motor_75kW</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Gujarat dairy cluster/13.pdf" >DPR on Solar Water Heating System 5000 LPD</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Gujarat dairy cluster/14.pdf" >DPR on Solar Water Heating System 7000 LPD</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+            
+
+               
+</div>
+</div>
+</div>
+
+
+<button class="accordion">Howrah galvinising and wire drawing cluster</button>
+ <div class="panel">
+
+<div class="col-lg-12 col-12">
+           <div class="row report-box">
+
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                               <a href="..\\DPRs\Howrah galvinising and wire drawing cluster/1.pdf" >DPR on Air Fuel Ratio Control with Oxygen Sensor</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Howrah galvinising and wire drawing cluster/2.pdf" >DPR on Air Pre Heater for galvanizing and annealing furnace</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Howrah galvinising and wire drawing cluster/3.pdf" >DPR on AIR PRE-HEATER AND DRYING BED FOR GALVANIZING AND ANNEALING FURNACES</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Howrah galvinising and wire drawing cluster/4.pdf" >DPR on Air Pre-heater Heat Pipe Heat Exchangers for Galvanizing and Annealing Furnaces</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Howrah galvinising and wire drawing cluster/5.pdf" >DPR on Air-Pre Heater and Flux Solution Heating for Galvanizing and Annealing Furnaces</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Howrah galvinising and wire drawing cluster/6.pdf" >DPR on Biomass Gasifier for Coal Based Furnaces</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Howrah galvinising and wire drawing cluster/7.pdf" >DPR on Biomass Gasifier for FO Based Furnaces</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Howrah galvinising and wire drawing cluster/8.pdf" >DPR on DC motor of 160 kW with AC Motor of 90 kW with VFD</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Howrah galvinising and wire drawing cluster/9.pdf" >DPR on DC motor of 260 kW with AC Motor of 180 kW with VFD</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Howrah galvinising and wire drawing cluster/10.pdf" >DPR on Energy Efficient Motor 15 kW</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Howrah galvinising and wire drawing cluster/11.pdf" >DPR on Energy Efficient Motor 22 kW</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Howrah galvinising and wire drawing cluster/12.pdf" >DPR on Furnace Insulation Improvement</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Howrah galvinising and wire drawing cluster/13.pdf" >DPR on LPG Gas Fired Radiation Furnace for Annealing</a></li>
+
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Howrah galvinising and wire drawing cluster/14.pdf" >DPR on Temperature Control in Zinc Bath in Galvanizing</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+              
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Howrah galvinising and wire drawing cluster/15.pdf" >DPR pm Energy Efficient Motor 45 kW</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+            
+
+               
+</div>
+</div>
+</div>
+
+
+<button class="accordion">Jagadhri brass and aluminium cluster</button>
+ <div class="panel">
+
+<div class="col-lg-12 col-12">
+           <div class="row report-box">
+
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                               <a href="..\\DPRs\Jagadhri brass and aluminium cluster/1.pdf" >Bogies Brass anneling funace 36 kW-Jagadhri cluster</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Jagadhri brass and aluminium cluster/2.pdf" >Bogies Brass anneling funace 60 kW-Jagadhri cluster</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Jagadhri brass and aluminium cluster/3.pdf" >Energy Efficient Pit Furnace 600 kg-Jagadhri cluster</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Jagadhri brass and aluminium cluster/4.pdf" >Induction furnace for brass 500kg-Jagadhri cluster</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Jagadhri brass and aluminium cluster/5.pdf" >Modified Pit Furnace for brass 600 kg-Jagadhri cluster</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Jagadhri brass and aluminium cluster/6.pdf" >Induction furnace for brass 750kg-Jagadhri cluster</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Jagadhri brass and aluminium cluster/7.pdf" >Waste heat recovery for coke fired pit furnace 600kg-Jagadhri cluster</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Jagadhri brass and aluminium cluster/8.pdf" >Wood gasifier aluminium 400kg-Jagadhri cluster</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Jagadhri brass and aluminium cluster/9.pdf" >Wood gasifier aluminium 600kg-Jagadhri cluster</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Jagadhri brass and aluminium cluster/10.pdf" >Wood gasifier aluminium 800kg-Jagadhri cluster</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Jagadhri brass and aluminium cluster/11.pdf" >Wood gasifier for anneling funace above 3T-Jagadhri cluster</a></li>
+
+                          </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Jagadhri brass and aluminium cluster/12.pdf" >Wood gasifier for coke fired brass melting furnace-Jagadhri cluster</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Jagadhri brass and aluminium cluster/13.pdf" >Wood gasifier for anneling funace below 3T-Jagadhri cluster</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Jagadhri brass and aluminium cluster/14.pdf" >wood gasifier for oil fired Brass melting furnace-Jagadhri cluster</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+            
+
+               
+</div>
+</div>
+</div>
+
+
+<button class="accordion">Jamnagar brass cluster</button>
+ <div class="panel">
+
+<div class="col-lg-12 col-12">
+           <div class="row report-box">
+
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                               <a href="..\\DPRs\Jamnagar brass cluster/1.pdf" >DPR Energy Efficient Gas Fired Rotoberatory Furnace_250 kg</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Jamnagar brass cluster/2.pdf" >>DPR on Energy Efficient Gas Fired Pit Furnace_200 kg</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Jamnagar brass cluster/3.pdf" >>DPR on Energy Efficient Gas Fired Pit Furnace_300 kg</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Jamnagar brass cluster/4.pdf" >>DPR on Energy Efficient Gas Fired Pit Furnace_350 kg</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Jamnagar brass cluster/5.pdf" >DPR on Energy Efficient Gas Fired Reheating Furnace_750 Kg</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Jamnagar brass cluster/6.pdf" >DPR on Energy Efficient Gas Fired Reheating Furnace_1200 Kg</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Jamnagar brass cluster/7.pdf" >DPR on Energy Efficient Gas Fired Reheating Furnace_2000 Kg</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Jamnagar brass cluster/8.pdf" >DPR on Energy Efficient Gas Fired Rotoberatory Furnace_500 kg</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Jamnagar brass cluster/9.pdf" >DPR on Energy Efficient Gas Fired Rotoberatory Furnace_750 kg</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Jamnagar brass cluster/10.pdf" >DPR on Energy Efficient Oil Fired Pit Furnace_150 kg</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Jamnagar brass cluster/11.pdf" >DPR on Energy Efficient Oil Fired Pit Furnace_300 kg</a></li>
+
+                          </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Jamnagar brass cluster/12.pdf" >DPR on Energy Efficient Oil Fired Pit Furnace_400 kg</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Jamnagar brass cluster/13.pdf" >DPR on Energy Efficient Oil Fired Reheating Furnace_1200 Kg</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Jamnagar brass cluster/14.pdf" >DPR on Energy Efficient Oil Fired Reheating Furnace_2000 Kg</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+            
+
+               
+</div>
+</div>
+</div>
+
+
+<button class="accordion">Jodhpur lime kiln cluster</button>
+ <div class="panel">
+
+<div class="col-lg-12 col-12">
+           <div class="row report-box">
+
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                               <a href="..\\DPRs\Jodhpur lime kiln cluster/1.pdf" >Energy cost reduction with power factor correction-Jodhpur cluster</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Jodhpur lime kiln cluster/2.pdf" >Energy cost saving by installing gasifier for kilns 15tpd-Jodhpur cluster</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Jodhpur lime kiln cluster/3.pdf" >Energy cost reduction by installling gasifier for kilns 30 tpd-Jodhpur cluster</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Jodhpur lime kiln cluster/4.pdf" >En cost saving by kiln insulation improvement for 50tpd kiln-Jodhpur cluster</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Jodhpur lime kiln cluster/5.pdf" >En cost reduction with energy efficient motor (7.5 hp)-Jodhpur cluster</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Jodhpur lime kiln cluster/6.pdf" >En cost reduction with e.e. motor (15HP)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Jodhpur lime kiln cluster/7.pdf" >Improved handling-storage of pet coke in large units-Jodhpur cluster</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Jodhpur lime kiln cluster/8.pdf" >Improved handling-storage of pet coke in medium units-Jodhpur cluster</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Jodhpur lime kiln cluster/9.pdf" >En cost saving by kiln insulation improvement for 30tpd capacity kiln-Jodhpur cluster</a>
+
+
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Jodhpur lime kiln cluster/10.pdf" >Energy cost saving by kiln insulation improvement capacity-15tpd-Jodhpur cluster</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Jodhpur lime kiln cluster/11.pdf" >Energy cost reduction with energy efficient motor (40 HP)-Jodhpur cluster</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+               
+            
+
+               
+</div>
+</div>
+</div>
+
+<button class="accordion">Jorhat tea cluster</button>
+ <div class="panel">
+
+<div class="col-lg-12 col-12">
+           <div class="row report-box">
+
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                               <a href="..\\DPRs\Jorhat tea cluster/1.pdf" >Biomass gasifier for 250 kW thermal application replacing coal-Jorhat</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Jorhat tea cluster/2.pdf" >Biomass gasifier for 50 kW thermal application replacing coal-Jorhat</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Jorhat tea cluster/3.pdf" >Tech upgradation with coal gasification for thermal &amp; captive generation-Jorhat</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Jorhat tea cluster/4.pdf" >Tech upgradation with coal gasification for thermal &amp; 100kva captive generation-Jorhat</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Jorhat tea cluster/5.pdf" >EE_Gas_Burner-Jorhat</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Jorhat tea cluster/6.pdf" >Energy efficient motor of 15 kw in hot air blower of drier-Jorhat</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Jorhat tea cluster/7.pdf" >Energy efficient motor of 18.5 kw in hot air blower of drier-Jorhat</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Jorhat tea cluster/8.pdf" >Energy efficient motor of 22 kw in hot air blower of drier-Jorhat</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Jorhat tea cluster/9.pdf" >Tech upgradn with automatic airflow variation in withering system-Jorhat</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Jorhat tea cluster/10.pdf" >Tech upgradn with automatic airflow variation in withering system 16 troughs-Jorhat</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Jorhat tea cluster/11.pdf" >Energy efficient NG burner150 KG D-Jorhat</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Jorhat tea cluster/12.pdf" >Solar – aero generator hybrid power system-Jorhat</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Jorhat tea cluster/13.pdf" >Solar – aero generator hybrid power system-Jorhat</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Jorhat tea cluster/14.pdf" >Vfd fitment in hot air blowing system in drier having 25 HP motor-Jorhat</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                 <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Jorhat tea cluster/15.pdf" >Vfd fitment in hot air blowing system in drier having 30 HP motor-Jorhat</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+            
+
+               
+</div>
+</div>
+</div>
+
+
+<button class="accordion">Morbi Cermaic Cluster</button>
+ <div class="panel">
+
+<div class="col-lg-12 col-12">
+           <div class="row report-box">
+
+
+
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                               <a href="..\\DPRs\Morbi Cermaic Cluster/1.pdf" >DPR on Briquette Fired Hot Air Generator (Morbi Cermaic Cluster)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Morbi Cermaic Cluster/2.pdf" >DPR on Energy Conservation in Agitation Section (Morbi Cermaic Cluster)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Morbi Cermaic Cluster/3.pdf" >DPR on Energy Conservation in Polishing Section (Morbi Cermaic Cluster)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Morbi Cermaic Cluster/4.pdf" >DPR on fabrication of dryer on tunnel kiln for pre heating of material (Morbi ceramic cluster)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Morbi Cermaic Cluster/5.pdf" >DPR on briquette fired hot air generator (Morbi ceramic cluster)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Morbi Cermaic Cluster/6.pdf" >DPR on energy conservation in polishing section (Morbi ceramic cluster)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Morbi Cermaic Cluster/7.pdf" >DPR on energy conservation in agitation section (Morbi ceramic cluster)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Morbi Cermaic Cluster/8.pdf" >DPR on gas engine based co-generation technology (Morbi ceramic cluster)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Morbi Cermaic Cluster/9.pdf" >DPR on gas turbine based co-generation technology (Morbi ceramic cluster)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Morbi Cermaic Cluster/10.pdf" >DPR on use of low thermal mass car in tunnel kiln</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Morbi Cermaic Cluster/11.pdf" >DPR on variable frequency drive on grinding machine (Morbi ceramic cluster)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Morbi Cermaic Cluster/12.pdf" >DPR on variable frequency drive on hydraulic press (Morbi ceramic cluster)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Morbi Cermaic Cluster/13.pdf" >DPR on waste heat recovery in roller kiln (Morbi ceramic cluster)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Morbi Cermaic Cluster/14.pdf" >DPR on kiln insulation improvement (Morbi ceramic cluster)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+                       
+                        <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Morbi Cermaic Cluster/15.pdf" >DPR on energy cost reduction by power factor improvement (Morbi ceramic cluster)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+            
+
+               
+</div>
+</div>
+</div>
+
+<button class="accordion">Orissa sponge iron cluster</button>
+ <div class="panel">
+
+<div class="col-lg-12 col-12">
+           <div class="row report-box">
+
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                               <a href="..\\DPRs\Orissa sponge iron cluster/1.pdf" >EE motor-crusher section 25HP-Orissa</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Orissa sponge iron cluster/2.pdf" >EE motor-crusher section 60HP-Orissa</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Orissa sponge iron cluster/3.pdf" >EE water pump for cooler main drive -15 HP-Orissa</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Orissa sponge iron cluster/4.pdf" >EE water pump for cooler main drive -20 HP-Orissa</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Orissa sponge iron cluster/5.pdf" >Energy efficient motor-crusher section 40HP-Orissa</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Orissa sponge iron cluster/6.pdf" >Fuel economizer-50 tpd-Orissa</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Orissa sponge iron cluster/7.pdf" >Fuel economizer-100 tpd-Orissa</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Orissa sponge iron cluster/8.pdf" >Raw material preheating-50 tpd-Orissa</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Orissa sponge iron cluster/9.pdf" >Raw material preheating-100 tpd-Orissa</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Orissa sponge iron cluster/10.pdf" >Raw material preheating-200 tpd-Orissa</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Orissa sponge iron cluster/11.pdf" >Waste heat recovery power plant (2mw)–100tpd-Orissa</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Orissa sponge iron cluster/12.pdf" >Waste heat recovery power plant (4mw)–200tpd-Orissa</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+               
+            
+
+               
+</div>
+</div>
+</div>
+
+<button class="accordion">Pali Textile Cluster</button>
+ <div class="panel">
+
+<div class="col-lg-12 col-12">
+           <div class="row report-box">
+
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                               <a href="..\\DPRs\Pali Textile Cluster/1.pdf" >DPR on Installation of Air Pre Heater in Thermopac (Pali Textile Cluster)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Pali Textile Cluster/2.pdf" >DPR on Blower Speed Optimization in Stenter (Pali Textile Cluster)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Pali Textile Cluster/3.pdf" >DPR on Installation of Condesate Recovery Pump in Jet Dyeing Machine (Pali Textile Cluster)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Pali Textile Cluster/4.pdf" >DPR on provision of insulation on dust collector in thermopak (Pali textile cluster)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Pali Textile Cluster/5.pdf" >DPR on installation of system for control of excess air in boiler (Pali textile cluster)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Pali Textile Cluster/6.pdf" >DPR on installation of system for control of excess air in thermopac (Pali textile cluster)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Pali Textile Cluster/7.pdf" >DPR on installation of exhaust humidity control system in stenters (Pali textile cluster)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Pali Textile Cluster/8.pdf" >DPR on installation of fabric temperature control system in stenters (Pali textile cluster)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Pali Textile Cluster/9.pdf" >DPR on provision of insulation in stenter motor operated valves (Pali textile cluster)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Pali Textile Cluster/10.pdf" >DPR on Residual moisture measurement and control system in stenter (Pali textile cluster)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Pali Textile Cluster/11.pdf" >DPR on solar water heater (Pali textile cluster)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Pali Textile Cluster/12.pdf" >DPR on installation of auto temperature controller in jigger dyeing machine</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Pali Textile Cluster/13.pdf" >DPR on installation of waste heat recovery system in Stenter</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Pali Textile Cluster/14.pdf" >DPR on provision of VFD in thermic fluid pump of Thermopac</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                 <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Pali Textile Cluster/15.pdf" >DPR on installation of VFD in jet dyeing machine</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+            
+
+               
+</div>
+</div>
+</div>
+
+<button class="accordion">Solapur Textile Cluster</button>
+ <div class="panel">
+
+<div class="col-lg-12 col-12">
+           <div class="row report-box">
+
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                               <a href="..\\DPRs\Solapur Textile Cluster/1.pdf" >DPR on energy efficient boiler (200kg)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Solapur Textile Cluster/2.pdf" >DPR on energy efficient boiler (400kg)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Solapur Textile Cluster/3.pdf" >DPR on solar water heating (500LPD)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Solapur Textile Cluster/4.pdf" >DPR on energy efficient boiler (600kg)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Solapur Textile Cluster/5.pdf" >DPR on solar water heating(1000LPD)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Solapur Textile Cluster/6.pdf" >DPR on solar water heating(2000LPD)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Solapur Textile Cluster/7.pdf" >DPR on energy efficient hot water generator (80000kCal)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Solapur Textile Cluster/8.pdf" >DPR on energy efficient chulha</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Solapur Textile Cluster/9.pdf" >DPR on waste heat recovery through economizer in boiler</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Solapur Textile Cluster/10.pdf" >DPR on waste heat recovery through economizer in thermic fluid heater</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Solapur Textile Cluster/11.pdf" >DPR on Auto Loom/ Rapier Loom (4Nos) (Solapur Textile Cluster)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Solapur Textile Cluster/12.pdf" >DPR on Auto Loom/ Rapier Loom (8Nos) (Solapur Textile Cluster)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Solapur Textile Cluster/13.pdf" >DPR on Hot Water Generator (10000kCal/hr) (Solapur Textile Cluster)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Solapur Textile Cluster/14.pdf" >DPR on VFD in doubling machine</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Solapur Textile Cluster/15.pdf" >DPR on VFD for FD ID fan</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+            
+
+               
+</div>
+</div>
+</div>
+
+<button class="accordion">Surat Textile Cluster</button>
+ <div class="panel">
+
+<div class="col-lg-12 col-12">
+           <div class="row report-box">
+
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                               <a href="..\\DPRs\Surat Textile Cluster/1.pdf" >DPR on waste heat recovery system (1.5 kL)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Surat Textile Cluster/2.pdf" >DPR on waste heat recovery system (2.5 kL)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Surat Textile Cluster/3.pdf" >DPR on energy efficient boiler (3TPH)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Surat Textile Cluster/4.pdf" >DPR on energy efficient boiler (4TPH)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Surat Textile Cluster/5.pdf" >DPR on stenter machine (6 Chamber)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Surat Textile Cluster/6.pdf" >DPR on stenter machine (7 Chamber)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Surat Textile Cluster/7.pdf" >DPR on energy conservation turbine (40 kW)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Surat Textile Cluster/8.pdf" >DPR on energy conservation turbine (60 kW)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Surat Textile Cluster/9.pdf" >DPR on energy efficient pump in jet machine (150 kg)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Surat Textile Cluster/10.pdf" >DPR on energy efficient pump in jet machine (250 kg)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Surat Textile Cluster/11.pdf" >DPR on naturak gas geberator base Co-gen system (600 kW)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Surat Textile Cluster/12.pdf" >DPR on naturak gas geberator base Co-gen system (800 kW)</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Surat Textile Cluster/13.pdf" >DPR on online flue gas monitoring system</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Surat Textile Cluster/14.pdf" >DPR on VFD in jet <br>machine pump</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+                <div class="col-md-3">
+                    <div class="report-item">  
+                        <div class="report-container">
+                            <div class="report-thumb">
+                              
+                              <a href="..\\DPRs\Surat Textile Cluster/15.pdf" >DPR on VFD senter <br>machine blower</a>
+                            </div>
+                        </div>
+                      </div>
+                </div> 
+
+            
+
+               
+</div>
+</div>
+</div>
+
+</div></div></div></section>
+</div>
+
+
+
+
+
+
+    <!--Newsletter Start-->
+
+    <div class="newsletter-wrap wow fadeInUp">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="title">
+                        <h3 class="text-white"><small>Stay in Loop</small><br> Join our Newsletter</h3>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="news-info">
+                        <form>
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="search" placeholder="Your Email Address">
+                                <div class="form_icon"><i class="fas fa-envelope"></i></div>
+                            </div>
+                            <input type="submit" class="sigup" value="Subscribe">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Newsletter End-->
+
+<script>
+
+var acc = document.getElementsByClassName("accordion");
+
+var i;
+
+
+
+for (i = 0; i < acc.length; i++) {
+
+  acc[i].addEventListener("click", function() {
+
+    this.classList.toggle("active");
+
+    var panel = this.nextElementSibling;
+
+    if (panel.style.display === "block") {
+
+      panel.style.display = "none";
+
+    } else {
+
+      panel.style.display = "block";
+
+    }
+
+  });
+
+}
+
+</script>
+    <?php include('include/footer.php'); ?>
+  
+</body>
+                
+                
+                          
+               
+                           
+                           
+                  
+
+                        
+                        

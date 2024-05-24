@@ -1,0 +1,213 @@
+﻿@model BEEKP.Models.EnergyProfessionalViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*-------------Datatable CSS------------------*@
+<link href="~/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css" rel="stylesheet" />
+
+@*<link href="~/assets/global/plugins/datatables/extensions/Scroller/css/dataTables.scroller.css" rel="stylesheet" />
+
+    <link href="~/assets/global/plugins/datatables/extensions/ColReorder/css/dataTables.colReorder.css" rel="stylesheet" />
+
+    <link href="~/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css" rel="stylesheet" />*@
+
+
+
+@*-------------Datatable JS------------------*@
+
+<script src="~/Scripts/jquery-3.6.0.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/assets/global/plugins/datatables/media/js/jquery.dataTables.js"></script>
+<script src="~/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js"></script>
+
+
+
+
+@using (Html.BeginForm("Index", "EnergyProfessionals", FormMethod.Post, new { @id = "frmEnergyProfessionals", @name = "frmEnergyProfessionals" }))
+{
+    @Html.AntiForgeryToken()
+
+    <!-- BEGIN PAGE CONTENT -->
+    <div class="container pt-10 pb-20">
+        <!-- BEGIN PAGE CONTENT INNER -->
+        <div class="row">
+            <div class="col-md-12">
+                <section class="breadcrumb-area">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="inner-content clearfix">
+                                    <div class="title_breadcrumb float-left">
+                                        <h1>Energy Experts</h1>
+                                    </div>
+                                    <div class="breadcrumb-menu float-right">
+                                        <ul class="clearfix">
+                                            <li><a href="/">Resources</a></li>
+                                            <li class="active">Energy Experts</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                @*<h4 class="text-theme-colored">Energy Experts</h4>*@
+                <hr />
+                <div class="row">
+                    <div class="col-md-12 mb-15">
+                        <div class="bg_grey clearfix">
+                            <div class="col-sm-3 dis_grid" id="vareaspecialization">
+                                <div class="form-group">
+                                    <label>Area of Specialization</label>
+                                    @Html.DropDownList("AreaSpecialization", new SelectList(Model.ListAreaSpecialization, "area_specialization_id", "area_specialization_name", ""), new { @class = "form-control small-height-field", @id = "ddlareaspecialization", @tabindex = "1", @onchange = "javascript:LoadEnergyProfessional();" })
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group frm_msme">
+                                    <label>&nbsp;</label><br />
+                                    <button type="button" onclick="LoadEnergyProfessional()" class="btn1 btn-primary">Search</button>
+                                    <input type="button" class="btn1 btn-default" value="Reset" onclick="window.location.href='@Url.Action("Index","EnergyProfessional")'" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class="portlet light">
+                    @*<div class="portlet-title">
+                            <div class="caption">
+                                <span class="caption-subject font-green-sharp bold uppercase">Energy Professionals Forum List</span>
+                            </div>
+                        </div>*@
+
+                    @*<h5>Energy Professionals Forum List</h5>*@
+
+                    <div id="divenergyprofessional" class="datatable-field-height">
+                        @Html.Partial("_EnergyProfessionalPartial", Model)
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END PAGE CONTENT INNER -->
+
+    </div>
+
+}
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        TableAdvanced_EnergyProfessionals()
+
+    });
+
+    AddAntiForgeryToken = function (data) {
+        data.__RequestVerificationToken = $('#frmEnergyProfessionals input[name=__RequestVerificationToken]').val();
+        return data;
+    };
+
+
+    function TableAdvanced_EnergyProfessionals() {
+
+        if (!jQuery().dataTable) {
+            return;
+        }
+
+        var table = $('#tblEnergyProfessionals');
+
+        var oTable = table.dataTable({
+
+            "language": {
+                "aria": {
+                    "sortAscending": ": activate to sort column ascending",
+                    "sortDescending": ": activate to sort column descending"
+                },
+                "emptyTable": "No data available in table",
+                "info": "Showing _START_ to _END_ of _TOTAL_ entries",
+                "infoEmpty": "No entries found",
+                "infoFiltered": "(filtered1 from _MAX_ total entries)",
+                "lengthMenu": "Show _MENU_ entries",
+                "search": "Search:",
+                "zeroRecords": "No matching records found"
+            },
+
+            "columnDefs": [{
+                "orderable": false, // false = sorting not applicale
+                "targets": [3] //for the columns
+            }],
+            //"order": [
+            //    [0, 'asc'] // default column sorting
+            //],
+            "lengthMenu": [
+                [5, 10, 15, 20, -1], // value - change per page values here
+                [5, 10, 15, 20, "All"] // display- change per page values here
+            ],
+            // set the initial value
+            "pageLength": 20
+        });
+
+
+    }
+
+    function LoadEnergyProfessional() {
+
+        var area_specialization_id = $("#ddlareaspecialization").val();
+
+        $("#divenergyprofessional").html("");
+
+
+        $.ajax({
+
+            url: '/EnergyProfessional/EnergyProfessionalListByAreaSpecialization',
+            data: AddAntiForgeryToken({ sAreaSpecializationID: area_specialization_id }),
+            async: false,
+            type: 'POST',
+            success: function (result) {
+
+                if (result == 'sessionout') {
+                    window.location.href = "/Account/LogOff";
+                }
+                else if (result.Data == 'error') {
+                    window.location.href = "/Error/GeneralError";
+                }
+                else {
+                    $("#divenergyprofessional").html(result).show();
+                    TableAdvanced_EnergyProfessionals();
+                    //Metronic.init();
+                }
+            },
+            error: function (result) {
+                isSuccess = result;
+            }
+
+        }).done(function () {
+        });
+
+
+
+    }
+
+</script>
+
+
+
+
+
+
+@*<script type="text/javascript">
+    $(document).ready(function() {
+        $('#tblEnergyProfessionals').DataTable();
+    });
+    </script>*@
+
+

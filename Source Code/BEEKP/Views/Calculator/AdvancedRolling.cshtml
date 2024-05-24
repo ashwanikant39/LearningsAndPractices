@@ -1,0 +1,685 @@
+﻿
+@{
+    ViewBag.Title = "AdvancedRolling";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="bg-blue bg-blue-advance-pages">
+    <div class="container-fluid cont_change_prl">
+        <div class="row">
+            <div class="row_mainbackdiv">
+                <a href="@Url.Action("BasicRolling", "Calculator", null, Request.Url.Scheme)">  <img src="~/images/back_btn.png"> <p>Advanced calculator</p>  </a>
+
+            </div>
+        </div>
+        <div class="row divcalcuforging">
+            <div class="col-md-7">
+
+
+                <div class="proceedpage-sec-ad advancedscreen">
+                    <div class="tri-line2">
+                        <img src="~/images/triangle-line.png" class="">
+                    </div>
+
+                    <div class="forging-a">
+                        <img src="~/images/foundry.png">
+
+                    </div>
+                    <div class="foundry-a">
+                        <img src="~/images/forging.png">
+
+                    </div>
+                    <div class="rolling-a">
+                        <div class="subline proceedbtn">
+                            <img src="~/images/rolling-advanced.png">
+                            <a href="javascript:void(0)"><p>Rolling</p></a>
+                        </div>
+                        <img src="~/images/rolling.png">
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+            </div>
+            <div class="col-md-5">
+
+
+                <div class="popup-container_forging popup_bg_img advanced_calculate_popups">
+                    <div class="forging_basic_popup for_only_scroll  ">
+                        <div class="basic_form">
+
+
+
+                            <div class="basic_foundry_field_form metal_heateing-furnace_first_div ">
+                                <div class="metal_heating_para">
+                                    <h2 class="basic_cal_heading">Metal heating furnace</h2>
+                                    <div class="advacne_div">
+                                        <a href="javascript:void(0)" class="advance_para">Advanced parameters</a>
+                                    </div>
+
+                                </div>
+                                <div class="form_fields">
+                                    <label>Number of Furnaces</label>
+                                    <div class="fuel_checkbox_forging">
+
+                                        <div class="type_fuel_checkboxes">
+                                            <label class="checkbox-wrapper">
+                                                <input type="radio" class="checkbox-input" name="ffurnace_number" checked>
+                                                <span class="checkbox-tile">
+                                                    <span class="checkbox-icon check_gcv">1</span>
+                                                </span>
+                                            </label>
+                                            <label class="checkbox-wrapper">
+                                                <input type="radio" class="checkbox-input" name="ffurnace_number">
+                                                <span class="checkbox-tile">
+                                                    <span class="checkbox-icon check_gcv">2</span>
+                                                </span>
+                                            </label>
+                                            <label class="checkbox-wrapper">
+                                                <input type="radio" class="checkbox-input" name="ffurnace_number">
+                                                <span class="checkbox-tile">
+                                                    <span class="checkbox-icon check_gcv">3</span>
+                                                </span>
+                                            </label>
+                                            <label class="checkbox-wrapper">
+                                                <input type="radio" class="checkbox-input" name="ffurnace_number">
+                                                <span class="checkbox-tile">
+                                                    <span class="checkbox-icon check_gcv">4</span>
+                                                </span>
+                                            </label>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="form_fields forfurnace_popup">
+                                    <h4 class="furnace_heading">Furnace details</h3>
+                                </div>
+
+
+                                <div class="furnace_select_tab">
+                                    <div class="tab_select_furnace">Furnace 1</div>
+                                </div>
+
+                                <div class="furnace_details-inputs_feild">
+                                    <div class="form_fields">
+                                        <label>Type of Furnace</label>
+                                        <div class="fuel_checkbox_forging">
+
+                                            <div class="type_fuel_checkboxes">
+                                                <label class="checkbox-wrapper">
+                                                    <input type="radio" class="checkbox-input" name="fuell_type_radio">
+                                                    <span class="checkbox-tile">
+                                                        <span class="checkbox-icon">
+                                                            <img src="~/images/Furnace_Continuous.png">
+                                                        </span>
+                                                        <span class="checkbox-label">Continuous</span>
+                                                    </span>
+                                                </label>
+                                                <label class="checkbox-wrapper">
+                                                    <input type="radio" class="checkbox-input" name="fuell_type_radio" checked>
+                                                    <span class="checkbox-tile">
+                                                        <span class="checkbox-icon">
+                                                            <img src="~/images/Furnace_Batch.png">
+                                                        </span>
+                                                        <span class="checkbox-label">Batch</span>
+                                                    </span>
+                                                </label>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form_fields">
+                                        <label>Age of furnace</label>
+                                        <input type="text" class="form_feilds_inputs" placeholder="Enter here">
+                                    </div>
+
+                                    <div class="form_fields">
+                                        <label>Production</label>
+                                        <input type="text" class="form_feilds_inputs" placeholder="Enter here">
+                                    </div>
+
+
+                                    <div class="form_fields">
+                                        <label>Make /Model</label>
+                                        <input type="text" class="form_feilds_inputs" placeholder="Enter here">
+                                    </div>
+
+                                    <div class="form_fields">
+                                        <label>Type of burner</label>
+                                        <select class="form_select_option">
+                                            <option>Regenerative</option>
+                                            <option>Regenerative</option>
+                                            <option>Regenerative</option>
+                                            <option>Regenerative</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form_fields">
+                                        <label>Batch time</label>
+                                        <input type="text" class="form_feilds_inputs" placeholder="Enter here">
+                                    </div>
+
+                                    <div class="form_fields">
+                                        <label>Area of Furnace</label>
+                                        <input type="text" class="form_feilds_inputs" placeholder="Enter here">
+                                    </div>
+                                    <div class="form_fields">
+                                        <label>Type of Fuel</label>
+                                        <select class="form_select_option">
+                                            <option>LPG</option>
+                                            <option>LPG</option>
+                                            <option>LPG</option>
+                                            <option>LPG</option>
+                                        </select>
+                                    </div>
+                                    <div class="form_fields">
+                                        <label>Quantity of fuel consumption</label>
+                                        <input type="text" class="form_feilds_inputs" placeholder="Enter here">
+                                    </div>
+                                    <div class="form_fields">
+                                        <label>Unit of fuel consumption</label>
+                                        <input type="text" class="form_feilds_inputs" placeholder="Enter here">
+                                    </div>
+                                    <div class="form_fields">
+                                        <label>GCV of selected fuel</label>
+                                        <input type="text" class="form_feilds_inputs" placeholder="Enter here">
+                                    </div>
+                                    <div class="form_fields">
+                                        <label>Metal pre-heating facility</label>
+                                        <input type="text" class="form_feilds_inputs" placeholder="Enter here">
+                                    </div>
+                                    <div class="form_fields">
+                                        <label>Temperature of flu gas before recuperator</label>
+                                        <input type="text" class="form_feilds_inputs" placeholder="Enter here">
+                                    </div>
+                                    <div class="form_fields">
+                                        <label>Temperature of flu gas after recuperator</label>
+                                        <input type="text" class="form_feilds_inputs" placeholder="Enter here">
+                                    </div>
+                                    <div class="form_fields">
+                                        <label>Number of heats per lining of crucible</label>
+                                        <input type="text" class="form_feilds_inputs" placeholder="Enter here">
+                                    </div>
+                                    <div class="form_fields">
+                                        <label>Oxygen % in flu gas</label>
+                                        <input type="text" class="form_feilds_inputs" placeholder="Enter here">
+                                    </div>
+                                    <div class="form_fields">
+                                        <label>Average surface temperature</label>
+                                        <input type="text" class="form_feilds_inputs" placeholder="Enter here">
+                                    </div>
+
+                                </div>
+
+
+                                <div class="cal_btn calbtn_advance_div">
+                                    <a href="javascript:void(0)" class="Cal_href_btn click_show_second_div">Calculate</a>
+
+                                </div>
+
+                            </div>
+
+                            <div class="basic_foundry_field_form metal_heateing_furnace_second_div display_none">
+                                <div class="metal_heating_para">
+                                    <h2 class="basic_cal_heading">Metal heating furnace</h2>
+                                    <div class="advacne_div">
+                                        <a href="javascript:void(0)" class="advance_para">Advanced parameters</a>
+                                    </div>
+
+                                </div>
+                                <h4 class="mealtheathead">Metal heating furnace - Output</h4>
+                                <div class="meltheatdiv">
+                                    <h1>Specific Energy Consumption</h1>
+                                    <h2> (kgoe/tonne)</h2>
+                                    <div class="rangeSlider__tooltip rangeSlider__tooltip--from">303</div>
+                                    <div class="tri-color-line"></div>
+                                </div>
+                                <p>Your SEC is remarkably high. In order to reduce your SEC you may implement the below mentioned energy efficient technologies and measures</p>
+                                <ul class="meltheatdivul">
+                                    <li><img src="~/images/Power.png"><p>New generation IBH with IGBT control along with IoT based alerts and automation</p></li>
+                                    <li><img src="~/images/Power.png"><p>Fuel switch from Oil to NG</p></li>
+                                    <li><img src="~/images/Power.png"><p>Relining of furnaces / Insulation</p></li>
+                                    <li><img src="~/images/Power.png"><p>Waste heat recovery for air preheating</p></li>
+                                </ul>
+                                <div class="cal_btn calbtn_advance_div">
+                                    <a href="javascript:void(0)" class="Cal_href_btn click_div-third_next_advance">Next</a>
+
+                                </div>
+                            </div>
+
+                            <div class="basic_foundry_field_form metal_heateing_furnace_third_div display_none">
+                                <div class="metal_heating_para">
+                                    <h2 class="basic_cal_heading">Yield</h2>
+                                    <div class="advacne_div">
+                                        <a href="javascript:void(0)" class="advance_para">Advanced parameters</a>
+                                    </div>
+
+                                </div>
+                                <div class="form_fields">
+                                    <label>Total mass of billet </label>
+                                    <input type="text" class="form_feilds_inputs" placeholder="Enter here">
+
+                                </div>
+                                <div class="form_fields">
+                                    <label>Final dispatched production </label>
+                                    <input type="text" class="form_feilds_inputs" placeholder="Enter here">
+
+                                </div>
+                                <div class="form_fields">
+                                    <label>Scale loss</label>
+                                    <input type="text" class="form_feilds_inputs" placeholder="Enter here">
+                                </div>
+                                <div class="form_fields">
+                                    <label>Rejections</label>
+                                    <input type="text" class="form_feilds_inputs" placeholder="Enter here">
+                                </div>
+
+                                <div class="cal_btn calbtn_advance_div forbottom_position">
+                                    <a href="javascript:void(0)" class="Cal_href_btn for_fourth_div_show">Next</a>
+
+                                </div>
+
+                            </div>
+
+                            <div class="basic_foundry_field_form metal_heateing_furnace_fourth_div display_none">
+                                <div class="metal_heating_para">
+                                    <h2 class="basic_cal_heading">Rolling</h2>
+                                    <div class="advacne_div">
+                                        <a href="javascript:void(0)" class="advance_para">Advanced parameters</a>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="form_fields">
+                                    <label>Motor capacity </label>
+                                    <input type="text" class="form_feilds_inputs" placeholder="Enter here">
+
+                                </div>
+                                <div class="form_fields">
+                                    <label>Motor Make </label>
+                                    <input type="text" class="form_feilds_inputs" placeholder="Enter here">
+
+                                </div>
+                                <div class="form_fields">
+                                    <label>Motor age</label>
+                                    <input type="text" class="form_feilds_inputs" placeholder="Enter here">
+                                </div>
+
+                                <div class="basic_foundry_field_form">
+                                    <div class="form_fields">
+                                        <label>Efficiency class (if any)</label>
+                                        <select class="form_select_option">
+                                            <option>IE3</option>
+                                            <option>IE3</option>
+                                            <option>IE3</option>
+                                            <option>IE3</option>
+                                        </select>
+
+                                    </div>
+                                </div>
+                                <div class="basic_foundry_field_form">
+                                    <div class="form_fields">
+                                        <label>VFD Controlled</label>
+                                        <select class="form_select_option">
+                                            <option>Yes</option>
+                                            <option>No</option>
+                                        </select>
+
+                                    </div>
+                                </div>
+                                <div class="form_fields">
+                                    <label>Metal rolled</label>
+                                    <input type="text" class="form_feilds_inputs" placeholder="Enter here">
+                                </div>
+
+                                <div class="cal_btn calbtn_advance_div forbottom_position">
+                                    <a href="javascript:void(0)" class="Cal_href_btn show_click_fifth_div">Calculate</a>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="basic_foundry_field_form metal_heateing_furnace_fifth_div display_none">
+                                <div class="metal_heating_para">
+                                    <h2 class="basic_cal_heading">Rolling Mill</h2>
+                                    <div class="advacne_div">
+                                        <a href="javascript:void(0)" class="advance_para">Advanced parameters</a>
+                                    </div>
+
+                                </div>
+                                <h4 class="mealtheathead">Output</h4>
+                                <div class="meltheatdiv">
+                                    <h1>Specific Energy Consumption</h1>
+                                    <h2> (kgoe/tonne)</h2>
+                                    <div class="rangeSlider__tooltip rangeSlider__tooltip--from">303</div>
+                                    <div class="tri-color-line"></div>
+                                </div>
+                                <p>Your SEC is remarkably high. In order to reduce your SEC you may implement the below mentioned energy efficient technologies and measures</p>
+                                <ul class="meltheatdivul">
+                                    <li><img src="~/images/Power.png"><p>New generation IBH with IGBT control along with IoT based alerts and automation</p></li>
+                                    <li><img src="~/images/Power.png"><p>Fuel switch from Oil to NG</p></li>
+                                    <li><img src="~/images/Power.png"><p>Relining of furnaces / Insulation</p></li>
+                                    <li><img src="~/images/Power.png"><p>Waste heat recovery for air preheating</p></li>
+                                </ul>
+                                <div class="cal_btn calbtn_advance_div">
+                                    <a href="javascript:void(0)" class="Cal_href_btn click_div-six_next_advance">Next</a>
+
+                                </div>
+                            </div>
+
+                            <div class="basic_foundry_field_form metal_heateing_furnace_six_div display_none">
+                                <div class="metal_heating_para">
+                                    <h2 class="basic_cal_heading">Pumps</h2>
+                                    <div class="advacne_div">
+                                        <a href="javascript:void(0)" class="advance_para">Advanced parameters</a>
+                                    </div>
+
+                                </div>
+                                <div class="form_fields">
+                                    <label>Rated efficiency</label>
+                                    <input type="text" class="form_feilds_inputs" placeholder="Enter here">
+
+                                </div>
+                                <div class="form_fields">
+                                    <label>Pump make </label>
+                                    <input type="text" class="form_feilds_inputs" placeholder="Enter here">
+
+                                </div>
+                                <div class="form_fields">
+                                    <label>Model</label>
+                                    <input type="text" class="form_feilds_inputs" placeholder="Enter here">
+                                </div>
+                                <div class="form_fields">
+                                    <label>Flow</label>
+                                    <input type="text" class="form_feilds_inputs" placeholder="Enter here">
+                                </div>
+                                <div class="form_fields">
+                                    <label>Head</label>
+                                    <input type="text" class="form_feilds_inputs" placeholder="Enter here">
+                                </div>
+
+                                <div class="cal_btn calbtn_advance_div forbottom_position">
+                                    <a href="javascript:void(0)" class="Cal_href_btn for_seven_div_show">Calculate</a>
+
+                                </div>
+
+                            </div>
+
+                            <div class="basic_foundry_field_form metal_heateing_furnace_seven_div display_none">
+                                <div class="metal_heating_para">
+                                    <h2 class="basic_cal_heading">Pumps</h2>
+                                    <div class="advacne_div">
+                                        <a href="javascript:void(0)" class="advance_para">Advanced parameters</a>
+                                    </div>
+
+                                </div>
+                                <h4 class="mealtheathead">Output</h4>
+                                <div class="meltheatdiv">
+                                    <h1>Specific Energy Consumption</h1>
+                                    <h2> (kgoe/tonne)</h2>
+                                    <div class="rangeSlider__tooltip rangeSlider__tooltip--from">303</div>
+                                    <div class="tri-color-line"></div>
+                                </div>
+                                <p>Your SEC is remarkably high. In order to reduce your SEC you may implement the below mentioned energy efficient technologies and measures</p>
+                                <ul class="meltheatdivul">
+                                    <li><img src="~/images/Power.png"><p>New generation IBH with IGBT control along with IoT based alerts and automation</p></li>
+                                    <li><img src="~/images/Power.png"><p>Fuel switch from Oil to NG</p></li>
+                                    <li><img src="~/images/Power.png"><p>Relining of furnaces / Insulation</p></li>
+                                    <li><img src="~/images/Power.png"><p>Waste heat recovery for air preheating</p></li>
+                                </ul>
+                                <div class="cal_btn calbtn_advance_div">
+                                    <a href="javascript:void(0)" class="Cal_href_btn click_div-eight_next_advance">Next</a>
+
+                                </div>
+                            </div>
+
+                            <div class="basic_foundry_field_form metal_heateing-furnace_eight_div display_none">
+                                <div class="metal_heating_para">
+                                    <h2 class="basic_cal_heading">Compressors</h2>
+                                    <div class="advacne_div">
+                                        <a href="javascript:void(0)" class="advance_para">Advanced parameters</a>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="form_fields">
+                                    <label>Number of Compressors</label>
+                                    <div class="fuel_checkbox_forging">
+
+                                        <div class="type_fuel_checkboxes">
+                                            <label class="checkbox-wrapper">
+                                                <input type="radio" class="checkbox-input" name="furnace_number_rr" checked>
+                                                <span class="checkbox-tile">
+                                                    <span class="checkbox-icon check_gcv">1</span>
+                                                </span>
+                                            </label>
+                                            <label class="checkbox-wrapper">
+                                                <input type="radio" class="checkbox-input" name="furnace_number_rr">
+                                                <span class="checkbox-tile">
+                                                    <span class="checkbox-icon check_gcv">2</span>
+                                                </span>
+                                            </label>
+                                            <label class="checkbox-wrapper">
+                                                <input type="radio" class="checkbox-input" name="furnace_number_rr">
+                                                <span class="checkbox-tile">
+                                                    <span class="checkbox-icon check_gcv">3</span>
+                                                </span>
+                                            </label>
+                                            <label class="checkbox-wrapper">
+                                                <input type="radio" class="checkbox-input" name="furnace_number_rr">
+                                                <span class="checkbox-tile">
+                                                    <span class="checkbox-icon check_gcv">4</span>
+                                                </span>
+                                            </label>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <!-- <div class="form_fields forfurnace_popup">
+                                 <h4 class="furnace_heading">Furnace details</h3>
+                                </div> -->
+
+
+                                <div class="furnace_select_tab">
+                                    <div class="tab_select_furnace">Compressor 1</div>
+                                </div>
+
+                                <div class="furnace_details-inputs_feild">
+
+                                    <div class="form_fields">
+                                        <label>Main / Standby</label>
+                                        <div class="fuel_checkbox_forging">
+
+                                            <div class="type_fuel_checkboxes">
+                                                <label class="checkbox-wrapper">
+                                                    <input type="radio" class="checkbox-input" name="furnace_number" checked="">
+                                                    <span class="checkbox-tile">
+                                                        <span class="checkbox-icon check_gcv">Main</span>
+                                                    </span>
+                                                </label>
+                                                <label class="checkbox-wrapper">
+                                                    <input type="radio" class="checkbox-input" name="furnace_number">
+                                                    <span class="checkbox-tile">
+                                                        <span class="checkbox-icon check_gcv">Standby</span>
+                                                    </span>
+                                                </label>
+
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form_fields">
+                                        <label>Type of compressor</label>
+                                        <div class="fuel_checkbox_forging">
+
+                                            <div class="type_fuel_checkboxes">
+                                                <label class="checkbox-wrapper">
+                                                    <input type="radio" class="checkbox-input" name="fuel_type_radio">
+                                                    <span class="checkbox-tile">
+                                                        <span class="checkbox-icon">
+                                                            <img src="~/images/Reciprocating.png">
+                                                        </span>
+                                                        <span class="checkbox-label">Reciprocating</span>
+                                                    </span>
+                                                </label>
+                                                <label class="checkbox-wrapper">
+                                                    <input type="radio" class="checkbox-input" name="fuel_type_radio" checked>
+                                                    <span class="checkbox-tile">
+                                                        <span class="checkbox-icon">
+                                                            <img src="~/images/Screw.png">
+                                                        </span>
+                                                        <span class="checkbox-label">Screw</span>
+                                                    </span>
+                                                </label>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form_fields">
+                                        <label>Is VFD Installed</label>
+                                        <div class="fuel_checkbox_forging">
+
+                                            <div class="type_fuel_checkboxes">
+                                                <label class="checkbox-wrapper">
+                                                    <input type="radio" class="checkbox-input" name="furnace_number_yes" checked="">
+                                                    <span class="checkbox-tile">
+                                                        <span class="checkbox-icon check_gcv">Yes</span>
+                                                    </span>
+                                                </label>
+                                                <label class="checkbox-wrapper">
+                                                    <input type="radio" class="checkbox-input" name="furnace_number_yes">
+                                                    <span class="checkbox-tile">
+                                                        <span class="checkbox-icon check_gcv">No</span>
+                                                    </span>
+                                                </label>
+
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form_fields">
+                                        <label>Motor capacity</label>
+                                        <input type="text" class="form_feilds_inputs" placeholder="Enter here">
+                                    </div>
+
+                                    <div class="form_fields">
+                                        <label>Receiver capacity</label>
+                                        <input type="text" class="form_feilds_inputs" placeholder="Enter here">
+                                    </div>
+
+
+                                    <div class="form_fields">
+                                        <label>Rated capacity</label>
+                                        <input type="text" class="form_feilds_inputs" placeholder="Enter here">
+                                    </div>
+
+
+
+                                    <div class="form_fields">
+                                        <label>Design Pressure</label>
+                                        <input type="text" class="form_feilds_inputs" placeholder="Enter here">
+                                    </div>
+
+                                    <div class="form_fields">
+                                        <label>Load pressure</label>
+                                        <input type="text" class="form_feilds_inputs" placeholder="Enter here">
+                                    </div>
+
+                                    <div class="form_fields">
+                                        <label>Unload pressure</label>
+                                        <input type="text" class="form_feilds_inputs" placeholder="Enter here">
+                                    </div>
+
+
+                                </div>
+
+
+                                <div class="cal_btn calbtn_advance_div">
+                                    <a href="javascript:void(0)" class="Cal_href_btn click_div-nine_next_advance">Calculate</a>
+
+                                </div>
+
+                            </div>
+
+                            <div class="basic_foundry_field_form metal_heateing_furnace_nine_div display_none">
+                                <div class="metal_heating_para">
+                                    <h2 class="basic_cal_heading">Compressors</h2>
+                                    <div class="advacne_div">
+                                        <a href="javascript:void(0)" class="advance_para">Advanced parameters</a>
+                                    </div>
+
+                                </div>
+                                <h4 class="mealtheathead">Compressors - Output</h4>
+                                <div class="meltheatdiv">
+                                    <h1>Specific Energy Consumption</h1>
+                                    <h2> (kgoe/tonne)</h2>
+                                    <div class="rangeSlider__tooltip rangeSlider__tooltip--from">303</div>
+                                    <div class="tri-color-line"></div>
+                                </div>
+                                <p>Your SEC is considerably higher than your per units. To reduce SEC, you may implement the following energy conservation measures</p>
+                                <ul class="meltheatdivul">
+                                    <li><img src="~/images/Power.png"><p>Replacement of reciprocating compressor with PM motor based screw compressor with VFD</p></li>
+                                    <li><img src="~/images/Power.png"><p>Arresting air leakages in compressed air system</p></li>
+                                    <li><img src="~/images/Power.png"><p>Reduce pressure setting of compressor as per actual requirement</p></li>
+                                </ul>
+
+                                <table class=" table table_compressure_advacne">
+                                    <tr>
+                                        <th>Network (Tank)</th>
+                                        <td>Go for Ring Network</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Compressor 1 (if >15 kW)</th>
+                                        <td>Shift to screw from reciprocating</td>
+                                    </tr>
+                                </table>
+
+
+                                <div class="cal_btn calbtn_advance_div">
+                                    <a href="@Url.Action("Index", "Calculator", null, Request.Url.Scheme)" class="Cal_href_btn">Back to home</a>
+
+                                </div>
+                            </div>
+
+
+
+                        </div>
+
+                    </div>
+
+
+
+
+
+
+                </div>
+                <p class="weightstyle">Disclaimer: Data is as per energy audit carried out in the last 5 years.</p>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+

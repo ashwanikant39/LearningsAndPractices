@@ -1,0 +1,121 @@
+﻿@model BEEKP.Areas.Admin.Models.KnowledgeBankManageModel
+@{
+    ViewBag.Title = "KnowledgeBank Manage";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@using (Html.BeginForm("ManageKnowledgeBank", "AdminKnowledgeBank", FormMethod.Post, new { @id = "frmManageKnowledgeBank", @name = "frmManageKnowledgeBank", enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    @Html.HiddenFor(model => Model.KnowledgeBank.knowledge_bank_id)
+
+    <div class="page-head">
+        <div class="container">
+            <!-- BEGIN PAGE TITLE -->
+            <div class="page-title">
+                <h1>@*@Model.PagePermission.file_name*@</h1>
+            </div>
+            <!-- END PAGE TITLE -->
+
+        </div>
+    </div>
+    <div class="page-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- BEGIN VALIDATION STATES-->
+                    <div class="portlet light">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <span class="caption-subject font-green-sharp bold uppercase">Manage Knowledge Bank</span> <small class="small-font-cuatom">Fields marked with asterisk (<span class="required-asterisk"> * </span>) are mandatory to fill in </small>
+                            </div>
+                        </div>
+                        <div class="portlet-body form">
+                            <div class="horizontal-form ">
+                                <div class="form-body form-body-small-padding">
+                                    @*<h3 class="form-section page-title mandatory-note">&nbsp <small>Fields marked with asterisk (<span class="required-asterisk"> * </span>) are mandatory to fill in </small></h3>*@
+
+                                    <!--body start-->
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group clearfix">
+                                                <label class="control-label col-md-4">Library Type<span class="required">* </span></label>
+                                                <div class="col-md-8">
+                                                    @Html.DropDownListFor(model => Model.KnowledgeBank.knowledge_bank_type_id, new SelectList(Model.ListKnowledgeBankType, "knowledge_bank_type_id", "knowledge_bank_type_name", ""), new { @class = "form-control required", @id = "ddltypeofknowledgebank", autocomplete = "off" })
+                                                    @Html.ValidationMessageFor(model => model.KnowledgeBank.knowledge_bank_type_name, "", new { @class = "text-denger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group clearfix">
+                                                <label class="control-label col-md-4">File Name<span class="required">* </span></label>
+                                                <div class="col-md-8">
+                                                    @Html.TextBoxFor(model => model.KnowledgeBank.knowledge_bank_name, new { @class = "form-control required", @id = "knowledge_bank_name", @Placeholder = "Bank Name" })
+                                                    @Html.ValidationMessageFor(model => model.KnowledgeBank.knowledge_bank_name, "", new { @class = "text-denger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group clearfix">
+                                                <label class="control-label col-md-4">Upload Document</label>
+                                                <div class="col-md-8">
+                                                    <div class="input-group">
+                                                        <span class="input-group-btn">
+                                                            <span class="btn btn-default btn-file">
+                                                                Browse&hellip;
+                                                                @Html.TextBoxFor(m => m.KnowledgeBank.file_name, new { type = "file", Name = "fileKnowledgeDoc", placeholder = Html.DisplayNameFor(m => m.KnowledgeBank.file_name), @id = "file", @class = "form-control", accept = ".pdf" })
+                                                                @Html.HiddenFor(m => m.KnowledgeBank.file_name)
+                                                            </span>
+                                                        </span>
+                                                        <input type="text" class="form-control" value="@Model.KnowledgeBank.file_name" readonly>
+                                                    </div>
+                                                    <span class="help-block">Max file size 20MB (.pdf) </span>
+                                                    <span id="spnDocumentUpload" style="color:red" class="file-error-message"></span>
+                                                    <br />
+                                                    @*@Html.TextBox("file", "", new { type = "file", @id="fileEventImage" })*@
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="col-md-6">
+                                                <div class="form-group clearfix">
+                                                    <label class="control-label col-md-4">Active</label>
+                                                    <div class="col-md-8">
+                                                        @Html.CheckBoxFor(model => model.KnowledgeBank.status, new { @class = "icheck", @id = "status", @Placeholder = "Status" })
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Footer-->
+                                <div class="form-actions right">
+                                    <div class="row">
+                                        <div class="col-md-offset-3 col-md-9">
+                                            <button type="button" class="btn default" onclick="location.href='@Url.Action("Index", "AdminKnowledgeBank", new {})'">Back</button>
+                                                <button type="submit" class="btn blue blue-custom" name="btnAction"><i class="fa fa-check"></i>Save</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END FORM-->
+                        </div>
+                        <!-- END VALIDATION STATES-->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- BEGIN VALIDATION STATES-->
+
+
+
+}
+@Scripts.Render("~/bundles/area/js/global")
+@Scripts.Render("~/bundles/area/js/validate")
+@Scripts.Render("~/bundles/area/appjs/knowledgebank_manage")
