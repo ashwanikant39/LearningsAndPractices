@@ -1,9 +1,0 @@
-﻿@model BEEKP.Models.VideoLibraryViewModel
-
-@for (Int32 i = 0; i < Model.ListVideoLibrary.Count; i++)
-{
-    <div class="col-md-3 wow fadeInUp mb-15 min-height-270" data-wow-duration="1.2s">
-        <iframe src="@Model.ListVideoLibrary[i].video_url" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <p>@Model.ListVideoLibrary[i].technology</p>
-    </div>
-}
