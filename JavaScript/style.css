@@ -17,7 +17,7 @@ body {
   width: 100px;
   border: 15px solid rgb(233, 232, 232);
   border-radius: 50%;
-  border-top-color: rgb(11, 204, 8);
+  /* border-top-color: rgb(11, 204, 8); */
   border-top-color: rgb(11, 204, 8);
 
   animation: loading 1s ease infinite;
@@ -28,18 +28,18 @@ body {
     transform: rotate(0turn);
   }
   20% {
-    border-top-color: rgb(8, 50, 204);
+    /* border-top-color: rgb(8, 50, 204); */
     /* border-radius: 40%; */
 
     /* border-color: aqua; */
   }
   40% {
-    border-top-color: rgb(13, 247, 219);
+    /* border-top-color: rgb(13, 247, 219); */
     /* border-radius: 45%; */
     /* border-color: blueviolet; */
   }
   100% {
-    border-top-color: rgb(11, 204, 8);
+    /* border-top-color: rgb(11, 204, 8); */
     transform: rotate(1turn);
   }
 }
