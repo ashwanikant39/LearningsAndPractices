@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let inputHour = 12;
+      let inputMin = 0;
+      let amPm = "AM";
+
+      if (amPm == "PM") {
+        if (inputHour < 12) {
+          // inputHour=inputHour
+          inputHour = inputHour + 12;
+        }
+      } else if (amPm == "AM") {
+        if (inputHour === 12) {
+          inputHour = 0;
+        }
+      }
+      // if (inputHour)
+
+      console.log(inputHour + " " + amPm);
+      //   if (realHour > 11 && realHour <= 23) {
+      //     amPm = "PM";
+      //   }
+      //   //    else if (realHour === 24) {
+      //   //     amPm = "AM";
+      //   //   }
+
+      //   if (realHour > 12) {
+      //     realHour = realHour - 12;
+      //     // amPm = "PM";
+      //   } else if (realHour === 0) {
+      //     realHour = 12;
+      //   }
+
+      //   console.log(realHour + ":" + realMin + " " + amPm);
+    </script>
+  </body>
+</html>

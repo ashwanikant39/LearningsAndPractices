@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        height: 100vh;
+        width: 100vw;
+        align-items: center;
+        justify-content: center;
+      }
+      .checkBoxCont {
+        width: 100px;
+        height: 40px;
+        background-color: red;
+        border-radius: 50px;
+        border: 2px solid red;
+        position: relative;
+      }
+      input[type="checkbox"] {
+        position: absolute;
+        /* display: flex; */
+        width: 34px;
+        height: 34px;
+        cursor: pointer;
+        background-color: blue;
+        /* animation: slider1 100ms ease forwards; */
+      }
+      input[type="checkbox"]:checked {
+        /* width: 24px;
+        height: 24px;
+        cursor: pointer; */
+        transform: translateX(100px);
+        /* animation: slider 100ms ease forwards; */
+      }
+      @keyframes slider1 {
+        0% {
+          transform: translateX(170%);
+          /* left: 100%; */
+        }
+        50% {
+          /* width: 24px;
+          height: 24px;
+          top: 50%; */
+        }
+        100% {
+          transform: translateX(-10%);
+        }
+      }
+      @keyframes slider {
+        0% {
+          /* left: 0%; */
+        }
+        50% {
+        }
+        100% {
+          transform: translateX(170%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="checkBoxCont">
+      <input id="checkBox" type="checkbox" />
+    </div>
+    <script>
+      // function f1() {
+      //   console.log("hello");
+      // }
+      // window.addEventListener("DOMContentLoaded", () => {
+      //   setInterval(f1, 1000);
+      // });
+    </script>
+  </body>
+</html>
