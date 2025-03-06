@@ -1,2 +1,12 @@
-customars_list)==0):
-            if(receiver_accountNum== customar and sender_exist==True):
+
+x = turtle.Turtle()
+def square(angle):
+    x.forward(100)
+    x.right(angle)
+    x.forward(100)
+    x.right(angle)
+    x.forward(100)
+    x.right(angle)
+    x.forward(100)
+    x.right(angle+10)
+for i in range(36):

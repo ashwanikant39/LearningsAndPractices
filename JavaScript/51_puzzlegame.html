@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Puzzle Game</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+      .game-container {
+        width: 400px;
+        margin: 40px auto;
+        text-align: center;
+      }
+
+      .game-board {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 10px;
+      }
+
+      .tile {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        padding: 20px;
+        font-size: 24px;
+        cursor: pointer;
+      }
+
+      .tile:hover {
+        background-color: #f0f0f0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="game-container">
+      <div class="game-board">
+        <!-- Tiles will be generated dynamically -->
+      </div>
+      <button class="shuffle-btn">Shuffle</button>
+      <button class="solve-btn">Solve</button>
+    </div>
+    <!-- <script src="script.js"></script> -->
+    <script>
+      // Game settings
+      const GAME_SIZE = 4;
+      const TILE_COUNT = GAME_SIZE * GAME_SIZE;
+
+      // Initialize game board
+      const gameBoard = document.querySelector(".game-board");
+      const tiles = [];
+
+      // Function to generate tiles
+      function generateTiles() {
+        for (let i = 1; i <= TILE_COUNT; i++) {
+          const tile = document.createElement("div");
+          tile.classList.add("tile");
+          tile.textContent = i;
+          tiles.push(tile);
+          gameBoard.appendChild(tile);
+        }
+      }
+
+      // Function to shuffle tiles
+      function shuffleTiles() {
+        for (let i = tiles.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [tiles[i], tiles[j]] = [tiles[j], tiles[i]];
+        }
+        updateTilePositions();
+      }
+
+      // Function to update tile positions
+      function updateTilePositions() {
+        tiles.forEach((tile, index) => {
+          tile.style.gridRow = Math.floor(index / GAME_SIZE) + 1;
+          tile.style.gridColumn = (index % GAME_SIZE) + 1;
+        });
+      }
+
+      // Function to solve puzzle
+      function solvePuzzle() {
+        tiles.sort((a, b) => parseInt(a.textContent) - parseInt(b.textContent));
+        updateTilePositions();
+      }
+
+      // Event listeners
+      document
+        .querySelector(".shuffle-btn")
+        .addEventListener("click", shuffleTiles);
+      document
+        .querySelector(".solve-btn")
+        .addEventListener("click", solvePuzzle);
+
+      // Initialize game
+      generateTiles();
+      shuffleTiles();
+    </script>
+  </body>
+</html>

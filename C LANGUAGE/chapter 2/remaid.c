@@ -1,10 +1,8 @@
-#include<stdio.h>
-int main(){
+#include <stdio.h>
+int main()
+{
 
- printf("%d", 13%100);
+    printf("%d", 13 % 100);
 
-return 0;
-
-
-
+    return 0;
 }

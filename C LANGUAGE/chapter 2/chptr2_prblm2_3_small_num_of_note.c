@@ -25,8 +25,8 @@ int main()
   printf("coin of two : %d\n", two_note);
   printf("coin of one : %d\n\n", one_note);
 
-// printf("%d",hun_note);
-  printf("%d(Hundred's notes) + %d(Fifty's notes) + %d(Ten's notes) + %d(Five's notes) + %d(Two's coin) + %d(One's coins) \n\n", hun_note, fifty_note , ten_note , five_note , two_note , one_note);
+  // printf("%d",hun_note);
+  printf("%d(Hundred's notes) + %d(Fifty's notes) + %d(Ten's notes) + %d(Five's notes) + %d(Two's coin) + %d(One's coins) \n\n", hun_note, fifty_note, ten_note, five_note, two_note, one_note);
   int total = hun_note + fifty_note + ten_note + five_note + two_note + one_note;
   printf("smallest number of notes= %d", total);
   return 0;

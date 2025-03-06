@@ -10,7 +10,7 @@ int main()
         if (h == 0)
         {
             printf("12 Midnight\n");
-            continue;
+            // continue;
         }
 
         if (h < 12)

@@ -292,29 +292,29 @@
 #     i+=1
 
 # Q-39 with for loop
-print("\nWith for loop")
-num = int(input("Enter number: "))
-j = 2
-for i in range(1, num+1):
-    if (num % j == 0):
-        print(j)
-        num //= j
-    elif (num % j != 0):
-        j += 1
+# print("\nWith for loop")
+# num = int(input("Enter number: "))
+# j = 2
+# for i in range(1, num+1):
+#     if (num % j == 0):
+#         print(j)
+#         num //= j
+#     elif (num % j != 0):
+#         j += 1
 
-# Q-39 with while loop
-print("\nWith while loop   ")
-num = int(input("Enter number: "))
-i = 2
-print("Factor of", num, "\n")
-while (i <= num):
-    if (num % i == 0):
-        print(i, "|", num)
-        print("--|-------")
-        num = num//i
-    elif (num % i != 0):
-        i += 1
-print("  |",num)
+# # Q-39 with while loop
+# print("\nWith while loop   ")
+# num = int(input("Enter number: "))
+# i = 2
+# print("Factor of", num, "\n")
+# while (i <= num):
+#     if (num % i == 0):
+#         print(i, "|", num)
+#         print("--|-------")
+#         num = num//i
+#     elif (num % i != 0):
+#         i += 1
+# print("  |",num)
 
 
 

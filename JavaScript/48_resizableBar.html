@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resizable Sidebar on the Right</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        display: flex;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      /* Content area on the left side */
+      #content {
+        flex-grow: 1;
+        padding: 20px;
+        background-color: #f4f4f4;
+      }
+
+      /* Sidebar styling, now on the right */
+      #sidebar {
+        width: 250px;
+        min-width: 150px;
+        max-width: 600px;
+        background-color: #333;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        position: relative;
+      }
+
+      /* Resizer bar is now on the left side of the sidebar */
+      #resizer {
+        width: 5px;
+        background-color: #888;
+        cursor: ew-resize;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+      }
+
+      /* Disable text selection while resizing */
+      .no-select {
+        user-select: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="content">
+      <h2>Main Content Area</h2>
+      <p>
+        This is the main content area. The sidebar can be resized by dragging
+        the left edge.
+      </p>
+    </div>
+
+    <div id="sidebar">
+      <h2>Resizable Sidebar</h2>
+      <div id="resizer"></div>
+    </div>
+
+    <script>
+      const resizer = document.getElementById("resizer");
+      const sidebar = document.getElementById("sidebar");
+      let isResizing = false;
+
+      // Event listener for mouse down on the resizer
+      resizer.addEventListener("mousedown", function (e) {
+        isResizing = true;
+        document.body.classList.add("no-select");
+      });
+
+      // Mouse move event to adjust the sidebar width
+      document.addEventListener("mousemove", function (e) {
+        if (isResizing) {
+          const newWidth = window.innerWidth - e.clientX;
+          if (newWidth >= 150 && newWidth <= 600) {
+            // Setting min and max width
+            sidebar.style.width = newWidth + "px";
+          }
+        }
+      });
+
+      // Mouse up event to stop resizing
+      document.addEventListener("mouseup", function () {
+        isResizing = false;
+        document.body.classList.remove("no-select");
+      });
+    </script>
+  </body>
+</html>

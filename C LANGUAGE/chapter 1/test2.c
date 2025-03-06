@@ -1,6 +1,7 @@
 #include <stdio.h>
 
-int main() {
+int main()
+{
     int num1, num2, max;
 
     // Input two numbers

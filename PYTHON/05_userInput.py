@@ -1,4 +1,4 @@
-# take input by us
+# take input by user
 
 a = input("Enter your first name: ")  # It take input as STRING
 print("Your name is", a, "\n")

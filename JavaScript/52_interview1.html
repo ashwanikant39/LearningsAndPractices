@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* Q-1 */
+      h1 {
+        color: red;
+        cursor: pointer;
+      }
+
+      /* Q-2 */
+      .score {
+        display: flex;
+        gap: 50px;
+      }
+
+      #btn {
+        padding: 5px;
+        cursor: pointer;
+      }
+      #curr-score,
+      #high-score {
+        font-size: 30px;
+        color: black;
+      }
+
+      /* Q-3 */
+    </style>
+  </head>
+  <body>
+    <!-- Q-1 -->
+    <p>Q-1</p>
+    <h1 id="hello">Hello world</h1>
+    <hr />
+
+    <!-- Q-2 -->
+    <p>Q-2</p>
+    <div class="score">
+      <p id="high-score"></p>
+      <p id="curr-score"></p>
+    </div>
+    <button id="btn">click</button>
+
+    <hr />
+
+    <!-- Q-3 -->
+
+    <p>Q-3</p>
+    <h1 class="incNum">0</h1>
+
+    <script>
+      // q-1
+      const arr = ["Aditya", "akash", "ashu", "ankush"];
+      let changeValue = document.querySelector("#hello");
+      indx = 0;
+      changeValue.addEventListener("click", () => {
+        // if (indx)
+        if (indx > 3) {
+          indx = 0;
+        }
+        currentValue = arr[indx];
+        changeValue.innerHTML = currentValue;
+        indx = indx + 1;
+      });
+
+      // q-2
+      let btn = document.querySelector("#btn");
+      let highScore = document.querySelector("#high-score");
+      let currScore = document.querySelector("#curr-score");
+
+      // currScore.innerHTML = localsVal;
+
+      let localsVal = localStorage.getItem("number");
+      if (localsVal != null) {
+        highScore.innerHTML = `High score: ${localsVal}`;
+      } else {
+        highScore.innerHTML = `High score: 0`;
+      }
+
+      updatingVal = 0;
+      currScore.innerHTML = `Current score: ${updatingVal}`;
+      btn.addEventListener("click", () => {
+        updatingVal++;
+
+        currScore.innerHTML = `Current score: ${updatingVal}`;
+        if (updatingVal > localsVal) {
+          highScore.innerHTML = `High score: ${updatingVal}`;
+          localStorage.setItem("number", updatingVal);
+          // currScore.innerHTML = `Current score: ${updatingVal}`;
+        }
+      });
+
+      // Q-3
+      let incNum = document.querySelector(".incNum");
+      value = 0;
+
+      printVal = (value) => {
+        incNum.innerHTML = value;
+      };
+
+      let increaming = true;
+      setInterval(() => {
+        if (value > 9) {
+          increaming = false;
+        }
+        if (value == 0) {
+          increaming = true;
+        }
+        if (increaming) {
+          value++;
+        } else {
+          value--;
+        }
+
+        printVal(value);
+        console.log(value);
+      }, 100);
+    </script>
+  </body>
+</html>

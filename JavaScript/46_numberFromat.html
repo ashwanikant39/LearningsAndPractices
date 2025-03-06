@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Number formater</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        height: 100vh;
+        align-items: center;
+      }
+      #print {
+        color: black;
+        /* border: 1px solid gray; */
+        font-size: 30px;
+        font-family: sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="print"></div>
+
+    <script>
+      let print = document.querySelector("#print");
+      //   for (let i = 0; i <= 1000000; i++) {
+      //     print.innerHTML = i;
+      //   }
+      let i = 0;
+      while (i < 1000000) {
+        print.innerHTML = i;
+        // print.innerHTML = "hello";
+        // setTimeout(() => {
+        //   i = i + 1;
+        // }, 1000);
+        i++;
+      }
+    </script>
+  </body>
+</html>

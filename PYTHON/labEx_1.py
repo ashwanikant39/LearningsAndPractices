@@ -10,3 +10,4 @@ for i in range(6):
 print("States' names:")
 for state in states:
     print(state)
+

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Viewer with Collapsible Arrays and Clear Button</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .json-viewer {
+            width: 40%;
+            padding: 20px;
+            border-right: 1px solid #ccc;
+            background-color: #f4f4f9;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .table-view {
+            width: 60%;
+            padding: 20px;
+            background-color: white;
+            overflow-y: auto;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            margin: 5px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .collapsible:before {
+            content: '⊞'; /* Collapsed array symbol */
+            cursor: pointer;
+            color: #0073e6;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .collapsible.expanded:before {
+            content: '⊟'; /* Expanded array symbol */
+        }
+
+        .collapsible-object:before {
+            content: '⊡'; /* Object symbol */
+            color: #333;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .collapsible-content {
+            display: none; /* Initially hidden */
+        }
+
+        .collapsible.expanded + .collapsible-content {
+            display: block; /* Display when expanded */
+        }
+
+        .key {
+            font-weight: bold;
+        }
+
+        .value {
+            color: #666;
+            cursor: pointer;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        #table-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #table-header h3 {
+            margin: 0;
+        }
+
+        /* Clear Button Styling */
+        .clear-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .clear-btn:hover {
+            background-color: #d32f2f;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- JSON Viewer Section -->
+    <div class="json-viewer" id="json-viewer">
+        <h2>JSON Viewer</h2>
+        <button class="clear-btn" id="clear-btn">Clear All</button>
+    </div>
+
+    <!-- Table View Section -->
+    <div class="table-view" id="table-view">
+        <div id="table-header">
+            <h3>Table View</h3>
+        </div>
+        <table id="data-table">
+            <thead>
+                <tr>
+                    <th>Key</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Table rows will be dynamically populated here -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    // Sample JSON data (Replace with your JSON)
+    const jsonData = [
+        {
+            "id": "1",
+            "name": "Google Pixel 6 Pro",
+            "data": {
+                "processor": "Google Tensor",
+                "ram": "12GB",
+                "storage": "128GB",
+                "battery": "5000mAh",
+                "camera": {
+                    "rear": "50MP",
+                    "front": "12MP"
+                }
+            }
+        },
+        {
+            "id": "2",
+            "name": "iPhone 14",
+            "data": {
+                "processor": "A15 Bionic",
+                "ram": "6GB",
+                "storage": "256GB",
+                "battery": "4000mAh",
+                "camera": {
+                    "rear": "48MP",
+                    "front": "12MP"
+                }
+            }
+        }
+    ];
+
+    // Function to create a collapsible element
+    function createCollapsibleElement(key, value) {
+        const li = document.createElement('li');
+
+        if (typeof value === 'object' && value !== null) {
+            const button = document.createElement('span');
+
+            if (Array.isArray(value)) {
+                // If it's an array, use the ⊞ symbol and collapsed by default
+                button.className = 'collapsible';
+                button.textContent = `Array (${value.length})`;
+
+                const ul = document.createElement('ul');
+                ul.className = 'collapsible-content';
+                Object.keys(value).forEach(subKey => {
+                    ul.appendChild(createCollapsibleElement(subKey, value[subKey]));
+                });
+
+                // Initially collapsed
+                ul.style.display = 'none';
+
+                button.addEventListener('click', function() {
+                    button.classList.toggle('expanded');
+                    ul.style.display = ul.style.display === 'block' ? 'none' : 'block';
+                });
+
+                li.appendChild(button);
+                li.appendChild(ul);
+            } else {
+                // If it's an object, use the ⊡ symbol
+                button.className = 'collapsible-object';
+                button.textContent = key;
+
+                const ul = document.createElement('ul');
+                Object.keys(value).forEach(subKey => {
+                    ul.appendChild(createCollapsibleElement(subKey, value[subKey]));
+                });
+
+                li.appendChild(button);
+                li.appendChild(ul);
+            }
+        } else {
+            li.innerHTML = `<span class="key">${key}:</span> <span class="value">${value}</span>`;
+            li.querySelector('.value').addEventListener('click', () => {
+                displayTable({ [key]: value });
+            });
+        }
+
+        return li;
+    }
+
+    // Function to display the JSON data
+    function displayJSON(json) {
+        const container = document.getElementById('json-viewer');
+        const ul = document.createElement('ul');
+        json.forEach((item) => {
+            ul.appendChild(createCollapsibleElement('', item));
+        });
+        container.appendChild(ul);
+    }
+
+    // Function to display data in the table
+    function displayTable(data) {
+        const tableBody = document.querySelector('#data-table tbody');
+        tableBody.innerHTML = ''; // Clear existing rows
+
+        Object.keys(data).forEach(key => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `<td>${key}</td><td>${JSON.stringify(data[key])}</td>`;
+            tableBody.appendChild(tr);
+        });
+    }
+
+    // Function to clear all data
+    function clearAll() {
+        // Clear JSON viewer
+        const jsonViewer = document.getElementById('json-viewer');
+        jsonViewer.innerHTML = '<h2>JSON Viewer</h2><button class="clear-btn" id="clear-btn">Clear All</button>';
+        // Clear Table View
+        const tableBody = document.querySelector('#data-table tbody');
+        tableBody.innerHTML = '';
+        // Reattach event listener to the button after clearing
+        document.getElementById('clear-btn').addEventListener('click', clearAll);
+    }
+
+    // Attach clear button event listener
+    document.getElementById('clear-btn').addEventListener('click', clearAll);
+
+    // Initialize and display JSON data
+    displayJSON(jsonData);
+</script>
+
+</body>
+</html>

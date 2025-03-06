@@ -256,7 +256,7 @@ public class all_pattern {
         System.out.println("--- No-18 ---");
 
         // for upper part
-        for (int i = 1; i <= n-1; i++) {
+        for (int i = 1; i <= n - 1; i++) {
             for (int j = 1; j <= n; j++) {
                 if (j <= i) {
                     System.out.print("*");
@@ -377,7 +377,7 @@ public class all_pattern {
 
         System.out.println("--- No-23 ---");
 
-        for (int i = 1; i <= n-1; i++) {
+        for (int i = 1; i <= n - 1; i++) {
             for (int j = 1; j <= n; j++) {
                 if (j == 1 || j == i) {
                     System.out.print("*");
@@ -516,8 +516,41 @@ public class all_pattern {
 
             System.out.println();
         }
+
         System.out.println();
         System.out.println();
+
+        System.out.println("--- No-29 ---");
+        // 00000000010
+        // 000000009
+        // 00000008
+        // 0000007
+        // 000006
+        // 00005
+        // 0004
+        // 003
+        // 02
+        // 1
+
+        for (int i = 10; i >= 1; i--) {
+
+            for (int j = 1; j <= i; j++) {
+                if (i == j) {
+
+                    System.out.print(i);
+                } else {
+                    System.out.print("0");
+
+                }
+
+            }
+            System.out.println();
+        }
+
+        System.out.println("--- No-30 ---");
+
+        
+
     }
 
 }
