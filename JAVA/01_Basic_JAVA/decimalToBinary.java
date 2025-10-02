@@ -15,9 +15,9 @@ public class decimalToBinary {
 
         // Divide by 2 until number reduces to 0
         while (num != 0) {
-            rem = num % 2;
+            rem = num % 2; // 1
               
-            y = i * rem;
+            y = i * rem; // 1*1
 
             binary = binary + y; // concatenate remainders in bottom-up manner
 

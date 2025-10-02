@@ -52,7 +52,7 @@ public class calculator {
                 System.out.println("Enter b: ");
                 int y = sc.nextInt();
                 int remainder = x % y;
-                System.out.println("Remainder= "+remainder);
+                System.out.println("Remainder= " + remainder);
                 break;
 
         }
